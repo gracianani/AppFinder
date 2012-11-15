@@ -1,0 +1,53 @@
+<%= form_for(@app) do |f| %>
+  <% if @app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
+
+      <ul>
+      <% @app.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :icon_url %><br />
+    <%= f.text_field :icon_url %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :developer %><br />
+    <%= f.text_field :developer %>
+  </div>
+  <div class="field">
+    <%= f.label :ratings %><br />
+    <%= f.text_field :ratings %>
+  </div>
+  <div class="field">
+    <%= f.label :screenshot_url %><br />
+    <%= f.text_field :screenshot_url %>
+  </div>
+  <div class="field">
+    <%= f.label :short_discription %><br />
+    <%= f.text_field :short_discription %>
+  </div>
+  <div class="field">
+    <%= f.label :long_description %><br />
+    <%= f.text_field :long_description %>
+  </div>
+  <div class="field">
+    <%= f.label :like_count %><br />
+    <%= f.number_field :like_count %>
+  </div>
+  <div class="field">
+    <%= f.label :video_url %><br />
+    <%= f.text_field :video_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

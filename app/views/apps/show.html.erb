@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Icon url:</b>
+  <%= @app.icon_url %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @app.title %>
+</p>
+
+<p>
+  <b>Developer:</b>
+  <%= @app.developer %>
+</p>
+
+<p>
+  <b>Ratings:</b>
+  <%= @app.ratings %>
+</p>
+
+<p>
+  <b>Screenshot url:</b>
+  <%= @app.screenshot_url %>
+</p>
+
+<p>
+  <b>Short discription:</b>
+  <%= @app.short_discription %>
+</p>
+
+<p>
+  <b>Long description:</b>
+  <%= @app.long_description %>
+</p>
+
+<p>
+  <b>Like count:</b>
+  <%= @app.like_count %>
+</p>
+
+<p>
+  <b>Video url:</b>
+  <%= @app.video_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>

@@ -1,0 +1,12 @@
+<h1>Listing apps</h1>
+
+<div id="waterfallApps"> </div>
+
+<br />
+<script type="text/javascript">
+  $(function() {
+    window.router = new AppFinder.Routers.WaterfallAppsRouter({options: {waterfallApps: []}});
+    Backbone.history.start();
+  });
+</script>
+<%= link_to 'New App', new_app_path %>
