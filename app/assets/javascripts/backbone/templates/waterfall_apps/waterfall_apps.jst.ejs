@@ -51,11 +51,17 @@
 		<a href="#"><%= category %></a>
 	</div>
 	<div class="app-like">
-		<i class="icon-heart"></i><%= like_count %>
+		<i class="icon-heart 
+			<% if ( like == false ) { %> 
+				icon-white
+			<% } %>
+		"></i><%= like_count %>
 	</div>
 	<div class="app-video">
-		<i class="icon-facetime-video"></i>
-
+		<% if ( video_url != "" ) { %>
+			<a href="<%= video_url %>"><i class="icon-facetime-video"></i></a>
+			
+		<% } %>
 	</div>
 	
 </div><!--/#app-id -->

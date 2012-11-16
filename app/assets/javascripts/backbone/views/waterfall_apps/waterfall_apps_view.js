@@ -10,10 +10,16 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
     "mouseout .app-short-description" : "hideDescription", 
     "mouseover .app-short-description" : "showDescription" ,
     "mouseout .hover-overlay" : "hideDescription", 
-    "mouseover .hover-overlay" : "showDescription" 
+    "mouseover .hover-overlay" : "showDescription", 
+    "click div.app-like" : "toggleLike"
   },
   initialize : function(){
     this.short_description_active = false;
+  },
+  toggleLike : function() {
+    this.model.toggle_like();
+    this.model.save();
+    this.render();
   },
   toggleShareMenu : function() {
       var menuShare = $(this.el).find(".menu-share");
@@ -30,7 +36,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
           this.short_description_active = false;
           setTimeout(function() {
             if(that.short_description_active== false) {
-              short_description.fadeOut(200, function() {that.short_description_active = false} ); } }, 400);
+              short_description.fadeOut(100, function() {that.short_description_active = false} ); } }, 200);
       } 
   },
   showDescription : function(e){
@@ -38,7 +44,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
     if(this.short_description_active == false) {
       that.short_description_active = true;
       var short_description = $(this.el).find(".app-short-description");
-      short_description.fadeIn( 200 , function() {
+      short_description.fadeIn( 100 , function() {
         that.short_description_active = true;
       });
     }
@@ -52,6 +58,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   },
 
   render: function() {
+    this.model.fetch();
     $(this.el).html(this.template(this.model.toJSON() ));
     return this;
   }
