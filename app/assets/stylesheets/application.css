@@ -120,6 +120,9 @@ a:hover,a:active {
 	
 	text-shadow: 1px 1px 0 #ededed;
 }
+/* ==========================================================================
+   Highlight style
+   ========================================================================== */
 
 #highlight {
 	margin-top:-10px;
@@ -153,7 +156,6 @@ a:hover,a:active {
 
 	background-color: #b52806;
 	color: #FFF;
-	border-radius: 0 0 5px 5px;
 	position: relative;
 	top:-15px;
 	
@@ -171,12 +173,7 @@ a:hover,a:active {
 	cursor: pointer;
 }
 .hlb-sp1:hover,.hlb-sp2:hover {
-	background-image: -webkit-gradient(linear,0 0,0 100%,from(#731115),to(#b52806));
-	background-image: -webkit-linear-gradient(top,#731115,#b52806);
-	background-image: -o-linear-gradient(top,#731115,#b52806);
-	background-image: linear-gradient(to bottom,#731115,#b52806);
-	background-image: -moz-linear-gradient(top,#731115,#b52806);
-	background-repeat: repeat-x;
+	background-color:#b52806;
 }
 .hlb-h2 {height:200px;}
 .hlb-alpha{}
@@ -184,7 +181,7 @@ a:hover,a:active {
 .hlb-sp1 {width:20%;}
 .hlb-sp2 {width:40%;}
 
-#highlight-box p {margin-bottom: 0;}
+#highlight-box p {margin-bottom: 0;position:relative;}
 .hlb-type{color:#eabcaf;font-size: 10px;}
 .hlb-title{color:#FFF;font-size: 18px;text-transform: uppercase;padding-bottom: 5px;}
 .hlb-subtitle{color:#fff;font-size:14px;text-transform: uppercase;}
@@ -198,11 +195,10 @@ a:hover,a:active {
 	border-radius: 6px;
 	float: left;
 }
-.hlb-app {
-	background-color: #731115;
-}
-.hlb-search {
-	background-color: #5d1015;
+.hlb-imgbg {
+	position: absolute;
+	right:0;
+	bottom:0;
 }
 .hlb-list i,.hlb-app i,.hlb-search i {
 	position: absolute;
@@ -210,19 +206,103 @@ a:hover,a:active {
 	bottom: 15px;
 	opacity: 0.6;
 }
+.hlb-app {
+	background-color: #731115;
+}
+.hlb-search {
+	background-color: #5d1015;
+}
+.hlb-list {
+	background-color:#731115;
+}
 
 /* ==========================================================================
-   card style // to be deleted
+   Filter Bar style
    ========================================================================== */
+
+#filter-box{
+	background: #FCFCFC;
+	background: -moz-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));
+	background: -webkit-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));
+	background: -o-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));
+	background: linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));	
+	
+	border: 1px solid #EAEAEA;
+	border-bottom-color: #CACACA;
+	border-radius: 3px;
+}
+.filter-btn {
+	float: left;
+	text-align: center;
+	display:inline-block;
+	padding:5px 10px;
+	line-height:30px;
+	height: 30px;
+	border-right: 1px solid rgba(192,192,192,0.5);
+	border-left: 1px solid rgba(255,255,255,0.5);
+}
+.filter-btn:first-child{
+	border-left: none;
+}
+.filter-btn:last-child{
+	border-right: none;
+}
+.filter-btn>[class^="icon-"],.filter-btn>[class*=" icon-"]{
+	height:30px;
+	width: 40px;
+	line-height: 30px;
+	margin:0;
+	vertical-align: middle;
+	background-repeat:no-repeat;
+	background-position:center center;
+	opacity: 0.7;
+}
+.icon-calendar {
+	background-image:url(img/icon-calendar.png);
+}
+.icon-rating {
+	background-image:url(img/icon-rating.png);
+}
+.icon-device {
+	background-image:url(img/icon-device.png);
+	width:47px;
+}
+.icon-tags {
+	background-image:url(img/icon-tags.png);
+}
+.icon-price {
+	background-image:url(img/icon-price.png);
+}
+.icon-globe {
+	background-image:url(img/icon-globe.png);
+}
+#filter-category {
+	width:120px;
+}
+#filter-feature {
+	width:120px;
+}
+/* ==========================================================================
+   Card style
+   ========================================================================== */
+.waterfall {
+	margin:0 -10px;
+}
 .card {
-	width: 220px;
+	width:190px;
+	padding:15px;
 	float: left;
 	position: relative;
+	display: inline-block;
+	margin:10px;
+	background:#efefef;
+	border:1px solid #b9b9b9;
+	border-radius: 5px;
 }
 .card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;}
 .card .app-short-description .hover-overlay { position: absolute; bottom:0px; width:100%; height:70px; background-color: rgba(100, 93, 95, 0.5);}
 .card .app-short-description .hover-overlay span {display: block;height: 100%;}
-    .card .menu-share {
+.card .menu-share {
     position:absolute;
     border:1px solid #CCC;
     background:#FFF;
