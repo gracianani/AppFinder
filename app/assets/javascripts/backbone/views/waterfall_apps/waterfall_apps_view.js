@@ -24,17 +24,19 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
       }
   },
   hideDescription : function(e) {
-    console.log(e.type + '' + e.target  + ' '+this.short_description_active);
       var short_description = $(this.el).find(".app-short-description");
       var that = this;
       if(this.short_description_active == true && !short_description.find('span').is(":hover") ) {
-          short_description.fadeOut(200, function() {that.short_description_active = false} );
+          this.short_description_active = false;
+          setTimeout(function() {
+            if(that.short_description_active== false) {
+              short_description.fadeOut(200, function() {that.short_description_active = false} ); } }, 400);
       } 
   },
   showDescription : function(e){
-    console.log(e.type + '' + e.target + ' '+this.short_description_active );
     var that = this;
     if(this.short_description_active == false) {
+      that.short_description_active = true;
       var short_description = $(this.el).find(".app-short-description");
       short_description.fadeIn( 200 , function() {
         that.short_description_active = true;
