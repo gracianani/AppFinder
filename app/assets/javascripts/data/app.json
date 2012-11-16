@@ -1,0 +1,53 @@
+{"apps" : [{
+      "title":"Angry Birds Star Wars",
+      "id":"1",
+      "icon_url": "rails.png",
+      "developer": "Rovio Entertainment Ltd",
+      "ratings": "4+",
+      "screenshot_url" : "rails.png",
+      "short_description": "JOIN THE ANGRY BIRDS IN THEIR BIGGEST ADVENTURE YET!",
+      "long_description": "cut",
+      "like_count" : 5140,
+      "video_url" : "rails.png",
+      "category" : "Games",
+      "price" : 0.0
+	},{
+      "title":"hayday",
+      "id":"3",
+      "icon_url": "rails.png",
+      "developer" : "supercell",
+      "ratings" : 3,
+      "screenshot_url" : "rails.png",
+      "short_description" : "angry",
+      "long_description" : "angry",
+      "like_count" : 3,
+      "video_url" : "rails.png",
+      "category" : "game",
+      "price" : "free"
+    },{
+      "title":"clash of clan",
+      "id":"4",
+      "icon_url" : "rails.png",
+      "developer" : "rovio",
+      "ratings" : 3,
+      "screenshot_url" : "rails.png",
+      "short_description" : "angry",
+      "long_description" : "angry",
+      "like_count" : 3,
+      "video_url" : "rails.png",
+      "category" : "game",
+      "price" : "free"
+    },{
+      "title":"clash of clan",
+      "id":"4",
+      "icon_url" : "rails.png",
+      "developer" : "rovio",
+      "ratings" : 3,
+      "screenshot_url" : "rails.png",
+      "short_description" : "angry",
+      "long_description" : "angry",
+      "like_count" : 3,
+      "video_url" : "rails.png",
+      "category" : "game",
+      "price" : "free"
+    }] }
