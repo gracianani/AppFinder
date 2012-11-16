@@ -1,4 +1,5 @@
 <div id="app-id">
+
 	<div class="media">
 		<a class="app-icon pull-left" href="#">
 			<img src="http://placehold.it/57x57" />
@@ -15,18 +16,36 @@
 			</div>
 		</div>
 	</div><!--/media -->
+	<div style="position:relative">
 	<div class="app-screenshot">
-			<img src="http://placehold.it/190x200" />
+			<img src="http://placehold.it/<%= screenshot_width %>x<%= screenshot_height %>" />
+	</div>
+	<div class="app-short-description">
+		<div class="hover-overlay"><span > <%= short_description %> </span></div>
+	</div>
 	</div>
 	<div class="btn-toolbar">
 		<a href="#" class="btn-group">
 		<span class="btn">
-			<%= price %>
+			<% if (price <= 0.5 ) { %>
+    			FREE
+			<% } else {  %> 
+				<%= price %>
+			<% } %>
+			
 		</span><span class="btn">Install</span>
 		</a>
-		<a href="#" class="btn">
+ 
+		
+		<a href="javascript:void(0)" class="btn">
 		Share
 		</a>
+		<div class="menu-share">
+			<a href="#"> Facebook </a>
+			<a href="#"> Google+ </a>
+			<a href="#"> Twitter </a>
+			<a href="#"> Pin it! </a>
+		</div>
 	</div>
 	<div class="app-category">
 		<a href="#"><%= category %></a>
@@ -38,7 +57,5 @@
 		<i class="icon-facetime-video"></i>
 
 	</div>
-	<div class="app-short-description">
-		<%= short_description %>
-	</div>
+	
 </div><!--/#app-id -->
