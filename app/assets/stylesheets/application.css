@@ -222,14 +222,16 @@ a:hover,a:active {
 
 #filter-box{
 	background: #FCFCFC;
-	background: -moz-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));
-	background: -webkit-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));
-	background: -o-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));
-	background: linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.4));	
+	background: -moz-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.8));
+	background: -webkit-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.8));
+	background: -o-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.8));
+	background: linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.8));	
 	
 	border: 1px solid #EAEAEA;
 	border-bottom-color: #CACACA;
 	border-radius: 3px;
+	
+	margin:20px 0 0;
 }
 .filter-btn {
 	float: left;
@@ -286,10 +288,10 @@ a:hover,a:active {
    Card style
    ========================================================================== */
 .waterfall {
-	margin:0 -10px;
+	margin:20px -10px;
 }
 .card {
-	width:190px;
+	width:189px;
 	padding:15px;
 	float: left;
 	display: inline-block;
