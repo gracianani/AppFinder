@@ -13,6 +13,7 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
   },
   addOne: function(waterfallApps) {
     view = new AppFinder.Views.WaterfallApps.WaterfallAppsView({model : waterfallApps});
+    
     $('#waterfallApps').append(view.render().el);
   },
   render: function() {

@@ -294,9 +294,24 @@ a:hover,a:active {
 	width:189px;
 	padding:15px;
 	float: left;
+	position: relative;
 	display: inline-block;
 	margin:10px;
 	background:#efefef;
 	border:1px solid #b9b9b9;
 	border-radius: 5px;
+}
+.card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;}
+.card .app-short-description .hover-overlay { position: absolute; bottom:0px; width:100%; height:70px; background-color: rgba(100, 93, 95, 0.5);}
+.card .app-short-description .hover-overlay span {display: block;height: 100%;}
+.card .menu-share {
+    position:absolute;
+    border:1px solid #CCC;
+    background:#FFF;
+    padding:10px;
+    font-size:12px;
+    display:none;
+    bottom: 100px;
+	right: 1px;
+	width: 60px;
 }

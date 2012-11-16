@@ -5,6 +5,8 @@
       "developer": "Rovio Entertainment Ltd",
       "ratings": "4+",
       "screenshot_url" : "rails.png",
+      "screenshot_width" : "190",
+      "screenshot_height" : "200",
       "short_description": "JOIN THE ANGRY BIRDS IN THEIR BIGGEST ADVENTURE YET!",
       "long_description": "cut",
       "like_count" : 5140,
@@ -12,18 +14,35 @@
       "category" : "Games",
       "price" : 0.0
 	},{
+      "title":"Facebook",
+      "id":"2",
+      "icon_url": "rails.png",
+      "developer" : "Facebook Inc.",
+      "ratings" : 3,
+      "screenshot_url" : "rails.png",
+      "screenshot_width" : "190",
+      "screenshot_height" : "260",
+      "short_description" : "JOIN THE ANGRY BIRDS IN THEIR BIGGEST ADVENTURE YET!",
+      "long_description" : "angry",
+      "like_count" : 3,
+      "video_url" : "rails.png",
+      "category" : "game",
+      "price" : 1.99
+    },{
       "title":"hayday",
       "id":"3",
       "icon_url": "rails.png",
       "developer" : "supercell",
       "ratings" : 3,
       "screenshot_url" : "rails.png",
-      "short_description" : "angry",
+      "screenshot_width" : "190",
+      "screenshot_height" : "300",
+      "short_description" : "JOIN THE ANGRY BIRDS IN THEIR BIGGEST ADVENTURE YET!",
       "long_description" : "angry",
       "like_count" : 3,
       "video_url" : "rails.png",
       "category" : "game",
-      "price" : "free"
+      "price" : 2.99
     },{
       "title":"clash of clan",
       "id":"4",
@@ -31,23 +50,27 @@
       "developer" : "rovio",
       "ratings" : 3,
       "screenshot_url" : "rails.png",
-      "short_description" : "angry",
+      "screenshot_width" : "190",
+      "screenshot_height" : "300",
+      "short_description" : "JOIN THE ANGRY BIRDS IN THEIR BIGGEST ADVENTURE YET!",
       "long_description" : "angry",
       "like_count" : 3,
       "video_url" : "rails.png",
       "category" : "game",
-      "price" : "free"
+      "price" : 1.99
     },{
       "title":"clash of clan",
-      "id":"4",
+      "id":"5",
       "icon_url" : "rails.png",
       "developer" : "rovio",
       "ratings" : 3,
       "screenshot_url" : "rails.png",
-      "short_description" : "angry",
+      "screenshot_width" : "190",
+      "screenshot_height" : "230",
+      "short_description" : "JOIN THE ANGRY BIRDS IN THEIR BIGGEST ADVENTURE YET!",
       "long_description" : "angry",
       "like_count" : 3,
       "video_url" : "rails.png",
       "category" : "game",
-      "price" : "free"
+      "price" : 3.99
     }] }
