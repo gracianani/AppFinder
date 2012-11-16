@@ -1,45 +1,44 @@
+<div id="app-id">
+	<div class="media">
+		<a class="app-icon pull-left" href="#">
+			<img src="http://placehold.it/57x57" />
+		</a>
+		<div class="media-body">
+			<div class="app-name media-heading">
+			<%= title %>
+			</div>
+			<div class="app-rating">
+			<%= ratings %>(1000)
+			</div>
+			<div class="app-developer">
+			by <a href="#"><%= developer %></a>
+			</div>
+		</div>
+	</div><!--/media -->
+	<div class="app-screenshot">
+			<img src="http://placehold.it/190x200" />
+	</div>
+	<div class="btn-toolbar">
+		<a href="#" class="btn-group">
+		<span class="btn">
+			<%= price %>
+		</span><span class="btn">Install</span>
+		</a>
+		<a href="#" class="btn">
+		Share
+		</a>
+	</div>
+	<div class="app-category">
+		<a href="#"><%= category %></a>
+	</div>
+	<div class="app-like">
+		<i class="icon-heart"></i><%= like_count %>
+	</div>
+	<div class="app-video">
+		<i class="icon-facetime-video"></i>
 
-<p>
-  <b>Icon url:</b>
-  <img src="/assets/<%= icon_url %>"/>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= title %>
-</p>
-
-<p>
-  <b>Developer:</b>
-  <%= developer %>
-</p>
-
-<p>
-  <b>Ratings:</b>
-  <%= ratings %>
-</p>
-
-<p>
-  <b>Screenshot url:</b>
-  <%= screenshot_url %>
-</p>
-
-<p>
-  <b>Short description:</b>
-  <%= short_description %>
-</p>
-
-<p>
-  <b>Long description:</b>
-  <%= long_description %>
-</p>
-
-<p>
-  <b>Like count:</b>
-  <%= like_count %>
-</p>
-
-<p>
-  <b>Video url:</b>
-  <%= video_url %>
-</p>
+	</div>
+	<div class="app-short-description">
+		<%= short_description %>
+	</div>
+</div><!--/#app-id -->

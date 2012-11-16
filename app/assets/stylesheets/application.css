@@ -1,13 +1,220 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+
+
+/* ==========================================================================
+   Author's custom styles
+   
+   colors:
+   =logo
+   #b52806
+   =yellow
+   #e7a136
+   =green
+   #978e43
+   red
+   #9b2f10
+   dark
+   #731115
+   ========================================================================== */
+.p10{padding:10px}
+.p15{padding:15px}
+.p20{padding:20px}
+
+.pt10{padding-top:10px}
+.pt15{padding-top:15px}
+.pt20{padding-top:20px}
+
+.pl10{padding-left:20px}
+.pl15{padding-left:15px}
+.pl20{padding-left:20px}
+
+.pr10{padding-right:10px}
+.pr15{padding-right:15px}
+.pr20{padding-right:20px}
+
+.pb10{padding-bottom:10px}
+.pb15{padding-bottom:15px}
+.pb20{padding-bottom:20px}
+
+
+body {
+	margin:80px 0 0;
+	background: url(img/main-bg.jpg);
+	
+	font-family: Verdana,Helvetica,Arial,sans-serif;
+}
+
+a {
+	color:#5b5b5b;
+}
+a:hover,a:active {
+	color:#404040;
+	text-decoration: none;
+}
+
+/* ==========================================================================
+   Header style
+   ========================================================================== */
+#site-header-inner {
+	background-image: url(img/header-bg.png);
+	border-bottom: none;
+	
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1),0 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1),0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#logo {
+	padding-right: 40px;
+}
+.main-nav-item,.profile-item {
+	line-height: 30px;
+}
+#main-search {
+	padding-top: 8px;
+	padding-left:20px;
+}
+#main-search>.icon-search {
+	position: relative;
+	z-index: 2;
+	top:2px;
+	
+	opacity: 0.5;
+}
+#main-search-query {
+	position: relative;
+	left:-28px;
+	z-index: 1;
+	
+	background-color: #DAD9D7;
+	width: 100px;
+	padding:3px 14px 2px 30px;
+	
+	color: #58595B;
+
+}
+#main-search-query.active{
+	background-color: #FFF;
+	width:206px;
+}
+
+/* ==========================================================================
+   Recommended style
+   ========================================================================== */
+
+#recommended-wrap {
+	float: left;
+	position: relative;
+	left: 50%;
+}
+#recommended {
+	float: left;
+	position: relative;
+	right:50%;
+}
+.recommended-item {
+	float: left;
+	display: inline-block;
+	list-style: none;
+	margin:0 20px;
+}
+.recommended-item>a {
+	
+	text-shadow: 1px 1px 0 #ededed;
+}
+
+#highlight {
+	margin-top:-10px;
+}
+#highlight-btn {
+	padding:10px 58px 10px 25px;
+	position: relative;
+}
+#highlight-btn:hover,#highlight-btn:active,#highlight-btn.over {
+	background: #b52806;
+	border-color: #b52806;
+	color: #FFF;
+	text-shadow: 1px 1px 0 #4c0c10;
+}
+#highlight-icon{
+	width:38px;
+	height:40px;
+	display: inline-block;
+	overflow: hidden;
+	
+	position: absolute;
+	right: 15px;
+	top:0;
+	
+	background:url(img/highlight-btn-bg.png) no-repeat left top;
+}
+#highlight-btn:hover>#highlight-icon,#highlight-btn.over>#highlight-icon {
+	background-position: left -40px;
+}
+#highlight-box {
+
+	background-color: #b52806;
+	color: #FFF;
+	border-radius: 0 0 5px 5px;
+	position: relative;
+	top:-15px;
+	
+}
+.hlb-sp1,.hlb-sp2 {
+	display: inline-block;
+	float: left;
+	border-color:#b52806;
+	border-style:solid;
+	border-width: 1px 0 0 1px;
+	margin-right: -1px;
+	overflow: hidden;
+	height: 100px;
+	position: relative;
+	cursor: pointer;
+}
+.hlb-sp1:hover,.hlb-sp2:hover {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#731115),to(#b52806));
+	background-image: -webkit-linear-gradient(top,#731115,#b52806);
+	background-image: -o-linear-gradient(top,#731115,#b52806);
+	background-image: linear-gradient(to bottom,#731115,#b52806);
+	background-image: -moz-linear-gradient(top,#731115,#b52806);
+	background-repeat: repeat-x;
+}
+.hlb-h2 {height:200px;}
+.hlb-alpha{}
+.hlb-omega {border-right-width: 0;}
+.hlb-sp1 {width:20%;}
+.hlb-sp2 {width:40%;}
+
+#highlight-box p {margin-bottom: 0;}
+.hlb-type{color:#eabcaf;font-size: 10px;}
+.hlb-title{color:#FFF;font-size: 18px;text-transform: uppercase;padding-bottom: 5px;}
+.hlb-subtitle{color:#fff;font-size:14px;text-transform: uppercase;}
+.hlb-desc{color:#eabcaf;font-size: 12px;}
+
+.hlb-h2 .hlb-type{font-size: 12px;padding-bottom: 10px;}
+.hlb-h2 .hlb-title{font-size: 40px;padding-bottom: 20px;}
+.hlb-h2 .hlb-subtitle{font-size:18px;padding-bottom: 10px;vertical-align: bottom;}
+.hlb-h2 .hlb-desc{font-size: 14px;}
+.hlb-icon {
+	border-radius: 6px;
+	float: left;
+}
+.hlb-app {
+	background-color: #731115;
+}
+.hlb-search {
+	background-color: #5d1015;
+}
+.hlb-list i,.hlb-app i,.hlb-search i {
+	position: absolute;
+	right:15px;
+	bottom: 15px;
+	opacity: 0.6;
+}
+
+/* ==========================================================================
+   card style // to be deleted
+   ========================================================================== */
+.card {
+	width: 220px;
+	float: left;
+}

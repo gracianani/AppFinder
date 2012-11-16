@@ -5,8 +5,13 @@
 <br />
 <script type="text/javascript">
   $(function() {
-    window.router = new AppFinder.Routers.WaterfallAppsRouter({options: {waterfallApps: []}});
-    Backbone.history.start();
+	
+	var apps = $.ajax({ url: 'assets/data/app.json', dataType: 'text json',  success: function(data) {
+		window.router = new AppFinder.Routers.WaterfallAppsRouter({waterfallApps: data.apps});
+    	Backbone.history.start();
+	} });
+	
+    
   });
 </script>
 <%= link_to 'New App', new_app_path %>

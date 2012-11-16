@@ -1,33 +1,8 @@
 AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   initialize: function (options) {
-    this.waterfallApps = new AppFinder.Collections.AppsCollection();
+    this.waterfallApps = new AppFinder.Collections.AppsCollection(options.waterfallApps);
     this.waterfallApps.reset( options.waterfallApps );
-    this.waterfallApps.add(new AppFinder.Models.App(
-    {
-      title:'angrybird',
-      id:'1',
-      icon_url: 'rails.png',
-      developer: 'rovio',
-      ratings: 3,
-      screenshot_url : 'rails.png',
-      short_description: 'angry',
-      long_description: 'angry',
-      like_count : 3,
-      video_url : 'rails.png'
-    } ));
-    this.waterfallApps.add(new AppFinder.Models.App(
-    {
-      title:'cut the rope',
-      id:'1',
-      icon_url: 'rails.png',
-      developer: 'disney',
-      ratings: 3,
-      screenshot_url : 'rails.png',
-      short_description: 'cut',
-      long_description: 'cut',
-      like_count : 4,
-      video_url : 'rails.png'
-    } ));
+   
   },
   routes: {
     "new"      : "newWaterfallApps",

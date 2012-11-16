@@ -3,7 +3,7 @@ AppFinder.Views.WaterfallApps = AppFinder.Views.WaterfallApps || {};
 AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
   
   template: JST["backbone/templates/waterfall_apps/index"],
-  
+
   initialize: function ()  {
       this.options.waterfallApps.bind('reset', this.addAll); 
   },

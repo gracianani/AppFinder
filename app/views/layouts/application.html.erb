@@ -1,14 +1,210 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AppFinder</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="assets/application.css">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+
+<header class="navbar navbar-fixed-top">
+        	<div id="site-header-inner" class="navbar-inner">
+	        	<div class="container">
+	        		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				    </a>
+      
+		        	<div id="logo" class="brand">
+		        		<img src="/assets/img/logo.png" alt="Tappollo" >
+		        	</div><!--/#logo -->
+
+	        		<ul id="main-nav" class="nav nav-collapse collapse">
+		        		<li class="main-nav-item active">
+		        			<a href="#">
+		        				Explore
+		        			</a>
+		        		</li><!--/li -->
+		        		<li class="main-nav-item">
+		        			<a href="#">
+		        				About
+		        			</a>
+		        		</li><!--/li -->
+	        		</ul><!--/#main-nav -->
+	        		
+					<form id="main-search" class="navbar-search pull-right">
+						<i class="icon-search"></i>
+					  <input type="text" id="main-search-query" class="search-query" placeholder="Search">
+					</form><!--/#main-search -->
+						
+						
+	        		<ul id="profile" class="nav pull-right">
+		        		<li class="profile-item">
+		        			<a href="#">
+		        				register
+		        			</a>
+		        		</li><!--/li -->
+		        		<li class="profile-item">
+		        			<a href="#">
+		        				login
+		        			</a>
+		        		</li><!--/li -->
+	        		</ul><!--/#profile -->
+
+	        	
+	        	</div><!--/.container -->
+	        	
+        	</div><!--/.navbar-inner -->
+        </header><!--/header -->
+        
+        <div class = "container clearfix" >
+        <div id="recommended-wrap">
+        	<ul  id="recommended">
+	        	<li class="recommended-item">
+	        		<a href="#">Popular</a>     		
+	        	</li>
+	        	<li class="recommended-item">
+	        		<a href="#">Latest</a>     		
+	        	</li>
+	        	<li class="recommended-item">
+	        		<a href="#">Free</a>     		
+	        	</li>
+	        	<li class="recommended-item">
+	        		<a href="#">On Sale</a>     		
+	        	</li>
+	        	<li id="highlight" class="recommended-item">
+	        		<div id="highlight-btn" class="btn">Explore the Highlight!<i id="highlight-icon"></i></div>
+	        	</li><!--/#hightlight -->
+        	</ul><!--/#recommended -->
+        </div><!--/#recommended-wrap -->
+        <div class="clearfix"></div>
+        <div id="highlight-box" class="clearfix">
+        	<div class="hlb-sp2 hlb-h2 hlb-list">
+	        	<div class="p20">
+	        		<p class="hlb-type">Editor's Choice</p>
+	        		<p class="hlb-subtitle">Popular</p>
+	        		<p class="hlb-title">Puzzlers</p>
+	        		<p class="hlb-desc">Brain Testing Games</p>
+	        		<i class="icon-list icon-white"></i>
+	        	</div>
+        	</div>
+        	<div class="hlb-sp1 hlb-search">
+	        	<div class="p10">
+	        		<p class="hlb-type">Most People Search for</p>
+	        		<p class="hlb-title">Education</p>
+	        		<p class="hlb-subtitle">Kids,Document</p>
+	        		<i class="icon-search icon-white"></i>
+	        	</div>
+        	</div>
+        	<div class="hlb-sp1 hlb-app">
+	        	<div class="p10">
+	        		<p class="hlb-type">New Apps in</p>
+	        		<p class="hlb-title">Photo <br>Sharing</p>
+	        		<i class="icon-chevron-right icon-white"></i>
+	        	</div>
+        	</div>
+        	<div class="hlb-sp1 hlb-omega hlb-search">
+	        	<div class="p10">
+	        		<p class="hlb-type">Must-have</p>
+	        		<p class="hlb-title">Apps <br>Starter Kit</p>
+	        		<i class="icon-list icon-white"></i>
+	        	</div>
+        	</div>
+        	<div class="hlb-sp1 hlb-search">
+	        	<div class="p10">
+	        		<p class="hlb-type">Some People Search for</p>
+	        		<p class="hlb-title">Angry Birds</p>
+	        		<p class="hlb-subtitle">Universe,Games</p>
+	        		<i class="icon-search icon-white"></i>
+	        	</div>
+        	</div>
+        	<div class="hlb-sp1 hlb-app">
+	        	<div class="p10">
+	        		<p class="hlb-type">Enhance for New iPad</p>
+	        		<p class="hlb-subtitle"><img src="assets/img/icon-tpcb.png" class="hlb-icon"> the Photo Cookbook</p>
+	        		<i class="icon-chevron-right icon-white"></i>
+	        	</div>
+        	</div>
+        	<div class="hlb-sp1 hlb-omega hlb-search">
+	        	<div class="p10">
+	        		<p class="hlb-type">Must-have</p>
+	        		<p class="hlb-title">Games <br>Starter Kit</p>
+	        		<i class="icon-list icon-white"></i>
+	        	</div>
+        	</div>
+        </div><!--/#highlight-box -->
+        
+        <div id="filter" class="container">
+        	<div id="filter-box" class="btn-group">
+        		<div id="filter-category" class="btn">
+        			Categories
+        		</div><!-- /category -->
+        		<div id="filter-feature" class="btn">
+        			Features
+        		</div><!-- /feature -->
+        		<div id="filter-price" class="btn">
+        			Price
+        		</div><!-- /price -->  
+        		<div id="filter-rating" class="btn">
+        			Ratings
+        		</div><!-- /rating -->    
+        		<div id="filter-time" class="btn">
+        			Time
+        		</div><!-- /time -->   
+        		<div id="filter-place" class="btn">
+        			Place
+        		</div><!-- /place -->
+        		<div id="filter-tag" class="btn">
+        			Tags
+        		</div><!-- /tag -->    
+        		<div id="filter-device" class="btn">
+        			Device
+        		</div><!-- /device -->
+        		<div id="filter-keyword" class="btn form-search">
+        			<div class="input-append">
+					    <input type="text" class="search-query">
+					    <button type="submit" class="btn">Search</button>
+					 </div>
+        		</div><!-- /keyword -->  
+        		<div id="filter-advanced" class="btn">
+        			Advanced Filter
+        		</div>  <!-- /advanced -->        		
+        	</div><!--/#filter-box -->
+        	<div id="filter-summary">
+        	
+        	</div><!--/#filter-summary -->
+        </div><!--/#filter -->
+        
+        <div id="main" class="container">
+	        <div id="primary" class="waterfall clearfix">
+	        		<%= yield %>
+	        </div><!--/#primary -->
+	        
+	        <div id="secondary">
+	        </div><!--/#secondary -->
+
+
+
+            <hr>
+
+            <footer>
+                <p>&copy; Company 2012</p>
+            </footer>
+
+        </div> <!-- /container -->
 
 </body>
 </html>
