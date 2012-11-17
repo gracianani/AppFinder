@@ -5,20 +5,15 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   events: {
     "click .destroy" : "destroy",
     "click a.btn" : "toggleShareMenu",
-    "mouseover img" : "showDescription",
-    "mouseout img" : "hideDescription", 
-    "mouseout .app-short-description" : "hideDescription", 
-    "mouseover .app-short-description" : "showDescription" ,
-    "mouseout .hover-overlay" : "hideDescription", 
-    "mouseover .hover-overlay" : "showDescription", 
     "click div.app-like" : "toggleLike"
   },
   initialize : function(){
     this.short_description_active = false;
-  },
+  },  
   toggleLike : function() {
     this.model.toggle_like();
     this.model.save();
+    this.model.fetch();
     this.render();
   },
   toggleShareMenu : function() {
@@ -29,26 +24,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
           menuShare.fadeIn();
       }
   },
-  hideDescription : function(e) {
-      var short_description = $(this.el).find(".app-short-description");
-      var that = this;
-      if(this.short_description_active == true && !short_description.find('span').is(":hover") ) {
-          this.short_description_active = false;
-          setTimeout(function() {
-            if(that.short_description_active== false) {
-              short_description.fadeOut(100, function() {that.short_description_active = false} ); } }, 200);
-      } 
-  },
-  showDescription : function(e){
-    var that = this;
-    if(this.short_description_active == false) {
-      that.short_description_active = true;
-      var short_description = $(this.el).find(".app-short-description");
-      short_description.fadeIn( 100 , function() {
-        that.short_description_active = true;
-      });
-    }
-  },
+ 
   tagName: "div",
   className: "card",
   destroy: function () {
@@ -60,6 +36,14 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   render: function() {
     this.model.fetch();
     $(this.el).html(this.template(this.model.toJSON() ));
+    $(this.el).find('.bar').mosaic({'animation':'slide'});
+    var temp = $(this.el).clone().html();
+    $(this.el).find('img').bind("click", function(){ 
+        TINY.box.show({html:temp,boxid:'frameless',animate:false,openjs:function(){
+
+        }}); 
+    });
+
     return this;
   }
     

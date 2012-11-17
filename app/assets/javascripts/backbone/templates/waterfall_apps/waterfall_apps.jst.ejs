@@ -1,13 +1,20 @@
 <div id="app-id">
 
 	<div class="media">
+		<div class="media-title">
+			<div class="app-name media-heading">
+				<%= title %>
+			</div>
+		</div>
 		<a class="app-icon pull-left" href="#">
-			<img src="http://placehold.it/57x57" />
+			<% if (icon_url != '') { %>
+				<img src="assets/<%= icon_url %>" style="width:57px;height:57px" />
+			<% } else { %>
+				<img src="http://placehold.it/57x57" />
+			<% } %>
 		</a>
 		<div class="media-body">
-			<div class="app-name media-heading">
-			<%= title %>
-			</div>
+			
 			<div class="app-rating">
 			<%= ratings %>(1000)
 			</div>
@@ -15,14 +22,36 @@
 			by <a href="#"><%= developer %></a>
 			</div>
 		</div>
+		<div class="clearfix"></>
 	</div><!--/media -->
-	<div style="position:relative">
-	<div class="app-screenshot">
+	<div class="mosaic-block bar" style= 'height: 
+		<% if( screenshot_width > screenshot_height ) { %>
+			<%= screenshot_height %>px;
+		<% } else { %>
+			<%= screenshot_height * 190 / screenshot_width %>px;
+		<% } %>
+	'>
+	<div class="app-short-description mosaic-overlay" style="display: inline; left: 0px; bottom: -100px;">
+		<div class="details">
+			<p> <%= short_description %> </p>
+		</div>
+	</div>
+	<div class="app-screenshot mosaic-backdrop" >
+		<% if (screenshot_url != '') { %>
+			<img src="assets/<%= screenshot_url %>" 
+			style="max-width:none;
+				<% if( screenshot_width > screenshot_height ) { %>
+					width:<%= screenshot_width %>px;left: -<%= (screenshot_width - 190)/2 %>px;
+				<% } else { %>
+				    width:190px;
+				<% } %>
+			   
+			position: relative;" />
+		<% } else { %>
 			<img src="http://placehold.it/<%= screenshot_width %>x<%= screenshot_height %>" />
+		<% } %>
 	</div>
-	<div class="app-short-description">
-		<div class="hover-overlay"><span > <%= short_description %> </span></div>
-	</div>
+	
 	</div>
 	<div class="btn-toolbar">
 		<a href="#" class="btn-group">
@@ -55,7 +84,8 @@
 			<% if ( like == false ) { %> 
 				icon-white
 			<% } %>
-		"></i><%= like_count %>
+		"></i>
+		<%= like_count %>
 	</div>
 	<div class="app-video">
 		<% if ( video_url != "" ) { %>
@@ -64,4 +94,7 @@
 		<% } %>
 	</div>
 	
+	<div class="popup">
+        <p>Lots of content</p>
+    </div>
 </div><!--/#app-id -->

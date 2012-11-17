@@ -15,10 +15,18 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
     view = new AppFinder.Views.WaterfallApps.WaterfallAppsView({model : waterfallApps});
     
     $('#waterfallApps').append(view.render().el);
+  
+	
+    
   },
   render: function() {
     $(this.el).html(this.template( {waterfallApps: this.options.waterfallApps.toJSON() }) ); 
+    
     this.addAll();
+    $('#waterfallApps').masonry({
+		// options
+		itemSelector : '.card'
+	});
     return this;
   }
   
