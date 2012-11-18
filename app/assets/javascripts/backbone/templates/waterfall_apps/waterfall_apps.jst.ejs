@@ -23,7 +23,7 @@
 					<i class='icon-star-empty pull-left'></i>
 				<%  } %>
 			<% } %>
-			<div class="app-ratings-count">(<%= like_count %>)</div>
+			<div class="app-ratings-count pull-left"> (<%= like_count %>)</div>
 			</div>
 			<div class="app-developer">
 			by <a href="#"><%= developer %></a>
@@ -62,31 +62,34 @@
 	</div>
 	<div class="btn-toolbar">
 		<a href="#" class="btn-group">
-		<span class="btn">
+		<span class="btn btn-small btn-price 
+			<% if (price <= 0.5 ) { %>
+    			 btn-info
+			<% }  %> ">
 			<% if (price <= 0.5 ) { %>
     			FREE
 			<% } else {  %> 
-				<%= price %>
+				$<%= price %>
 			<% } %>
 			
-		</span><span class="btn">Install</span>
+		</span><span class="btn btn-small btn-install">Install</span>
 		</a>
  
 		
-		<a href="javascript:void(0)" class="btn">
-		Share
+		<a href="javascript:void(0)" class="app-share-btn btn btn-small pull-right">
+			<i class="icon-share"></i>
 		</a>
 		<div class="menu-share">
-			<a href="#"> Facebook </a>
-			<a href="#"> Google+ </a>
-			<a href="#"> Twitter </a>
-			<a href="#"> Pin it! </a>
-		</div>
+				<a href="#"> Facebook </a>
+				<a href="#"> Google+ </a>
+				<a href="#"> Twitter </a>
+				<a href="#"> Pin it! </a>
+			</div>		
 	</div>
 	<div class="app-category">
 		<a href="#"><%= category %></a>
 	</div>
-	<div class="app-like">
+	<div class="app-like pull-left">
 		<i class="icon-heart 
 			<% if ( like == false ) { %> 
 				icon-white
@@ -94,7 +97,7 @@
 		"></i>
 		<%= like_count %>
 	</div>
-	<div class="app-video">
+	<div class="app-video pull-right">
 		<% if ( video_url != "" ) { %>
 			<a href="<%= video_url %>"><i class="icon-facetime-video"></i></a>
 			

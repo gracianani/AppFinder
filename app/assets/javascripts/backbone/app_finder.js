@@ -10,3 +10,12 @@ window.AppFinder = {
   Routers: {},
   Views: {}
 }
+jQuery(function($){
+	$(".chzn-select").chosen({allow_single_deselect: true});
+	
+	$('#highlight').click(function(){
+		$('#highlight-box').slideToggle('fast');
+		$(this).find('#highlight-btn').toggleClass('over');
+	});
+	
+});

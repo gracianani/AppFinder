@@ -4,7 +4,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   template: JST["backbone/templates/waterfall_apps/waterfall_apps"],
   events: {
     "click .destroy" : "destroy",
-    "click a.btn" : "toggleShareMenu",
+    "click .app-share-btn" : "toggleShareMenu",
     "click div.app-like" : "toggleLike"
   },
   initialize : function(){
@@ -16,13 +16,13 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
     this.model.fetch();
     this.render();
   },
-  toggleShareMenu : function() {
-      var menuShare = $(this.el).find(".menu-share");
-      if (menuShare.is(":visible")) {
-          menuShare.fadeOut();
-      } else {
-          menuShare.fadeIn();
-      }
+  toggleShareMenu : function(e) {
+      var menuShare = this.$el.find(".menu-share");
+      menuShare.slideToggle('fast');
+      
+      var btn = this.$el.find('.app-share-btn');
+      btn.find('i').toggleClass('icon-white');
+      btn.toggleClass('btn-danger');
   },
  
   tagName: "div",
@@ -41,7 +41,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
       var popupModel = new AppFinder.Models.App(data);
       var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
       that.find('img').bind("click", function(){ 
-          TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:false,openjs:function(){}}); 
+          TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:true,openjs:function(){}}); 
       });
     }});
     
