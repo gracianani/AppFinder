@@ -36,13 +36,16 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   render: function() {
     $(this.el).html(this.template(this.model.toJSON() ));
     $(this.el).find('.bar').mosaic({'animation':'slide'});
-
-    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: this.model});
-    $(this.el).find('img').bind("click", function(){ 
-        TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:false,openjs:function(){
-          this.html = popupView.render().el;
-        }}); 
-    });
+    var that = $(this.el);
+    var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
+      var popupModel = new AppFinder.Models.App(data);
+      var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
+      that.find('img').bind("click", function(){ 
+          TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:false,openjs:function(){}}); 
+      });
+    }});
+    
+     
 
     return this;
   }

@@ -41,44 +41,15 @@
 			<% } %>
 		</div>
 	</div>
-	<div class="btn-toolbar">
-		<a href="#" class="btn-group">
-		<span class="btn">
-			<% if (price <= 0.5 ) { %>
-    			FREE
-			<% } else {  %> 
-				<%= price %>
-			<% } %>
-			
-		</span><span class="btn">Install</span>
-		</a>
- 
+	<div class="app-long-description" >
+		<p>
+			<%= long_description %>
+		</p>
+	</div>
+	<div class="app-tags">
 		
-		<a href="javascript:void(0)" class="btn">
-		Share
-		</a>
-		<div class="menu-share">
-			<a href="#"> Facebook </a>
-			<a href="#"> Google+ </a>
-			<a href="#"> Twitter </a>
-			<a href="#"> Pin it! </a>
-		</div>
 	</div>
-	<div class="app-category">
-		<a href="#"><%= category %></a>
+	<div class="app-badges">
 	</div>
-	<div class="app-like">
-		<i class="icon-heart 
-			<% if ( like == false ) { %> 
-				icon-white
-			<% } %>
-		"></i>
-		<%= like_count %>
-	</div>
-	<div class="app-video">
-		<% if ( video_url != "" ) { %>
-			<a href="<%= video_url %>"><i class="icon-facetime-video"></i></a>
-			
-		<% } %>
-	</div>
+	
 </div><!--/#app-id -->
