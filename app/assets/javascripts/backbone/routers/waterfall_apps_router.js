@@ -6,6 +6,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   routes: {
     "new"      : "newWaterfallApps",
+    
     "index"    : "index",
     "p:page" : "page",
     ":id/edit" : "edit",
@@ -15,6 +16,8 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   page : function(page) {
   	console.log("page");
+  	this.view = new AppFinder.Views.WaterfallApps.IndexView({waterfallApps: this.waterfallApps});
+  	console.log($('#waterfall_apps').html());
   	 $('#waterfall_apps').append(this.view.render().el);
   },
   newWaterfallApps: function() {

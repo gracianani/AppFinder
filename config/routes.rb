@@ -1,6 +1,6 @@
 AppFinder::Application.routes.draw do
   
-  match 'apps/p2' => 'apps#index'
+  match 'apps#p2' => 'apps#index'
   resources :apps do
     
   end
