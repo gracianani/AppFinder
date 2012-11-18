@@ -12,9 +12,11 @@
   <title>AppFinder</title>
   <link rel="stylesheet" href="assets/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="assets/application.css">
     <link rel="stylesheet" href="assets/mosaic.css">
     <link rel="stylesheet" href="assets/tinybox.css">
+    <link rel="stylesheet" href="assets/chosen.css" />
+
+    <link rel="stylesheet" href="assets/application.css">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -37,12 +39,12 @@
 	        		<ul id="main-nav" class="nav nav-collapse collapse">
 		        		<li class="main-nav-item active">
 		        			<a href="#">
-		        				Explore
+		        				Apps
 		        			</a>
 		        		</li><!--/li -->
 		        		<li class="main-nav-item">
 		        			<a href="#">
-		        				About
+		        				Developer
 		        			</a>
 		        		</li><!--/li -->
 	        		</ul><!--/#main-nav -->
@@ -155,8 +157,37 @@
         <div id="filter" class="container">
         	<div id="filter-box" class="clearfix">
         		<div id="filter-category" class="filter-btn">
-        		Categories
-        		</div><!-- /category -->
+        <select data-placeholder="Categories" class="chzn-select" id="filter-category-select" tabindex="2">
+          <option value=""></option> 
+          <option value="">All Categories</option> 
+          <option value="United Kingdom">Business</option> 
+          <option value="United States">Developer Tools</option> 
+          <option value="United States">Education</option> 
+          <option value="United States">Entertament</option> 
+          <option value="United Kingdom">Finance</option> 
+          <optgroup label="Games">
+          <option value="United Kingdom">All Games</option> 
+          <option value="United Kingdom">Action</option> 
+          <option value="United Kingdom">Adventure</option> 
+          <option value="United Kingdom">Arcade</option> 
+          <option value="United Kingdom">Board</option> 
+          <option value="United Kingdom">Card</option> 
+          <option value="United Kingdom">Casino</option> 
+          <option value="United Kingdom">Educational</option> 
+          <option value="United Kingdom">Family</option> 
+          <option value="United Kingdom">Kids</option> 
+
+          </optgroup>
+          <option value="United Kingdom">Graphics & Design</option> 
+          <option value="United Kingdom">Health & Fitness</option> 
+          <option value="United Kingdom">Lifestyle</option> 
+          <option value="United Kingdom">Medical</option> 
+          <option value="United Kingdom">Music</option> 
+          <option value="United Kingdom">News</option> 
+          <option value="United Kingdom">Photography</option> 
+
+        </select>
+                </div><!-- /category -->
         		<div id="filter-feature" class="filter-btn">
         			Features
         		</div><!-- /feature -->
@@ -210,6 +241,5 @@
             </footer>
 
         </div> <!-- /container -->
-
 </body>
 </html>

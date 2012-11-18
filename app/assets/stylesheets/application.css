@@ -237,12 +237,13 @@ a:hover,a:active {
 	float: left;
 	text-align: center;
 	display:inline-block;
+	position: relative;
 	padding:5px 10px;
 	line-height:40px;
 	height: 40px;
 	border-right: 1px solid rgba(192,192,192,0.5);
 	border-left: 1px solid rgba(255,255,255,0.5);
-	
+		
 	cursor: pointer;
 }
 .filter-btn:hover,.filter-btn:active {
@@ -250,6 +251,9 @@ a:hover,a:active {
 	background: -webkit-linear-gradient(rgba(235,235,235,0.8), rgba(252,252,252,1));
 	background: -o-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.8));
 	background: linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.8));		
+
+	box-shadow:0 1px 0px #F6F6F6 inset;
+
 }
 .filter-btn:first-child{
 	border-left: none;
@@ -287,7 +291,7 @@ a:hover,a:active {
 	background-image:url(img/icon-globe.png);
 }
 #filter-category {
-	width:120px;
+	width:160px;
 }
 #filter-feature {
 	width:120px;
@@ -299,6 +303,38 @@ a:hover,a:active {
 	border-top:none;
 	border-radius: 0 0 3px 3px;
 	
+}
+
+#filter-category-select {
+	width:180px;
+}
+#filter_category_select_chzn {
+	left: -10px;	
+}
+.chzn-container-single .chzn-single {
+	border:none;
+	background:none;
+	box-shadow: none;
+	font-size: 14px;
+	color:#666;
+}
+.chzn-container-single .chzn-single div b,
+.chzn-container-single .chzn-single abbr,.chzn-container-multi .chzn-choices .search-choice .search-choice-close,
+.chzn-container-single .chzn-search input {
+	background-image: url(img/chosen-sprite.png);
+	
+}
+.chzn-container-active .chzn-single-with-drop {
+	border:none;
+	background:none;
+	
+}
+.chzn-drop {
+	top:35px!important;
+	border-left:none!important;
+	border-right-color: 2px!important;
+	border-right-color: #fff!important;	
+	text-align: left;
 }
 /* ==========================================================================
    Card style

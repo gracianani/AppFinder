@@ -10,3 +10,6 @@ window.AppFinder = {
   Routers: {},
   Views: {}
 }
+jQuery(function($){
+	$(".chzn-select").chosen({allow_single_deselect: true});
+});
