@@ -9,7 +9,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     "index"    : "index",
     ":id/edit" : "edit",
     ":id"      : "show",
-    ".*"        : "index"
+    ".*"       : "index"
   },
 
   newWaterfallApps: function() {
