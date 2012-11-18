@@ -15,10 +15,26 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
     view = new AppFinder.Views.WaterfallApps.WaterfallAppsView({model : waterfallApps});
     
     $('#waterfallApps').append(view.render().el);
+  
+	
+    
   },
   render: function() {
     $(this.el).html(this.template( {waterfallApps: this.options.waterfallApps.toJSON() }) ); 
+    
     this.addAll();
+    $('#waterfallApps').masonry({
+		// options
+		itemSelector : '.card'
+	}).infinitescroll({
+    	navSelector  : "#page-nav", // selector for the paged navigation (it will be hidden)
+    	nextSelector : "#page-nav a", // selector for the NEXT link (to page 2)
+    	itemSelector : ".card",  // selector for all items you'll retrieve
+    	loading : {
+    		finishedMsg: "no more pages to load",
+    		img: 'http://i.imgur.com/6RMhx.gif'
+    	}
+  	});
     return this;
   }
   

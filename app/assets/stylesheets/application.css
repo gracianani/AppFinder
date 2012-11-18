@@ -318,8 +318,12 @@ a:hover,a:active {
 	border-radius: 5px;
 }
 .card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;}
-.card .app-short-description .hover-overlay { position: absolute; bottom:0px; width:100%; height:70px; background-color: rgba(100, 93, 95, 0.5);}
-.card .app-short-description .hover-overlay span {display: block;height: 100%;}
+.card .app-developer, .card .app-ratings-count{ display: inline-block;font-size: 10px;}
+.card .app-ratings-count {display:block;}
+.card .app-name { margin-bottom: 8px; color: #474747;}
+.card .app-icon { margin-right: 8px;}
+.card .media-body { width:120px; float: left;}
+.card .mosaic-block { margin-top:10px}
 .card .menu-share {
     position:absolute;
     border:1px solid #CCC;
@@ -331,3 +335,10 @@ a:hover,a:active {
 	right: 1px;
 	width: 60px;
 }
+.popup .media {
+	padding: 20px 30px;border-bottom: 1px solid #D1CDCD;overflow: hidden;
+}
+.popup .media-body {}
+.popup .app-icon {margin-right: 9px;}
+.popup .app-name {color: #474747; font-size: 23px;line-height: 1em;margin-bottom: 2px;}
+.popup .app-screenshot {position: relative;margin: 20px 30px;background-color: #F2F0F0;overflow: hidden;}

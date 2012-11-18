@@ -9,14 +9,19 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     "index"    : "index",
     ":id/edit" : "edit",
     ":id"      : "show",
-    ".*"       : "index"
+    "#p:page" : "page",
+    ".*"        : "index"
   },
-
+  page : function(page) {
+  	console.log("page");
+  	 $('#waterfall_apps').append(this.view.render().el);
+  },
   newWaterfallApps: function() {
     this.view = new AppFinder.Views.WaterfallApps.NewView({collection: this.waterfallApps});
     $("#waterfall_apps").html(this.view.render().el);
   },
   index: function() {
+  	console.log("index");
     this.view = new AppFinder.Views.WaterfallApps.IndexView({waterfallApps: this.waterfallApps});
     $("#waterfall_apps").html(this.view.render().el);
   },

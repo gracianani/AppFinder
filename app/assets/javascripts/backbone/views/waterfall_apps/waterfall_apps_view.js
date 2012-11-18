@@ -5,15 +5,16 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   events: {
     "click .destroy" : "destroy",
     "click a.btn" : "toggleShareMenu",
-    "mouseover img" : "showDescription",
-    "mouseout img" : "hideDescription", 
-    "mouseout .app-short-description" : "hideDescription", 
-    "mouseover .app-short-description" : "showDescription" ,
-    "mouseout .hover-overlay" : "hideDescription", 
-    "mouseover .hover-overlay" : "showDescription" 
+    "click div.app-like" : "toggleLike"
   },
   initialize : function(){
     this.short_description_active = false;
+  },  
+  toggleLike : function() {
+    this.model.toggle_like();
+    this.model.save();
+    this.model.fetch();
+    this.render();
   },
   toggleShareMenu : function() {
       var menuShare = $(this.el).find(".menu-share");
@@ -23,26 +24,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
           menuShare.fadeIn();
       }
   },
-  hideDescription : function(e) {
-      var short_description = $(this.el).find(".app-short-description");
-      var that = this;
-      if(this.short_description_active == true && !short_description.find('span').is(":hover") ) {
-          this.short_description_active = false;
-          setTimeout(function() {
-            if(that.short_description_active== false) {
-              short_description.fadeOut(200, function() {that.short_description_active = false} ); } }, 400);
-      } 
-  },
-  showDescription : function(e){
-    var that = this;
-    if(this.short_description_active == false) {
-      that.short_description_active = true;
-      var short_description = $(this.el).find(".app-short-description");
-      short_description.fadeIn( 200 , function() {
-        that.short_description_active = true;
-      });
-    }
-  },
+ 
   tagName: "div",
   className: "card",
   destroy: function () {
@@ -53,6 +35,15 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 
   render: function() {
     $(this.el).html(this.template(this.model.toJSON() ));
+    $(this.el).find('.bar').mosaic({'animation':'slide'});
+
+    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: this.model});
+    $(this.el).find('img').bind("click", function(){ 
+        TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:false,openjs:function(){
+          this.html = popupView.render().el;
+        }}); 
+    });
+
     return this;
   }
     
