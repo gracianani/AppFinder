@@ -90,12 +90,12 @@
 	        		<a href="#">On Sale</a>     		
 	        	</li>
 	        	<li id="highlight" class="recommended-item">
-	        		<div id="highlight-btn" class="btn over">Explore the Highlight!<i id="highlight-icon"></i></div>
+	        		<div id="highlight-btn" class="btn">Explore the Highlight!<i id="highlight-icon"></i></div>
 	        	</li><!--/#hightlight -->
         	</ul><!--/#recommended -->
         </div><!--/#recommended-wrap -->
         <div class="clearfix"></div>
-        <div id="highlight-box" class="clearfix">
+        <div id="highlight-box" class="clearfix none">
         	<div class="hlb-sp2 hlb-h2 hlb-list">
 	        	<div class="p20">
 	        		<div class="hlb-imgbg"><img src="assets/img/highlight-big-bg.png"></div>
@@ -157,39 +157,44 @@
         <div id="filter" class="container">
         	<div id="filter-box" class="clearfix">
         		<div id="filter-category" class="filter-btn">
-        <select data-placeholder="Categories" class="chzn-select" id="filter-category-select" tabindex="2">
-          <option value=""></option> 
-          <option value="">All Categories</option> 
-          <option value="United Kingdom">Business</option> 
-          <option value="United States">Developer Tools</option> 
-          <option value="United States">Education</option> 
-          <option value="United States">Entertament</option> 
-          <option value="United Kingdom">Finance</option> 
-          <optgroup label="Games">
-          <option value="United Kingdom">All Games</option> 
-          <option value="United Kingdom">Action</option> 
-          <option value="United Kingdom">Adventure</option> 
-          <option value="United Kingdom">Arcade</option> 
-          <option value="United Kingdom">Board</option> 
-          <option value="United Kingdom">Card</option> 
-          <option value="United Kingdom">Casino</option> 
-          <option value="United Kingdom">Educational</option> 
-          <option value="United Kingdom">Family</option> 
-          <option value="United Kingdom">Kids</option> 
-
-          </optgroup>
-          <option value="United Kingdom">Graphics & Design</option> 
-          <option value="United Kingdom">Health & Fitness</option> 
-          <option value="United Kingdom">Lifestyle</option> 
-          <option value="United Kingdom">Medical</option> 
-          <option value="United Kingdom">Music</option> 
-          <option value="United Kingdom">News</option> 
-          <option value="United Kingdom">Photography</option> 
-
-        </select>
+			        <select data-placeholder="Categories" class="chzn-select" id="filter-category-select" tabindex="2">
+			          <option value=""></option> 
+			          <option value="">All Categories</option> 
+			          <option value="United Kingdom">Business</option> 
+			          <option value="United States">Developer Tools</option> 
+			          <option value="United States">Education</option> 
+			          <option value="United States">Entertament</option> 
+			          <option value="United Kingdom">Finance</option> 
+			          <optgroup label="Games">
+			          <option value="United Kingdom">All Games</option> 
+			          <option value="United Kingdom">Action</option> 
+			          <option value="United Kingdom">Adventure</option> 
+			          <option value="United Kingdom">Arcade</option> 
+			          <option value="United Kingdom">Board</option> 
+			          <option value="United Kingdom">Card</option> 
+			          <option value="United Kingdom">Casino</option> 
+			          <option value="United Kingdom">Educational</option> 
+			          <option value="United Kingdom">Family</option> 
+			          <option value="United Kingdom">Kids</option> 
+			
+			          </optgroup>
+			          <option value="United Kingdom">Graphics & Design</option> 
+			          <option value="United Kingdom">Health & Fitness</option> 
+			          <option value="United Kingdom">Lifestyle</option> 
+			          <option value="United Kingdom">Medical</option> 
+			          <option value="United Kingdom">Music</option> 
+			          <option value="United Kingdom">News</option> 
+			          <option value="United Kingdom">Photography</option> 
+			        </select>
                 </div><!-- /category -->
         		<div id="filter-feature" class="filter-btn">
-        			Features
+			        <select data-placeholder="Features" class="chzn-select" id="filter-feature-select" tabindex="2">
+			          <option value=""></option> 
+			          <option value="">All Features</option> 
+			          <option value="Top Paid">New & Noteworthy</option> 
+			          <option value="Top Free">What's Hot</option> 
+			          <option value="United States">Enhanced for Retina display</option> 
+			        </select>
         		</div><!-- /feature -->
 
 	        	<div id="filter-price" class="filter-btn">

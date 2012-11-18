@@ -35,7 +35,18 @@
 .pb15{padding-bottom:15px}
 .pb20{padding-bottom:20px}
 
+.none{display: none}
 
+.btn-danger {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#9b2f10),to(#BD362F));
+	background-image: -webkit-linear-gradient(top,#9b2f10,#BD362F);
+	background-image: -o-linear-gradient(top,#9b2f10,#BD362F);
+	background-image: linear-gradient(to bottom,#9b2f10,#BD362F);
+	background-image: -moz-linear-gradient(top,#9b2f10,#BD362F);
+}
+.btn-danger:hover, .btn-danger:active, .btn-danger.active, .btn-danger.disabled, .btn-danger[disabled] {
+	background: #9b2f10;
+}
 body {
 	margin:80px 0 0;
 	background: url(img/main-bg.jpg);
@@ -117,8 +128,10 @@ a:hover,a:active {
 	margin:0 20px;
 }
 .recommended-item>a {
-	
 	text-shadow: 1px 1px 0 #ededed;
+}
+.recommended-item>a:hover,.recommended-item>a:active {
+	color:#b52806;
 }
 /* ==========================================================================
    Highlight style
@@ -230,8 +243,8 @@ a:hover,a:active {
 	border: 1px solid #EAEAEA;
 	border-bottom-color: #CACACA;
 	border-radius: 3px;
+	margin:10px 0 0;
 	
-	margin:20px 0 0;
 }
 .filter-btn {
 	float: left;
@@ -290,11 +303,28 @@ a:hover,a:active {
 .icon-globe {
 	background-image:url(img/icon-globe.png);
 }
+.filter-btn>.icon-search {
+	background-position:-48px 0;
+	width:14px;
+	height: 14px;
+	position: absolute;
+	right: 20px;
+	top:18px;
+}
 #filter-category {
-	width:160px;
+	width:180px;
+}
+#filter-category-select {
+	width:200px;
+}
+#filter_category_select_chzn,#filter_feature_select_chzn {
+	left: -10px;	
 }
 #filter-feature {
-	width:120px;
+	width:180px;
+}
+#filter-feature-select {
+	width:200px;
 }
 #filter-summary {
 	padding: 10px 20px;
@@ -305,12 +335,7 @@ a:hover,a:active {
 	
 }
 
-#filter-category-select {
-	width:180px;
-}
-#filter_category_select_chzn {
-	left: -10px;	
-}
+
 .chzn-container-single .chzn-single {
 	border:none;
 	background:none;
@@ -343,8 +368,8 @@ a:hover,a:active {
 	margin:20px -10px;
 }
 .card {
-	width:186px;
-	padding:15px;
+	width:190px;
+	padding:15px 13px;
 	float: left;
 	position: relative;
 	display: inline-block;
@@ -353,24 +378,47 @@ a:hover,a:active {
 	border:1px solid #b9b9b9;
 	border-radius: 5px;
 }
+.card .btn-price {
+	width:43px;
+}
+.card .btn-install {
+	width:68px;
+}
 .card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;}
-.card .app-developer, .card .app-ratings-count{ display: inline-block;font-size: 10px;}
-.card .app-ratings-count {display:block;}
+.card .app-developer,
+.card .app-ratings-count{ 
+display: inline-block;
+font-size: 10px;
+line-height: 14px;
+color:#999;
+}
+
+.card .app-developer {margin-top:5px;}
+
 .card .app-name { margin-bottom: 8px; color: #474747;}
 .card .app-icon { margin-right: 8px;}
 .card .media-body { width:120px; float: left;}
 .card .mosaic-block { margin-top:10px}
+
 .card .menu-share {
     position:absolute;
-    border:1px solid #CCC;
-    background:#FFF;
+    z-index: 2;
+    background-color: #9b2f10;
     padding:10px;
     font-size:12px;
     display:none;
-    bottom: 100px;
-	right: 1px;
+    bottom:108px;
+	right: -33px;
 	width: 60px;
+	border-radius: 5px 5px 5px 0;
 }
+
+.card .menu-share a {
+	color:#FFF;
+}
+.card .app-screenshot{ margin:15px 0;}
+.card .app-category{ margin:15px 0;}
+
 .popup .media {
 	padding: 20px 30px;border-bottom: 1px solid #D1CDCD;overflow: hidden;
 }
