@@ -1,11 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
-
+gem 'heroku'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
+group  :staging do
+  gem "pg"
+end
+group :development, :test, :production do
+  #gem 'sqlite3'
+end
 
 gem "rails-backbone"
 gem  "coffee-script"
