@@ -150,19 +150,4 @@
       "video_url" : "",
       "category" : "Games",
       "price" : 0.0
-    },{
-      "title":"YammySoup!",
-      "id":"11",
-      "icon_url" : "appImages/yammysoup-logo.png",
-      "developer" : "Ninja Kiwi",
-      "ratings" : "4+",
-      "screenshot_url" : "appImages/yammysoup-screenshot-1.png",
-      "screenshot_width" : "800",
-      "screenshot_height" : "500",
-      "short_description" : "Banjo integrates the largest social networks to provide an on-the-ground view of what is happening anyplace at anytime.",
-      "long_description" : "Banjo integrates the largest social networks to provide an on-the-ground view of what is happening anyplace at anytime..",
-      "like_count" : 24,
-      "video_url" : "https://itunes.apple.com/us/app/angry-birds-star-wars/id557137623?mt=8",
-      "category" : "Lifestyle",
-      "price" : 0.0
     }] }
