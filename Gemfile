@@ -8,7 +8,7 @@ group  :staging do
   gem "pg"
 end
 group :development, :test, :production do
-  #gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 gem "rails-backbone"

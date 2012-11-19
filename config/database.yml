@@ -23,3 +23,13 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+staging:
+  adapter: postgresql
+  host: ec2-107-22-169-148.compute-1.amazonaws.com
+  username: rvmluvwwuxqlqx
+  password: wO90D_MWLeMnzQ93DO8MH1LLMy
+  database: d2gu1pcgkl07ml
+  port: 5432
+  sslmode: require
+  
