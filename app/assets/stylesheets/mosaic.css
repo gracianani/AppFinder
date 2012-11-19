@@ -16,7 +16,6 @@
 	width:190px;
 	height:100%;
 	background:#111 url(img/progress.gif) no-repeat center center;
-	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
 }
 
 .mosaic-backdrop {
