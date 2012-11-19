@@ -428,11 +428,16 @@ a:hover,a:active {
 .card .menu-share a {
 	color:#FFF;
 }
+<<<<<<< HEAD
 .card .app-screenshot{ margin:15px 0;cursor: pointer;}
 .card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;cursor: pointer;}
 
+=======
+.card .app-screenshot{ margin:0 0 15px 0;}
+>>>>>>> a9c796427f716892a2bd30ca2222188872eba3b1
 .card .app-category{ margin:15px 0;}
 
+.popup { display: block; overflow:scroll;}
 .popup .media {
 	padding: 20px 30px;border-bottom: 1px solid #D1CDCD;overflow: hidden;
 }
@@ -440,3 +445,33 @@ a:hover,a:active {
 .popup .app-icon {margin-right: 9px;}
 .popup .app-name {color: #474747; font-size: 23px;line-height: 1em;margin-bottom: 2px;}
 .popup .app-screenshot {position: relative;margin: 20px 30px;background-color: #F2F0F0;overflow: hidden;}
+.popup .app-long-description { border-top: 1px solid #D1CDCD;height: 100px;padding: 0 30px 20px;font-size: 13px;line-height: 1.5em;border-bottom-width: 0;word-wrap: break-word;}
+.popup .app-activity {clear: both;padding: 15px 30px 15px 88px;font-size: 13px;border-top: 1px solid #D1CDCD;overflow: hidden;}
+.popup .app-activity  h4 {float: left;width: 50px;margin-left: -58px;padding-top: 16px;font-size:13px;font-weight: bold;text-align: right;}
+.popup .tags, .popup .badges {
+margin: 0 10px -8px 0;
+}
+.popup .tags > li, .popup .badges > li {
+display: inline-block;
+margin: 0 8px 15px 0;
+}
+.popup .tag {
+display: inline-block;
+padding: 0 10px;
+line-height: 25px;
+font-weight: normal;
+color: #605C56;
+text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+background: rgba(0, 0, 0, 0.06);
+border-radius: 2px;
+}
+.popup .badge {
+	display: inline-block;
+padding: 0 10px;
+line-height: 25px;
+font-weight: normal;
+color: black;
+text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+background: rgba(0, 0, 0, 0.06);
+border-radius: 10px;
+}

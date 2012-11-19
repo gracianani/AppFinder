@@ -246,5 +246,16 @@
             </footer>
 
         </div> <!-- /container -->
+<script type="text/javascript">
+  $(function() {
+	
+	var apps = $.ajax({ url: 'assets/data/app.json', dataType: 'text json',  success: function(data) {
+		window.router = new AppFinder.Routers.WaterfallAppsRouter({waterfallApps: data.apps});
+    	Backbone.history.start();
+	} });
+	
+    
+  });
+</script>
 </body>
 </html>
