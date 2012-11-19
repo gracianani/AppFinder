@@ -46,7 +46,20 @@
 }
 .btn-danger:hover, .btn-danger:active, .btn-danger.active, .btn-danger.disabled, .btn-danger[disabled] {
 	background: #9b2f10;
+	color:#fff;
 }
+.btn-info {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#d8651d),to(#b52806));
+	background-image: -webkit-linear-gradient(top,#d8651d,#b52806);
+	background-image: -o-linear-gradient(top,#d8651d,#b52806);
+	background-image: linear-gradient(to bottom,#d8651d,#b52806);
+	background-image: -moz-linear-gradient(top,#d8651d,#b52806);
+	border-color: #d8651d;
+}
+.btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+	background: #c73b0b;
+}
+
 body {
 	margin:80px 0 0;
 	background: url(img/main-bg.jpg);
@@ -384,18 +397,17 @@ a:hover,a:active {
 .card .btn-install {
 	width:68px;
 }
-.card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;}
 .card .app-developer,
 .card .app-ratings-count{ 
-display: inline-block;
-font-size: 10px;
-line-height: 14px;
-color:#999;
+	display: inline-block;
+	font-size: 10px;
+	line-height: 14px;
+	color:#999;
 }
 
 .card .app-developer {margin-top:5px;}
 
-.card .app-name { margin-bottom: 8px; color: #474747;}
+.card .app-name { margin-bottom: 8px; color:#40090c;}
 .card .app-icon { margin-right: 8px;}
 .card .media-body { width:120px; float: left;}
 .card .mosaic-block { margin-top:10px}
@@ -416,7 +428,9 @@ color:#999;
 .card .menu-share a {
 	color:#FFF;
 }
-.card .app-screenshot{ margin:15px 0;}
+.card .app-screenshot{ margin:15px 0;cursor: pointer;}
+.card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;cursor: pointer;}
+
 .card .app-category{ margin:15px 0;}
 
 .popup .media {

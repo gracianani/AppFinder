@@ -5,10 +5,10 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   events: {
     "click .destroy" : "destroy",
     "click .app-share-btn" : "toggleShareMenu",
-    "click div.app-like" : "toggleLike"
+    "click div.app-like" : "toggleLike",
   },
   initialize : function(){
-    this.short_description_active = false;
+    this.mouseover = false;
   },  
   toggleLike : function() {
     this.model.toggle_like();
@@ -24,6 +24,23 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
       btn.find('i').toggleClass('icon-white');
       btn.toggleClass('btn-danger');
   },
+  fadeOutOthers : function(e) {
+  	  var that = this;
+  	  
+  	  if ( !this.mouseover ) {
+  	  	  this.mouseover = true;
+	  	  $('.card').not(this.$el).animate({'opacity':'0.4'},500);
+  	  }
+	  
+  },
+  fadeInAll : function(e) {
+  	  var that = this;
+
+	  if ( this.mouseover ) {
+  	  	  this.mouseover = false;
+	  	  $('.card').not(this.$el).animate({'opacity':'1'},500);
+  	  }
+  },
  
   tagName: "div",
   className: "card",
@@ -34,16 +51,29 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   },
 
   render: function() {
-    $(this.el).html(this.template(this.model.toJSON() ));
-    $(this.el).find('.bar').mosaic({'animation':'slide'});
-    var that = $(this.el);
-    var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
-      var popupModel = new AppFinder.Models.App(data);
-      var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
-      that.find('img').bind("click", function(){ 
-          TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:true,openjs:function(){}}); 
-      });
-    }});
+  	var that = $(this.el);
+    that.html(this.template(this.model.toJSON() ));
+    
+    that.mosaic({'animation':'slide'});
+
+    
+    setTimeout(function(){
+    
+	   	var shortdesc = that.find('.app-short-description');
+		shortdesc.css('bottom', '-' + shortdesc.outerHeight()+'px');
+		
+		that.mosaic({'animation':'slide'});
+		    
+	    var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
+	      var popupModel = new AppFinder.Models.App(data);
+	      var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
+	      that.find('img,.app-short-description').bind("click", function(){ 
+	          TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:true,openjs:function(){}}); 
+	      });
+	    }});
+
+    },0);
+
     
      
 
