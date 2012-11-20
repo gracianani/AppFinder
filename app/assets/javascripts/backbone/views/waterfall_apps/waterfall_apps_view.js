@@ -1,15 +1,20 @@
 AppFinder.Views.WaterfallApps = AppFinder.Views.WaterfallApps || {};
-
+var position = 0,
+    container = $('.tmask'),
+ 	activePosition = 0,
+	scrollPosition = 0;
+          	
 AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   template: JST["backbone/templates/waterfall_apps/waterfall_apps"],
   events: {
     "click .destroy" : "destroy",
     "click .app-share-btn" : "toggleShareMenu",
-    "click div.app-like" : "toggleLike",
+    "click div.app-like" : "toggleLike"
   },
+  
   initialize : function(){
     this.mouseover = false;
-  },  
+  },
   toggleLike : function() {
     this.model.toggle_like();
     this.model.save();
@@ -69,10 +74,15 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	      var popupModel = new AppFinder.Models.App(data);
 	      var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
 	      that.find('img,.app-short-description').bind("click", function(){ 
-          TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:true,openjs:function(){
+          TINY.box.show({html:popupView.render().el,width:'800',animate:true,openjs:function(){
           	
-          	$('body').css("position","fixed").css("overflow", "auto").css('height', $(window).height() + 'px')
-          }});
+          	position = $('body').offset();
+          	container.css('top', -position.top + 'px');
+          	activePosition = position.top;
+          	scrollPosition = $('body').scrollTop();
+          	$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');
+          	$('body').scrollTop(scrollPosition);
+          }, closejs:function() { $('body').css('position','').css('overflow','').css('width','').css('top',''); $('body').scrollTop(scrollPosition)}});
         });
       }});
 

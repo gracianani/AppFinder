@@ -65,7 +65,7 @@ TINY.box=function(){
 			p.style.width=x; p.style.height=y;
 			this.size(w,h,a)
 		},
-		esc:function(e){e=e||window.event; if(e.keyCode==27){TINY.box.hide()}},
+		esc:function(e){e=e||window.event; if(e.keyCode==27){TINY.box.hide();}},
 		hide:function(){TINY.box.alpha(j,-1,0,3); document.onkeypress=null; if(v.closejs){v.closejs()}},
 		resize:function(){TINY.box.pos(); TINY.box.mask()},
 		mask:function(){m.style.height=this.total(1)+'px'; m.style.width=this.total(0)+'px'},
