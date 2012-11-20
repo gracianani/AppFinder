@@ -32,7 +32,6 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
     	navSelector  : "#page-nav", // selector for the paged navigation (it will be hidden)
     	nextSelector : "#page-nav a", // selector for the NEXT link (to page 2)
     	itemSelector : ".card",  // selector for all items you'll retrieve
-    	debug : true,
     	loading : {
     		finishedMsg: "no more pages to load",
     		/*img: 'http://i.imgur.com/6RMhx.gif',*/

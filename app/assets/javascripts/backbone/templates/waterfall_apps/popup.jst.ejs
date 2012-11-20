@@ -1,12 +1,19 @@
 <div id="app-id">
-
+	<div class="social-share">
+		<ul>
+			<li style="height:31px"><span class="btn btn-small">Facebook</span></li>
+			<li style="height:31px"><span class="btn btn-small">Twitter</span></li>
+			<li style="height:31px"><span class="btn btn-small">Google+</span></li>
+			<li style="height:31px"><span class="btn btn-small">Pin</span></li>
+		</ul>
+	</div>
 	<div class="media">
 		
 		<a class="app-icon pull-left" href="#">
 			<% if (icon_url != '') { %>
-				<img class='img-rounded' src="assets/<%= icon_url %>" style="width:57px;height:57px" />
+				<img class='img-rounded' src="assets/<%= icon_url %>" style="width:75px;height:75px" />
 			<% } else { %>
-				<img src="http://placehold.it/57x57" />
+				<img src="http://placehold.it/75x75" />
 			<% } %>
 		</a>
 		<div class="media-body">
@@ -35,7 +42,7 @@
 		<div class="app-screenshot" >
 			<% if (screenshot_url != '') { %>
 				<img src="assets/<%= screenshot_url %>" 
-				style="max-width:none;width:<%= screenshot_width %>px;position: relative;" />
+				style="max-width:none;width:<%= screenshot_width %>px;position: relative;margin: 0 auto;display:block;" />
 			<% } else { %>
 				<img src="http://placehold.it/<%= screenshot_width %>x<%= screenshot_height %>" />
 			<% } %>
@@ -60,7 +67,7 @@
 	</div>
 	<div class="app-long-description" >
 		<p>
-			<%= long_description %>
+			<%= short_description %>
 		</p>
 	</div>
 </div><!--/#app-id -->

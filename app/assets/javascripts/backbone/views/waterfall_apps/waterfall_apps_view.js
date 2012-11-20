@@ -56,11 +56,13 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	   	TINY.box.show({html:popupView.render().el,width:'800',animate:true,
 	   		openjs:function(){
 	      		position = $('body').offset();
-	      		container.css('top', -position.top + 'px');
+	      		container.css('top', -position.top + 'px').css('overflow','scroll');
 	      		activePosition = position.top;
 	      		scrollPosition = $('body').scrollTop();
 	      		$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');
 	      		$('body').scrollTop(scrollPosition);
+	      		$('.tmask').css('top',-position.top + 'px');
+	      		$('.tbox').css('height',$(window).height()-100+'px').css('overflow','scroll');
 	      	}, 
       		closejs:function() { 
       			$('body').css('position','').css('overflow','').css('width','').css('top',''); 
