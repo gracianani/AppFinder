@@ -68,7 +68,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	    var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
 	      var popupModel = new AppFinder.Models.App(data);
 	      var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
-	      that.find('img').bind("click", function(){ 
+	      that.find('img,.app-short-description').bind("click", function(){ 
           TINY.box.show({html:popupView.render().el,boxid:'frameless',animate:true,openjs:function(){
           	
           	$('body').css("position","fixed").css("overflow", "auto").css('height', $(window).height() + 'px')

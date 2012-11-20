@@ -7,10 +7,8 @@ gem 'heroku'
 group  :staging do
   gem "pg"
 end
-group :development, :test, :production do
- # gem 'sqlite3'
-end
 
+gem 'sqlite3'
 gem "rails-backbone"
 gem  "coffee-script"
 # Gems used only for assets and not required

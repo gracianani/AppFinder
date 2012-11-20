@@ -16,6 +16,9 @@ jQuery(function($){
 	$('#highlight').click(function(){
 		$('#highlight-box').slideToggle('fast');
 		$(this).find('#highlight-btn').toggleClass('over');
+	}).mouseenter(function(){
+		$('#highlight-box').slideDown('fast');
+		$(this).find('#highlight-btn').addClass('over');
 	});
 	
 });
