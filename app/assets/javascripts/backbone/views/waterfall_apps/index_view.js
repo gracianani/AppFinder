@@ -35,7 +35,7 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
     	debug : true,
     	loading : {
     		finishedMsg: "no more pages to load",
-    		img: 'http://i.imgur.com/6RMhx.gif',
+    		/*img: 'http://i.imgur.com/6RMhx.gif',*/
     		msg: null,
         	msgText: "<em>Loading the next set of posts...</em>",
     	} 

@@ -9,7 +9,8 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   events: {
     "click .destroy" : "destroy",
     "click .app-share-btn" : "toggleShareMenu",
-    "click div.app-like" : "toggleLike"
+    "click div.app-like" : "toggleLike", 
+    "click img,.app-short-description" : "showDetail"
   },
   
   initialize : function(){
@@ -46,7 +47,29 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	  	  $('.card').not(this.$el).animate({'opacity':'1'},500);
   	  }
   },
- 
+  showDetail: function()
+  {
+ 	 var that = $(this.el);
+  	 var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
+	 	var popupModel = new AppFinder.Models.App(data);
+	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
+	   	TINY.box.show({html:popupView.render().el,width:'800',animate:true,
+	   		openjs:function(){
+	      		position = $('body').offset();
+	      		container.css('top', -position.top + 'px');
+	      		activePosition = position.top;
+	      		scrollPosition = $('body').scrollTop();
+	      		$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');
+	      		$('body').scrollTop(scrollPosition);
+	      	}, 
+      		closejs:function() { 
+      			$('body').css('position','').css('overflow','').css('width','').css('top',''); 
+      			$('body').scrollTop(scrollPosition)}
+      		});
+    	}
+    });
+      
+  },
   tagName: "div",
   className: "card",
   destroy: function () {
@@ -59,36 +82,13 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 
   	var that = $(this.el);
     that.html(this.template(this.model.toJSON() ));
-    
     that.mosaic({'animation':'slide'});
-
     
     setTimeout(function(){
-    
 	   	var shortdesc = that.find('.app-short-description');
-		shortdesc.css('bottom', '-' + shortdesc.outerHeight()+'px');
-		
+		shortdesc.css('bottom', '-' + shortdesc.outerHeight()+'px');	
 		that.mosaic({'animation':'slide'});
-		    
-	    var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
-	      var popupModel = new AppFinder.Models.App(data);
-	      var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
-	      that.find('img,.app-short-description').bind("click", function(){ 
-          TINY.box.show({html:popupView.render().el,width:'800',animate:true,openjs:function(){
-          	
-          	position = $('body').offset();
-          	container.css('top', -position.top + 'px');
-          	activePosition = position.top;
-          	scrollPosition = $('body').scrollTop();
-          	$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');
-          	$('body').scrollTop(scrollPosition);
-          }, closejs:function() { $('body').css('position','').css('overflow','').css('width','').css('top',''); $('body').scrollTop(scrollPosition)}});
-        });
-      }});
-
     },0);
-    
-     
 
     return this;
   }
