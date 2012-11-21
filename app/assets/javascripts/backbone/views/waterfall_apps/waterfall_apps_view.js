@@ -27,6 +27,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
       menuShare.slideToggle('fast');
       
       var btn = this.$el.find('.app-share-btn');
+      
       btn.find('i').toggleClass('icon-white');
       btn.toggleClass('btn-danger');
   },
