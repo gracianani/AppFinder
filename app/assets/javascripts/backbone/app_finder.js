@@ -11,9 +11,7 @@ window.AppFinder = {
   Views: {}
 }
 jQuery(function($){
-	$(".chzn-select").chosen({allow_single_deselect: true});
 	
-	$('.dropdown-toggle').dropdown();
 	
 	$('#highlight').click(function(){
 		$('#highlight-box').slideToggle('fast');

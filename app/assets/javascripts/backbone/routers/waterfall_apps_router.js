@@ -2,7 +2,8 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   initialize: function (options) {
     this.waterfallApps = new AppFinder.Collections.AppsCollection(options.waterfallApps);
     this.waterfallApps.reset( options.waterfallApps );
-   
+    this.filters = new AppFinder.Collections.Filters();
+    this.filters.reset();
   },
   routes: {
     "new"      : "newWaterfallApps",
@@ -28,6 +29,12 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   	console.log("index");
     this.view = new AppFinder.Views.WaterfallApps.IndexView({waterfallApps: this.waterfallApps});
     $("#waterfall_apps").html(this.view.render().el);
+    this.filter = new AppFinder.Views.Filters.FiltersView();
+    $(this.filter.render().el).insertAfter('#filterAnchor');
+	setTimeout( function() {
+		$(".chzn-select").chosen({allow_single_deselect: true});
+		$('.dropdown-toggle').dropdown();
+	},0);
   },
   show: function(id){ 
     waterfallApps = this.waterfallApps.get(id);
