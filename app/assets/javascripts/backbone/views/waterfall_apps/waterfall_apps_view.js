@@ -47,7 +47,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	  	  $('.card').not(this.$el).animate({'opacity':'1'},500);
   	  }
   },
-  showDetail: function()
+  showDetail: function(e)
   {
  	 var that = $(this.el);
   	 var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
@@ -63,14 +63,15 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	      		$('body').scrollTop(scrollPosition);
 	      		$('.tmask').css('top',-position.top + 'px');
 	      		$('.tbox').css('height',$(window).height()-100+'px').css('overflow','scroll');
+				window.onscroll = function(oEvent) { oEvent.preventDefault(); oEvent.stopPropagation();return false;}
 	      	}, 
       		closejs:function() { 
       			$('body').css('position','').css('overflow','').css('width','').css('top',''); 
-      			$('body').scrollTop(scrollPosition)}
-      		});
+      			$('body').scrollTop(scrollPosition);
+   
+      		}});
     	}
     });
-      
   },
   tagName: "div",
   className: "card",
