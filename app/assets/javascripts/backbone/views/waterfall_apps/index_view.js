@@ -44,6 +44,7 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
     	$('#waterfallApps').infinitescroll({state : {currPage: 1}});
         // hide new items while they are loading
         var $newElems = $( newElements ).css({ opacity: 0 });
+        console.log($newElems);
         // ensure that images load before adding to masonry layout
         $newElems.imagesLoaded(function(){
           // show elems now they're ready
