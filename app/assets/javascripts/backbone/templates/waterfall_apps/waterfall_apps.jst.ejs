@@ -1,5 +1,4 @@
-<div id="app-id">
-
+<div id="app-<%= id %>">
 	<div class="media">
 		<div class="media-title">
 			<div class="app-name media-heading">
@@ -23,13 +22,13 @@
 					<i class='icon-star-empty pull-left'></i>
 				<%  } %>
 			<% } %>
-			<div class="app-ratings-count pull-left"> (<%= like_count %>)</div>
+				<div class="app-ratings-count pull-left"> (<%= like_count %>)</div>
 			</div>
 			<div class="app-developer">
-			by <a href="#"><%= developer %></a>
+				by <a href="#"><%= developer %></a>
 			</div>
 		</div>
-		<div class="clearfix"></>
+		<div class="clearfix"></div>
 	</div><!--/media -->
 	<div class="mosaic-block bar" style= 'height: 
 		<% if( screenshot_width > screenshot_height ) { %>
@@ -76,15 +75,16 @@
 		</a>
  
 		
-		<a href="javascript:void(0)" class="app-share-btn btn btn-small pull-right">
+		<div href="javascript:void(0)" class="app-share-btn btn btn-small pull-right">
 			<i class="icon-share"></i>
-		</a>
-		<div class="menu-share">
+			<div class="menu-share">
 				<a href="#"> Facebook </a>
 				<a href="#"> Google+ </a>
 				<a href="#"> Twitter </a>
 				<a href="#"> Pin it! </a>
-			</div>		
+			</div>	
+		</div>
+			
 	</div>
 	<div class="app-category">
 		<a href="#"><%= category %></a>
@@ -92,7 +92,7 @@
 	<div class="app-like pull-left">
 		<i class="icon-heart 
 			<% if ( like == false ) { %> 
-				icon-white
+				icon-gray
 			<% } %>
 		"></i>
 		<%= like_count %>
@@ -103,4 +103,4 @@
 			
 		<% } %>
 	</div>
-</div><!--/#app-id -->
+</div><!--/#app-<%= id %> -->
