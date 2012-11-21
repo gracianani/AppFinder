@@ -78,6 +78,17 @@
 		</div>
 			
 	</div>
+	
+	<div class="app-tags app-activity">
+		<ul class="tags">
+		<% for (var i=0; i < tags.length; i++) { %>
+			<li> <a class="tag" href="javascript:void(0)"> <%= tags[i] %></a> </li>
+		<% } for (var i=0; i < badges.length; i++) {  %>
+			<li><a class="tag" href="javascript:void(0)"><%= badges[i] %> </a> </li>
+		<% } %>
+		</ul>
+	</div>
+	
 	<div class="app-category">
 		<a href="#"><%= category %></a>
 	</div>
