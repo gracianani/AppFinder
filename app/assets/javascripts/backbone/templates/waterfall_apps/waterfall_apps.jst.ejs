@@ -79,15 +79,18 @@
 			
 	</div>
 	
-	<div class="app-tags app-activity">
-		<ul class="tags">
+		<div class="app-tags ">
+		
 		<% for (var i=0; i < tags.length; i++) { %>
-			<li> <a class="tag" href="javascript:void(0)"> <%= tags[i] %></a> </li>
-		<% } for (var i=0; i < badges.length; i++) {  %>
-			<li><a class="tag" href="javascript:void(0)"><%= badges[i] %> </a> </li>
+			<a class="tag" href="javascript:void(0)"><i class='icon-tag icon-white'></i> <%= tags[i] %></a>
 		<% } %>
-		</ul>
-	</div>
+		</div>
+		<div class="app-badges">
+		<% for (var i=0; i < badges.length; i++) {  %>
+			<a class="badge" href="javascript:void(0)"><i class="icon-certificate icon-white"></i> <%= badges[i] %> </a>
+		<% } %>
+		</div>
+		
 	
 	<div class="app-category">
 		<a href="#"><%= category %></a>
