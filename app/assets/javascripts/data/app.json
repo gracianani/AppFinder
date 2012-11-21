@@ -12,7 +12,9 @@
       "like_count" : 5140,
       "video_url" : "https://itunes.apple.com/us/app/angry-birds-star-wars/id557137623?mt=8",
       "category" : "Games",
-      "price" : 0.0
+      "price" : 0.0,
+      "tags" : ["Farm and Animal", "Build and Manage Sims", "Huggable Heros", "Game Center"],
+      "badges" : ["BEEP BEEP!"]
 	},{
       "title":"The Cat in the Hat - Dr. Seuss",
       "id":"2",
@@ -27,7 +29,9 @@
       "like_count" : 3,
       "video_url" : "",
       "category" : "Kids",
-      "price" : 3.99
+      "price" : 3.99, 
+      "tags" : ["Kids Education"],
+      "badges" : ["PATRONAGE"]
     },{
       "title":"An Awesome Book",
       "id":"3",
@@ -42,7 +46,9 @@
       "like_count" : 24,
       "video_url" : "https://itunes.apple.com/us/app/angry-birds-star-wars/id557137623?mt=8",
       "category" : "Social Networking",
-      "price" : 0.0
+      "price" : 0.0, 
+      "tags" : ["Kids Love It!"],
+      "badges" : ["CHA-CHING!"]
     },{
       "title":"YammySoup!",
       "id":"4",
@@ -58,7 +64,9 @@
       "video_url" : "",
       "category" : "Lifestyle",
       "price" : 9.99,
-      "released_date" : "11-14-2012"
+      "released_date" : "11-14-2012", 
+      "tags" : ["Cooking Recipes", "Special Diet"],
+      "badges" : ["STEVEDORE"]
     },{
       "title":"Small Street",
       "id":"5",
@@ -72,8 +80,10 @@
       "long_description" : "Dr. Diggabone is getting too old for archaeological digs—or so he says.",
       "like_count" : 5,
       "video_url" : "",
-      "category" : "game",
-      "price" : 3.99
+      "category" : "Games",
+      "price" : 3.99, 
+      "tags" : ["Build and Manage Sims"],
+      "badges" : ["EGG HEAD", "RELAX SONGS"]
     },{
       "title":"eHarmony – #1 Trusted Dating Site",
       "id":"6",
@@ -88,7 +98,9 @@
       "like_count" : 23,
       "video_url" : "",
       "category" : "Social Networking",
-      "price" : 0.0
+      "price" : 0.0, 
+      "tags" : [],
+      "badges" : ["GOT MILK"]
     },{
       "title":"BranchOut",
       "id":"7",
@@ -103,7 +115,9 @@
       "like_count" : 17,
       "video_url" : "",
       "category" : "Social Networking",
-      "price" : 0.0
+      "price" : 0.0, 
+      "tags" : ["Gun Shooting"],
+      "badges" : ["Baconator"]
     },{
       "title":"Bloons TD 5",
       "id":"8",
@@ -118,7 +132,9 @@
       "like_count" : 239,
       "video_url" : "",
       "category" : "Games",
-      "price" : 2.99
+      "price" : 2.99, 
+      "tags" : ["Racing Games"],
+      "badges" : ["SHEEP SHEARER"]
     },{
       "title":"Ban.jo",
       "id":"9",
@@ -133,7 +149,9 @@
       "like_count" : 24,
       "video_url" : "https://itunes.apple.com/us/app/angry-birds-star-wars/id557137623?mt=8",
       "category" : "Social Networking",
-      "price" : 0.0
+      "price" : 0.0, 
+      "tags" : ["Fashion and Style Games"],
+      "badges" : ["GOAT GOADER"]
     },{
       "title":"Animal Legends",
       "id":"10",
@@ -148,7 +166,10 @@
       "like_count" : 24,
       "video_url" : "",
       "category" : "Games",
-      "price" : 0.0
+      "price" : 0.0, 
+      "tags" : ["Hunting Games"],
+      "badges" : ["HYPER HARVESTER"]
+      
     },
     {
       "title":"Angry Birds Star Wars",
@@ -164,7 +185,9 @@
       "like_count" : 5140,
       "video_url" : "https://itunes.apple.com/us/app/angry-birds-star-wars/id557137623?mt=8",
       "category" : "Games",
-      "price" : 0.0
+      "price" : 0.0, 
+      "tags" : ["Big Name Games"],
+      "badges" : ["TURBO TRUCKER", "BURRY PICKER"]
 	},{
       "title":"Flea Symphony",
       "id":"12",
@@ -180,7 +203,9 @@
       "video_url" : "",
       "category" : "Games",
       "price" : 0.99,
-      "released_date": "11-15-2012"
+      "released_date": "11-15-2012", 
+      "tags" : ["Music Games"],
+      "badges" : ["HYPER HERDER"]
     },{
       "title":"Expedia Hotels & Flights",
       "id":"13",
@@ -196,7 +221,9 @@
       "video_url" : "",
       "category" : "Travel",
       "price" : 0.0,
-      "released_date" : "11-14-2012"
+      "released_date" : "11-14-2012", 
+      "tags" : ["Hotel Finders"],
+      "badges" : ["CAPTAIN", "GREEN THUMB"]
     },{
       "title":"Lazy Riders",
       "id":"14",
@@ -210,8 +237,10 @@
       "long_description" : "Dr. Diggabone is getting too old for archaeological digs—or so he says.",
       "like_count" : 5,
       "video_url" : "",
-      "category" : "game",
-      "price" : 3.99
+      "category" : "Games",
+      "price" : 3.99, 
+      "tags" : ["Riding Games"],
+      "badges" : ["CITIZEN KANE", "GOLD MINER"]
     },{
       "title":"Swackeet",
       "id":"15",
@@ -226,5 +255,7 @@
       "like_count" : 5140,
       "video_url" : "https://itunes.apple.com/us/app/angry-birds-star-wars/id557137623?mt=8",
       "category" : "Weather",
-      "price" : 0.0
+      "price" : 0.0, 
+      "tags" : ["Weather Alert"],
+      "badges" : ["FARM TYCOON", "HELTER SMELTER"]
 	}] }
