@@ -503,11 +503,35 @@ a:hover,a:active {
 .card .app-screenshot{ cursor: pointer;}
 .card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;cursor: pointer;}
 .card .app-category { font-size: 10px;margin:10px 0 0;}
-.card .tags, .card .badges {margin: 0 10px -8px 0;}
-.card .tags > li, .card .badges > li {display: inline-block;margin: 0 8px 15px 0;}
-.card .tag, .card .badge {display: inline-block;padding: 0 10px;line-height: 18px;font-size: 10px;font-weight: normal;color: #605C56;text-shadow: 0 1px rgba(255, 255, 255, 0.4);background: rgba(0, 0, 0, 0.06);border-radius: 2px;}
-.card .app-tags {margin: 0 -15px;padding: 10px 15px;border-top:1px solid #F6F6F3; border-bottom:1px solid #F6F6F3;}
 
+
+.card .tag, .card .badge {
+	display: inline-block;
+	line-height: 18px;
+	font-size: 10px;
+	font-weight: normal;
+	color: #767676;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+	background: rgba(0, 0, 0, 0.06);border-radius: 3px;
+	padding:2px 8px 2px 5px;
+	margin:5px 3px;
+}
+.card .tag i, .card .badge i {
+		vertical-align: bottom;
+
+}
+.card .tag:hover{
+	background-color: #c73b0b;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+	color: #FFF
+
+}
+.card .badge:hover{
+	background-color: #edb230;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+	color: #FFF
+
+}
 .popup { display: block; overflow:scroll;}
 .popup .media {padding: 20px 30px;border-bottom: 1px solid #D1CDCD;overflow: hidden;}
 .popup .media-body {}
