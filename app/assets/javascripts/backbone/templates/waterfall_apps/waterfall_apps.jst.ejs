@@ -31,11 +31,7 @@
 		<div class="clearfix"></div>
 	</div><!--/media -->
 	<div class="mosaic-block bar" style= 'height: 
-		<% if( screenshot_width > screenshot_height ) { %>
-			<%= screenshot_height %>px;
-		<% } else { %>
 			<%= screenshot_height * 190 / screenshot_width %>px;
-		<% } %>
 	'>
 	<div class="app-short-description mosaic-overlay" style="left: 0px;">
 		<div class="details">
@@ -46,11 +42,7 @@
 		<% if (screenshot_url != '') { %>
 			<img src="assets/<%= screenshot_url %>" 
 			style="max-width:none;
-				<% if( screenshot_width > screenshot_height ) { %>
-					width:<%= screenshot_width %>px;left: -<%= (screenshot_width - 190)/2 %>px;
-				<% } else { %>
-				    width:190px;
-				<% } %>
+				width:190px;height:auto;
 			   
 			position: relative;" />
 		<% } else { %>
