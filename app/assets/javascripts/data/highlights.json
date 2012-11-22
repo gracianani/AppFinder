@@ -1,0 +1,78 @@
+{
+	"recommended" : [ 
+		{ "name" : "Popular", "url" : "#", "type":"link"},
+		{ "name" : "Latest", "url" : "#", "type":"link"},
+		{ "name" : "Free", "url" : "#", "type":"link"},
+		{ "name" : "On Sale", "url" : "#", "type":"link"},
+		{ "name" : "Explore the Highlight!", "url" : "#", "type" : "button"}
+	], 
+	"highlights" : [
+		{  	
+			"size" : 2,
+			"highlightType" : "Editor's Choice", 
+			"backgroundImg": "img/highlight-big-bg.png", 
+			"subtitle": {"name" : "Popular" , "icon" : ""}, 
+			"title": "Puzzlers",
+			"description": "Brain Testing Games",
+			"icon" : "icon-list icon-white", 
+			"type": "list"
+		},
+		{
+			"size" : 1,
+			"highlightType" : "Most People Search for",
+			"backgroundImg" : "",
+			"subtitle" : {"name" : "Kids,Document", "icon" : ""},
+			"title" : "Education",
+			"description" : "",
+			"icon": "icon-white icon-search",
+			"type": "search"
+		},
+		{
+			"size" : 1,
+			"highlightType" : "New Apps in",
+			"backgroundImg" : "",
+			"title" : "Photo <br>Sharing",
+			"description" : "",
+			"icon" : "icon-chevron-right icon-white",
+			"type": "app"
+		},
+		{
+			"size" : 1,
+			"highlightType" : "Must-have",
+			"backgroundImg" : "img/highlight-app-bg.png",
+			"title" : "Apps <br>Starter Kit",
+			"description" : "",
+			"icon" : "icon-list icon-white",
+			"type": "search"
+		},
+		{
+			"size" : 1,
+			"highlightType" : "Some People Search for",
+			"backgroundImg" : "",
+			"title" : "Angry Birds",
+			"subtitle" : {"name" : "Universe,Games", "icon" :  ""},
+			"description" : "",
+			"icon" : "icon-search icon-white",
+			"type": "search"
+		},
+		{
+			"size" : 1,
+			"highlightType" : "Enhance for New iPad",
+			"backgroundImg" : "",
+			"title" : "Angry Birds",
+			"subtitle" : { "name" : "the Photo Cookbook", "icon":"img/icon-tpcb.png" },
+			"description" : "",
+			"icon" : "icon-chevron-right icon-white",
+			"type": "search"
+		},
+		{
+			"size" : 1,
+			"highlightType" : "Must-have",
+			"backgroundImg" : "img/highlight-game-bg.png",
+			"title" : "Games <br>Starter Kit",
+			"description" : "",
+			"icon" : "icon-list icon-white",
+			"type": "search"
+		}
+	]
+}

@@ -75,85 +75,8 @@
         </header><!--/header -->
         
         <div class = "container clearfix" >
-        <div id="recommended-wrap">
-        	<ul  id="recommended">
-	        	<li class="recommended-item">
-	        		<a href="#">Popular</a>     		
-	        	</li>
-	        	<li class="recommended-item">
-	        		<a href="#">Latest</a>     		
-	        	</li>
-	        	<li class="recommended-item">
-	        		<a href="#">Free</a>     		
-	        	</li>
-	        	<li class="recommended-item">
-	        		<a href="#">On Sale</a>     		
-	        	</li>
-	        	<li id="highlight" class="recommended-item">
-	        		<div id="highlight-btn" class="btn">Explore the Highlight!<i id="highlight-icon"></i></div>
-	        	</li><!--/#hightlight -->
-        	</ul><!--/#recommended -->
-        </div><!--/#recommended-wrap -->
-        <div class="clearfix"></div>
-        <div id="highlight-box" class="clearfix none">
-        	<div class="hlb-sp2 hlb-h2 hlb-list">
-	        	<div class="p20">
-	        		<div class="hlb-imgbg"><img src="assets/img/highlight-big-bg.png"></div>
-	        		<p class="hlb-type">Editor's Choice</p>
-	        		<p class="hlb-subtitle">Popular</p>
-	        		<p class="hlb-title">Puzzlers</p>
-	        		<p class="hlb-desc">Brain Testing Games</p>
-	        		<i class="icon-list icon-white"></i>
-	        	</div>
-        	</div>
-        	<div class="hlb-sp1 hlb-search">
-	        	<div class="p10">
-	        		<p class="hlb-type">Most People Search for</p>
-	        		<p class="hlb-title">Education</p>
-	        		<p class="hlb-subtitle">Kids,Document</p>
-	        		<i class="icon-search icon-white"></i>
-	        	</div>
-        	</div>
-        	<div class="hlb-sp1 hlb-app">
-	        	<div class="p10">
-	        		<p class="hlb-type">New Apps in</p>
-	        		<p class="hlb-title">Photo <br>Sharing</p>
-	        		<i class="icon-chevron-right icon-white"></i>
-	        	</div>
-        	</div>
-        	<div class="hlb-sp1 hlb-omega hlb-search">
-	        	<div class="p10">
-	        		<div class="hlb-imgbg"><img src="assets/img/highlight-app-bg.png"></div>
-	        		<p class="hlb-type">Must-have</p>
-	        		<p class="hlb-title">Apps <br>Starter Kit</p>
-	        		<i class="icon-list icon-white"></i>
-	        	</div>
-        	</div>
-        	<div class="hlb-sp1 hlb-search">
-	        	<div class="p10">
-	        		<p class="hlb-type">Some People Search for</p>
-	        		<p class="hlb-title">Angry Birds</p>
-	        		<p class="hlb-subtitle">Universe,Games</p>
-	        		<i class="icon-search icon-white"></i>
-	        	</div>
-        	</div>
-        	<div class="hlb-sp1 hlb-app">
-	        	<div class="p10">
-	        		<p class="hlb-type">Enhance for New iPad</p>
-	        		<p class="hlb-subtitle"><img src="assets/img/icon-tpcb.png" class="hlb-icon"> the Photo Cookbook</p>
-	        		<i class="icon-chevron-right icon-white"></i>
-	        	</div>
-        	</div>
-        	<div class="hlb-sp1 hlb-omega hlb-search">
-	        	<div class="p10">
-	        		<div class="hlb-imgbg"><img src="assets/img/highlight-game-bg.png"></div>
-	        		<p class="hlb-type">Must-have</p>
-	        		<p class="hlb-title">Games <br>Starter Kit</p>
-	        		<i class="icon-list icon-white"></i>
-	        	</div>
-        	</div>
-        </div><!--/#highlight-box -->
         
+        <a id="highlightsAnchor" style="display:none"</a> <!--/# highlight box-->
         <a id="filterAnchor" style="display:none"></a><!--/#filter -->
         
         <div id="main" class="container">
@@ -188,10 +111,18 @@
 		apps = data.apps;
 	}});
 	
+	var highlights;
+	$.ajax({ url: 'assets/data/highlights.json', dataType: 'text json',  success: function(data) {
+		highlights = data;
+	}});
+	
+	
 	isLoaded = setInterval( function() {
-		if(filters != null && typeof(filters) != 'undefined' && apps != null && typeof(apps) != 'undefined' ) {
+		if(filters != null && typeof(filters) != 'undefined' && 
+		   apps != null && typeof(apps) != 'undefined' &&
+		   highlights != null && typeof(highlights) != 'undefined' ) {
 			window.clearInterval(isLoaded);
-			window.router = new AppFinder.Routers.WaterfallAppsRouter({waterfallApps: apps, filters: filters });
+			window.router = new AppFinder.Routers.WaterfallAppsRouter({waterfallApps: apps, filters: filters, highlights: highlights });
 	   		Backbone.history.start();
 		}
 	},2000);
