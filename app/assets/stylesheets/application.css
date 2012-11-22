@@ -64,6 +64,7 @@
 	background: #c73b0b;
 }
 
+
 body {
 	margin:85px 0 0;
 	background: url(img/main-bg.jpg);
@@ -505,7 +506,7 @@ a:hover,a:active {
 .card .app-category { font-size: 10px;margin:10px 0 0;}
 
 
-.card .tag, .card .badge {
+.card .tag, .card .badge,.detail .tag, .detail .badge  {
 	display: inline-block;
 	line-height: 18px;
 	font-size: 10px;
@@ -516,36 +517,109 @@ a:hover,a:active {
 	padding:2px 8px 2px 5px;
 	margin:5px 3px;
 }
-.card .tag i, .card .badge i {
+.detail .tag, .detail .badge {
+	font-size: 12px;
+}
+
+.detail .badge {
+	background-color: #ebeece;
+	color: #7d742f;
+}
+.card .tag i, .card .badge i,.detail .tag i, .detail .badge i {
 		vertical-align: bottom;
 
 }
-.card .tag:hover{
+.card .tag:hover,.detail .tag:hover{
 	background-color: #c73b0b;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
 	color: #FFF
 
 }
-.card .badge:hover{
+.card .badge:hover,.detail .badge:hover{
 	background-color: #edb230;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
 	color: #FFF
 
 }
 .popup { display: block; overflow:scroll;}
-.popup .media {padding: 20px 30px;border-bottom: 1px solid #D1CDCD;overflow: hidden;}
-.popup .media-body {}
-.popup .app-icon {margin-right: 9px;}
-.popup .app-name {color: #474747; font-size: 23px;line-height: 1em;margin-bottom: 2px;}
-.popup .app-screenshot {position: relative;margin: 20px 30px;background-color: #F2F0F0;overflow: hidden;}
-.popup .app-long-description { border-top: 1px solid #D1CDCD;height: 100px;padding: 20px 30px 20px;font-size: 13px;line-height: 1.5em;border-bottom-width: 0;word-wrap: break-word;}
-.popup .app-activity {clear: both;padding: 15px 30px 15px 88px;font-size: 13px;border-top: 1px solid #D1CDCD;overflow: hidden;}
-.popup .app-activity  h4 {float: left;width: 50px;margin-left: -58px;margin-right:30px;padding-top: 16px;font-size:13px;font-weight: bold;text-align: right;}
-.popup .tags, .popup .badges {margin: 0 10px -8px 0;}
-.popup .tags > li, .popup .badges > li {display: inline-block;margin: 0 5px 10px 0;}
-.popup .tag {display: inline-block;padding: 0 10px;line-height: 25px;font-weight: normal;color: #605C56;text-shadow: 0 1px rgba(255, 255, 255, 0.4);background: rgba(0, 0, 0, 0.06);border-radius: 2px;}
-.popup .badge {display: inline-block;padding: 0 10px;line-height: 25px;font-weight: normal;color: black;text-shadow: 0 1px rgba(255, 255, 255, 0.4);background: rgba(0, 0, 0, 0.06);border-radius: 10px;}
 .popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 440px;}
+
+.detail a {
+	color:#c73b0b;
+}
+.detail a:hover,.detail a:active {
+	color:#978e43;
+}
+.detail .app-icon {margin-right: 15px;}
+.detail .img-rounded {
+	border-radius: 10px;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+.detail .app-name {color: #474747; font-size: 23px;line-height: 1em;margin-bottom: 10px;padding-top:10px;}
+.detail .app-developer,
+.detail .app-category 
+{
+	font-size: 12px;
+	line-height: 1.8em;
+	color:#a8a8a8;
+}
+.detail .app-category a {
+	color:#5b5b5b;
+}
+.detail .app-category a:hover {
+	color:#978e43;
+
+}
+
+.detail .media {
+	margin-bottom: 10px;
+}
+.detail .app-long-description,.detail .app-short-description { 
+	font-size: 13px;
+	line-height: 1.5em;
+	word-wrap: break-word;
+	margin-bottom: 15px;
+}
+.detail .app-screenshot {
+	position: relative;
+	padding:10px;
+	border-radius: 5px;
+	background-image: url(img/header-bg.png);
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+.detail .btn-group {
+	width: 100%;
+}
+.detail .btn-price {
+	width:43%;
+}
+.detail .btn-install {
+}
+#detail-primary {
+	float: left;
+	display: inline-block;
+	width: 64%;
+	padding: 5px 1%;
+}
+#detail-secondary {
+	float: right;
+	display: inline-block;
+	width: 31%;
+	padding: 5px 1%;
+
+}
+
 
 #infscr-loading {position:absolute;bottom:30px;}
 
+
+.tcontent {
+	height: 100%;
+	overflow: scroll;
+}
+.rslides1_nav.next {
+	border-radius: 30px 0 0 30px;
+}
+.rslides1_nav.prev {
+	border-radius: 0 30px 30px 0;
+}

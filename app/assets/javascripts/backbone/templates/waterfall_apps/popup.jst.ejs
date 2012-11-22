@@ -1,4 +1,102 @@
-<div id="app-id">
+
+<div id="app-<%= id %>" class="detail">
+
+	<div id="detail-primary">
+		<div class="media">
+			
+			<a class="app-icon pull-left" href="#">
+				<% if (icon_url != '') { %>
+					<img class='img-rounded' src="assets/<%= icon_url %>" width="114px" height="114px" />
+				<% } else { %>
+					<img src="http://placehold.it/114x114" />
+				<% } %>
+			</a>
+			<div class="media-body">
+				<div class="media-title">
+					<div class="app-name media-heading">
+						<%= title %>
+					</div>
+				</div>
+				<div class="app-developer">
+					by <a href="#"><%= developer %></a>
+				</div>
+				<div class="app-category">
+					<a href="">Games</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div><!--/media -->
+		<div class="app-short-description">
+				<%= short_description %> <a href="#" class="expand">Expand >></a>
+		</div>
+		<div class="app-long-description none">
+				<%= long_description %> <a href="#" class="folded">Folded <<</a>
+		</div>
+		<div>
+			<div class="app-screenshot" >
+				<ul class="rslides">
+				<% for (i = 0; i < screenshot_url.length; i++ ) { %>
+					<li> <img src ="assets/<%= screenshot_url[i] %>" alt="" /> </li>
+				<% } %>
+				</ul>
+			</div>
+		</div>
+		
+
+
+	</div><!--/.popup-primary-->
+	<div id="detail-secondary">
+		<div class="btn-toolbar">
+			<a href="#" class="btn-group">
+			<span class="btn btn-price btn-info 
+				<% if (price <= 0.5 ) { %>
+	    			 btn-info
+				<% }  %> ">
+				<% if (price <= 0.5 ) { %>
+	    			FREE
+				<% } else {  %> 
+					$<%= price %>
+				<% } %>
+				
+			</span><span class="btn btn-install btn-info">Install</span>
+			</a>
+		</div>
+
+		<div class="clearfix">
+			<div class="app-tags">
+			<% for (var i=0; i < tags.length; i++) { %>
+				<a class="tag" href="javascript:void(0)"><%= tags[i] %></a>
+			<% } %>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="app-badges">
+			<% for (var i=0; i < badges.length; i++) { %>
+				<a class="badge" href="javascript:void(0)"> <span> <%= badges[i] %></span> </a>
+			<% } %>
+			</div>
+		</div>
+		
+		<div class="app-rating clearfix">
+			<% for (var i=0; i< 5; i=i+1) {
+			    if(i < parseInt(ratings)) {  %>
+					<i class='icon-star pull-left'></i>
+				<% } else { %>
+					<i class='icon-star-empty pull-left'></i>
+				<%  } %>
+			<% } %>
+				<div class="app-ratings-count pull-left"> (<%= like_count %>)</div>
+		</div>
+		<div id="detail-related">
+			<div class="detail-secendary-title">Related Apps</div>
+			<div class="detail-apps">
+				<div class="detail-app">
+					<a href="#"><img src="assets/<%= icon_url %>" width="57px" height="57px" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--/#app-id -->
 	<div class="social-share">
 		<ul>
 			<li style="height:31px"><span class="btn btn-small">Facebook</span></li>
@@ -7,66 +105,3 @@
 			<li style="height:31px"><span class="btn btn-small">Pin</span></li>
 		</ul>
 	</div>
-	<div class="media">
-		
-		<a class="app-icon pull-left" href="#">
-			<% if (icon_url != '') { %>
-				<img class='img-rounded' src="assets/<%= icon_url %>" style="width:75px;height:75px" />
-			<% } else { %>
-				<img src="http://placehold.it/75x75" />
-			<% } %>
-		</a>
-		<div class="media-body">
-			<div class="media-title">
-			<div class="app-name media-heading">
-				<%= title %>
-			</div>
-			</div>
-			<div class="app-rating">
-			<% for (var i=0; i< 5; i=i+1) {
-			    if(i < parseInt(ratings)) {  %>
-					<i class='icon-star pull-left'></i>
-				<% } else { %>
-					<i class='icon-star-empty pull-left'></i>
-				<%  } %>
-			<% } %>
-			<div class="app-ratings-count">(<%= like_count %>)</div>
-			</div>
-			<div class="app-developer">
-			by <a href="#"><%= developer %></a>
-			</div>
-		</div>
-		<div class="clearfix"></div>
-	</div><!--/media -->
-	<div>
-		<div class="app-screenshot" >
-			<ul class="rslides">
-			<% for (i = 0; i < screenshot_url.length; i++ ) { %>
-				<li> <img src ="assets/<%= screenshot_url[i] %>" alt="" /> </li>
-			<% } %>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="app-tags app-activity">
-		<h4> Tags </h4>
-		<ul class="tags">
-		<% for (var i=0; i < tags.length; i++) { %>
-			<li> <a class="tag" href="javascript:void(0)"> <%= tags[i] %></a> </li>
-		<% } %>
-		</ul>
-	</div>
-	<div class="app-badges app-activity">
-		<h4> Badges </h4>
-		<ul class="badges">
-		<% for (var i=0; i < badges.length; i++) { %>
-			<li><a class="badge" href="javascript:void(0)"> <span> <%= badges[i] %></span> </a> </li>
-		<% } %>
-		</ul>
-	</div>
-	<div class="app-long-description" >
-		<p>
-			<%= short_description %>
-		</p>
-	</div>
-</div><!--/#app-id -->

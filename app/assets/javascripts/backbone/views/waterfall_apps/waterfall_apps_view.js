@@ -54,7 +54,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   	 var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
 	 	var popupModel = new AppFinder.Models.App(data);
 	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
-	   	TINY.box.show({html:popupView.render().el,width:'800',animate:true,
+	   	TINY.box.show({html:popupView.render().el,width:'940',animate:true,
 	   		openjs:function(){
 	   			console.log("open");
 	      		position = $('body').offset();
@@ -64,7 +64,8 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	      		$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');
 	      		$('body').scrollTop(scrollPosition);
 	      		$('.tmask').css('top',-position.top + 'px');
-	      		$('.tbox').css('height',$(window).height()-100+'px').css('overflow','scroll');
+	      		$('.tbox').css('height',$(window).height()-100+'px');
+	      		$('.tinner').css('height','100%');
 				window.onscroll = function(oEvent) { oEvent.preventDefault(); oEvent.stopPropagation();return false;}
 	      	}, 
       		closejs:function() { 

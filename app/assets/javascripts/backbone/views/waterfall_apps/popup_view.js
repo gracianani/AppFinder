@@ -4,6 +4,14 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
   template: JST["backbone/templates/waterfall_apps/popup"],
   className: "popup",
   tagName: "div",
+  events: {
+    "click .expand" : "toggleDesc",
+    "click .folded" : "toggleDesc"
+  },
+  toggleDesc: function() {
+	  this.$el.find('.app-long-description').toggle();
+	  this.$el.find('.app-short-description').toggle();
+  },
   render: function() {
     $(this.el).html(this.template(this.options.model.toJSON() ));
     setTimeout(function() {$(".rslides").responsiveSlides({
