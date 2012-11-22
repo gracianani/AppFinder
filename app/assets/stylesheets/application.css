@@ -554,7 +554,12 @@ ul,li {
 	color: #FFF
 
 }
+<<<<<<< HEAD
 .popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 440px;}
+=======
+.popup { display: block; overflow:scroll;}
+.popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 540px;}
+>>>>>>> bc1469af06e2ca12bb8fafd352ca0720a9be45df
 
 .detail a {
 	color:#c73b0b;
@@ -607,6 +612,7 @@ ul,li {
 }
 .detail .btn-install {
 }
+
 #detail-primary {
 	float: left;
 	display: inline-block;
@@ -620,7 +626,9 @@ ul,li {
 	padding: 5px 1%;
 
 }
-
+#detail-related .detail-app{
+	padding: 10px 0;
+}
 
 #infscr-loading {position:absolute;bottom:30px;}
 
@@ -647,3 +655,4 @@ ul,li {
 	border-radius: 5px;
 	z-index: 999;
 }
+

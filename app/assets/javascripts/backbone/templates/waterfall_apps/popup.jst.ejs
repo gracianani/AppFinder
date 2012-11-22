@@ -90,9 +90,34 @@
 		<div id="detail-related">
 			<div class="detail-secendary-title">Related Apps</div>
 			<div class="detail-apps">
-				<div class="detail-app">
-					<a href="#"><img src="assets/<%= icon_url %>" width="57px" height="57px" /></a>
-				</div>
+				
+				<% for (var i=0 ; i<similar_apps.length; i++) { %>
+					<div class="detail-app clearfix" >
+					<div class="media" > 
+						<a href="#" class="app-icon pull-left">
+						<img class="img-rounded" src="assets/<%= similar_apps[i].icon %>" width="57px" height="57px" /></a>
+						<div class="media-body">
+						<div class="app-title">
+						<%=similar_apps[i].name %>
+						</div>
+						
+						<div class="app-developer">
+						<%=similar_apps[i].developer %>
+						</div>
+						<div class="app-rating">
+							<% for (var j=0; j< 5; j=j+1) {
+							    if(i < parseInt(similar_apps[i].ratings)) {  %>
+									<i class='icon-star pull-left'></i>
+								<% } else { %>
+									<i class='icon-star-empty pull-left'></i>
+								<%  } %>
+							<% } %>
+						</div>
+						</div>
+					</div>
+					</div>
+				<% }  %>
+			    <div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
