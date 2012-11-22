@@ -40,12 +40,11 @@
 	</div><!--/media -->
 	<div>
 		<div class="app-screenshot" >
-			<% if (screenshot_url != '') { %>
-				<img src="assets/<%= screenshot_url %>" 
-				style="max-width:none;width:<%= screenshot_width %>px;position: relative;margin: 0 auto;display:block;" />
-			<% } else { %>
-				<img src="http://placehold.it/<%= screenshot_width %>x<%= screenshot_height %>" />
+			<ul class="rslides">
+			<% for (i = 0; i < screenshot_url.length; i++ ) { %>
+				<li> <img src ="assets/<%= screenshot_url[i] %>" alt="" /> </li>
 			<% } %>
+			</ul>
 		</div>
 	</div>
 	

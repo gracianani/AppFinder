@@ -56,6 +56,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
 	   	TINY.box.show({html:popupView.render().el,width:'800',animate:true,
 	   		openjs:function(){
+	   			console.log("open");
 	      		position = $('body').offset();
 	      		container.css('top', -position.top + 'px').css('overflow','scroll');
 	      		activePosition = position.top;
