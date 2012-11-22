@@ -18,5 +18,12 @@
   "category" : "Kids",
   "price" : 3.99, 
   "tags" : ["Family", "Kids","Both iPhone & iPad", "Great on iPhone5", "Games", "Puzzle", "Game Center"], 
-  "badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"]
+  "badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
+  "similar_apps" : [
+  	{"id" : "3", "name": "An Awesome Book", "icon" : "appImages/an-awsome-book-logo.jpg", "ratings":"4+", "developer" : "Supercell, Inc"},
+  	{"id" : "4", "name": "Flea Sympony",  "icon" : "appImages/flea-symphony-logo.jpg", "ratings":"4+", "developer" : "Nimbitz, Inc"},
+  	{"id" : "5", "name": "Lazy Riders", "icon" : "appImages/lazy-riders-logo.jpg", "ratings":"4+", "developer" : "Supercell, Inc"},
+  	{"id" : "6", "name": "Animal Legends", "icon" : "appImages/animal-legends-logo.jpg", "ratings":"4+", "developer" : "Facebook, Inc"},
+  	{"id" : "7", "name": "Swackeet", "icon" : "appImages/swackeet-logo.jpg","ratings":"4+",  "developer" : "Zinga, Inc"}
+  ]
 }

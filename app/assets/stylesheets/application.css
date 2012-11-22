@@ -542,7 +542,7 @@ a:hover,a:active {
 
 }
 .popup { display: block; overflow:scroll;}
-.popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 440px;}
+.popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 540px;}
 
 .detail a {
 	color:#c73b0b;
@@ -595,6 +595,7 @@ a:hover,a:active {
 }
 .detail .btn-install {
 }
+
 #detail-primary {
 	float: left;
 	display: inline-block;
@@ -608,7 +609,9 @@ a:hover,a:active {
 	padding: 5px 1%;
 
 }
-
+#detail-related .detail-app{
+	padding: 10px 0;
+}
 
 #infscr-loading {position:absolute;bottom:30px;}
 

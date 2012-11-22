@@ -14,7 +14,10 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template(this.options.model.toJSON() ));
-    setTimeout(function() {$(".rslides").responsiveSlides({
+    
+    setTimeout(function() {
+    	$('.detail-app').tooltip();	
+    	$(".rslides").responsiveSlides({
 	  auto: true,             // Boolean: Animate automatically, true or false
 	  speed: 1000,            // Integer: Speed of the transition, in milliseconds
 	  timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
