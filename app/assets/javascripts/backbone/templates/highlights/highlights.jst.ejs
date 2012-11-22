@@ -1,0 +1,44 @@
+		<div id="recommended-wrap">
+        	<ul  id="recommended">
+        		<% for(i=0; i<recommended.length; i++) { %>
+        			
+        				<% if(recommended[i].type == "link") { %> 
+        					<li class="recommended-item">
+	        					<a href="<%= recommended[i].url %>"><%= recommended[i].name %></a>  
+	        				</li>
+	        			<% } else if (recommended[i].type == "button") { %>
+	        				<li id="highlight" class="recommended-item">
+	        					<div id="highlight-btn" class="btn"><%= recommended[i].name %><i id="highlight-icon"></i></div>
+	        				</li>
+	        			<% } %>   		
+        		<% } %>
+    
+        	</ul><!--/#recommended -->
+        </div><!--/#recommended-wrap -->
+        <div class="clearfix"></div>
+        <div id="highlight-box" class="clearfix none">
+        	<% for( i=0 ; i < highlights.length; i++) { %>
+        	
+    			<div class="hlb-sp<%= highlights[i].size %> hlb-h<%= highlights[i].size %> hlb-<%= highlights[i].type %>"> 
+    				<div class="p<%= highlights[i].size %>0">	
+        	
+	        		<% if( highlights[i].backgroundImg != "") { %>
+	        				<div class="hlb-imgbg"><img src="assets/<%= highlights[i].backgroundImg %>"></div>
+	        		<%	} %>
+	        		
+	        		<p class="hlb-type"> <%= highlights[i].highlightType %> </p>
+	        		
+	        		<% if( highlights[i].subtitle != null ) { 
+	        			 if( highlights[i].subtitle.icon != "" ) { %>
+	        				<img src="assets/<%=  highlights[i].subtitle.icon %>" class="hlb-icon">
+	        			<% }%>
+	        			<p class="hlb-subtitle"> <%= highlights[i].subtitle.name %></p>
+	        		<% } %>
+	        		<p class="hlb-title"> <%= highlights[i].title %> </p>
+	        		<p class="hlb-desc"> <%= highlights[i].description %> </p>
+	        		<i class="<%= highlights[i].icon %>"></i>
+        		</div>
+        		</div>
+        	<% } %>
+        	
+        </div><!--/#highlight-box -->
