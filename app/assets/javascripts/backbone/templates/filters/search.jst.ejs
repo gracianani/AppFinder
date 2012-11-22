@@ -1,43 +1,26 @@
 
         	<div id="filter-box" class="clearfix">
         		<div id="filter-category" class="filter-btn">
-			        <select data-placeholder="Categories" class="chzn-select" id="filter-category-select">
-			          <option value=""></option> 
-			          <option value="">All Categories</option> 
-			          <option value="United Kingdom">Business</option> 
-			          <option value="United States">Developer Tools</option> 
-			          <option value="United States">Education</option> 
-			          <option value="United States">Entertament</option> 
-			          <option value="United Kingdom">Finance</option> 
-			          <optgroup label="Games">
-			          <option value="United Kingdom">All Games</option> 
-			          <option value="United Kingdom">Action</option> 
-			          <option value="United Kingdom">Adventure</option> 
-			          <option value="United Kingdom">Arcade</option> 
-			          <option value="United Kingdom">Board</option> 
-			          <option value="United Kingdom">Card</option> 
-			          <option value="United Kingdom">Casino</option> 
-			          <option value="United Kingdom">Educational</option> 
-			          <option value="United Kingdom">Family</option> 
-			          <option value="United Kingdom">Kids</option> 
-			
-			          </optgroup>
-			          <option value="United Kingdom">Graphics & Design</option> 
-			          <option value="United Kingdom">Health & Fitness</option> 
-			          <option value="United Kingdom">Lifestyle</option> 
-			          <option value="United Kingdom">Medical</option> 
-			          <option value="United Kingdom">Music</option> 
-			          <option value="United Kingdom">News</option> 
-			          <option value="United Kingdom">Photography</option> 
-			        </select>
+        			<select data-placeholder="Categories" class="chzn-select" id="filter-category-select">
+        			<% for (i = 0; i< categories.length; i++) { 
+        				 if (categories[i].children.length == 0) { %>
+        					<option> <%= categories[i].name %> </option>
+        				 <% } else {  %>
+        					<optgroup lable="<%= categories[i].name %>">
+        						<% for (j = 0; j < categories[i].children.length; j++) { %>
+        							<option> <%= categories[i].children[j].name %> </option>
+        						<% } %>
+        					</optiongroup>
+        				<%  } %>
+        			<% } %>
+        			</select>
+			        
                 </div><!-- /category -->
         		<div id="filter-feature" class="filter-btn">
 			        <select data-placeholder="Features" class="chzn-select" id="filter-feature-select">
-			          <option value=""></option> 
-			          <option value="">All Features</option> 
-			          <option value="Top Paid">New & Noteworthy</option> 
-			          <option value="Top Free">What's Hot</option> 
-			          <option value="United States">Enhanced for Retina display</option> 
+			          <% for ( i=0; i< features.length; i++ ) { %>
+			          	 <option> <%= features[i].name %> </option>
+			          <% } %>
 			        </select>
         		</div><!-- /feature -->
 
@@ -65,7 +48,12 @@
 	        	<div id="filter-tag" class="filter-btn">
 	        			<i class="icon-tags dropdown-toggle"><b class="caret pull-right"></b></i>
 	        			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-						    <li><a tabindex="-1" href="#">All Tags</a></li>
+	        				<li><input type="text" style="margin: 1px 7px;padding: 4px 20px 4px 5px;"></input></li>
+						    <li><a href="#"> Education & Kids </a></li>
+						    <li><a href="#">  Kids </a></li>
+						    <li><a href="#">  Education</a> </li>
+						    <li><a href="#">  Book</a></li>
+						    <li><a href="#">  Fun </a></li>
 	        			</ul>
 	        	</div><!-- /tag -->    
 	        	<div id="filter-device" class="filter-btn dropdown">

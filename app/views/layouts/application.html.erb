@@ -176,11 +176,24 @@
 <script type="text/javascript">
   $(function() {
 	
-	var apps = $.ajax({ url: 'assets/data/app.json', dataType: 'text json',  success: function(data) {
-		window.router = new AppFinder.Routers.WaterfallAppsRouter({waterfallApps: data.apps});
-    	Backbone.history.start();
-	} });
+	var filters;
 	
+	$.ajax( {url: 'assets/data/filter.json', dataType: 'text json', success: function(data) {
+		filters = data.filters;	
+	}, error : function(a,b,c) {console.log(a); console.log(b)}});
+	
+	var apps;
+	$.ajax({ url: 'assets/data/app.json', dataType: 'text json',  success: function(data) {
+		apps = data.apps;
+	}});
+	
+	isLoaded = setInterval( function() {
+		if(filters != null && typeof(filters) != 'undefined' && apps != null && typeof(apps) != 'undefined' ) {
+			window.clearInterval(isLoaded);
+			window.router = new AppFinder.Routers.WaterfallAppsRouter({waterfallApps: apps, filters: filters });
+	   		Backbone.history.start();
+		}
+	},2000);
     
   });
 </script>
