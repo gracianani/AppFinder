@@ -79,6 +79,11 @@ a:hover,a:active {
 	color:#404040;
 	text-decoration: none;
 }
+ul,li {
+	list-style: none;
+	padding:0;
+	margin:0;
+}
 
 /* ==========================================================================
    Header style
@@ -444,7 +449,7 @@ a:hover,a:active {
 }
 .card {
 	width:190px;
-	padding:15px 15px;
+	padding:15px 15px 0;
 	float: left;
 	position: relative;
 	display: inline-block;
@@ -458,6 +463,14 @@ a:hover,a:active {
 	margin:-15px -15px 0 -15px;
 	padding:15px 13px;
 	border-radius: 5px 5px 0 0;
+}
+.card-footer {
+	background:#f6f6f3;
+	margin:10px -15px 0 -15px;
+	padding:0 13px 15px;
+	border-radius:  0 0 5px 5px;
+	border-top:1px solid #efefef;
+
 }
 .card .btn-price {
 	width:43px;
@@ -503,7 +516,7 @@ a:hover,a:active {
 
 .card .app-screenshot{ cursor: pointer;}
 .card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;cursor: pointer;}
-.card .app-category { font-size: 10px;margin:10px 0 0;}
+.card .app-category { font-size: 10px;margin:5px 0 5px;}
 
 
 .card .tag, .card .badge,.detail .tag, .detail .badge  {
@@ -541,7 +554,6 @@ a:hover,a:active {
 	color: #FFF
 
 }
-.popup { display: block; overflow:scroll;}
 .popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 440px;}
 
 .detail a {
@@ -615,11 +627,23 @@ a:hover,a:active {
 
 .tcontent {
 	height: 100%;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 .rslides1_nav.next {
 	border-radius: 30px 0 0 30px;
 }
 .rslides1_nav.prev {
 	border-radius: 0 30px 30px 0;
+}
+
+.smlDropdown {
+	position: relative;
+}
+.smlDropdown-menu {
+	position: absolute;
+	padding:10px;
+	background:#fff;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+	border-radius: 5px;
+	z-index: 999;
 }

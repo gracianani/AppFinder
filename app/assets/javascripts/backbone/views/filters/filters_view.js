@@ -2,7 +2,9 @@ AppFinder.Views.Filters = AppFinder.Views.Filters || {};
 
 AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   template: JST["backbone/templates/filters/search"],
-  events: {},
+  events: {
+
+  },
   tagName : "div",
   className : "container",
   id: "filter",
@@ -13,7 +15,8 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 		
 		$(".chzn-select").chosen({allow_single_deselect: true});
 		$('.dropdown-toggle').dropdown();
-	}, 500);
+		
+	}, 0);
   	
   	return this;
   }
