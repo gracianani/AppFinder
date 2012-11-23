@@ -87,26 +87,29 @@
 		</div>
 		<div class="app-badges">
 		<% for (var i=0; i < badges.length; i++) {  %>
-			<a class="badge" href="javascript:void(0)"><%= badges[i] %> </a>
+			<a class="badge" href="javascript:void(0)"><i class='icon-certificate icon-white'></i> <%= badges[i] %> </a>
 		<% } %>
 		</div>
 		
-	
-	<div class="app-category">
-		<a href="#"><%= category %></a>
-	</div>
-	<div class="app-like pull-left">
-		<i class="icon-heart 
-			<% if ( like == false ) { %> 
-				icon-gray
+	<div class="card-footer">
+		<div class="app-category">
+			<a href="#"><%= category %></a>
+		</div>
+		<div class="clearfix">
+		<div class="app-like pull-left">
+			<i class="icon-heart 
+				<% if ( like == false ) { %> 
+					icon-gray
+				<% } %>
+			"></i>
+			<%= like_count %>
+		</div>
+		<div class="app-video pull-right">
+			<% if ( video_url != "" ) { %>
+				<a href="<%= video_url %>"><i class="icon-facetime-video"></i></a>
+				
 			<% } %>
-		"></i>
-		<%= like_count %>
-	</div>
-	<div class="app-video pull-right">
-		<% if ( video_url != "" ) { %>
-			<a href="<%= video_url %>"><i class="icon-facetime-video"></i></a>
-			
-		<% } %>
+		</div>
+		</div>
 	</div>
 </div><!--/#app-<%= id %> -->

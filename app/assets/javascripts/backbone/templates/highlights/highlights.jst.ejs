@@ -22,21 +22,28 @@
     			<div class="hlb-sp<%= highlights[i].size %> hlb-h<%= highlights[i].size %> hlb-<%= highlights[i].type %>"> 
     				<div class="p<%= highlights[i].size %>0">	
         	
-	        		<% if( highlights[i].backgroundImg != "") { %>
+	        		<% if( highlights[i].backgroundImg != null && highlights[i].backgroundImg != "") { %>
 	        				<div class="hlb-imgbg"><img src="assets/<%= highlights[i].backgroundImg %>"></div>
 	        		<%	} %>
-	        		
-	        		<p class="hlb-type"> <%= highlights[i].highlightType %> </p>
-	        		
-	        		<% if( highlights[i].subtitle != null ) { 
-	        			 if( highlights[i].subtitle.icon != "" ) { %>
-	        				<img src="assets/<%=  highlights[i].subtitle.icon %>" class="hlb-icon">
-	        			<% }%>
-	        			<p class="hlb-subtitle"> <%= highlights[i].subtitle.name %></p>
+	        		<% if( highlights[i].kicker != null &&  highlights[i].kicker != "") { %>
+	        			<p class="hlb-kicker"> <%= highlights[i].kicker %> </p>
+	        		<%	} %>
+	        		<% if (highlights[i].size > 1)  { %>
+	        			<p class="hlb-subtitle"> <%= highlights[i].subtitle %></p>
+	        		<% } %>	
+	        		<% if( highlights[i].title != null &&  highlights[i].title != "") { %>
+	        			<p class="hlb-title"> <%= highlights[i].title %> </p>	
+	        		<% } %>	
+	        		<% if( highlights[i].icon != null &&  highlights[i].icon != "") { %>
+	        				<img src="assets/<%=  highlights[i].icon %>" class="hlb-icon">
+	        		<% }%>
+	        		<% if( highlights[i].size ==1 && highlights[i].subtitle != null ) { %>
+	        			<p class="hlb-subtitle"> <%= highlights[i].subtitle %></p>
 	        		<% } %>
-	        		<p class="hlb-title"> <%= highlights[i].title %> </p>
-	        		<p class="hlb-desc"> <%= highlights[i].description %> </p>
-	        		<i class="<%= highlights[i].icon %>"></i>
+	        		<% if( highlights[i].description != null ) { %>
+	        			<p class="hlb-desc"> <%= highlights[i].description %> </p>
+	        		<% } %>
+	        		<i class="icon-white icon-<%=highlights[i].type %>"></i>
         		</div>
         		</div>
         	<% } %>

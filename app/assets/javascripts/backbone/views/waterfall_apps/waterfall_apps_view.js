@@ -58,7 +58,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 	   		openjs:function(){
 	   			console.log("open");
 	      		position = $('body').offset();
-	      		container.css('top', -position.top + 'px').css('overflow','scroll');
+	      		container.css('top', -position.top + 'px');
 	      		activePosition = position.top;
 	      		scrollPosition = $('body').scrollTop();
 	      		$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');

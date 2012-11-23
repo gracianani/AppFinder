@@ -8,71 +8,62 @@
 	], 
 	"highlights" : [
 		{  	
+			"type": "list",
 			"size" : 2,
-			"highlightType" : "Editor's Choice", 
-			"backgroundImg": "img/highlight-big-bg.png", 
-			"subtitle": {"name" : "Popular" , "icon" : ""}, 
-			"title": "Puzzlers",
+			"kicker" : "Editor's Choice",
+			"title": "Puzzlers", 
+			"subtitle": "Popular", 
 			"description": "Brain Testing Games",
-			"icon" : "icon-list icon-white", 
-			"type": "list"
+			"backgroundImg": "img/highlight-big-bg.png", 
+			"url":"#"
 		},
 		{
+			"type": "search",
 			"size" : 1,
-			"highlightType" : "Most People Search for",
-			"backgroundImg" : "",
-			"subtitle" : {"name" : "Kids,Document", "icon" : ""},
+			"kicker" : "Most People Search for",
+			"subtitle" : "Kids,Document",
 			"title" : "Education",
-			"description" : "",
-			"icon": "icon-white icon-search",
-			"type": "search"
+			"url":"#"
+
 		},
 		{
+			"type": "app",
 			"size" : 1,
-			"highlightType" : "New Apps in",
-			"backgroundImg" : "",
+			"kicker" : "New Apps in",
 			"title" : "Photo <br>Sharing",
-			"description" : "",
-			"icon" : "icon-chevron-right icon-white",
-			"type": "app"
+			"url":"#"
 		},
 		{
+			"type": "search",
 			"size" : 1,
-			"highlightType" : "Must-have",
-			"backgroundImg" : "img/highlight-app-bg.png",
+			"kicker" : "Must-have",
 			"title" : "Apps <br>Starter Kit",
-			"description" : "",
-			"icon" : "icon-list icon-white",
-			"type": "search"
+			"backgroundImg" : "img/highlight-app-bg.png",
+			"url":"#"
 		},
 		{
+			"type": "search",
 			"size" : 1,
-			"highlightType" : "Some People Search for",
-			"backgroundImg" : "",
+			"kicker" : "Some People Search for",
 			"title" : "Angry Birds",
-			"subtitle" : {"name" : "Universe,Games", "icon" :  ""},
-			"description" : "",
-			"icon" : "icon-search icon-white",
-			"type": "search"
+			"subtitle" : "Universe, Games",
+			"url":"#"
 		},
 		{
+			"type": "app",
 			"size" : 1,
-			"highlightType" : "Enhance for New iPad",
-			"backgroundImg" : "",
-			"title" : "Angry Birds",
-			"subtitle" : { "name" : "the Photo Cookbook", "icon":"img/icon-tpcb.png" },
-			"description" : "",
-			"icon" : "icon-chevron-right icon-white",
-			"type": "search"
+			"kicker" : "Enhance for New iPad",
+			"icon":"img/icon-tpcb.png",
+			"subtitle" : "the Photo Cookbook",
+			"url":"#"
 		},
 		{
+			"type": "search",
 			"size" : 1,
-			"highlightType" : "Must-have",
-			"backgroundImg" : "img/highlight-game-bg.png",
+			"kicker" : "Must-have",
 			"title" : "Games <br>Starter Kit",
-			"description" : "",
-			"icon" : "icon-list icon-white",
-			"type": "search"
+			"backgroundImg" : "img/highlight-game-bg.png",
+			"url":"#"
 		}
 	]
 }
