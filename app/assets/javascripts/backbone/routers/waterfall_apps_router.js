@@ -28,9 +28,9 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	    this.indexView = new AppFinder.Views.WaterfallApps.IndexView({waterfallApps: this.waterfallApps});
 	    this.indexView.render();
 	    this.filterView = new AppFinder.Views.Filters.FiltersView({filters: this.filters});
-
-	    $(this.filterView.render().el).insertAfter('#filterAnchor');
+		$(this.filterView.render().el).insertAfter('#filterAnchor');
 	    $("#filterAnchor").remove();
+	    
 	    this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
 	    $(this.highlightsView.render().el).insertAfter('#highlightsAnchor');
 	    $("#highlightsAnchor").remove();

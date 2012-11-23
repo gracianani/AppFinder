@@ -20,7 +20,6 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 		$("#filter-category-select").chosen({allow_single_deselect: true, selectedTo: "#filter-category-result"});
 		$("#filter-feature-select").chosen({allow_single_deselect: true, selectedTo: "#filter-feature-result"});
 		$("#filter-tags-select,#filter-country-select").chosen();
-		//$(".chzn-select").chosenForTappollo({allow_single_deselect: true});
 		$('.smlDropdown').smlDropdown();
 		
 		$('#filter-rating-low').raty({
@@ -45,6 +44,8 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 		  	selector.find('option[value="'+tagValue+'"]').attr('selected','1');
 		  	selector.trigger("liszt:updated");
 		});
-	}, 0);
+	}, 10);
+	 return this;
+	}
   	
 });
