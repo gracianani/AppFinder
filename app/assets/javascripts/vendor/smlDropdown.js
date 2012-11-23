@@ -16,20 +16,26 @@
       // Namespacing
         namespace = settings.namespace,
         namespaceIdx = namespace + i,
-        $menu;
+        $menu,
+        hideOtherMenu = function(){
+	        $('.smlDropdown.open').not($this).removeClass('open').find('.smlDropdown-menu').hide();
+        };
         
         $menu = $this.find('.smlDropdown-menu');
         $menu.bind('click',function(e){
-        	e.stopPropagation();
+        	if ( $menu[0] == e.currentTarget ) {
+	        	e.stopPropagation();
+        	}	
         });
     	$this.bind('click',function(e){
     		e.stopPropagation();
-	    	$this.toggleClass('over');
+    		hideOtherMenu();
+	    	$this.toggleClass('open');
 	    	$menu.toggle();	    		
     	});
     	$(window).bind('click',function(e){
     		
-	    		$this.removeClass('over');
+	    		$this.removeClass('open');
 	    		$menu.hide();
     		
     	});

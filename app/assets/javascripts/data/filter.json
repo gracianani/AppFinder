@@ -74,7 +74,13 @@
  			{"name" : "Stunts and Tricks"},
 			{"name" : "Block Games"},
 			{"name" : "Brain Teaser and Trainer"},
-			{"name" : "World Fact Quizzes"}
+			{"name" : "World Fact Quizzes"},
+			{"name" : "Puzzles"},
+			{"name" : "Bubble"},
+			{"name" : "Word"},
+			{"name" : "Block"},
+			{"name" : "Brain Teaser"},
+			{"name" : "Quizzes"}
 	], 
 	"popularTags": [
 			{"name" : "Suduku"}, 
