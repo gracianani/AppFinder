@@ -2,13 +2,15 @@
         	<div id="filter-box" class="clearfix">
         		<div id="filter-category" class="filter-btn">
         			<select data-placeholder="Categories" class="chzn-select" id="filter-category-select">
+        			<option value=""></option>
+        			<option value="">All Categories</option>
         			<% for (i = 0; i< categories.length; i++) { 
         				 if (categories[i].children.length == 0) { %>
-        					<option> <%= categories[i].name %> </option>
+        					<option value="<%= categories[i].name %>"> <%= categories[i].name %> </option>
         				 <% } else {  %>
         					<optgroup lable="<%= categories[i].name %>">
         						<% for (j = 0; j < categories[i].children.length; j++) { %>
-        							<option> <%= categories[i].children[j].name %> </option>
+        							<option value="<%= categories[i].children[j].name %>"> <%= categories[i].children[j].name %> </option>
         						<% } %>
         					</optiongroup>
         				<%  } %>
@@ -18,8 +20,10 @@
                 </div><!-- /category -->
         		<div id="filter-feature" class="filter-btn">
 			        <select data-placeholder="Features" class="chzn-select" id="filter-feature-select">
+			        <option value=""></option>
+        			<option value="">All Features</option>
 			          <% for ( i=0; i< features.length; i++ ) { %>
-			          	 <option> <%= features[i].name %> </option>
+			          	 <option value="<%= features[i].name %>"> <%= features[i].name %> </option>
 			          <% } %>
 			        </select>
         		</div><!-- /feature -->
@@ -45,16 +49,23 @@
 	        	<div id="filter-lan" class="filter-btn">
 	        			<i class="icon-globe"></i>
 	        	</div><!-- /place -->
-	        	<div id="filter-tag" class="filter-btn">
-	        			<i class="icon-tags dropdown-toggle"><b class="caret pull-right"></b></i>
-	        			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-	        				<li><input type="text" style="margin: 1px 7px;padding: 4px 20px 4px 5px;"></input></li>
-						    <li><a href="#"> Education & Kids </a></li>
-						    <li><a href="#">  Kids </a></li>
-						    <li><a href="#">  Education</a> </li>
-						    <li><a href="#">  Book</a></li>
-						    <li><a href="#">  Fun </a></li>
-	        			</ul>
+	        	<div id="filter-tag" class="filter-btn smlDropdown">
+	        			<i class="icon-tags smlDropdown-toggle"><b class="caret pull-right"></b></i>
+	        			<div class="smlDropdown-menu" role="menu" aria-labelledby="dLabel">
+	        				<select data-placeholder="Tags" class="chzn-select" multiple="" id="filter-tags-select">
+        			<% for (i = 0; i< categories.length; i++) { 
+        				 if (categories[i].children.length == 0) { %>
+        					<option> <%= categories[i].name %> </option>
+        				 <% } else {  %>
+        					<optgroup lable="<%= categories[i].name %>">
+        						<% for (j = 0; j < categories[i].children.length; j++) { %>
+        							<option> <%= categories[i].children[j].name %> </option>
+        						<% } %>
+        					</optiongroup>
+        				<%  } %>
+        			<% } %>
+        					</select>
+	        			</div>
 	        	</div><!-- /tag -->    
 	        	<div id="filter-device" class="filter-btn dropdown">
 	        			<i class="icon-device dropdown-toggle"><b class="caret pull-right"></b></i>

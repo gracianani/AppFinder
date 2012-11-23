@@ -13,7 +13,7 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   	$(this.el).html(this.template(this.options.filters.toJSON()[0]));
 	setTimeout( function (){
 		
-		$(".chzn-select").chosen({allow_single_deselect: true});
+		$(".chzn-select").chosen();
 		$('.dropdown-toggle').dropdown();
 		
 	}, 0);
