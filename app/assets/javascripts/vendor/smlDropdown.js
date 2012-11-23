@@ -18,22 +18,24 @@
         namespaceIdx = namespace + i,
         $menu,
         hideOtherMenu = function(){
-	        $('.smlDropdown.over').removeClass('over').find('.smlDropdown-menu').hide();
+	        $('.smlDropdown.open').not($this).removeClass('open').find('.smlDropdown-menu').hide();
         };
         
         $menu = $this.find('.smlDropdown-menu');
         $menu.bind('click',function(e){
-        	e.stopPropagation();
+        	if ( $menu[0] == e.currentTarget ) {
+	        	e.stopPropagation();
+        	}	
         });
     	$this.bind('click',function(e){
     		e.stopPropagation();
     		hideOtherMenu();
-	    	$this.toggleClass('over');
+	    	$this.toggleClass('open');
 	    	$menu.toggle();	    		
     	});
     	$(window).bind('click',function(e){
     		
-	    		$this.removeClass('over');
+	    		$this.removeClass('open');
 	    		$menu.hide();
     		
     	});

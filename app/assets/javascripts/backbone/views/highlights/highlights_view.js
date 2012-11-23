@@ -4,9 +4,7 @@ AppFinder.Views.Highlights.HighlightsView = Backbone.View.extend({
   template: JST["backbone/templates/highlights/highlights"],
   events: {
   	"click #highlight-btn" : "showHighlight",
-  	"mouseleave #highlight-box" : "leave", 
-  	"mouseenter #highlight-box" : "enter",
-  	"mouseleave #highlight-btn" :"leave"
+
   },
   tagName : "div",
   className : "container",
