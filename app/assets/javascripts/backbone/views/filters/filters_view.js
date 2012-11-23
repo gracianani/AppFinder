@@ -23,6 +23,21 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 		//$(".chzn-select").chosenForTappollo({allow_single_deselect: true});
 		$('.smlDropdown').smlDropdown();
 		
+		$('#filter-rating-low').raty({
+			'half':true,
+			'score':1,
+			'targetKeep':true,
+			'targetType':'number',
+			'target':'#filter-rating-low-hint'
+		});
+		$('#filter-rating-high').raty({
+			'half':true,
+			'score':5,
+			'targetKeep':true,
+			'targetType':'number',
+			'target':'#filter-rating-high-hint'
+		});
+		
 		that.$el.find('.filter-tag-link').bind('click',function(e){
 		  	e.preventDefault();
 		  	var tagValue = $(e.target).html();

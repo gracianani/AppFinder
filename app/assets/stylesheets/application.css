@@ -80,6 +80,7 @@
 }
 .smlDropdown-inner {
 	padding:10px;
+	line-height: 2em;
 }
 .smlDropdown-inner .chzn-container-single .chzn-single{
 	font-size: 12px;
@@ -129,6 +130,7 @@ ul,li {
 h4 {
 	font-weight: normal;
 	color: #333;
+	font-size: 14px;
 }
 
 /* ==========================================================================
@@ -429,7 +431,7 @@ h4 {
 	width:250px;
 }
 #filter-tag .filter-tag-link {
-	margin:2px;
+	margin:5px 2px;
 	font-size: 12px;
 }
 .chzn-drop {
