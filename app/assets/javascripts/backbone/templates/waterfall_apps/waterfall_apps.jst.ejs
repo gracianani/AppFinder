@@ -14,16 +14,11 @@
 		</a>
 		<div class="media-body">
 			
-			<div class="app-rating">
-			<% for (var i=0; i< 5; i=i+1) {
-			    if(i < parseInt(ratings)) {  %>
-					<i class='icon-star pull-left'></i>
-				<% } else { %>
-					<i class='icon-star-empty pull-left'></i>
-				<%  } %>
-			<% } %>
-				<div class="app-ratings-count pull-left"> (<%= like_count %>)</div>
+			<div>
+				<span class="app-rating"></span>
+				<span class="app-ratings-count"> (<%= like_count %>)</span>
 			</div>
+			
 			<div class="app-developer">
 				by <a href="#"><%= developer %></a>
 			</div>

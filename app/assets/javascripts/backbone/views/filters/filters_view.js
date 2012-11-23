@@ -44,7 +44,7 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 		  	selector.find('option[value="'+tagValue+'"]').attr('selected','1');
 		  	selector.trigger("liszt:updated");
 		});
-	}, 10);
+	}, 0);
 	 return this;
 	}
   	

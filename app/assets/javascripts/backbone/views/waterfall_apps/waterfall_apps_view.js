@@ -87,14 +87,30 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
 
   render: function() {
 
-  	var that = $(this.el);
-    that.html(this.template(this.model.toJSON() ));
-    that.mosaic({'animation':'slide'});
+	var that = this;
+  	var $el = $(this.el);
+    $el.html(this.template(this.model.toJSON() ));
+    $el.mosaic({'animation':'slide'});
     
+    var ratingStr = this.model.get('ratings');
+    var ratings = parseFloat(ratingStr);
+    if ( ratingStr.indexOf('+') > 0 ) {
+	    ratings += 0.5
+    }
+    
+
     setTimeout(function(){
-	   	var shortdesc = that.find('.app-short-description');
+	   	var shortdesc = $el.find('.app-short-description');
 		shortdesc.css('bottom', '-' + shortdesc.outerHeight()+'px');	
-		that.mosaic({'animation':'slide'});
+		$el.mosaic({'animation':'slide'});
+		
+		$el.find('.app-rating').raty({
+		'readOnly':true,
+		'space':false,
+		'score':ratings
+		
+		});
+		
     },0);
 
     return this;
