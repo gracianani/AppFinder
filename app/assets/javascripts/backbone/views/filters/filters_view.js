@@ -7,11 +7,12 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   className : "container",
   id: "filter",
   render: function(){
-    console.log(this.options.filters.toJSON());
   	$(this.el).html(this.template(this.options.filters.toJSON()[0]));
 	setTimeout( function (){
 		
-		$(".chzn-select").chosen({allow_single_deselect: true});
+		$("#filter-category-select").chosen({allow_single_deselect: true, selectedTo: "#filter-category-result"});
+		$("#filter-feature-select").chosen({allow_single_deselect: true, selectedTo: "#filter-feature-result"});
+		//$(".chzn-select").chosenForTappollo({allow_single_deselect: true});
 		$('.dropdown-toggle').dropdown();
 	}, 500);
   	
