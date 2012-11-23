@@ -20,7 +20,7 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 		//$(".chzn-select").chosenForTappollo({allow_single_deselect: true});
 		$('.smlDropdown').smlDropdown();
 	}, 100);
-  	
+ 
   	return this;
   }
 });

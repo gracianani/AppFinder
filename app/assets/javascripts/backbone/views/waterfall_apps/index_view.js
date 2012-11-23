@@ -32,7 +32,7 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
     	nextSelector : "#page-nav a", // selector for the NEXT link (to page 2)
     	itemSelector : "div",  // selector for all items you'll retrieve
         dataType: 'json',
-        debug: true,
+        debug: false,
         appendCallback: false,
     	loading : {
     		finishedMsg: "no more pages to load",
@@ -47,7 +47,6 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
 	    	$.each(newElements.apps, function(index, item) {
 	    		item.id=item.id+page.state.currPage*20;
 	    		var view = that.addOne(new AppFinder.Models.App(item));
-	    		console.log(view.el);
 	    		$('#waterfallApps').masonry('appended',$(view.el), true);
 	    	});
       	});

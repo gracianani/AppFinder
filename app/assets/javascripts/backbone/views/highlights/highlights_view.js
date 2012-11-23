@@ -32,7 +32,6 @@ AppFinder.Views.Highlights.HighlightsView = Backbone.View.extend({
   	
   },
   render: function(){
-  	console.log(this.model.toJSON());
   	$(this.el).html(this.template(this.model.toJSON()));
   	return this;
   }
