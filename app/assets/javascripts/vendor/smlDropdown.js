@@ -15,11 +15,23 @@
       var $this = $(this),
       // Namespacing
         namespace = settings.namespace,
-        namespaceIdx = namespace + i;
-    	$this.bind('click',function(){
+        namespaceIdx = namespace + i,
+        $menu;
+        
+        $menu = $this.find('.smlDropdown-menu');
+        $menu.bind('click',function(e){
+        	e.stopPropagation();
+        });
+    	$this.bind('click',function(e){
+    		e.stopPropagation();
 	    	$this.toggleClass('over');
-	    	console.log('here');
-	    	$this.find('.smlDropdown-menu').toggle();
+	    	$menu.toggle();	    		
+    	});
+    	$(window).bind('click',function(e){
+    		
+	    		$this.removeClass('over');
+	    		$menu.hide();
+    		
     	});
     });
  };
