@@ -16,7 +16,10 @@
       // Namespacing
         namespace = settings.namespace,
         namespaceIdx = namespace + i,
-        $menu;
+        $menu,
+        hideOtherMenu = function(){
+	        $('.smlDropdown.over').removeClass('over').find('.smlDropdown-menu').hide();
+        };
         
         $menu = $this.find('.smlDropdown-menu');
         $menu.bind('click',function(e){
@@ -24,6 +27,7 @@
         });
     	$this.bind('click',function(e){
     		e.stopPropagation();
+    		hideOtherMenu();
 	    	$this.toggleClass('over');
 	    	$menu.toggle();	    		
     	});

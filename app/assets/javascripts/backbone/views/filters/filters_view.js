@@ -17,6 +17,7 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 
 		$("#filter-category-select").chosen({allow_single_deselect: true, selectedTo: "#filter-category-result"});
 		$("#filter-feature-select").chosen({allow_single_deselect: true, selectedTo: "#filter-feature-result"});
+		$("#filter-tags-select").chosen();
 		//$(".chzn-select").chosenForTappollo({allow_single_deselect: true});
 		$('.smlDropdown').smlDropdown();
 	}, 100);
