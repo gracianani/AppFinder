@@ -12,14 +12,14 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 	  //$(e.currentTarget).toggleClass('over');
   },
   render: function(){
-    console.log(this.options.filters.toJSON());
   	$(this.el).html(this.template(this.options.filters.toJSON()[0]));
 	setTimeout( function (){
-		
-		$(".chzn-select").chosen();
-		//$('.dropdown-toggle').dropdown();
+
+		$("#filter-category-select").chosen({allow_single_deselect: true, selectedTo: "#filter-category-result"});
+		$("#filter-feature-select").chosen({allow_single_deselect: true, selectedTo: "#filter-feature-result"});
+		//$(".chzn-select").chosenForTappollo({allow_single_deselect: true});
 		$('.smlDropdown').smlDropdown();
-	}, 0);
+	}, 100);
   	
   	return this;
   }

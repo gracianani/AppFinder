@@ -1,6 +1,7 @@
 {"filters" : 
 	{
 	"categories" :  [
+		{"name" : "All Category", "children" : []},
 		{"name" : "Business","children" : []},
 		{"name" : "Developer Tools", "children" : []},
 		{"name" : "Education", "children" : []},
@@ -45,6 +46,7 @@
 		]
 	, 	
 	"features" : [ 
+		{ "name" : "All Features", "children" : [] },
 		{ "name" : "New and Noteworthy", "children" : []},
 		{ "name" : "What is Hot", "children" : []},
 		{ "name" : "Enhanced for Retina Display", "children" : []},
