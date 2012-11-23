@@ -75,8 +75,11 @@
 	z-index: 999;
 	min-width: 150px;
 	padding:5px 0;
+	display: none;
 }
-
+.smlDropdown-inner {
+	padding:10px;
+}
 .smlDropdown-menu li > a {
 	display: block;
 	padding:5px 10px;
@@ -318,7 +321,7 @@ ul,li {
 		
 	cursor: pointer;
 }
-.filter-btn:hover,.filter-btn:active {
+.filter-btn:hover,.filter-btn:active,.filter-btn:focus,.filter-btn.over {
 	background: -moz-linear-gradient(rgba(235,235,235,0.8), rgba(252,252,252,1));
 	background: -webkit-linear-gradient(rgba(235,235,235,0.8), rgba(252,252,252,1));
 	background: -o-linear-gradient(rgba(252,252,252,0.4), rgba(235,235,235,0.8));
@@ -557,7 +560,7 @@ ul,li {
 .card .app-category { font-size: 10px;margin:5px 0 5px;}
 
 
-.card .tag, .card .badge,.detail .tag, .detail .badge  {
+.tag,.badge  {
 	display: inline-block;
 	line-height: 18px;
 	font-size: 10px;
@@ -580,13 +583,13 @@ ul,li {
 		vertical-align: bottom;
 
 }
-.card .tag:hover,.detail .tag:hover{
+.tag:hover,.detail .tag:hover{
 	background-color: #c73b0b;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
 	color: #FFF
 
 }
-.card .badge:hover,.detail .badge:hover{
+.badge:hover,.detail .badge:hover{
 	background-color: #edb230;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
 	color: #FFF

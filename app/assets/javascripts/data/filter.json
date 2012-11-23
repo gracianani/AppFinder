@@ -53,15 +53,12 @@
 		]	
 	, 
 	"tags": [
-		{ "name" : "Puzzle Games" , "children" : [
 			{"name" : "Suduku"}, 
 			{"name" : "Tic Tac Toe"},
 			{"name" : "Tile Puzzles"},
 			{"name" : "Bubble Shooter Games"},
 			{"name" : "Word Games"},
-			{"name" : "Memory Games"}
- 			]},
- 		{ "name" : "Business City Simulations", "children" : [
+			{"name" : "Memory Games"},
  			{"name" : "Zombie Games"},
  			{"name" : "Role Playing Advantures"},
  			{"name" : "Gun Shotting"},
@@ -69,9 +66,7 @@
  			{"name" : "Quest and Mystery"},
 			{"name" : "Fashion and Style Games"},
 			{"name" : "Virtual Pets and Families"},
-			{"name" : "War Games"}
- 			]},
-		{ "name" : "Quiz and Triva and more", "children" : [
+			{"name" : "War Games"},
  			{"name" : "Music Games"},
  			{"name" : "Guessing Games"},
  			{"name" : "Movie Triva"},
@@ -80,8 +75,17 @@
 			{"name" : "Block Games"},
 			{"name" : "Brain Teaser and Trainer"},
 			{"name" : "World Fact Quizzes"}
- 			]}
-		]
+	], 
+	"popularTags": [
+			{"name" : "Suduku"}, 
+			{"name" : "Tic Tac Toe"},
+			{"name" : "Puzzles"},
+			{"name" : "Bubble"},
+			{"name" : "Word"},
+			{"name" : "Block"},
+			{"name" : "Brain Teaser"},
+			{"name" : "Quizzes"}
+	]
 	
 }
 }
