@@ -10,7 +10,9 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
     "click .destroy" : "destroy",
     "click .app-share-btn" : "toggleShareMenu",
     "click div.app-like" : "toggleLike", 
-    "click img,.app-short-description" : "showDetail"
+    "click img,.app-short-description,.app-name" : "showDetail",
+    "mouseenter" : "onMouseEnter",
+    "mouseleave" : "onMouseLeave"
   },
   
   initialize : function(){
@@ -47,6 +49,12 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   	  	  this.mouseover = false;
 	  	  $('.card').not(this.$el).animate({'opacity':'1'},500);
   	  }
+  },
+  onMouseEnter : function(e) {
+	  this.$el.find('.btn-install').addClass('btn-info');
+  },
+  onMouseLeave : function(e) {
+	  this.$el.find('.btn-install').removeClass('btn-info');
   },
   showDetail: function(e)
   {

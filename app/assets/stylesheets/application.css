@@ -535,11 +535,15 @@ h4 {
 	border-top:1px solid #efefef;
 
 }
+.card .app-name {
+	width:155px;
+	cursor: pointer;
+}
 .card .btn-price {
 	width:43px;
 }
 .card .btn-install {
-	width:68px;
+	width:130px;
 }
 .card .app-developer,
 .card .app-ratings-count{ 
@@ -547,6 +551,46 @@ h4 {
 	font-size: 10px;
 	line-height: 14px;
 	color:#a8a8a8;
+}
+
+.card .app-priceContainer {
+	position: absolute;
+	z-index: 2;
+	top: -1px;
+	right: -1px;
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	border-radius: 4px 0 4px 0;
+}
+.card .app-price {
+	position: absolute;
+	z-index: 2;
+	top: 10px;
+	right: -38px;
+	width: 125px;
+	height: 22px;
+	padding-top: 3px;
+	text-align: center;
+	font-size: 11px;
+	color: #524D4D;
+	background-color: whitesmoke;
+	overflow: hidden;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.card .app-price.free {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#d8651d),to(#b52806));
+	background-image: -webkit-linear-gradient(top,#d8651d,#b52806);
+	background-image: -o-linear-gradient(top,#d8651d,#b52806);
+	background-image: linear-gradient(to bottom,#d8651d,#b52806);
+	background-image: -moz-linear-gradient(top,#d8651d,#b52806);
+	color: #FFF;	
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+
 }
 
 .card .app-developer {margin-top:5px;}
@@ -618,7 +662,7 @@ h4 {
 
 }
 
-.popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 440px;}
+.popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 500px;}
 
 
 .detail a {
@@ -664,13 +708,21 @@ h4 {
 	background-image: url(img/header-bg.png);
 	box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
-.detail .btn-group {
-	width: 100%;
-}
-.detail .btn-price {
-	width:43%;
-}
 .detail .btn-install {
+	width: 80%;
+}
+.detail .span-price,.span-install {
+	display: inline-block;
+	margin:-5px 0;
+	padding:5px 0;
+}
+.detail .span-price {
+	width:33%;
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+.detail .span-install {
+	width:66%;
+	border-left: 1px solid rgba(0,0,0,0.1);
 }
 
 #detail-primary {
