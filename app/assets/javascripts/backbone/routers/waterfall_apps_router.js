@@ -44,7 +44,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
        
        var showModel = new AppFinder.Models.App(data);
        var showView = new AppFinder.Views.WaterfallApps.ShowView({model: showModel});
-       $("#waterfallApps").html(showView.render().el);
+       $("#main").html(showView.render().el);
     }});
   },
   popup: function(id) {

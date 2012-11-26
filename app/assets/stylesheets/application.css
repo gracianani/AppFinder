@@ -330,7 +330,9 @@ h4 {
 /* ==========================================================================
    Filter Bar style
    ========================================================================== */
-
+#filter {
+	margin-bottom: 20px;
+}
 #filter-box{
 	background: #FCFCFC;
 	background: -moz-linear-gradient(rgba(252,252,252,0.8), rgba(235,235,235,0.8));
@@ -419,6 +421,7 @@ h4 {
 .icon-price {
 	background-image:url(img/icon-price.png);
 }
+
 .icon-globe {
 	background-image:url(img/icon-globe.png);
 }
@@ -540,7 +543,7 @@ h4 {
    Card style
    ========================================================================== */
 .waterfall {
-	margin:20px -10px;
+	margin:0 -10px 20px;
 }
 .card {
 	width:190px;
@@ -778,7 +781,30 @@ h4 {
 #detail-related .detail-app{
 	padding: 10px 0;
 }
-
+.detail-like {
+	margin-right: 15px;
+}
+.detail-like p,.detail-pin p {
+	font-size: 10px;
+	color:#999;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	margin-top:20px;
+}
+.detail-like-count {
+	background:url(img/icon-heart.png) no-repeat left center;
+	padding-left:32px;
+}
+.detail-pin-count {
+	background:url(img/icon-pin.png) no-repeat left center;
+	padding-left:32px;
+}
+.detailPage {
+	background-color: #FFF;
+	border-radius: 5px;
+	padding:20px;
+	margin-bottom: 30px;
+}
 #infscr-loading {position:absolute;bottom:30px;}
 
 
