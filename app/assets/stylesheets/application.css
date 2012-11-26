@@ -104,6 +104,31 @@
 	color:#fff;	
 	text-shadow: 1px 1px 0 #340608;
 }
+
+.ui-slider-range {
+	background-color: #9b2f10;
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#b52806),to(#9b2f10));
+	background-image: -webkit-linear-gradient(top,#b52806,#9b2f10);
+	background-image: -o-linear-gradient(top,#b52806,#9b2f10);
+	background-image: linear-gradient(to bottom,#b52806,#9b2f10);
+	background-image: -moz-linear-gradient(top,#b52806,#9b2f10);
+}
+.ui-slider-handle {
+	background-color: whiteSmoke;
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(white),to(#E6E6E6));
+	background-image: -webkit-linear-gradient(top,white,#E6E6E6);
+	background-image: -o-linear-gradient(top,white,#E6E6E6);
+	background-image: linear-gradient(to bottom,white,#E6E6E6);
+	background-image: -moz-linear-gradient(top,white,#E6E6E6);
+	background-repeat: repeat-x;
+	border-radius: 2px;
+	border:1px solid #cdcdcd;	
+}
+.ui-slider {
+	background:#efefef;
+	border:1px solid #dedede;
+	margin:0 10px;
+}
 .icon-app {
 	background-position: -456px -72px;
 }
@@ -434,6 +459,12 @@ h4 {
 	margin:5px 2px;
 	font-size: 12px;
 }
+#filter-price .smlDropdown-menu {
+	width: 250px;
+}
+#filter-priceRange {
+	color:#e7a136
+}
 .chzn-drop {
 	min-width:200px!important;
 }
@@ -724,7 +755,12 @@ h4 {
 	width:66%;
 	border-left: 1px solid rgba(0,0,0,0.1);
 }
-
+.detail-secendary-title {
+	margin-top:20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #dedede;
+	font-size: 18px;
+}
 #detail-primary {
 	float: left;
 	display: inline-block;
