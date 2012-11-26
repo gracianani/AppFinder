@@ -29,7 +29,6 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	    this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
 	    $(this.highlightsView.render().el).insertAfter('#highlightsAnchor');
 	    $("#highlightsAnchor").remove();
-	   // $('#loading').hide();
     }
     
   },
@@ -43,6 +42,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
        var showView = new AppFinder.Views.WaterfallApps.ShowView({model: showModel});
        $("#waterfallApps").html(showView.render().el);
        $('#loading').hide();
+       $("#main").html(showView.render().el);
     }});
   },
   popup: function(id) {
