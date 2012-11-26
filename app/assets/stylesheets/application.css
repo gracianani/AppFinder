@@ -462,8 +462,9 @@ h4 {
 #filter-price .smlDropdown-menu {
 	width: 250px;
 }
-#filter-priceRange {
-	color:#e7a136
+#filter-priceRange,#filter-rating-low-hint,#filter-rating-high-hint {
+	color:#e7a136;
+	text-transform: capitalize;
 }
 .chzn-drop {
 	min-width:200px!important;
