@@ -26,16 +26,41 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
 			'half':true,
 			'score':1,
 			'targetKeep':true,
-			'targetType':'number',
 			'target':'#filter-rating-low-hint'
 		});
 		$('#filter-rating-high').raty({
 			'half':true,
 			'score':5,
 			'targetKeep':true,
-			'targetType':'number',
 			'target':'#filter-rating-high-hint'
 		});
+		
+		var sliderRange = $('#filter-priceRange-slider');
+		var sliderText = $('#filter-priceRange');
+		sliderRange.slider({
+            range: true,
+            min: 0,
+            max: 50,
+            values: [ 0, 50 ],
+            slide: function( event, ui ) {
+            	var lowest = ui.values[ 0 ],
+            	highest = ui.values[1];
+            	
+            	if ( lowest == 0 ) {
+	            	lowest = "Free";
+            	} else {
+	            	lowest = '$' + lowest;
+            	}
+            	if ( highest == 50 ) {
+	            	highest = "$" + highest + '+';
+	            	
+            	} else {
+	            	highest = '$' + highest;
+            	}
+                sliderText.text( lowest + " - " + highest );
+            }
+        });
+       
 		
 		that.$el.find('.filter-tag-link').bind('click',function(e){
 		  	e.preventDefault();

@@ -8,15 +8,35 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
     "click .expand" : "toggleDesc",
     "click .folded" : "toggleDesc"
   },
-  toggleDesc: function() {
+  toggleDesc: function(e) {
+  	  e.preventDefault();
 	  this.$el.find('.app-long-description').toggle();
 	  this.$el.find('.app-short-description').toggle();
   },
   render: function() {
     $(this.el).html(this.template(this.options.model.toJSON() ));
     
+    var ratingStr = this.model.get('ratings');
+    var ratings = parseFloat(ratingStr);
+    if ( ratingStr.indexOf('+') > 0 ) {
+	    ratings += 0.5
+    }
+    $el = $(this.el);
+    setTimeout(function(){		
+		$el.find('.app-rating.raty-big').raty({
+		'readOnly':true,
+		'space':false,
+		'score':ratings,
+		'size'      : 24,
+		'starHalf'  : 'star-half-big.png',
+		'starOff'   : 'star-off-big.png',
+		'starOn'    : 'star-on-big.png'
+		
+		});
+		
+    },0);
+    
     setTimeout(function() {
-    	$('.detail-app').tooltip();	
     	$(".rslides").responsiveSlides({
 	  auto: true,             // Boolean: Animate automatically, true or false
 	  speed: 1000,            // Integer: Speed of the transition, in milliseconds

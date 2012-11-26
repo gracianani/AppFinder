@@ -47,8 +47,8 @@
 	</div><!--/.popup-primary-->
 	<div id="detail-secondary">
 		<div class="btn-toolbar">
-			<a href="#" class="btn-group">
-			<span class="btn btn-price btn-info 
+			<div href="#" class="btn btn-install btn-info">
+			<span class="span-price 
 				<% if (price <= 0.5 ) { %>
 	    			 btn-info
 				<% }  %> ">
@@ -58,8 +58,8 @@
 					$<%= price %>
 				<% } %>
 				
-			</span><span class="btn btn-install btn-info">Install</span>
-			</a>
+			</span><span class="span-install">Install</span>
+			</div>
 		</div>
 
 		<div class="clearfix">
@@ -77,18 +77,24 @@
 			</div>
 		</div>
 		
-		<div class="app-rating clearfix">
-			<% for (var i=0; i< 5; i=i+1) {
-			    if(i < parseInt(ratings)) {  %>
-					<i class='icon-star pull-left'></i>
-				<% } else { %>
-					<i class='icon-star-empty pull-left'></i>
-				<%  } %>
-			<% } %>
-				<div class="app-ratings-count pull-left"> (<%= like_count %>)</div>
+		<div class="clearfix">
+		<h4 class="detail-secendary-title">Ratings</h4>
+				<span class="app-rating raty-big"></span>
+				<span class="app-ratings-count"> (<%= like_count %>)</span>
+
+		</div>
+		<div class="clearfix">
+		<div class="pull-left">
+			<p>people who like it</p>
+			<big>7397</big>
+		</div>
+		<div class="pull-left">
+			<p>people who pin it</p>
+			<big>7397</big>
+		</div>
 		</div>
 		<div id="detail-related">
-			<div class="detail-secendary-title">Related Apps</div>
+			<h4 class="detail-secendary-title">Related Apps</h4>
 			<div class="detail-apps">
 				
 				<% for (var i=0 ; i<similar_apps.length; i++) { %>
