@@ -1,8 +1,10 @@
 
         	<div id="filter-box" class="clearfix">
-        		<div id="filter-category" class="filter-btn">
-        			<select data-placeholder="Categories" class="chzn-select" id="filter-category-select">
-        			<option value=""></option>
+        		<div id="filter-category" class="filter-btn smlDropdown">
+        		    Category<b class="caret pull-right"></b>
+        			<div class="smlDropdown-menu">
+					<div class="smlDropdown-inner">
+        			<select data-placeholder="Click to Search Categories" class="chzn-select" id="filter-category-select" multiple="">
         			<option value="">All Categories</option>
         			<% for (i = 0; i< categories.length; i++) { 
         				 if (categories[i].children.length == 0) { %>
@@ -15,23 +17,21 @@
         					</optiongroup>
         				<%  } %>
         			<% } %>
-        			</select>
-			        
+        			</select> 
+        			<hr />
+	        		<div class="clearfix"><a id="filter-category-apply" class="btn btn-info btn-small pull-right">Apply</a></div>    
+        			</div>
+        			</div>
                 </div><!-- /category -->
-        		<div id="filter-feature" class="filter-btn">
-			        <select data-placeholder="Features" class="chzn-select" id="filter-feature-select">
-			        <option value=""></option>
-        			<option value="">All Features</option>
-			          <% for ( i=0; i< features.length; i++ ) { %>
-			          	 <option value="<%= features[i].name %>"> <%= features[i].name %> </option>
-			          <% } %>
-			        </select>
-        		</div><!-- /feature -->
 
 	        	<div id="filter-price" class="filter-btn smlDropdown">
 	        			<i class="icon-price smlDropdown-toggle"><b class="caret pull-right"></b></i>
 	        			<div class="smlDropdown-menu">
 	        				<div class="smlDropdown-inner">
+	        						<a href="#" class="tag btn ">Free </a>
+	        						<a href="#" class="tag btn ">Under $1</a>
+	        						<a href="#" class="tag btn ">Under $5</a>
+	        						<hr>
 	        						<p>Price Range: <span id="filter-priceRange">All Price</span></p>
 	        						<div id="filter-priceRange-slider">
 	        						
@@ -51,7 +51,11 @@
 	        					<div>to <span id="filter-rating-high-hint"></span></div>
 	        					<div id="filter-rating-high"></div>
 	        					<hr>
+	        					<p>Ratings Count Range: <span id="filter-ratingsCountRange">All Ratings</span></p>
+	        					<div id="filter-ratingsCountRange-slider"></div>
+	        					<hr>
 	        					<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+	        					
 	        				</div>
 	        			</div>
 	        	</div><!-- /rating -->    
@@ -63,7 +67,7 @@
 						    <li><a tabindex="-1" href="#">Today</a></li>
 						    <li><a tabindex="-1" href="#">This Week</a></li>
 						    <li><a tabindex="-1" href="#">This Month</a></li>
-						  </ul>
+						</ul>
 				        
 	        	</div><!-- /time -->   
 	        	<div id="filter-lan" class="filter-btn smlDropdown">

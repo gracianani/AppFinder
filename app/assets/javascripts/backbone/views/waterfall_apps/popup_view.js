@@ -14,31 +14,37 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 	  this.$el.find('.app-short-description').toggle();
   },
   initialize : function() {
+  
+
   	var that = this;
-  	TINY.box.show({html: this.render().el,width:'940',animate:true,
+  	TINY.box.show({html:"",width:'940',animate:true,
    		openjs:function(){
    			
       		position = $('body').offset();
-      		container.css('top', -position.top + 'px');
       		activePosition = position.top;
       		scrollPosition = $('body').scrollTop();
       		$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');
       		$('body').scrollTop(scrollPosition);
       		$('.tmask').css('top',-position.top + 'px');
+      		$('.tbox').css('top','20px');
       		$('.tbox').css('height',$(window).height()-100+'px');
       		$('.tinner').css('height','100%');
 			window.onscroll = function(oEvent) { oEvent.preventDefault(); oEvent.stopPropagation();return false;}
-			window.router.navigate("id" + that.model.id + "&popup", {trigger: false});
+			 
+			$('.tcontent').html(that.el);
+
       	}, 
   		closejs:function() { 
   			$('body').css('position','').css('overflow','').css('width','').css('top',''); 
   			$('body').scrollTop(scrollPosition);
 			window.router.navigate("index", {trigger: false});
   		}});
-    	
+  		
+  	this.model.on('change',this.render,this);
+
   },
   render: function() {
-    $(this.el).html(this.template(this.options.model.toJSON() ));
+    $(this.el).html(this.template(this.model.toJSON() ));
     
     var ratingStr = this.model.get('ratings');
     var ratings = parseFloat(ratingStr);

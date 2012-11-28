@@ -5,17 +5,19 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
 
   className: "show",
   tagName : "div",
+  initialize: function ()  {
+  	this.model.on('change',this.render,this);
+  },
   events: {
     "click .expand" : "toggleDesc",
-    "click .folded" : "toggleDesc"
-  },
+    "click .folded" : "toggleDesc"  },
   toggleDesc: function(e) {
   	  e.preventDefault();
 	  this.$el.find('.app-long-description').toggle();
 	  this.$el.find('.app-short-description').toggle();
   },
   render: function(){
-    $(this.el).html(this.template(this.options.model.toJSON() ));
+    $(this.el).html(this.template(this.model.toJSON() ));
     
     var ratingStr = this.model.get('ratings');
     var ratings = parseFloat(ratingStr);

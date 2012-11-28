@@ -202,7 +202,15 @@ h4 {
 	background-color: #FFF;
 	width:206px;
 }
-
+/* ==========================================================================
+   stage style
+   ========================================================================== */
+   .stage-view {
+	   display: none;
+   }
+   .stage-view.active {
+	   display: block;
+   }
 /* ==========================================================================
    Recommended style
    ========================================================================== */
@@ -442,9 +450,9 @@ h4 {
 #filter-category-select {
 	width:200px;
 }
+
 #filter_category_select_chzn,#filter_feature_select_chzn,#filter_calendar_select_chzn {
 	width: 200px;
-	left: -10px;
 }
 #filter-feature {
 	width:180px;
@@ -464,6 +472,14 @@ h4 {
 }
 #filter-price .smlDropdown-menu {
 	width: 250px;
+}
+#filter-price .tag.active{
+	background-color: #c73b0b;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+	color: #FFF;
+}
+#filter-price .tag.active::after{
+	content: ' *';
 }
 #filter-priceRange,#filter-rating-low-hint,#filter-rating-high-hint {
 	color:#e7a136;
@@ -542,7 +558,7 @@ h4 {
 /* ==========================================================================
    Card style
    ========================================================================== */
-.waterfall {
+#waterfallApps {
 	margin:0 -10px 20px;
 }
 .card {

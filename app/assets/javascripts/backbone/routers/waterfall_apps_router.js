@@ -1,60 +1,90 @@
 AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   initialize: function (options) {
-    this.waterfallApps = new AppFinder.Collections.AppsCollection(options.waterfallApps);
-    this.waterfallApps.reset( options.waterfallApps );
-    this.filters = new AppFinder.Collections.Filters();
-    this.filters.reset( options.filters );
-    this.highlights = new AppFinder.Models.Highlight(options.highlights);
+    this.waterfallApps = new AppFinder.Collections.AppsCollection();
+    //this.waterfallApps.reset(  );
+    this.filters = new AppFinder.Models.Filters();
+    //this.filters.reset(  );
+    this.highlights = new AppFinder.Models.Highlight();
+
+
+	this.indexView = new AppFinder.Views.WaterfallApps.IndexView({collection:this.waterfallApps});
+	$('#app-view').prepend(this.indexView.el);
+	
+	this.filterView = new AppFinder.Views.Filters.FiltersView({model:this.filters});
+	$('#app-view').prepend(this.filterView.el);
+    
+	this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
+	$('#app-view').prepend(this.highlightsView.el);
+
+
+  },
+  start: function(){
+	Backbone.history.start({pushStage:true});
   },
   routes: {
     
-    "index"    : "index",
-    "id:id&popup" : "popup",
-    "id:id"      : "show",
-    ".*"        : "index"
+    "index"    		: 	"index",
+    "id:id&popup" 	: 	"popup",
+    "id:id"      	: 	"show",
+    "login"			:	"login",
+    ".*"        	: 	"index"
   },
-
+  showStage:function(stageName){
+	$('.stage-view.active').hide().removeClass('active');
+  	$('#'+stageName+'-view').show().addClass('active');
+  },
   index: function() {
   	if($(".tbox").length > 0 ) {
   		TINY.box.hide();
   	}
-  	if(this.indexView == null || typeof(this.indexView) == "undefined" ) {
-  		
-	    this.indexView = new AppFinder.Views.WaterfallApps.IndexView({waterfallApps: this.waterfallApps});
-	    this.indexView.render();
-	    this.filterView = new AppFinder.Views.Filters.FiltersView({filters: this.filters});
-		$(this.filterView.render().el).insertAfter('#filterAnchor');
-	    $("#filterAnchor").remove();
-	    
-	    this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
-	    $(this.highlightsView.render().el).insertAfter('#highlightsAnchor');
-	    $("#highlightsAnchor").remove();
-    }
+  	this.showStage('app');
+  	
+  	this.filters.fetch();
+  	this.highlights.fetch();
+  	this.waterfallApps.fetch();
+  	
+
     
   },
   show: function(id){ 
-  	$('#loading').show();
-    var waterfallApp = this.waterfallApps.get(id);
+  	
+  	if($(".tbox").length > 0 ) {
+  		TINY.box.hide();
+  	}
+  	
+  	this.showStage('detail');
 
-    var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
-       
-       var showModel = new AppFinder.Models.App(data);
-       var showView = new AppFinder.Views.WaterfallApps.ShowView({model: showModel});
-       $("#waterfallApps").html(showView.render().el);
-       $('#loading').hide();
-       $("#main").html(showView.render().el);
-    }});
+  	
+	var showModel = new AppFinder.Models.App();
+    var waterfallApp = this.waterfallApps.get(id);
+	//todo: change id
+	showModel.url = 'assets/data/app-id2.json';
+	
+    var showView = new AppFinder.Views.WaterfallApps.ShowView({model: showModel});
+    $("#detail-view").html(showView.el);
+    
+    showModel.fetch();
+     
   },
   popup: function(id) {
- 	if(this.indexView == null || typeof(this.indexView ) == undefined) {
- 		this.indexView = new AppFinder.Views.WaterfallApps.IndexView({waterfallApps: this.waterfallApps});
-    	this.indexView.render();
- 	}
-  	 var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
-	 	var popupModel = new AppFinder.Models.App(data);
+	  	//this.showStage('app');
+
+	  	
+	  	this.filters.fetch();
+	  	this.highlights.fetch();
+	  	this.waterfallApps.fetch();
+	  	
+	  	var waterfallApp = this.waterfallApps.get(id);
+	  	//todo: change id
+	 	var popupModel = new AppFinder.Models.App();	  		 
+	 	popupModel.url = 'assets/data/app-id2.json';
 	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
-	   	
-    	}
-    });
+	    
+	    popupModel.fetch();
+
+  },
+  login: function(){
+	    this.showStage('login');
+
   }
 });

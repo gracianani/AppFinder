@@ -2,6 +2,9 @@ AppFinder.Views.Filters = AppFinder.Views.Filters || {};
 
 AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   template: JST["backbone/templates/filters/search"],
+  initialize: function(){
+	  this.model.on('change',this.render,this);
+  },
   events: {
 	  "click .filter-tag-link" : 'clickTagLink'
   },
@@ -13,13 +16,11 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   	
   },
   render: function(){
-  	$(this.el).html(this.template(this.options.filters.toJSON()[0]));
+  	$(this.el).html(this.template(this.model.toJSON()));
   	var that = this;
 	setTimeout( function (){
 
-		$("#filter-category-select").chosen({allow_single_deselect: true, selectedTo: "#filter-category-result"});
-		$("#filter-feature-select").chosen({allow_single_deselect: true, selectedTo: "#filter-feature-result"});
-		$("#filter-tags-select,#filter-country-select").chosen();
+		$("#filter-tags-select,#filter-country-select,#filter-category-select").chosen();
 		$('.smlDropdown').smlDropdown();
 		
 		$('#filter-rating-low').raty({
@@ -60,7 +61,36 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
                 sliderText.text( lowest + " - " + highest );
             }
         });
+        
+        var ratingsCountRange = $('#filter-ratingsCountRange-slider');
+		var ratingsCountText = $('#filter-ratingsCountRange');
+		ratingsCountRange.slider({
+            range: true,
+            min: 0,
+            max: 5000,
+            values: [ 0, 5000 ],
+            slide: function( event, ui ) {
+            	var lowest = ui.values[ 0 ],
+            	    highest = ui.values[1];
+            	
+            	if ( lowest == 0 ) {
+	            	lowest = "0";
+            	} else {
+	            	lowest =  lowest;
+            	}
+            	if ( highest == 5000 ) {
+	            	highest = highest + '+';
+	            	
+            	} else {
+	            	highest = highest;
+            	}
+                ratingsCountText.text( lowest + " - " + highest );
+            }
+        });
        
+		that.$el.find("#filter-price .tag").bind('click', function(e) {
+			$(this).toggleClass("active");
+		});
 		
 		that.$el.find('.filter-tag-link').bind('click',function(e){
 		  	e.preventDefault();

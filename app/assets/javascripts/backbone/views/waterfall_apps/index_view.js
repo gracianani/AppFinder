@@ -4,18 +4,24 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
   
   template: JST["backbone/templates/waterfall_apps/index"],
   tagName : "div",
-  id: "waterfallApps",
+  className : "container",
   initialize: function ()  {
-      this.options.waterfallApps.bind('reset', this.addAll); 
+      $(this.el).html(this.template());
+
+      this.collection.on('add', this.addOne, this);
+      this.collection.on('reset', this.addAll, this);
+      
+      this.apps = $(this.el).find('#waterfallApps');
+      console.log(this.apps);
   },
 
   addAll: function() {
-    this.options.waterfallApps.each(this.addOne); 
+    this.collection.forEach(this.addOne,this); 
+    this.render();
   },
   addOne: function(waterfallApps) {
     view = new AppFinder.Views.WaterfallApps.WaterfallAppsView({model : waterfallApps});
-    
-    $('#waterfallApps').append(view.render().el);
+    this.apps.append(view.render().el);
  	return view;
     
   },
@@ -23,19 +29,18 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
   
   render: function() {
   	
-    $('#waterfallApps').html(this.template( ) );
-    this.addAll(); 
-    var that=this;
-    $('#waterfallApps').masonry({
+    var that=this; 
+    this.apps.masonry({
 		// options
 		itemSelector : '.card'
 	});
-	$('#waterfallApps').infinitescroll({
+
+	this.apps.infinitescroll({
     	navSelector  : "#page-nav", // selector for the paged navigation (it will be hidden)
     	nextSelector : "#page-nav a", // selector for the NEXT link (to page 2)
     	itemSelector : "div",  // selector for all items you'll retrieve
         dataType: 'json',
-        debug: false,
+        debug: true,
         appendCallback: false,
     	loading : {
     		finishedMsg: "no more pages to load",
@@ -45,12 +50,14 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
     	},
 
     	function( newElements, page ) {
-	    	
-	    	$.each(newElements.apps, function(index, item) {
+	    	$(newElements).each(function(index, item) {
+	    		
 	    		item.id=item.id+page.state.currPage*20;
 	    		var view = that.addOne(new AppFinder.Models.App(item));
+
 	    		$('#waterfallApps').masonry('appended',$(view.el), true);
 	    	});
+
       	});
    return this;
 

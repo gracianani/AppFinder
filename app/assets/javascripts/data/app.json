@@ -1,4 +1,4 @@
-{"apps" : [{
+[{
       "title":"Hay Day",
       "id":"1",
       "icon_url": "appImages/hey-day-logo.jpg",
@@ -258,4 +258,4 @@
       "price" : 0.0, 
       "tags" : ["Weather Alert"],
       "badges" : ["FARM TYCOON", "HELTER SMELTER"]
-	}] }
+	}]

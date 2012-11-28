@@ -45,7 +45,7 @@
 		        		</li><!--/li -->
 		        		<li class="main-nav-item">
 		        			<a href="#">
-		        				Developer
+		        				Developers
 		        			</a>
 		        		</li><!--/li -->
 	        		</ul><!--/#main-nav -->
@@ -75,59 +75,30 @@
         	</div><!--/.navbar-inner -->
         </header><!--/header -->
         
-        <div class = "container clearfix" >
-        
-        <a id="highlightsAnchor" style="display:none"</a> <!--/# highlight box-->
-        <a id="filterAnchor" style="display:none"></a><!--/#filter -->
-        
-        <div id="main" class="container">
-	        <div id="primary" class="waterfall clearfix">
-	        		<%= yield %>
-	        </div><!--/#primary -->
-	        
-	        <div id="secondary">
-	        </div><!--/#secondary -->
+        <div id="stage" class = "clearfix" >
+        	<div id="login-view" class="stage-view">
+        	login
+        	</div>
+        	<div id="detail-view" class="stage-view">
+        	</div>
+        	<div id="app-view" class="stage-view active">
+        	</div><!-- /#app-view -->
 
+        </div> <!-- /stage -->
+        <hr>
 
-
-            <hr>
-
-            <footer>
+        <footer>
                 <p>&copy; Company 2012</p>
-            </footer>
-
-        </div> <!-- /container -->
+        </footer>
+		<div id="loading"></div>
         
 <script type="text/javascript">
   $(function() {
-  	loadingView = new AppFinder.Views.LoadingView();
-	$("#loading").html(loadingView.render().el);
-	var filters;
-	
-	$.ajax( {url: 'assets/data/filter.json', dataType: 'text json', success: function(data) {
-		filters = data.filters;	
-	}});
-	
-	var apps;
-	$.ajax({ url: 'assets/data/app.json', dataType: 'text json',  success: function(data) {
-		apps = data.apps;
-	}});
-	
-	var highlights;
-	$.ajax({ url: 'assets/data/highlights.json', dataType: 'text json',  success: function(data) {
-		highlights = data;
-	}});
 	
 	
-	isLoaded = setInterval( function() {
-		if(filters != null && typeof(filters) != 'undefined' && 
-		   apps != null && typeof(apps) != 'undefined' &&
-		   highlights != null && typeof(highlights) != 'undefined' ) {
-			window.clearInterval(isLoaded);
-			window.router = new AppFinder.Routers.WaterfallAppsRouter({waterfallApps: apps, filters: filters, highlights: highlights });
-	   		Backbone.history.start();
-		}
-	},2000);
+	window.router = new AppFinder.Routers.WaterfallAppsRouter();
+	window.router.start();
+	
     
   });
 </script>

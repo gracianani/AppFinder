@@ -58,12 +58,13 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   },
   showDetail: function(e)
   {
- 	 
-  	 var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
-	 	var popupModel = new AppFinder.Models.App(data);
-	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
-	   	
-    }});
+	 var popupModel = new AppFinder.Models.App();	  		 
+	 popupModel.url = 'assets/data/app-id2.json';
+	 var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
+	 popupModel.fetch();
+	 
+	 window.router.navigate("id" + this.model.get("id") + "&popup");
+
   },
   tagName: "div",
   className: "card",

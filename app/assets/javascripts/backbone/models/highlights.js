@@ -1,5 +1,9 @@
 AppFinder.Models.Highlight = Backbone.Model.extend({
-	
+	url: 'assets/data/highlights.json',
+	parse: function(response){
+		console.log(response);
+       return response;
+    }
 }) ;
 
 
