@@ -25,6 +25,8 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     "id:id&popup" 	: 	"popup",
     "id:id"      	: 	"show",
     "login"			:	"login",
+    "developers"	:	"developer",
+    "register"		:	"register",
     ".*"        	: 	"index"
   },
   showStage:function(stageName){
@@ -74,8 +76,15 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	    popupModel.fetch();
 
   },
+  developer: function() {
+  	this.showStage('developers');
+	  
+  },
+  register:function() {
+  	this.showStage('register');	  
+  },
   login: function(){
-	    this.showStage('login');
+	this.showStage('login');
 
   }
 });
