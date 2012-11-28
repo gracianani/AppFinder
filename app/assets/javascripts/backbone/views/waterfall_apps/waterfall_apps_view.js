@@ -58,32 +58,12 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   },
   showDetail: function(e)
   {
- 	 var that = this;
+ 	 
   	 var appDetail = $.ajax({url:'assets/data/app-id2.json', dataType: 'text json',  success: function(data) {
 	 	var popupModel = new AppFinder.Models.App(data);
 	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
-	   	TINY.box.show({html:popupView.render().el,width:'940',animate:true,
-	   		openjs:function(){
-	   			
-	      		position = $('body').offset();
-	      		container.css('top', -position.top + 'px');
-	      		activePosition = position.top;
-	      		scrollPosition = $('body').scrollTop();
-	      		$('body').css("position","fixed").css("overflow", "auto").css('width', '100%').css('top', -scrollPosition+'px');
-	      		$('body').scrollTop(scrollPosition);
-	      		$('.tmask').css('top',-position.top + 'px');
-	      		$('.tbox').css('height',$(window).height()-100+'px');
-	      		$('.tinner').css('height','100%');
-				window.onscroll = function(oEvent) { oEvent.preventDefault(); oEvent.stopPropagation();return false;}
-				window.router.navigate("id" + that.model.id + "&popup", {trigger: false});
-	      	}, 
-      		closejs:function() { 
-      			$('body').css('position','').css('overflow','').css('width','').css('top',''); 
-      			$('body').scrollTop(scrollPosition);
-   				window.router.navigate("index", {trigger: false});
-      		}});
-    	}
-    });
+	   	
+    }});
   },
   tagName: "div",
   className: "card",
