@@ -25,17 +25,13 @@
 		</div>
 		<div class="clearfix"></div>
 	</div><!--/media -->
-	<div class="app-priceContainer">
-		<strong class="app-price
+	<div class="app-ribbonContainer">
+		<strong class="app-ribbon
 			<% if (price <= 0.5 ) { %>
-    			 free
+    			 em
 			<% } %>
 			">
-			<% if (price <= 0.5 ) { %>
-    			FREE
-			<% } else {  %> 
-				$<%= price %>
-			<% } %>
+			On Sale
 		</strong>
 	</div><!--/app-priceContainer-->
 	<div class="mosaic-block bar" style= 'height: 
@@ -61,8 +57,24 @@
 	</div>
 	<div class="btn-toolbar">
 
-		<a class="btn btn-small btn-install">Install</a>
+		<a class="btn btn-small btn-install
+		<% if (price <= 0.5 ) { %>
+    			  btn-free
+			<% } %>
+		">
+		<span class="price">
+		<% if (price <= 0.5 ) { %>
+    			FREE
+			<% } else {  %> 
+				$<%= price %>
+			<% } %>
+		</span>
+		<span class="install none">
+		Install
+		</span>
+		</a>
  
+		
 		
 		<div href="javascript:void(0)" class="app-share-btn btn btn-small pull-right">
 			<i class="icon-share"></i>
