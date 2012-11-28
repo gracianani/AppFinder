@@ -75,20 +75,21 @@
         	</div><!--/.navbar-inner -->
         </header><!--/header -->
         
-        <div class = "container clearfix" >
         
-        <a id="highlightsAnchor" style="display:none"</a> <!--/# highlight box-->
-        <a id="filterAnchor" style="display:none"></a><!--/#filter -->
-        
-        <div id="main" class="container">
-	        <div id="primary" class="waterfall clearfix">
-	        		<%= yield %>
-	        </div><!--/#primary -->
+        <div id="apps-content">
+	        <a id="highlightsAnchor" style="display:none"</a> <!--/# highlight box-->
+	        <a id="filterAnchor" style="display:none"></a><!--/#filter -->
+	
+	        <div id="main" class="container">
+		        <div id="primary" class="waterfall clearfix">
+		        		<%= yield %>
+		        </div><!--/#primary -->
+		        
+		        <div id="secondary">
+		        </div><!--/#secondary -->
+	
+	        </div><!--#main-->
 	        
-	        <div id="secondary">
-	        </div><!--/#secondary -->
-
-
 
             <hr>
 
@@ -96,7 +97,7 @@
                 <p>&copy; Company 2012</p>
             </footer>
 
-        </div> <!-- /container -->
+        </div> <!-- /#apps-content -->
         
 <script type="text/javascript">
   $(function() {
