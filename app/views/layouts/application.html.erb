@@ -44,7 +44,7 @@
 		        			</a>
 		        		</li><!--/li -->
 		        		<li class="main-nav-item">
-		        			<a href="#">
+		        			<a href="#developers">
 		        				Developers
 		        			</a>
 		        		</li><!--/li -->
@@ -58,12 +58,12 @@
 						
 	        		<ul id="profile" class="nav pull-right">
 		        		<li class="profile-item">
-		        			<a href="#">
+		        			<a href="#register">
 		        				register
 		        			</a>
 		        		</li><!--/li -->
 		        		<li class="profile-item">
-		        			<a href="#">
+		        			<a href="#login">
 		        				login
 		        			</a>
 		        		</li><!--/li -->
@@ -77,7 +77,86 @@
         
         <div id="stage" class = "clearfix" >
         	<div id="login-view" class="stage-view">
-        	login
+        		<div id="login">
+				<form class="form-horizontal">
+				  <fieldset>
+				  	<legend>Log in</legend>
+				    <div class="control-group">
+					    <label class="control-label" for="inputEmail">Email</label>
+					    <div class="controls">
+					      <input type="text" id="inputEmail" placeholder="Email">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputPassword">Password</label>
+					    <div class="controls">
+					      <input type="password" id="inputPassword" placeholder="Password">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <div class="controls">
+					      <label class="checkbox">
+					        <input type="checkbox"> Keep me logged in
+					      </label>
+					      <button type="submit" class="btn btn-info">Log in</button>
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label"></label>
+					    <div class="controls">
+					    <p><a href="">Can't access your account?</a></p>
+					    </div>
+					  </div>				  
+				</fieldset>
+				</form>
+        		</div>
+        	</div>
+        	<div id="developers-view" class="stage-view">
+        		developer
+        	</div>
+        	<div id="register-view" class="stage-view">
+        		<div id="register">
+				<form class="form-horizontal">
+				  <fieldset>
+				  	<legend>Sign up</legend>
+				    <div class="control-group">
+					    <label class="control-label" for="inputEmail">Email</label>
+					    <div class="controls">
+					      <input type="text" id="inputEmail" placeholder="Email">
+					    </div>
+					  </div>
+				    <div class="control-group">
+					    <label class="control-label" for="inputFirstName">First Name</label>
+					    <div class="controls">
+					      <input type="text" id="inputFirstName" placeholder="First Name">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputLastName">Last Name</label>
+					    <div class="controls">
+					      <input type="text" id="inputLastName" placeholder="Last Name">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputPassword">Password</label>
+					    <div class="controls">
+					      <input type="password" id="inputPassword" placeholder="Password">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputPassword2">Confirm Password</label>
+					    <div class="controls">
+					      <input type="password" id="inputPassword2" placeholder="Password">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <div class="controls">
+					      <button type="submit" class="btn btn-info">Sign up</button>
+					    </div>
+					  </div>				  
+				</fieldset>
+				</form>
+        		</div>
         	</div>
         	<div id="detail-view" class="stage-view">
         	</div>
@@ -85,7 +164,6 @@
         	</div><!-- /#app-view -->
 
         </div> <!-- /stage -->
-        <hr>
 
         <footer>
                 <p>&copy; Company 2012</p>
@@ -94,12 +172,8 @@
         
 <script type="text/javascript">
   $(function() {
-	
-	
 	window.router = new AppFinder.Routers.WaterfallAppsRouter();
-	window.router.start();
-	
-    
+	window.router.start();    
   });
 </script>
 

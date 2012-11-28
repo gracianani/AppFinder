@@ -1,9 +1,7 @@
 AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   initialize: function (options) {
     this.waterfallApps = new AppFinder.Collections.AppsCollection();
-    //this.waterfallApps.reset(  );
     this.filters = new AppFinder.Models.Filters();
-    //this.filters.reset(  );
     this.highlights = new AppFinder.Models.Highlight();
 
 
@@ -27,18 +25,21 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     "id:id&popup" 	: 	"popup",
     "id:id"      	: 	"show",
     "login"			:	"login",
+    "developers"	:	"developer",
+    "register"		:	"register",
     ".*"        	: 	"index"
   },
   showStage:function(stageName){
 	$('.stage-view.active').hide().removeClass('active');
   	$('#'+stageName+'-view').show().addClass('active');
-  },
-  index: function() {
   	if($(".tbox").length > 0 ) {
   		TINY.box.hide();
   	}
+  },
+  index: function() {
+
   	this.showStage('app');
-  	
+
   	this.filters.fetch();
   	this.highlights.fetch();
   	this.waterfallApps.fetch();
@@ -48,18 +49,12 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   show: function(id){ 
   	
-  	if($(".tbox").length > 0 ) {
-  		TINY.box.hide();
-  	}
-  	
   	this.showStage('detail');
-
   	
-	var showModel = new AppFinder.Models.App();
     var waterfallApp = this.waterfallApps.get(id);
 	//todo: change id
+	var showModel = new AppFinder.Models.App();
 	showModel.url = 'assets/data/app-id2.json';
-	
     var showView = new AppFinder.Views.WaterfallApps.ShowView({model: showModel});
     $("#detail-view").html(showView.el);
     
@@ -67,9 +62,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
      
   },
   popup: function(id) {
-	  	//this.showStage('app');
 
-	  	
 	  	this.filters.fetch();
 	  	this.highlights.fetch();
 	  	this.waterfallApps.fetch();
@@ -83,8 +76,15 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	    popupModel.fetch();
 
   },
+  developer: function() {
+  	this.showStage('developers');
+	  
+  },
+  register:function() {
+  	this.showStage('register');	  
+  },
   login: function(){
-	    this.showStage('login');
+	this.showStage('login');
 
   }
 });

@@ -932,3 +932,15 @@ font-size: 21px;
 	font-size:24px;
 	text-align:center;
 }
+footer {
+	padding:10px 40px;
+}
+
+#login,#register {
+	border-radius: 5px;
+	border:1px solid #dedede;
+	background:#FFF;
+	margin:0 auto 30px;
+	width:600px;
+	padding:30px 40px;
+}
