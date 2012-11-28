@@ -74,10 +74,9 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	  	this.highlights.fetch();
 	  	this.waterfallApps.fetch();
 	  	
-	 	var popupModel = new AppFinder.Models.App();	  	
 	  	var waterfallApp = this.waterfallApps.get(id);
 	  	//todo: change id
-	 
+	 	var popupModel = new AppFinder.Models.App();	  		 
 	 	popupModel.url = 'assets/data/app-id2.json';
 	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
 	    
