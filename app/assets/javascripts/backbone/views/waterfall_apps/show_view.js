@@ -5,10 +5,12 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
 
   className: "show",
   tagName : "div",
+  initialize: function ()  {
+  	this.model.on('change',this.render,this);
+  },
   events: {
     "click .expand" : "toggleDesc",
-    "click .folded" : "toggleDesc"
-  },
+    "click .folded" : "toggleDesc"  },
   toggleDesc: function(e) {
   	  e.preventDefault();
 	  this.$el.find('.app-long-description').toggle();

@@ -1,6 +1,4 @@
-AppFinder.Models.Filter = Backbone.Model.extend({});
-
-AppFinder.Collections.Filters = Backbone.Collection.extend ({
+AppFinder.Models.Filters = Backbone.Model.extend ({
   model: AppFinder.Models.Filter,
-  url: '/filters'
+  url: '/assets/data/filter.json'
 });

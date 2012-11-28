@@ -2,6 +2,9 @@ AppFinder.Views.Filters = AppFinder.Views.Filters || {};
 
 AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   template: JST["backbone/templates/filters/search"],
+  initialize: function(){
+	  this.model.on('change',this.render,this);
+  },
   events: {
 	  "click .filter-tag-link" : 'clickTagLink'
   },
@@ -13,7 +16,7 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   	
   },
   render: function(){
-  	$(this.el).html(this.template(this.options.filters.toJSON()[0]));
+  	$(this.el).html(this.template(this.model.toJSON()));
   	var that = this;
 	setTimeout( function (){
 

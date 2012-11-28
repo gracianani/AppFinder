@@ -1,5 +1,4 @@
-{"filters" : 
-	{
+{
 	"categories" :  [
 		{"name" : "Business","children" : []},
 		{"name" : "Developer Tools", "children" : []},
@@ -93,5 +92,4 @@
 			{"name" : "Quizzes"}
 	]
 	
-}
 }

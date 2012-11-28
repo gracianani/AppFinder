@@ -2,6 +2,9 @@ AppFinder.Views.Highlights = AppFinder.Views.Highlights || {};
 
 AppFinder.Views.Highlights.HighlightsView = Backbone.View.extend({
   template: JST["backbone/templates/highlights/highlights"],
+  initialize: function(){
+	  this.model.on('change',this.render,this);
+  },
   events: {
   	"click #highlight-btn" : "showHighlight",
 

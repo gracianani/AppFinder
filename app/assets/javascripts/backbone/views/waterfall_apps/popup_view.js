@@ -8,6 +8,9 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
     "click .expand" : "toggleDesc",
     "click .folded" : "toggleDesc"
   },
+  initialize: function ()  {
+  	this.model.on('change',this.render,this);
+  },
   toggleDesc: function(e) {
   	  e.preventDefault();
 	  this.$el.find('.app-long-description').toggle();
