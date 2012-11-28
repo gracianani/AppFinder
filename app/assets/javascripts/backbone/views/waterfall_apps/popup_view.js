@@ -8,9 +8,6 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
     "click .expand" : "toggleDesc",
     "click .folded" : "toggleDesc"
   },
-  initialize: function ()  {
-  	this.model.on('change',this.render,this);
-  },
   toggleDesc: function(e) {
   	  e.preventDefault();
 	  this.$el.find('.app-long-description').toggle();
@@ -18,7 +15,7 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
   },
   initialize : function() {
   	var that = this;
-  	TINY.box.show({html: this.render().el,width:'940',animate:true,
+  	TINY.box.show({html: this.el,width:'940',animate:true,
    		openjs:function(){
    			
       		position = $('body').offset();
@@ -38,10 +35,12 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
   			$('body').scrollTop(scrollPosition);
 			window.router.navigate("index", {trigger: false});
   		}});
+  		
+  		this.model.on('change',this.render,this);
     	
   },
   render: function() {
-    $(this.el).html(this.template(this.options.model.toJSON() ));
+    $(this.el).html(this.template(this.model.toJSON() ));
     
     var ratingStr = this.model.get('ratings');
     var ratings = parseFloat(ratingStr);

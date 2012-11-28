@@ -17,7 +17,7 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
 	  this.$el.find('.app-short-description').toggle();
   },
   render: function(){
-    $(this.el).html(this.template(this.options.model.toJSON() ));
+    $(this.el).html(this.template(this.model.toJSON() ));
     
     var ratingStr = this.model.get('ratings');
     var ratings = parseFloat(ratingStr);
