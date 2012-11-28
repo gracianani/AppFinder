@@ -39,7 +39,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   index: function() {
 
   	this.showStage('app');
-  	
+
   	this.filters.fetch();
   	this.highlights.fetch();
   	this.waterfallApps.fetch();
