@@ -16,7 +16,9 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
   },
 
   addAll: function() {
-  	this.apps.masonry( 'destroy' );
+  	if ( this.$el.find('.masonry').size() > 0 ) {
+  		this.apps.masonry( 'destroy' );	  	
+  	}
   	this.apps.html("");
     this.collection.forEach(this.addOne,this); 
     this.render();
