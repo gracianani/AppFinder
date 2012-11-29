@@ -950,7 +950,9 @@ font-size: 21px;
 footer {
 	padding:10px 40px;
 }
-
+/* ==========================================================================
+   login style
+   ========================================================================== */
 #login,#register {
 	border-radius: 5px;
 	border:1px solid #dedede;
@@ -959,7 +961,59 @@ footer {
 	width:600px;
 	padding:30px 40px;
 }
+.icon-fb {
+	background:url(img/fb-btn-logo.png) no-repeat center center;
+	height: 33px;
+	width: 20px;
+	margin:-5px 0;
+}
+.icon-twitter {
+	background:url(img/twitter-btn-logo.png) no-repeat center center;
+	height: 30px;
+	width: 35px;
+	margin:-5px 0;
+}
+.btn-fb>.divider,.btn-twitter>.divider{
+	border-left:1px solid rgba(255,255,255,0.2);
+	border-right: 1px solid rgba(0,0,0,0.2);
+	height:30px;
+	display: inline-block;
+	margin:0 10px;
+	vertical-align: top;
+}
 
+.btn-fb {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#0d75bd),to(#0d63ab));
+	background-image: -webkit-linear-gradient(top,#0d75bd,#0d63ab);
+	background-image: -o-linear-gradient(top,#0d75bd,#0d63ab);
+	background-image: linear-gradient(to bottom,#0d75bd,#0d63ab);
+	background-image: -moz-linear-gradient(top,#0d75bd,#0d63ab);
+	border-color: #00549f;
+	color:#fff;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+	height: 30px;
+	line-height: 30px;
+}
+.btn-fb:hover, .btn-fb:active, .btn-fb.active, .btn-fb.disabled, .btn-fb[disabled] {
+	background: #0d63ab;
+	color:#FFF;
+}
+.btn-twitter {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#53d3fe),to(#17addf));
+	background-image: -webkit-linear-gradient(top,#53d3fe,#17addf);
+	background-image: -o-linear-gradient(top,#53d3fe,#17addf);
+	background-image: linear-gradient(to bottom,#53d3fe,#17addf);
+	background-image: -moz-linear-gradient(top,#53d3fe,#17addf);
+	border-color: #1b94bc;
+	color:#fff;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+	height: 30px;
+	line-height: 30px;	
+}
+.btn-twitter:hover, .btn-twitter:active, .btn-twitter.active, .btn-twitter.disabled, .btn-twitter[disabled] {
+	background: #17addf;
+	color:#FFF;
+}
 .triangle-border{
 position: relative;
 padding: 15px;
