@@ -31,7 +31,8 @@
       "category" : "Kids",
       "price" : 3.99, 
       "tags" : ["Kids Education"],
-      "badges" : ["PATRONAGE"]
+      "badges" : ["PATRONAGE"],
+      "feature": "New"
     },{
       "title":"An Awesome Book",
       "id":"3",
@@ -83,7 +84,8 @@
       "category" : "Games",
       "price" : 3.99, 
       "tags" : ["Build and Manage Sims"],
-      "badges" : ["EGG HEAD", "RELAX SONGS"]
+      "badges" : ["EGG HEAD", "RELAX SONGS"],
+      "feature": "Top 100"
     },{
       "title":"eHarmony – #1 Trusted Dating Site",
       "id":"6",
@@ -117,7 +119,9 @@
       "category" : "Social Networking",
       "price" : 0.0, 
       "tags" : ["Gun Shooting"],
-      "badges" : ["Baconator"]
+      "badges" : ["Baconator"],
+      "feature": "On Sale",
+      "feature_type":"important"
     },{
       "title":"Bloons TD 5",
       "id":"8",
@@ -134,7 +138,8 @@
       "category" : "Games",
       "price" : 2.99, 
       "tags" : ["Racing Games"],
-      "badges" : ["SHEEP SHEARER"]
+      "badges" : ["SHEEP SHEARER"],
+      "feature": "Top 100"
     },{
       "title":"Ban.jo",
       "id":"9",
@@ -168,8 +173,9 @@
       "category" : "Games",
       "price" : 0.0, 
       "tags" : ["Hunting Games"],
-      "badges" : ["HYPER HARVESTER"]
-      
+      "badges" : ["HYPER HARVESTER"],
+      "feature": "On Sale",
+      "feature_type":"important"      
     },
     {
       "title":"Angry Birds Star Wars",
@@ -223,8 +229,9 @@
       "price" : 0.0,
       "released_date" : "11-14-2012", 
       "tags" : ["Hotel Finders"],
-      "badges" : ["CAPTAIN", "GREEN THUMB"]
-    },{
+      "badges" : ["CAPTAIN", "GREEN THUMB"],
+      "feature": "New"
+     },{
       "title":"Lazy Riders",
       "id":"14",
       "icon_url" : "appImages/lazy-riders-logo.jpg",

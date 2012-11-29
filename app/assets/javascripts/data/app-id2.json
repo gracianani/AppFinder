@@ -25,5 +25,25 @@
   	{"id" : "5", "name": "Lazy Riders", "icon" : "appImages/lazy-riders-logo.jpg", "ratings":"4+", "developer" : "Supercell, Inc"},
   	{"id" : "6", "name": "Animal Legends", "icon" : "appImages/animal-legends-logo.jpg", "ratings":"4+", "developer" : "Facebook, Inc"},
   	{"id" : "7", "name": "Swackeet", "icon" : "appImages/swackeet-logo.jpg","ratings":"4+",  "developer" : "Zinga, Inc"}
-  ]
+  ],
+  "comments":[{
+  		"id"		: 0,
+  		"user_name" : "Mark",
+  		"user_url"	: "#",
+  		"user_avatar": "https://www.gstatic.com/s2/contacts/images/NoPicture.gif",
+  		"is_like"	: 1,
+  		"time"		: "Jun 28, 2012",
+  		"comment"	: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."	  
+  },{
+  		"id"			: 1,
+  		"user_name"		: "Applico",
+  		"user_url"		: "#",
+  		"user_avatar"	: "https://www.gstatic.com/s2/contacts/images/NoPicture.gif",
+  		"user_title"			: "Developer",
+  		"user_company"		: "Google",
+  		"company_url"	: "#",
+  		"is_like"	: 0,
+  		"time"		: "Jun 28, 2012",
+  		"comment"	: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."		  
+  }]
 }
