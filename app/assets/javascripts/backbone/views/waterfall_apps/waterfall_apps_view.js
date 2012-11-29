@@ -12,7 +12,9 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
     "click div.app-like" : "toggleLike", 
     "click img,.app-short-description,.app-name" : "showDetail",
     "mouseenter" : "onMouseEnter",
-    "mouseleave" : "onMouseLeave"
+    "mouseleave" : "onMouseLeave",
+    "mouseenter .btn-install" : "toggleInstallText",
+    "mouseleave .btn-install" : "toggleInstallText"
   },
   
   initialize : function(){
@@ -32,6 +34,12 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
       
       btn.find('i').toggleClass('icon-white');
       btn.toggleClass('btn-danger');
+  },
+  toggleInstallText : function(e) {
+	  var btn = this.$el.find('.btn-install');
+	  btn.find('.price').toggle();
+	  btn.find('.install').toggle();
+	  
   },
   fadeOutOthers : function(e) {
   	  var that = this;

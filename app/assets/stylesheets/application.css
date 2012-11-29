@@ -63,7 +63,19 @@
 .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
 	background: #c73b0b;
 }
-
+.btn-free {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#d8651d),to(#b52806));
+	background-image: -webkit-linear-gradient(top,#d8651d,#b52806);
+	background-image: -o-linear-gradient(top,#d8651d,#b52806);
+	background-image: linear-gradient(to bottom,#d8651d,#b52806);
+	background-image: -moz-linear-gradient(top,#d8651d,#b52806);
+	border-color: #d8651d;
+	color:#fff;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+}
+.btn-free:hover, .btn-free:active, .btn-free.active, .btn-free.disabled, .btn-free[disabled] {
+	background: #c73b0b;
+}
 .smlDropdown {
 	position: relative;
 }
@@ -604,7 +616,7 @@ h4 {
 	color:#a8a8a8;
 }
 
-.card .app-priceContainer {
+.card .app-ribbonContainer {
 	position: absolute;
 	z-index: 2;
 	top: -1px;
@@ -614,7 +626,7 @@ h4 {
 	overflow: hidden;
 	border-radius: 4px 0 4px 0;
 }
-.card .app-price {
+.card .app-ribbon {
 	position: absolute;
 	z-index: 2;
 	top: 10px;
@@ -633,7 +645,7 @@ h4 {
 	-ms-transform: rotate(45deg);
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-.card .app-price.free {
+.card .app-ribbon.em {
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#d8651d),to(#b52806));
 	background-image: -webkit-linear-gradient(top,#d8651d,#b52806);
 	background-image: -o-linear-gradient(top,#d8651d,#b52806);
