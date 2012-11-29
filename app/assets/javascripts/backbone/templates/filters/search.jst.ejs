@@ -365,33 +365,22 @@
 	        	</div><!-- /tag -->    
 	        	<div id="filter-device" class="filter-btn smlDropdown">
 	        			<i class="icon-device smlDropdown-toggle"><b class="caret pull-right"></b></i>
-	        			<ul class="smlDropdown-menu">
-						    <li><a tabindex="-1" href="#">All Devices</a></li>
-						    <li class="divider"></li>
-						    <li><a tabindex="-1" href="#">iPhone 5</a></li>
-						    <li><a tabindex="-1" href="#">iPhone 4</a></li>
-						    <li><a tabindex="-1" href="#">iPhone</a></li>
-						    <li class="divider"></li>
-						    <li><a tabindex="-1" href="#">iPad 4</a></li>
-						    <li><a tabindex="-1" href="#">iPad</a></li>
-						    <li class="divider"></li>
-						    <li><a tabindex="-1" href="#">iMac</a></li>
-						  </ul>
+	        			<div class=smlDropdown-menu">
+	        			<div class="smlDropdown-inner>
+	        			<select id="filter-device-select" multiple="">
+	        				<option>All Devices</option>
+	        				<option>iPhone</option>
+	        				<option>iPad</option>
+	        				<option>iMac</option>
+	        			</select>
+	        			</div>
+	        			</div>
 	        	</div><!-- /device -->
 
         		<div id="filter-keyword" class="filter-btn form-search">
 					    <input type="text" class="search-query">
 					    <i class="icon-search"></i>
-        		</div><!-- /keyword -->  
-        		<div id="filter-advanced" class="filter-btn smlDropdown">
-        			<span class="smlDropdown-toggle">Advanced Filter<b class="caret pull-right"></b></span>
-        			<ul class="smlDropdown-menu">
-						    <li><a tabindex="-1" href="#">Advanced-1</a></li>
-						    <li><a tabindex="-1" href="#">Advanced-2</a></li>
-						    <li><a tabindex="-1" href="#">Advanced-3</a></li>
-						    <li><a tabindex="-1" href="#">Advanced-4</a></li>
-					</ul>
-        		</div>  <!-- /advanced -->        		
+        		</div><!-- /keyword -->       		
         	</div><!--/#filter-box -->
         	<div id="filter-summary">
         		<div> <span id="filter-category-result"> Most Popular </span> <span id="filter-feature-result"> Free </span> Games updated within  last 30 days  + <a class="btn-tag btn btn-small">For Kids</a><a class="btn-tag btn btn-small">Education</a></div>

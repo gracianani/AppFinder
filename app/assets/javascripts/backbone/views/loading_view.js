@@ -20,8 +20,5 @@ AppFinder.Views.LoadingView = Backbone.View.extend({
   		 	Tick=Tick+1;
   		 }, 500);
     	return this;
-  	},
-	appendDot: function() {
-		
-	}
+  	}
 });
