@@ -20,7 +20,7 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   	var that = this;
 	setTimeout( function (){
 
-		$("#filter-tags-select,#filter-country-select,#filter-category-select").chosen();
+		$("#filter-tags-select,#filter-badges-select,#filter-country-select,#filter-category-select").chosen();
 		$('.smlDropdown').smlDropdown();
 		
 		$('#filter-rating-low').raty({

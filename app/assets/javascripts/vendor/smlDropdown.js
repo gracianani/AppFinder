@@ -33,6 +33,7 @@
 	    	$this.toggleClass('open');
 	    	$menu.toggle();	    		
     	});
+
     	$(window).bind('click',function(e){
     		
 	    		$this.removeClass('open');
