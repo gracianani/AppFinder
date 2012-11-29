@@ -68,13 +68,11 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 		 
     },0);
 	var that = this;  
-	  
-    
     setTimeout(function(){
 	that.player  = new YT.Player('player', {
       height: '387',
       width: '587',
-      videoId: 'MRxSVEM-Bto'
+      videoId: that.model.get('video_id')
     });
 	$(".flexslider")
     .flexslider({
@@ -82,8 +80,9 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
       useCSS: false,
       animationLoop: false,
       smoothHeight: true,
+      animationSpeed: 300,
+      animationLoop: false, 
       before: function(slider){
-      	console.log(that.player);
       	if(that.player != null && typeof(that.player) !='undefined' && typeof(that.player.stopVideo) != 'undefined'){
       		that.player.stopVideo();
       	}
