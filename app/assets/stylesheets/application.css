@@ -1015,14 +1015,3 @@ footer {
 	background: #17addf;
 	color:#FFF;
 }
-.triangle-border{
-position: relative;
-padding: 15px;
-margin: 1em 0 3em;
-border: 5px solid #5A8F00;
-color: #333;
-background: white;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-}
