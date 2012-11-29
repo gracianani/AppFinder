@@ -32,12 +32,18 @@
 	        						<a href="#" class="tag btn ">Under $1</a>
 	        						<a href="#" class="tag btn ">Under $5</a>
 	        						<hr>
-	        						<p>Price Range: <span id="filter-priceRange">All Price</span></p>
-	        						<div id="filter-priceRange-slider">
-	        						
+	        						<div id="filter-priceRange-box">
+	        							<h4>Price Range</h4>
+	        							<form class="form-inline">
+	        							Min <input type="text" class="input-mini"></input>
+	        							Max <input type="text" class="input-mini"></input>
+	        							</form>
 	        						</div>
 	        						<hr>
-	        						<p class="checkbox"><input type="checkbox" />In-app Purchance</p>
+	        						<p class="checkbox"><input type="checkbox" />In-app Purchase</p>
+	        						<hr />
+	        						<div class="clearfix"><a id="filter-category-apply" class="btn btn-info btn-small pull-right">Apply</a></div>    
+        			
 	        				</div>
 	        			</div>
 	        	</div><!-- /price -->  
@@ -45,14 +51,21 @@
 	        			<i class="icon-rating  smlDropdown-toggle"><b class="caret pull-right"></b></i>
 	        			<div class="smlDropdown-menu">
 	        				<div class="smlDropdown-inner">
-	        					<h4>Rating Range</h4>
-	        					<div>From <span id="filter-rating-low-hint"></span></div>
-	        					<div id="filter-rating-low"></div>
-	        					<div>to <span id="filter-rating-high-hint"></span></div>
-	        					<div id="filter-rating-high"></div>
+	        					<div id="filter-ratingsCountRange-box">
+	        						<h4>Rating Range</h4>
+	        						<div>From <span id="filter-rating-low-hint"></span></div>
+		        					<div id="filter-rating-low"></div>
+		        					<div>to <span id="filter-rating-high-hint"></span></div>
+		        					<div id="filter-rating-high"></div>
+	        					</div>
 	        					<hr>
-	        					<p>Ratings Count Range: <span id="filter-ratingsCountRange">All Ratings</span></p>
-	        					<div id="filter-ratingsCountRange-slider"></div>
+	        					<div id="filter-ratingsCountRange-box">
+	        						<h4>Rating Count</h4>
+	        						<form class="form-inline">
+	        							Min <input type="text" class="input-mini"></input>
+	        							Max <input type="text" class="input-mini"></input>
+	        						</form>
+	        					</div>
 	        					<hr>
 	        					<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
 	        					
@@ -64,9 +77,9 @@
 	        			<ul class="smlDropdown-menu" role="menu" aria-labelledby="dLabel">
 						    <li><a tabindex="-1" href="#">All Time</a></li>
 						    <li class="divider"></li>
-						    <li><a tabindex="-1" href="#">Today</a></li>
-						    <li><a tabindex="-1" href="#">This Week</a></li>
-						    <li><a tabindex="-1" href="#">This Month</a></li>
+						    <li><a tabindex="-1" href="#">Past 24 hours</a></li>
+						    <li><a tabindex="-1" href="#">Past 7 days</a></li>
+						    <li><a tabindex="-1" href="#">Past 30 days</a></li>
 						</ul>
 				        
 	        	</div><!-- /time -->   
@@ -339,6 +352,8 @@
 	        						<a href="#" class="tag btn filter-tag-link"><%= popularBadges[i].name %></a> 
         						<% } %>
         					</div>
+        					<hr />
+	        				<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
         				</div>
 	        		</div>
 	        	</div><!-- /badge -->
@@ -365,14 +380,15 @@
 	        	</div><!-- /tag -->    
 	        	<div id="filter-device" class="filter-btn smlDropdown">
 	        			<i class="icon-device smlDropdown-toggle"><b class="caret pull-right"></b></i>
-	        			<div class=smlDropdown-menu">
-	        			<div class="smlDropdown-inner>
-	        			<select id="filter-device-select" multiple="">
-	        				<option>All Devices</option>
-	        				<option>iPhone</option>
-	        				<option>iPad</option>
-	        				<option>iMac</option>
-	        			</select>
+	        			<div class="smlDropdown-menu">
+	        			<div class="smlDropdown-inner">
+	
+	        				<label class="checkbox"> <input type="checkbox" value="all">All Devices</input></label>
+	        				<label class="checkbox"> <input type="checkbox" value="iPhone">iPhone</input></label>
+	        				<label class="checkbox"> <input type="checkbox" value="iPad">iPad</input></label>
+	        				<label class="checkbox"> <input type="checkbox" value="iMac">iMac</input></label>
+	        				<hr />
+	        				<div class="clearfix"><a id="filter-device-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
 	        			</div>
 	        			</div>
 	        	</div><!-- /device -->
