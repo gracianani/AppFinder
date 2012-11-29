@@ -488,17 +488,18 @@ h4 {
 #filter-price .smlDropdown-menu {
 	width: 250px;
 }
+
 #filter-price .tag.active{
 	background-color: #c73b0b;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
 	color: #FFF;
 }
-#filter-price .tag.active::after{
-	content: ' *';
-}
 #filter-priceRange,#filter-rating-low-hint,#filter-rating-high-hint {
 	color:#e7a136;
 	text-transform: capitalize;
+}
+#filter-rating .smlDropdown-menu {
+	width: 250px;
 }
 .chzn-drop {
 	min-width:200px!important;
@@ -508,7 +509,7 @@ h4 {
 }
 
 #filter-keyword .search-query {
-	width:140px;
+	width:411px;
 }
 #filter-summary {
 	padding: 10px 20px;
