@@ -13,7 +13,10 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     
 	this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
 	$('#app-view').prepend(this.highlightsView.el);
-
+	
+	this.loginView = new AppFinder.Views.LoginView();
+	this.registerView = new AppFinder.Views.RegisterView();
+	
 
   },
   start: function(){
