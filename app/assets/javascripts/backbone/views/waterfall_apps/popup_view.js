@@ -14,9 +14,11 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 	  this.$el.find('.app-short-description').toggle();
   },
   initialize : function() {
-  
 
   	var that = this;
+  	
+  
+    
   	TINY.box.show({html:"",width:'940',animate:true,
    		openjs:function(){
    			
@@ -63,27 +65,31 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 		'starOn'    : 'star-on-big.png'
 		
 		});
-		
+		 
     },0);
-    
-    setTimeout(function() {
-    	$(".rslides").responsiveSlides({
-	  auto: true,             // Boolean: Animate automatically, true or false
-	  speed: 1000,            // Integer: Speed of the transition, in milliseconds
-	  timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
-	  pager: true,           // Boolean: Show pager, true or false
-	  nav: true,             // Boolean: Show navigation, true or false
-	  random: false,          // Boolean: Randomize the order of the slides, true or false
-	  pause: false,           // Boolean: Pause on hover, true or false
-	  pauseControls: false,   // Boolean: Pause when hovering controls, true or false
-	  prevText: "Previous",   // String: Text for the "previous" button
-	  nextText: "Next",       // String: Text for the "next" button
-	  maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
-	  controls: "",           // Selector: Where controls should be appended to, default is after the 'ul'
-	  namespace: "rslides",   // String: change the default namespace used
-	  before: function(){},   // Function: Before callback
-	  after: function(){}     // Function: After callback
-	});}, 2000);
+	var that = this;  
+    setTimeout(function(){
+	that.player  = new YT.Player('player', {
+      height: '387',
+      width: '587',
+      videoId: that.model.get('video_id')
+    });
+	$(".flexslider")
+    .flexslider({
+      animation: "slide",
+      useCSS: false,
+      animationLoop: false,
+      smoothHeight: true,
+      animationSpeed: 300,
+      animationLoop: false, 
+      before: function(slider){
+      	if(that.player != null && typeof(that.player) !='undefined' && typeof(that.player.stopVideo) != 'undefined'){
+      		that.player.stopVideo();
+      	}
+      }
+  });
+   }, 3000);
+ 
     return this;
   }
 });

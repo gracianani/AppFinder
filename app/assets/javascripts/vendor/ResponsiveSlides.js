@@ -87,6 +87,7 @@
               settings.after();
               index = idx;
             });
+           
         };
 
       // Random order
