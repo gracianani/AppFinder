@@ -25,7 +25,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   routes: {
     
     "index"    		: 	"index",
-    "id:id&popup" 	: 	"popup",
+    "id:id&popup:video" 	: 	"popup",
     "id:id"      	: 	"show",
     "login"			:	"login",
     "developers"	:	"developer",
@@ -64,7 +64,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     showModel.fetch();
      
   },
-  popup: function(id) {
+  popup: function(id, video) {
 
 	  	this.filters.fetch();
 	  	this.highlights.fetch();
@@ -74,7 +74,8 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	  	//todo: change id
 	 	var popupModel = new AppFinder.Models.App();	  		 
 	 	popupModel.url = 'assets/data/app-id2.json';
-	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
+	 	var showVideo = (video == "&video");
+	    var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel, showVideo: showVideo});
 	    
 	    popupModel.fetch();
 

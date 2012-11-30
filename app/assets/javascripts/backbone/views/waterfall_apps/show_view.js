@@ -7,7 +7,6 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
   tagName : "div",
   initialize: function ()  {
   	this.players=[];
-  	this.videoStatus = []; // 0 => initializing, 1 => ready
   	this.model.on('change',this.render,this);
   },
   events: {
@@ -66,7 +65,6 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
     	var videos = that.model.get('videos');
     	for(i = 0; i < videos.length; i=i+1) {
     		var playerid="player"+i;
-    		that.videoStatus[i]='0';
     		if(videos[i].video_type=="youtube") {
 	    		that.players[i]  = new YT.Player(playerid, {
 		      		height: '397',
@@ -94,9 +92,7 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
     	}
     });
     setTimeout(function() {
-    	
-    	
-    	
+
 	    $("#flexslider")
 	    .flexslider({
 			animation: "slide",

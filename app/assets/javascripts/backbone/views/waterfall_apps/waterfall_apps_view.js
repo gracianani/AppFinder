@@ -14,7 +14,8 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
     "mouseenter" : "onMouseEnter",
     "mouseleave" : "onMouseLeave",
     "mouseenter .btn-install" : "toggleInstallText",
-    "mouseleave .btn-install" : "toggleInstallText"
+    "mouseleave .btn-install" : "toggleInstallText",
+    "click div.app-video" : "showDetail"
   },
   
   initialize : function(){
@@ -68,10 +69,11 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   {
 	 var popupModel = new AppFinder.Models.App();	  		 
 	 popupModel.url = 'assets/data/app-id2.json';
-	 var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel});
+	 var showVideo = $(e.target).hasClass("icon-facetime-video");
+	 var popupView = new AppFinder.Views.WaterfallApps.PopupView({model: popupModel, showVideo:showVideo});
 	 popupModel.fetch();
 	 
-	 window.router.navigate("id" + this.model.get("id") + "&popup");
+	 window.router.navigate("id" + this.model.get("id") + "&popup" + (showVideo?"&video":""));
 
   },
   tagName: "div",

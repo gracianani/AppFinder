@@ -33,32 +33,30 @@
 				<%= long_description %> <a href="#" class="folded">Folded <<</a>
 		</div>
 		<div>
+			<a href="#" id="lnk_screenshots"> screenshots </a> |
+			<a href="#" id="lnk_videos"> video</a>
+		</div>
+		<div>
 			<div class="app-screenshot" >
-				<div class="flexslider">
+				<div id="flexslider" class="flexslider">
 				<ul class="slides">
 				<% for (i = 0; i < screenshot_url.length; i++ ) { %>
 					<li> <img src ="assets/<%= screenshot_url[i] %>" alt="" /> </li>
 				<% } %>
-				<% if( video_url != "") { %>
-					<!-- YouTube: iframe -->
-                		<li> <div id="player"></div></li>
-					<% } %>
+				
 				</ul>
 				</div>
 				
-				<!-- Start slider 
-				<div id="slides">
-					<div class="slides_container">
-					<% for (i = 0; i < screenshot_url.length; i++ ) { %>
-						<div><img src ="assets/<%= screenshot_url[i] %>" alt="" /> </div>
+				
+				<% if( videos.length >0 ) { %>
+				<div id="video_flexslider" class="flexslider" style="display:none">
+					<ul class="slides" >
+					<% for (i = 0; i < videos.length; i++ ) { %>
+						<li> <div id="player<%=i%>" ></div></li>
 					<% } %>
-					<% if( video_url != "") { %>
-                		<div><iframe title="YouTube video player" width="587" height="387" src="<%= video_url %>" frameborder="0" allowfullscreen></iframe></div>
-					<% } %>
-					</div>
-					<a href="#" class="prev"><img src="assets/img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
-					<a href="#" class="next"><img src="assets/img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
-				</div>  END Slider -->
+					</ul>
+				</div>
+				<% } %>
 			</div>
 		</div>
 		
