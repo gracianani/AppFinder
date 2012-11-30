@@ -37,12 +37,32 @@
 				<%= long_description %> <a href="#" class="folded">Folded <<</a>
 		</div>
 		<div>
+			<a href="#" id="lnk_screenshots"> screenshots </a> |
+			<a href="#" id="lnk_videos"> video</a>
+		</div>
+		<div>
 			<div class="app-screenshot" >
-				<ul class="rslides">
+				<div id="flexslider" class="flexslider">
+				<ul class="slides">
 				<% for (i = 0; i < screenshot_url.length; i++ ) { %>
 					<li> <img src ="assets/<%= screenshot_url[i] %>" alt="" /> </li>
 				<% } %>
+				
 				</ul>
+				</div>
+				
+				
+				<% if( videos.length >0 ) { %>
+				<div id="video_flexslider" class="flexslider" style="display:none">
+					<ul class="slides" >
+					<% for (i = 0; i < videos.length; i++ ) { %>
+						<li> <div id="player<%=i%>" ></div></li>
+					<% } %>
+					</ul>
+				</div>
+				<% } %>
+					
+				
 			</div>
 		</div>
 		
