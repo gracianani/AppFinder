@@ -46,13 +46,53 @@
 			</div>
 		</div>
 		
+		<div id="detail-commentsContainer">
+			<h4 class="detail-secendary-title">Reviews</h4>
+			<div class="detail-comment">
+				<a class="pull-left" href="#">
+					    	<img class="user-avatar" src="https://www.gstatic.com/s2/contacts/images/NoPicture.gif">
+				</a>
+				<div class="detail-comment-body">
+						<div href="" class="btn btn-small"><i class="icon-heart"> </i>Like</div>
+							<textarea id="detail-postComment-ta"></textarea>				
+						<div href="" class="btn">Submit</div>
+				</div>
+			</div>
+			<ul id="detail-comment-list">
+			<% for (var i=0; i < comments.length; i++) { %>
+				<li class="detail-comment">
+					<a class="pull-left" href="#">
+				    	<img class="user-avatar" src="<%= comments[i].user_avatar %>">
+				    </a>
+				    <div class="detail-comment-body">
+				    <p class="detail-comment-heading">
+				    <a href="" class="detail-comment-user"><%= comments[i].user_name %></a> 
+				     <% if (comments[i].user_title && comments[i].user_title != "") { %> 
+				      <span class="detail-comment-title"><%= comments[i].user_title %></span> 				     
+				    <% } %>
+				     <% if (comments[i].user_company && comments[i].user_company != "") { %> 
+				     @<a class="detail-comment-company" href="<%= comments[i].company_url %>"><%= comments[i].user_company %></a> 				     
+				    <% } %>
+				    <% if (comments[i].is_like > 0) { %>
+					    <span class="detail-comment-like">likes this <i class="icon-heart"></i></span>
+				    <% } %>
+				     <span class="detail-comment-time"><%= comments[i].time %></span> 
+				    </p>
+				    <%= comments[i].comment %>
+				    </div>				
+				</li>
+
+			<% } %>				
+
+			</ul>
+		</div>
 
 
 	</div><!--/.popup-primary-->
 	<div id="detail-secondary">
 		<div class="btn-toolbar">
 			<div href="#" class="btn btn-install btn-info">
-			<span class="span-price 
+			<span class="price-text 
 				<% if (price <= 0.5 ) { %>
 	    			 btn-info
 				<% }  %> ">
@@ -62,7 +102,7 @@
 					$<%= price %>
 				<% } %>
 				
-			</span><span class="span-install">Install</span>
+			</span><span class="install-text" style="display:none">Install</span>
 			</div>
 		</div>
 
@@ -98,11 +138,12 @@
 			</div>
 		</div>
 		<div class="social-share clearfix pt20">
-					<span class="btn btn-small">Facebook</span>
-					<span class="btn btn-small">Twitter</span>
-					<span class="btn btn-small">Google+</span>
-					<span class="btn btn-small">Pin</span>
-			</div>
+					<span class='st_facebook_large' displayText='Facebook'></span>
+					<span class='st_twitter_large' displayText='Tweet'></span>
+					<span class='st_pinterest_large' displayText='Pinterest'></span>
+					<span class='st_linkedin_large' displayText='LinkedIn'></span>
+					<span class='st_email_large' displayText='Email'></span>
+		</div>
 		<div id="detail-related">
 			<h4 class="detail-secendary-title">Related Apps</h4>
 			<div class="detail-apps">

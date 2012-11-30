@@ -10,11 +10,17 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
   },
   events: {
     "click .expand" : "toggleDesc",
-    "click .folded" : "toggleDesc"  },
+    "click .folded" : "toggleDesc",
+    "mouseenter .btn-install" : "toggleInstallText",
+    "mouseleave .btn-install": "toggleInstallText"  },
   toggleDesc: function(e) {
   	  e.preventDefault();
 	  this.$el.find('.app-long-description').toggle();
 	  this.$el.find('.app-short-description').toggle();
+  },
+  toggleInstallText: function(e) {
+  	  this.$el.find('.price-text').toggle();
+  	  this.$el.find('.install-text').toggle();
   },
   render: function(){
     $(this.el).html(this.template(this.model.toJSON() ));

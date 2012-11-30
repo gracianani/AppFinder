@@ -778,19 +778,8 @@ h4 {
 .detail .btn-install {
 	width: 80%;
 }
-.detail .span-price,.span-install {
-	display: inline-block;
-	margin:-5px 0;
-	padding:5px 0;
-}
-.detail .span-price {
-	width:33%;
-	border-right: 1px solid rgba(255,255,255,0.2);
-}
-.detail .span-install {
-	width:66%;
-	border-left: 1px solid rgba(0,0,0,0.1);
-}
+
+
 .detail-secendary-title {
 	margin-top:20px;
 	padding-bottom: 10px;
@@ -836,6 +825,62 @@ h4 {
 	border-radius: 5px;
 	padding:20px;
 	margin-bottom: 30px;
+}
+
+.detail-comment {
+	
+}
+
+.user-avatar {
+	width: 35px;
+	height: 35px;
+	border: 2px solid white;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: -1px 1px 5px #B2B2B2;
+	-moz-box-shadow: -1px 1px 5px #b2b2b2;
+	box-shadow: -1px 1px 5px #B2B2B2;
+	float: left;
+	margin-left: 3px;
+	padding: 0;
+}
+.detail-comment .pull-left {
+	margin-right: 10px;
+}
+.detail-comment-body {
+	overflow: hidden;
+	zoom: 1;
+	padding-bottom: 20px;
+}
+.detail-comment-heading {
+	margin-bottom: 0;
+	color:#999;
+	font-size: 12px;
+}
+.detail-comment-title,.detail-comment-company {
+	display: inline-block;
+	padding:0 5px;
+	font-style: italic;
+
+}
+.detail-comment-user {
+	font-size:16px;
+	font-weight: bold;
+	padding-right: 10px;
+}
+.detail-comment-time {
+	font-size: 10px;
+	color: #CCC;
+	padding-left:10px;
+}
+.detail-comment {
+	border-bottom: 1px dotted #dedede;
+	margin:20px 0;
+}
+#detail-postComment-ta {
+	width: 90%;
+	margin-top:5px;
 }
 #infscr-loading {position:absolute;bottom:30px;}
 
