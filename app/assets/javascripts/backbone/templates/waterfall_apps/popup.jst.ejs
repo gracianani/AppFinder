@@ -62,13 +62,53 @@
 			</div>
 		</div>
 		
+		<div id="detail-commentsContainer">
+			<h4 class="detail-secendary-title">Reviews</h4>
+			<div class="detail-comment">
+				<a class="pull-left" href="#">
+					    	<img class="user-avatar" src="https://www.gstatic.com/s2/contacts/images/NoPicture.gif">
+				</a>
+				<div class="detail-comment-body">
+						<div href="" class="btn btn-small"><i class="icon-heart"> </i>Like</div>
+							<textarea id="detail-postComment-ta"></textarea>				
+						<div href="" class="btn">Submit</div>
+				</div>
+			</div>
+			<ul id="detail-comment-list">
+			<% for (var i=0; i < comments.length; i++) { %>
+				<li class="detail-comment">
+					<a class="pull-left" href="#">
+				    	<img class="user-avatar" src="<%= comments[i].user_avatar %>">
+				    </a>
+				    <div class="detail-comment-body">
+				    <p class="detail-comment-heading">
+				    <a href="" class="detail-comment-user"><%= comments[i].user_name %></a> 
+				     <% if (comments[i].user_title && comments[i].user_title != "") { %> 
+				      <span class="detail-comment-title"><%= comments[i].user_title %></span> 				     
+				    <% } %>
+				     <% if (comments[i].user_company && comments[i].user_company != "") { %> 
+				     @<a class="detail-comment-company" href="<%= comments[i].company_url %>"><%= comments[i].user_company %></a> 				     
+				    <% } %>
+				    <% if (comments[i].is_like > 0) { %>
+					    <span class="detail-comment-like">likes this <i class="icon-heart"></i></span>
+				    <% } %>
+				     <span class="detail-comment-time"><%= comments[i].time %></span> 
+				    </p>
+				    <%= comments[i].comment %>
+				    </div>				
+				</li>
+
+			<% } %>				
+
+			</ul>
+		</div>
 
 
 	</div><!--/.popup-primary-->
 	<div id="detail-secondary">
 		<div class="btn-toolbar">
 			<div href="#" class="btn btn-install btn-info">
-			<span class="span-price 
+			<span class="price-text 
 				<% if (price <= 0.5 ) { %>
 	    			 btn-info
 				<% }  %> ">
@@ -78,7 +118,7 @@
 					$<%= price %>
 				<% } %>
 				
-			</span><span class="span-install">Install</span>
+			</span><span class="install-text" style="display:none">Install</span>
 			</div>
 		</div>
 
@@ -149,10 +189,15 @@
 	</div>
 </div><!--/#app-id -->
 	<div class="social-share">
-		<ul>
-			<li style="height:31px"><span class="btn btn-small">Facebook</span></li>
-			<li style="height:31px"><span class="btn btn-small">Twitter</span></li>
-			<li style="height:31px"><span class="btn btn-small">Google+</span></li>
-			<li style="height:31px"><span class="btn btn-small">Pin</span></li>
-		</ul>
+			<!-- AddThis Button BEGIN -->
+			<ul class="addthis_toolbox addthis_default_style ">
+			<li><a class="addthis_button_facebook_like" fb:like:layout="button_count" style="width:85px"></a></li>
+			<li><a class="addthis_button_tweet" data-count="none"  style="width:85px"></a></li>
+			<li><a class="addthis_button_google_plusone" g:plusone:size="medium"  style="width:65px"></a> </li>
+			<li><a class="addthis_button_pinterest_pinit"  pi:pinit:url="http://www.apple.com" pi:pinit:media="http://images.apple.com/home/images/hero.jpg" pi:pinit:layout="horizontal"></a></li>
+			</ul>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b82f6610809c25"></script>
+			<!-- AddThis Button END -->
+
 	</div>
+		

@@ -649,7 +649,7 @@ h4 {
 	-ms-transform: rotate(45deg);
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-.card .app-ribbon.em {
+.card .app-ribbon.important {
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#d8651d),to(#b52806));
 	background-image: -webkit-linear-gradient(top,#d8651d,#b52806);
 	background-image: -o-linear-gradient(top,#d8651d,#b52806);
@@ -659,7 +659,26 @@ h4 {
 	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
 
 }
+.card .app-ribbon.top {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#778825),to(#57641d));
+	background-image: -webkit-linear-gradient(top,#778825,#57641d);
+	background-image: -o-linear-gradient(top,#778825,#57641d);
+	background-image: linear-gradient(to bottom,#778825,#57641d);
+	background-image: -moz-linear-gradient(top,#778825,#57641d);
+	color: #FFF;	
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
 
+}
+.card .app-ribbon.new {
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#edb230),to(#e7a136));
+	background-image: -webkit-linear-gradient(top,#edb230,#e7a136);
+	background-image: -o-linear-gradient(top,#edb230,#e7a136);
+	background-image: linear-gradient(to bottom,#edb230,#e7a136);
+	background-image: -moz-linear-gradient(top,#edb230,#e7a136);
+	color: #FFF;	
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+
+}
 .card .app-developer {margin-top:5px;}
 
 .card .app-name { margin-bottom: 10px; color:#40090c;line-height: 1.4em;}
@@ -730,7 +749,9 @@ h4 {
 }
 
 .popup .social-share{position: fixed;left: 50%;top: 162px;width: 120px;margin-left: 500px;}
-
+.popup .addthis_toolbox li {
+height:35px;
+}
 
 .detail a {
 	color:#c73b0b;
