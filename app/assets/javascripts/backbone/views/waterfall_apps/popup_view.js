@@ -6,12 +6,18 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
   tagName: "div",
   events: {
     "click .expand" : "toggleDesc",
-    "click .folded" : "toggleDesc"
+    "click .folded" : "toggleDesc",
+    "mouseenter .btn-install" : "toggleInstallText",
+    "mouseleave .btn-install": "toggleInstallText"  
   },
   toggleDesc: function(e) {
   	  e.preventDefault();
 	  this.$el.find('.app-long-description').toggle();
 	  this.$el.find('.app-short-description').toggle();
+  },
+  toggleInstallText: function(e) {
+  	  this.$el.find('.price-text').toggle();
+  	  this.$el.find('.install-text').toggle();
   },
   initialize : function() {
 

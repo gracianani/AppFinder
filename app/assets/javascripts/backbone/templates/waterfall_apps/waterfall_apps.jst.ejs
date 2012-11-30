@@ -25,15 +25,17 @@
 		</div>
 		<div class="clearfix"></div>
 	</div><!--/media -->
+	<% if (obj.feature) { %>
 	<div class="app-ribbonContainer">
-		<strong class="app-ribbon
-			<% if (price <= 0.5 ) { %>
-    			 em
-			<% } %>
-			">
-			On Sale
-		</strong>
+			<strong class="app-ribbon
+				<% if (obj.feature_type) { %>
+	    			 <%= feature_type %>
+				<% } %>
+				">
+	    			 <%= feature %>
+			</strong>
 	</div><!--/app-priceContainer-->
+	<% } %>
 	<div class="mosaic-block bar" style= 'height: 
 			<%= screenshot_height * 190 / screenshot_width %>px;
 	'>
