@@ -7,12 +7,9 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
   className : "container",
   initialize: function ()  {
       $(this.el).html(this.template());
-
       this.collection.on('add', this.addOne, this);
       this.collection.on('reset', this.addAll, this);
-      
       this.apps = $(this.el).find('#waterfallApps');
-      console.log(this.apps);
   },
 
   addAll: function() {

@@ -1,0 +1,74 @@
+
+
+	
+		<div class="dev-basicInfo pull-left">
+			<div class="dev-where clearfix">
+				<div class="dev-location pull-left">
+					<i class="icon-map-marker"></i><%= location %>
+				</div>
+				<div class="dev-distance pull-right">
+					<%= distance %> far from you
+				</div>
+			</div><!--where-->
+			<div class="dev-name">
+				<%= name %><i class="icon-vertified"></i>
+			</div><!--name-->
+			<div class="dev-rate">
+			<%= rate %>
+			</div>
+			<div class="dev-desc">
+			<%= description %>
+			</div>
+		</div><!--basicInfo-->
+		
+		
+		<div class="dev-stat pull-left">
+			<div class="clearfix">
+				<div class="dev-appNum pull-left">
+					<big><%= numOfApps %></big><small>APPS</small>
+				</div><!--appNum-->
+				<div class="pull-left">
+					<div class="dev-focus">
+						<span class="dev-statTitle">focus</span>
+						<span class="dev-statContent"><a href=""><%= main_category %></a></span>
+					</div><!--focus-->
+					<div class="dev-appRate">
+						<span class="dev-statTitle">avg</span>
+						<span class="dev-statContent"><%= app_avg_score %></span>	        
+					</div><!--rate-->
+				</div>
+			</div>
+			<div class="tags ">
+			<% for (var i=0; i < tags.length; i++) { %>
+				<a class="tag" href="javascript:void(0)"><i class='icon-tag icon-white'></i> <%= tags[i] %></a>
+			<% } %>
+			</div>
+			<div class="badges">
+			<% for (var i=0; i < badges.length; i++) {  %>
+				<a class="badge" href="javascript:void(0)"><i class='icon-certificate icon-white'></i> <%= badges[i] %> </a>
+			<% } %>
+			</div>
+		</div><!--stat-->
+		
+		
+		<div class="dev-appsContainer pull-right">
+			<div class="dev-apps">
+				<% for(var i=0; i<apps.length; i++) { %>
+				<div class="dev-app">
+					<img class="dev-appLogo" src="assets/<%= apps[i].app_logo %>" />
+					<div class="dev-appName"><%= apps[i].app_name %></div>
+					<div class="dev-appCat">in <a href="#"><%= apps[i].app_category %></a></div>
+					<div class="dev-appPrice btn btn-small">
+						<% if (apps[i].app_price > 0 ) { %>
+							$<%= apps[i].app_price %>
+						<% } else { %>
+							FREE
+						<% } %>
+					</div>
+				</div><!--app-->
+				<% } %>
+			</div><!--apps-->
+		</div><!--appsContainer-->
+		
+
+	
