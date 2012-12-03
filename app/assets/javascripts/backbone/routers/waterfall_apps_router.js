@@ -3,7 +3,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     this.waterfallApps = new AppFinder.Collections.AppsCollection();
     this.filters = new AppFinder.Models.Filters();
     this.highlights = new AppFinder.Models.Highlight();
-
+	this.developers = new AppFinder.Collections.DevelopersCollection();
 
 	this.indexView = new AppFinder.Views.WaterfallApps.IndexView({collection:this.waterfallApps});
 	$('#app-view').prepend(this.indexView.el);
@@ -17,6 +17,10 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	this.loginView = new AppFinder.Views.LoginView();
 	this.registerView = new AppFinder.Views.RegisterView();
 	
+	this.developerView = new AppFinder.Views.Developer.IndexView({collection: this.developers});
+	$('#developers-view').prepend(this.developerView.el);
+	$('#developers-view').prepend(this.filterView.el);
+	$('#developers-view').prepend(this.highlightsView.el);
 
   },
   start: function(){
@@ -82,7 +86,9 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   developer: function() {
   	this.showStage('developers');
-	  
+	this.filters.fetch();
+  	this.highlights.fetch();
+  	this.developers.fetch();
   },
   register:function() {
   	this.showStage('register');	  
