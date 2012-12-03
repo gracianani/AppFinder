@@ -834,7 +834,7 @@ height:35px;
 	margin-top:20px;
 }
 .detail-like-count {
-	background:url(img/icon-heart.png) no-repeat left center;
+	background:url(img/icon-like.png) no-repeat left -70px;
 	padding-left:32px;
 }
 .detail-pin-count {
@@ -1098,7 +1098,7 @@ footer {
   }
   .dev-basicInfo {
 	  width:430px;
-	  padding:15px 25px;
+	  padding:15px 25px 25px;
 	  background-color: #FFF;
 	  border-radius: 5px 0 0 5px;
 
@@ -1110,6 +1110,7 @@ footer {
 	  text-shadow: 1px 1px 0 #fff;
 	  color:#938a8a;
 	  font-size: 12px;
+	  cursor: pointer;
   }
   .dev-name {
 	  color:#c73c0c;
@@ -1117,6 +1118,14 @@ footer {
 	  line-height: 1.2em;
 	  padding:8px 0 0;
 	  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  }
+  .icon-vertified {
+	  background: url(img/icon-vertificated.png) no-repeat center center;
+	  background-color:#c73b0b;
+	  border-radius: 12px;
+	  width: 22px;
+	  height: 22px;
+	  margin-left:10px;
   }
   .dev-rate {
 	  font-size: 12px;
@@ -1128,6 +1137,7 @@ footer {
 	  font-size: 11px;
 	  line-height: 1.5em;
 	  color: #999;
+	  margin-bottom: 15px;
   }
   .dev-stat {
 	  padding:15px;
@@ -1197,10 +1207,48 @@ footer {
 	  color: #555;
 	  line-height: 1.1em;
   }
+
   .dev-appPrice {
 	  margin:5px 0;
   }
   .dev-appCat{
 	  font-size: 12px;
 	  color: #999;
+  }
+  .dev-links {
+  }
+  .dev-links>[class^="icon-"], .dev-links>[class*=" icon-"] {
+	  width: 32px;
+	  height: 32px;
+	  background-position: left top;
+	  display: inline-block;
+	  margin-right: 15px;
+  }
+  .icon-like {
+	  background-image:url(img/icon-like.png);
+  }
+  .icon-homepage {
+	  background-image:url(img/icon-homepage.png);
+	  
+  }
+  .icon-twi {
+	  background-image:url(img/icon-twi.png);
+	  
+  }
+  .icon-email {
+	  background-image:url(img/icon-email.png);
+	  
+  }
+  .dev-links>.active {
+	  background-position: left -32px;
+  }
+  .dev-links>.active:hover,.dev-links>.active:focus,.dev-links>.active:active,
+  .icon-like.liked {
+	  background-position: left -64px;
+  }
+  
+  
+  #flexslider {
+	  background:transparent url(img/ajax-loader.gif) no-repeat center center !important;
+	  min-height:30px;
   }
