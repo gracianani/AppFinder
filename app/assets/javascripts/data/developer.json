@@ -2,6 +2,8 @@
 	"id" : "2",
 	"location" : "Chicago, IL, US",
 	"distance" : "1.5km",
+	"lat":25.017445,
+	"lng":121.53338,
 	"name" : "Riktam Technologies",
 	"verified":1,
 	"rate" : "$10k-15k",
@@ -19,25 +21,30 @@
     	"app_name" : "The Cat In The Hat",
     	"app_category": "Games",
     	"app_price" : "0.99",
-    	"app_logo" : "appImages/the-cat-in-the-hat-dr.-seuss-logo.jpg"
+    	"app_logo" : "appImages/the-cat-in-the-hat-dr.-seuss-logo.jpg",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
     	}, {
     	"app_id" : "3", 
     	"app_name": "An Awesome Book", 
     	"app_category": "Education",
     	"app_logo" : "appImages/animal-legends-logo.jpg", 
-    	"app_price":"0.0"},
+    	"app_price":"0.0",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
   		{
   		"app_id" : "4", 
   		"app_name": "Flea Sympony",  
   		"app_category": "Games",
   		"app_logo" : "appImages/flea-symphony-logo.jpg", 
-  		"app_price":"1.99"}
+  		"app_price":"1.99",
+  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
   	]
 }, 
 {
 	"id" : "3",
 	"location" : "Los Angeles, US",
 	"distance" : "1510 mi",
+	"lat":25.017445,
+	"lng":121.53338,
 	"name" : "Stanfy",
 	"verified":0,
 	"rate" : "over $20k",
@@ -54,19 +61,30 @@
     	"app_name" : "WaterBanance",
     	"app_category": "Lifestyle",
     	"app_price" : "0.99",
-    	"app_logo" : "appImages/branchOut-logo.jpg"
+    	"app_logo" : "appImages/branchOut-logo.jpg",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
     	}, {
     	"app_id" : "6", 
     	"app_name": "IMAX", 
     	"app_category": "Entertainment",
     	"app_logo" : "appImages/bloons-td-5-logo.jpg", 
-    	"app_price":"0.0"}
+    	"app_price":"0.0",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
+    	{
+    	"app_id" : "6", 
+    	"app_name": "Angry Birds Star Wars", 
+    	"app_category": "Entertainment",
+    	"app_logo" : "appImages/angry-birds-star-wars-logo.jpg", 
+    	"app_price":"0.0",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
   	]
 }, 
 {
 	"id" : "4",
 	"location" : "United Kingdom",
 	"distance" : "1510 mi",
+	"lat":25.017445,
+	"lng":121.53338,
 	"name" : "Rare Breed Digital",
 	"verified":1,
 	"rate" : "$5k-10k",
@@ -74,8 +92,8 @@
 	"twitter":"http://twitter.com/rik",
 	"email":"rik@rik.com",
 	"numOfApps":"3",
-	"tags" : ["New"],
-    "badges" : ["PATRONAGE"],
+	"tags" : ["New","Updated","cats","Dogs","Birds"],
+    "badges" : ["PATRONAGE","Top10","BestTeam"],
     "main_category" : ["Lifestyle","Games","Education"],
     "app_avg_score" : "4",
     "apps" : [ {
@@ -83,18 +101,21 @@
     	"app_name" : "WaterBanance",
     	"app_category": "Lifestyle",
     	"app_price" : "0.99",
-    	"app_logo" : "appImages/eHarmony-logo.jpg"
+    	"app_logo" : "appImages/eHarmony-logo.jpg",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
     	}, {
     	"app_id" : "6", 
     	"app_name": "IMAX", 
     	"app_category": "Entertainment",
     	"app_logo" : "appImages/ban-jo-logo.jpg", 
-    	"app_price":"0.0"},
+    	"app_price":"0.0",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
   		{
   		"app_id" : "7", 
   		"app_name": "SchoolIt",  
   		"app_category": "Education",
   		"app_logo" : "appImages/lazy-riders-logo.jpg", 
-  		"app_price":"1.99"}
+  		"app_price":"1.99",
+  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
   	]
 }]

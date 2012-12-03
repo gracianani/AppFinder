@@ -24,6 +24,21 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
     });
     
     $el.find('[rel="tooltip"]').tooltip();
+    $el.find('.dev-app [rel="popover"]').popover({
+	    "placement":"top",
+	    "trigger":"hover"
+    });
+    
+    var mapStr = '<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=http://maps.google.com.tw/maps?f=q&geocode=&q='+
+    this.model.get('lat') +
+    ',' +
+    this.model.get('lng') +
+    '&z=16&output=embed&t=q></iframe>';
+    console.log(mapStr);
+    $el.find('.dev-where').popover({
+    	"html":true,
+    	"content":mapStr
+    });
 
     setTimeout(function(){
 	    var containerHeight = $el.height();

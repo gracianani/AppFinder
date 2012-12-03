@@ -24,7 +24,7 @@
 			</div>
 			<div class="clearfix">
 	        					<div class="dev-links pull-left">
-	        						<a href="" class="icon-like active" title="Like this" rel="tooltip"></a>
+	        						<a href="javascript:void(0)" class="icon-like active" title="Like this" rel="tooltip"></a>
 	        						<a <% if (obj.homepage) { %>
 	        						 href="<%= homepage %>"
 	        						<% } %> class="icon-homepage 
@@ -50,13 +50,14 @@
 	        						title="Email"  rel="tooltip" target="_blank"></a>
 	        						
 	             				</div>
+	             				<div class="btn pull-right btn-small" style="margin-top:5px">Full Profile ></div>
         					</div>
 		</div><!--basicInfo-->
 		
 		
 		<div class="dev-stat pull-left">
 			<div class="clearfix">
-				<div class="dev-appNum pull-left">
+				<div class="dev-appNum pull-left" title="View All Apps" rel="tooltip">
 					<big><%= numOfApps %></big><small>APPS</small>
 				</div><!--appNum-->
 				<div class="pull-left">
@@ -95,7 +96,7 @@
 			<div class="dev-apps">
 				<% for(var i=0; i<apps.length; i++) { %>
 				<div class="dev-app">
-					<img class="dev-appLogo" src="assets/<%= apps[i].app_logo %>" />
+					<img class="dev-appLogo" src="assets/<%= apps[i].app_logo %>" title="<%=apps[i].short_description %>" rel="popover" />
 					<div class="dev-appName"><%= apps[i].app_name %></div>
 					<div class="dev-appCat">in <a href="#"><%= apps[i].app_category %></a></div>
 					<div class="dev-appPrice btn btn-small">

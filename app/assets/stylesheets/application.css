@@ -1092,6 +1092,9 @@ footer {
 /* ==========================================================================
    developers style
    ========================================================================== */
+  #developers {
+	  margin:15px 0;
+  }
   .developer {
 	  border-radius: 5px;
 	  color: #777;
@@ -1124,6 +1127,13 @@ footer {
 	  line-height: 1.2em;
 	  padding:8px 0 0;
 	  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	  cursor: pointer;
+  }
+  .dev-name:hover,.dev-name:active,.dev-name:focus{
+	  color:#e7a136;
+  }
+  .popover {
+	  width: 330px;
   }
   .icon-verified {
 	  background: url(img/icon-vertificated.png) no-repeat center center;
@@ -1188,7 +1198,11 @@ footer {
 	  padding:3px 6px 5px;
 	  margin-right: 10px;
 	  margin-bottom: 10px;
+	  cursor: pointer;
 }
+  .dev-appNum:hover,.dev-appNum:focus,.dev-appNum:active {
+	  background:#e7a136;
+  }
   .dev-appNum>big,.dev-appNum>small {
 	  display: block;
 	  margin:0;
@@ -1216,6 +1230,7 @@ footer {
 	  width: 28%;
 	  float: left;
 	  margin-right: 15px;
+	  margin-top:10px;
   }
   .dev-appLogo {
 	  width: 100px;
@@ -1223,12 +1238,14 @@ footer {
 	  border-radius: 10px;
 	  margin-bottom: 10px;
 	  box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+	  cursor: pointer;
   }
   .dev-appName {
 	  text-shadow: 1px 1px 0 #FFF;
 	  color: #555;
 	  line-height: 1.1em;
 	  font-weight: bold;
+	  cursor: pointer;
   }
 
   .dev-appPrice {
