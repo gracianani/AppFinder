@@ -659,7 +659,7 @@ h4 {
 	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
 
 }
-.card .app-ribbon.top {
+.card .app-ribbon.green {
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#778825),to(#57641d));
 	background-image: -webkit-linear-gradient(top,#778825,#57641d);
 	background-image: -o-linear-gradient(top,#778825,#57641d);
@@ -669,7 +669,7 @@ h4 {
 	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
 
 }
-.card .app-ribbon.new {
+.card .app-ribbon.top,.card .app-ribbon.new {
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#edb230),to(#e7a136));
 	background-image: -webkit-linear-gradient(top,#edb230,#e7a136);
 	background-image: -o-linear-gradient(top,#edb230,#e7a136);
@@ -1017,6 +1017,7 @@ font-size: 21px;
 footer {
 	padding:10px 40px;
 }
+ 
 /* ==========================================================================
    login style
    ========================================================================== */
@@ -1081,3 +1082,125 @@ footer {
 	background: #17addf;
 	color:#FFF;
 }
+
+/* ==========================================================================
+   developers style
+   ========================================================================== */
+  .developer {
+	  border-radius: 5px;
+	  color: #777;
+	  min-height: 200px;
+	  box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+	  position: relative;
+	  background-color: #f7f7f7;
+	  overflow: hidden;
+
+  }
+  .dev-basicInfo {
+	  width:430px;
+	  padding:15px 25px;
+	  background-color: #FFF;
+	  border-radius: 5px 0 0 5px;
+
+  }
+  .dev-where {
+	  background-color:#f7f7f7;
+	  border-radius: 3px;
+	  padding:5px 15px 5px 5px;
+	  text-shadow: 1px 1px 0 #fff;
+	  color:#938a8a;
+	  font-size: 12px;
+  }
+  .dev-name {
+	  color:#c73c0c;
+	  font-size: 24px;
+	  line-height: 1.2em;
+	  padding:8px 0 0;
+	  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  }
+  .dev-rate {
+	  font-size: 12px;
+	  margin-bottom: 10px;
+	  font-family: "Lucida Console", Monaco, monospace;
+	  color: #999;
+  }
+  .dev-desc {
+	  font-size: 11px;
+	  line-height: 1.5em;
+	  color: #999;
+  }
+  .dev-stat {
+	  padding:15px;
+	  width: 220px;
+  }
+  .dev-statTitle{
+	  text-align: right;
+	  width: 50px;
+	  display: inline-block;
+	  text-transform: uppercase;
+	  font-size: 12px;
+	  color: #999;
+	  padding-right;8px;
+  }
+  .dev-statContent {
+	  display: inline-block;
+	  font-size: 12px;
+  }
+  .dev-statContent>a{
+	  color:#8d2d0c;
+  }
+
+  .dev-appNum {
+	  background:#c73c0c;
+	  color:#FFF;
+	  border-radius: 5px;
+	  padding:3px 6px 5px;
+	  margin-right: 10px;
+	  margin-bottom: 10px;
+}
+  .dev-appNum>big,.dev-appNum>small {
+	  display: block;
+	  margin:0;
+	  padding: 0;
+	  text-align: center;
+	  line-height: 1em;
+  }
+  .dev-appNum>big{
+	  font-size: 30px;
+	  font-weight: normal;
+	  font-family:"Courier New", Courier, monospace;
+	  margin-bottom: -5px;
+  }
+  .dev-appNum>small {
+	  font-size: 9px;
+  }
+  .dev-appsContainer {
+	  background-color: #efefee;
+	  padding:15px;
+	  text-align: center;
+	  width: 350px;
+	  border-radius: 0 5px 5px 0;
+  }
+  .dev-app {
+	  width: 150px;
+
+  }
+  .dev-appLogo {
+	  width: 114px;
+	  height:114px;
+	  border-radius: 10px;
+	  margin-bottom: 10px;
+	  box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+  }
+  .dev-appName {
+	  text-shadow: 1px 1px 0 #FFF;
+	  color: #555;
+	  line-height: 1.1em;
+  }
+  .dev-appPrice {
+	  margin:5px 0;
+  }
+  .dev-appCat{
+	  font-size: 12px;
+	  color: #999;
+  }
