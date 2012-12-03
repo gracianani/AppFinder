@@ -1119,7 +1119,7 @@ footer {
 	  padding:8px 0 0;
 	  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   }
-  .icon-vertified {
+  .icon-verified {
 	  background: url(img/icon-vertificated.png) no-repeat center center;
 	  background-color:#c73b0b;
 	  border-radius: 12px;
@@ -1145,21 +1145,36 @@ footer {
   }
   .dev-statTitle{
 	  text-align: right;
-	  width: 50px;
+	  width: 35px;
 	  display: inline-block;
 	  text-transform: uppercase;
 	  font-size: 12px;
 	  color: #999;
-	  padding-right:8px;
+	  padding-right:5px;
   }
   .dev-statContent {
 	  display: inline-block;
 	  font-size: 12px;
+	  vertical-align: top;
+	  height: 20px;
+	  line-height: 20px;
+	  width: 120px;
+	  overflow: hidden;
   }
   .dev-statContent>a{
 	  color:#8d2d0c;
   }
-
+  .dev-stat hr {
+	  margin:5px 0;
+  }
+  .dev-stat .badges {
+	  max-height: 64px;
+	  overflow: hidden;
+  }
+  .dev-stat .tags {
+	  max-height: 96px;
+	  overflow: hidden;
+  }
   .dev-appNum {
 	  background:#c73c0c;
 	  color:#FFF;
@@ -1188,13 +1203,13 @@ footer {
 	  background-color: #efefee;
 	  padding:15px;
 	  text-align: center;
-	  width: 350px;
+	  width: 400px;
 	  border-radius: 0 5px 5px 0;
   }
   .dev-app {
-	  width: 105px;
+	  width: 28%;
 	  float: left;
-	  margin-right: 10px;
+	  margin-right: 15px;
   }
   .dev-appLogo {
 	  width: 100px;

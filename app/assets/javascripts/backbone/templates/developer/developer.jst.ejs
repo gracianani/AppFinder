@@ -2,16 +2,19 @@
 
 	
 		<div class="dev-basicInfo pull-left">
-			<div class="dev-where clearfix">
-				<div class="dev-location pull-left">
-					<i class="icon-map-marker"></i><%= location %>
-				</div>
-				<div class="dev-distance pull-right">
+			<div class="dev-where">
+				<span class="dev-location">
+					<i class="icon-map-marker"></i> <%= location %>
+				</span> - 
+				<span class="dev-distance">
 					<%= distance %> far from you
-				</div>
+				</span>
 			</div><!--where-->
 			<div class="dev-name">
-				<%= name %><i class="icon-vertified"></i>
+				<%= name %>
+				<% if (obj.verified && verified > 0) {%>
+				<i class="icon-verified" title="Verified" rel="tooltip"></i>
+				<% } %>
 			</div><!--name-->
 			<div class="dev-rate">
 			<%= rate %>
@@ -21,13 +24,32 @@
 			</div>
 			<div class="clearfix">
 	        					<div class="dev-links pull-left">
-	        						<a href="" class="icon-like active" title="Like this"></a>
-	        						<a href="" class="icon-homepage active" title="Homepage"></a>
-	        						<a class="icon-twi" title="Twitter"></a>
-	        						<a href="" class="icon-email active" title="Email"></a>
+	        						<a href="" class="icon-like active" title="Like this" rel="tooltip"></a>
+	        						<a <% if (obj.homepage) { %>
+	        						 href="<%= homepage %>"
+	        						<% } %> class="icon-homepage 
+	        						<% if (obj.homepage) { %>
+	        						active
+	        						<% } %>" title="Homepage" 
+	        						rel="tooltip" target="_blank"></a>
+	        						
+	        						<a <% if (obj.twitter) { %>
+	        						 href="<%= twitter %>"
+	        						<% } %> class="icon-twi 
+	        						<% if (obj.twitter) { %>
+	        						active
+	        						<% } %>" title="Twitter" 
+	        						rel="tooltip" target="_blank"></a>
+	        						
+	        						<a <% if (obj.email) { %>
+	        						 href="mailto:<%= email %>"
+	        						<% } %> class="icon-email 
+	        						<% if (obj.email) { %>
+	        						active
+	        						<% } %>" 
+	        						title="Email"  rel="tooltip" target="_blank"></a>
 	        						
 	             				</div>
-	             				<div href="" class="btn btn-info pull-right">Full Profile</div>
         					</div>
 		</div><!--basicInfo-->
 		
@@ -40,24 +62,32 @@
 				<div class="pull-left">
 					<div class="dev-focus">
 						<span class="dev-statTitle">focus</span>
-						<span class="dev-statContent"><a href=""><%= main_category %></a></span>
+						<span class="dev-statContent">
+						<% for (var i=0; i < main_category.length; i++) {  %>
+						 <% if (i > 0) { %>, <%}%><a href=""><%= main_category[i] %></a>
+						<% } %>
+
+						</span>
 					</div><!--focus-->
 					<div class="dev-appRate">
 						<span class="dev-statTitle">avg</span>
-						<span class="dev-statContent"><%= app_avg_score %></span>	        
+						<span class="dev-statContent" title="<%= app_avg_score %>"><%= app_avg_score %></span>	        
 					</div><!--rate-->
 				</div>
 			</div>
-			<div class="tags ">
-			<% for (var i=0; i < tags.length; i++) { %>
-				<a class="tag" href="javascript:void(0)"><i class='icon-tag icon-white'></i> <%= tags[i] %></a>
-			<% } %>
-			</div>
+			<hr>
 			<div class="badges">
 			<% for (var i=0; i < badges.length; i++) {  %>
 				<a class="badge" href="javascript:void(0)"><i class='icon-certificate icon-white'></i> <%= badges[i] %> </a>
 			<% } %>
 			</div>
+			<hr>
+			<div class="tags ">
+			<% for (var i=0; i < tags.length; i++) { %>
+				<a class="tag" href="javascript:void(0)"><i class='icon-tag icon-white'></i> <%= tags[i] %></a>
+			<% } %>
+			</div>
+
 		</div><!--stat-->
 		
 		
