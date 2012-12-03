@@ -711,7 +711,12 @@ h4 {
 .card .app-short-description{ position:absolute; display:none;bottom: 0px;width:190px; background-color:transparent;cursor: pointer;}
 .card .app-category { font-size: 10px;margin:5px 0 5px;}
 
-
+.app-screenshot > div {
+	display:none;
+}
+.app-screenshot > div.active{
+	display:block;
+}
 .tag,.badge  {
 	display: inline-block;
 	line-height: 18px;

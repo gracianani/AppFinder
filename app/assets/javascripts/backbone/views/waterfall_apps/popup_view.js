@@ -14,15 +14,14 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
   },
   showScreenShots : function( e) {
   	e.preventDefault();
-  	$("#flexslider").show( function() {
-  		$("#video_flexslider").hide();
-  	})
+  	$("#video_flexslider").removeClass("active");
+  	$("#flexslider").addClass("active");
+  	
   },
   showVideos : function( e) {
   	e.preventDefault();
-  	$("#video_flexslider").show( function() {
-  		$("#flexslider").hide();
-  	})
+  	$("#flexslider").removeClass("active");
+  	$("#video_flexslider").addClass("active");
   },
   toggleDesc: function(e) {
   	  e.preventDefault();
@@ -53,6 +52,35 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 			window.onscroll = function(oEvent) { oEvent.preventDefault(); oEvent.stopPropagation();return false;}
 			 
 			$('.tcontent').html(that.el);
+			
+			// Load video as soon as the popup opened.
+			var videos = that.model.get('videos');
+	    	for(i = 0; i < videos.length; i=i+1) {
+	    		var playerid="player"+i;
+	    		if(videos[i].video_type=="youtube") {
+		    		that.players[i]  = new YT.Player(playerid, {
+			      		height: 340,
+			      		width: 480,
+			      	    videoId: videos[i].video_id
+		    		});
+	    		}
+	    		else if(videos[i].video_type=="vimeo") {
+	    			// render iframe
+	    			var holder =$(that.el).find("#"+playerid);
+	    			var player = '<iframe id="' + playerid+ 
+	    			'" src="http://player.vimeo.com/video/'+ videos[i].video_id +
+	    			'?api=1&amp;player_id='+ playerid + 
+	    			'" width="480" height="340" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
+	    			
+	    			holder.after(player);
+	    			holder.remove();
+	    			that.players[i] = $f(document.getElementById(playerid));
+					that.players[i].addEvent('ready', function() {
+							
+					});
+					
+	    		}
+	    	}
 
       	}, 
   		closejs:function() { 
@@ -68,7 +96,6 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
   	var that = this;  
     $(this.el).html(this.template(this.model.toJSON() ));
     if(this.options.showVideo) {
-    	console.log(this.options.showVideo);
     	$(that.el).find("#video_flexslider").show( function() {
   			$(that.el).find("#flexslider").hide();
   		});
@@ -93,37 +120,6 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 		 
     },0);
 	
-	
-	setTimeout(function() {
-    	var videos = that.model.get('videos');
-    	for(i = 0; i < videos.length; i=i+1) {
-    		var playerid="player"+i;
-    		if(videos[i].video_type=="youtube") {
-	    		that.players[i]  = new YT.Player(playerid, {
-		      		height: 340,
-		      		width: 480,
-		      	    videoId: videos[i].video_id,
-		      	    events: {
-		      	    	'onReady' : function() { }
-		      	    }
-	    		});
-    		}
-    		else if(videos[i].video_type=="vimeo") {
-    			// render iframe
-    			var holder =$(that.el).find("#"+playerid);
-    			var player = '<iframe id="' + playerid+ 
-    			'" src="http://player.vimeo.com/video/'+ videos[i].video_id +
-    			'?api=1&amp;player_id='+ playerid + 
-    			'" width="480" height="340" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
-    			
-    			holder.after(player);
-    			holder.remove();
-    			that.players[i] = $f(document.getElementById(playerid));
-				that.players[i].addEvent('ready', function() {
-				});
-    		}
-    	}
-    }, 500);
     
     setTimeout(function(){
 	$("#flexslider")
@@ -137,26 +133,27 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
       before: function(slider){
       }
   });
+  
   	$("#video_flexslider").fitVids().flexslider({
-			animation: "fade",
-			useCSS: false,
-			animationLoop: false,
-			smoothHeight: false,
-			animationSpeed: 300,
-			before: function(slider){
-				var videos = that.model.get('videos');
-				for(i=0;i<that.players.length; i=i+1) {
-					if(that.players[i]!=null && typeof(that.players[i]) != 'undefined'){
-		        		if(videos[i].video_type == "vimeo") {
-		        			that.players[i].api('pause');
-		        		}
-		        		else if(videos[i].video_type == "youtube") {
-		        			if(typeof(that.players[i].stopVideo) != 'undefined') 
-		        			    that.players[i].stopVideo();
-		        		}
-		        	}
-		        }
-	      	}
+		animation: "fade",
+		useCSS: false,
+		animationLoop: false,
+		smoothHeight: false,
+		animationSpeed: 0,
+		before: function(slider){
+			var videos = that.model.get('videos');
+			for(i=0;i<that.players.length; i=i+1) {
+				if(that.players[i]!=null && typeof(that.players[i]) != 'undefined'){
+	        		if(videos[i].video_type == "vimeo") {
+	        			that.players[i].api('pause');
+	        		}
+	        		else if(videos[i].video_type == "youtube") {
+	        			if(typeof(that.players[i].stopVideo) != 'undefined') 
+	        			    that.players[i].stopVideo();
+	        		}
+	        	}
+	        }
+      	}
 	    });
    }, 5000);
  

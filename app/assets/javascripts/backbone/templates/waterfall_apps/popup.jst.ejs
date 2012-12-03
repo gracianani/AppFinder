@@ -38,7 +38,7 @@
 		</div>
 		<div>
 			<div class="app-screenshot" >
-				<div id="flexslider" class="flexslider">
+				<div id="flexslider" class="flexslider active">
 				<ul class="slides">
 				<% for (i = 0; i < screenshot_url.length; i++ ) { %>
 					<li> <img src ="assets/<%= screenshot_url[i] %>" alt="" /> </li>
@@ -49,7 +49,7 @@
 				
 				
 				<% if( videos.length >0 ) { %>
-				<div id="video_flexslider" class="flexslider" style="display:none">
+				<div id="video_flexslider" class="flexslider" >
 					<ul class="slides" >
 					<% for (i = 0; i < videos.length; i++ ) { %>
 						<li> <div id="player<%=i%>" ></div></li>

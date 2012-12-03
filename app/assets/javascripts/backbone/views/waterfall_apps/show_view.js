@@ -19,15 +19,14 @@ AppFinder.Views.WaterfallApps.ShowView = Backbone.View.extend ({
   },
   showScreenShots : function( e) {
   	e.preventDefault();
-  	$("#flexslider").show( function() {
-  		$("#video_flexslider").hide();
-  	})
+  	$("#flexslider").addClass("active");
+  	$("#video_flexslider").removeClass("active");
+
   },
   showVideos : function( e) {
   	e.preventDefault();
-  	$("#video_flexslider").show( function() {
-  		$("#flexslider").hide();
-  	})
+  	$("#flexslider").removeClass("active");
+  	$("#video_flexslider").addClass("active");
   },
   toggleDesc: function(e) {
   	  e.preventDefault();
