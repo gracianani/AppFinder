@@ -57,7 +57,7 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 			var videos = that.model.get('videos');
 	    	for(i = 0; i < videos.length; i=i+1) {
 	    		var playerid="player"+i;
-	    		if(videos[i].video_type=="youtube" && typeof(YT.player) != 'undefined') {
+	    		if(videos[i].video_type=="youtube" && typeof(YT.Player) != 'undefined') {
 		    		that.players[i]  = new YT.Player(playerid, {
 			      		height: 340,
 			      		width: 480,
@@ -139,7 +139,7 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 		animationLoop: false,
 		smoothHeight: false,
 		animationSpeed: 0,
-		pausePlay : true,
+		slideshow: false,  
 		before: function(slider){
 			var videos = that.model.get('videos');
 			for(i=0;i<that.players.length; i=i+1) {
