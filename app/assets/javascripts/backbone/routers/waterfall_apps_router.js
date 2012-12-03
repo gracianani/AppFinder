@@ -6,21 +6,19 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	this.developers = new AppFinder.Collections.DevelopersCollection();
 
 	this.indexView = new AppFinder.Views.WaterfallApps.IndexView({collection:this.waterfallApps});
-	$('#app-view').prepend(this.indexView.el);
+	
 	
 	this.filterView = new AppFinder.Views.Filters.FiltersView({model:this.filters});
-	$('#app-view').prepend(this.filterView.el);
+	
     
 	this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
-	$('#app-view').prepend(this.highlightsView.el);
+	
 	
 	this.loginView = new AppFinder.Views.LoginView();
 	this.registerView = new AppFinder.Views.RegisterView();
 	
 	this.developerView = new AppFinder.Views.Developer.IndexView({collection: this.developers});
-	$('#developers-view').prepend(this.developerView.el);
-	$('#developers-view').prepend(this.filterView.el);
-	$('#developers-view').prepend(this.highlightsView.el);
+
 
   },
   start: function(){
@@ -46,7 +44,9 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   index: function() {
 
   	this.showStage('app');
-
+  	$('#app-view').prepend(this.indexView.el);
+  	$('#app-view').prepend(this.filterView.el);
+  	$('#app-view').prepend(this.highlightsView.el);
   	this.filters.fetch();
   	this.highlights.fetch();
   	this.waterfallApps.fetch();
@@ -70,9 +70,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   popup: function(id, video) {
 
-	  	this.filters.fetch();
-	  	this.highlights.fetch();
-	  	this.waterfallApps.fetch();
+
 	  	
 	  	var waterfallApp = this.waterfallApps.get(id);
 	  	//todo: change id
@@ -86,8 +84,9 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   developer: function() {
   	this.showStage('developers');
+  	$('#developers-view').prepend(this.developerView.el);
+	$('#developers-view').prepend(this.filterView.el);
 	this.filters.fetch();
-  	this.highlights.fetch();
   	this.developers.fetch();
   },
   register:function() {
