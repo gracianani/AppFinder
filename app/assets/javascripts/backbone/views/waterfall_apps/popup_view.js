@@ -57,29 +57,13 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 			var videos = that.model.get('videos');
 	    	for(i = 0; i < videos.length; i=i+1) {
 	    		var playerid="player"+i;
-	    		if(videos[i].video_type=="youtube" && typeof(YT.Player) != 'undefined') {
-		    		that.players[i]  = new YT.Player(playerid, {
-			      		height: 340,
-			      		width: 480,
-			      	    videoId: videos[i].video_id
-		    		});
-	    		}
-	    		else if(videos[i].video_type=="vimeo") {
-	    			// render iframe
-	    			var holder =$(that.el).find("#"+playerid);
-	    			var player = '<iframe id="' + playerid+ 
-	    			'" src="http://player.vimeo.com/video/'+ videos[i].video_id +
-	    			'?api=1&amp;player_id='+ playerid + 
-	    			'" width="480" height="340" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
-	    			
-	    			holder.after(player);
-	    			holder.remove();
-	    			that.players[i] = $f(document.getElementById(playerid));
-					that.players[i].addEvent('ready', function() {
-							
-					});
-					
-	    		}
+	    		that.players[i] = new AppFinder.Models.Player({
+	    								player_id: playerid, 
+	    								video_type: videos[i].video_type, 
+	    								video_id : videos[i].video_id,
+	    								width : 480,
+	    								height : 340
+	    							});
 	    	}
 
       	}, 
@@ -144,13 +128,7 @@ AppFinder.Views.WaterfallApps.PopupView = Backbone.View.extend({
 			var videos = that.model.get('videos');
 			for(i=0;i<that.players.length; i=i+1) {
 				if(that.players[i]!=null && typeof(that.players[i]) != 'undefined'){
-	        		if(videos[i].video_type == "vimeo") {
-	        			that.players[i].api('pause');
-	        		}
-	        		else if(videos[i].video_type == "youtube") {
-	        			if(typeof(that.players[i].stopVideo) != 'undefined') 
-	        			    that.players[i].stopVideo();
-	        		}
+					that.players[i].pause();
 	        	}
 	        }
       	}
