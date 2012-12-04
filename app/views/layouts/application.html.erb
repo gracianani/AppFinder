@@ -40,12 +40,12 @@
 
 	        		<ul id="main-nav" class="nav nav-collapse collapse">
 		        		<li class="main-nav-item active">
-		        			<a href="#">
+		        			<a href="/">
 		        				Apps
 		        			</a>
 		        		</li><!--/li -->
 		        		<li class="main-nav-item">
-		        			<a href="#developers">
+		        			<a href="/developers">
 		        				Developers
 		        			</a>
 		        		</li><!--/li -->
@@ -96,13 +96,21 @@
         <footer>
                 <p>&copy; Company 2012</p>
         </footer>
-		<div id="loading"></div>
+		<div id="loadingContainer"></div>
         
 <script type="text/javascript">
   $(function() {
 	window.router = new AppFinder.Routers.WaterfallAppsRouter();
 	window.router.start();    
   });
+  
+	$(document).on("click", "a[href^='/']", function(event) {
+	  if (!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+	    event.preventDefault();
+	    var url = $(event.currentTarget).attr("href").replace(/^\//, "");
+	    window.router.navigate(url, { trigger: true });
+	  }
+	});
 </script>
 </body>
 </html>

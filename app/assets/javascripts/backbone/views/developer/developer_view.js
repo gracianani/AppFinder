@@ -7,6 +7,13 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
   className: "developer",
   
   initialize : function() {},
+  events: {
+	  "mouseenter":"toggleSocialButton",
+	  "mouseleave":"toggleSocialButton"
+  },
+  toggleSocialButton: function() {
+	  this.$el.find('.social-share').toggle();
+  },
   render: function() {
   	var that = this;
   	var $el = $(this.el);
@@ -17,7 +24,7 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
     if ( ratingStr.indexOf('+') > 0 ) {
 	    ratings += 0.5
     }
-    $el.find('.dev-appRate .dev-statContent').raty({
+    $el.find('.dev-raty').raty({
 		'readOnly':true,
 		'space':false,
 		'score':ratings	    
@@ -29,16 +36,19 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
 	    "trigger":"hover"
     });
     
-    var mapStr = '<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=http://maps.google.com.tw/maps?f=q&geocode=&q='+
-    this.model.get('lat') +
-    ',' +
-    this.model.get('lng') +
-    '&z=16&output=embed&t=q></iframe>';
-    console.log(mapStr);
-    $el.find('.dev-where').popover({
-    	"html":true,
-    	"content":mapStr
-    });
+    if ( this.model.get('lat') != null ) {
+	    var mapStr = '<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=http://maps.google.com.tw/maps?f=q&geocode=&q='+
+	    this.model.get('lat') +
+	    ',' +
+	    this.model.get('lng') +
+	    '&z=16&output=embed&t=q></iframe>';
+	    console.log(mapStr);
+	    $el.find('.dev-where').popover({
+	    	"html":true,
+	    	"content":mapStr,
+		    "trigger":"hover"
+	    });
+	  }
 
     setTimeout(function(){
 	    var containerHeight = $el.height();

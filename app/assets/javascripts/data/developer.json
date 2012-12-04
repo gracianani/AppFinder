@@ -16,6 +16,7 @@
     "badges" : ["PATRONAGE","Top114","ReviewedByXXX"],
     "main_category" : ["Farm and Animal Games"],
     "app_avg_score" : "4",
+    "app_total_rating_count" : "10494",
     "apps" : [ {
     	"app_id" : "2",
     	"app_name" : "The Cat In The Hat",
@@ -56,6 +57,7 @@
     "badges" : ["PATRONAGE"],
     "main_category" : ["Utilities","Driving Assistance"],
     "app_avg_score" : "4",
+    "app_total_rating_count" : "1094",
     "apps" : [ {
     	"app_id" : "5",
     	"app_name" : "WaterBanance",
@@ -81,10 +83,6 @@
 }, 
 {
 	"id" : "4",
-	"location" : "United Kingdom",
-	"distance" : "1510 mi",
-	"lat":25.017445,
-	"lng":121.53338,
 	"name" : "Rare Breed Digital",
 	"verified":1,
 	"rate" : "$5k-10k",
@@ -96,6 +94,7 @@
     "badges" : ["PATRONAGE","Top10","BestTeam"],
     "main_category" : ["Lifestyle","Games","Education"],
     "app_avg_score" : "4",
+    "app_total_rating_count" : "12",
     "apps" : [ {
     	"app_id" : "5",
     	"app_name" : "WaterBanance",

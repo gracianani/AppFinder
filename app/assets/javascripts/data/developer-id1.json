@@ -1,0 +1,42 @@
+{
+	"id" : "2",
+	"location" : "Chicago, IL, US",
+	"distance" : "1.5km",
+	"lat":25.017445,
+	"lng":121.53338,
+	"name" : "Riktam Technologies",
+	"verified":1,
+	"rate" : "$10k-15k",
+	"description" : "We build awesome web and mobile apps. With 150+ successful projects for iOS, Android, Windows Phone, Facebook, the Web & Browser extensions, we know what it takes to build great products. Get in touch with us to discuss how we can partner with you.",
+	"homepage":"http://rik.com",
+	"twitter" :"http://twitter.com/rik",
+	"email":"rik@rik.com",
+	"numOfApps":"3",
+	"tags" : ["Kids Education","Good","New","Cat","Dogs","NiceHat"],
+    "badges" : ["PATRONAGE","Top114","ReviewedByXXX"],
+    "main_category" : ["Farm and Animal Games"],
+    "app_avg_score" : "4",
+    "app_total_rating_count" : "10494",
+    "apps" : [ {
+    	"app_id" : "2",
+    	"app_name" : "The Cat In The Hat",
+    	"app_category": "Games",
+    	"app_price" : "0.99",
+    	"app_logo" : "appImages/the-cat-in-the-hat-dr.-seuss-logo.jpg",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
+    	}, {
+    	"app_id" : "3", 
+    	"app_name": "An Awesome Book", 
+    	"app_category": "Education",
+    	"app_logo" : "appImages/animal-legends-logo.jpg", 
+    	"app_price":"0.0",
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
+  		{
+  		"app_id" : "4", 
+  		"app_name": "Flea Sympony",  
+  		"app_category": "Games",
+  		"app_logo" : "appImages/flea-symphony-logo.jpg", 
+  		"app_price":"1.99",
+  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
+  	]
+}

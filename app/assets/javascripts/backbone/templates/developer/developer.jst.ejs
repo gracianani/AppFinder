@@ -2,6 +2,7 @@
 
 	
 		<div class="dev-basicInfo pull-left">
+			<% if (obj.location) { %>
 			<div class="dev-where">
 				<span class="dev-location">
 					<i class="icon-map-marker"></i> <%= location %>
@@ -10,21 +11,34 @@
 					<%= distance %> far from you
 				</span>
 			</div><!--where-->
-			<div class="dev-name">
+			<% } %>
+			<a class="dev-name" href="/developers/id<%= id %>">
 				<%= name %>
 				<% if (obj.verified && verified > 0) {%>
 				<i class="icon-verified" title="Verified" rel="tooltip"></i>
 				<% } %>
-			</div><!--name-->
-			<div class="dev-rate">
-			<%= rate %>
+			</a><!--name-->
+			<div class="clearfix">
+				<div class="dev-rate pull-left">
+					<%= rate %>
+				</div>
+				<div class="social-share pull-right" style="height:30px;display:none">
+					<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style ">
+						<a class="addthis_button_facebook"></a>
+						<a class="addthis_button_twitter"></a>
+						<a class="addthis_button_google_plusone" g:plusone:annotation="none"></a> 
+					</div>
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b82f6610809c25"></script>
+					<!-- AddThis Button END -->
+				</div>
 			</div>
 			<div class="dev-desc">
 			<%= description %>
 			</div>
 			<div class="clearfix">
 	        					<div class="dev-links pull-left">
-	        						<a href="javascript:void(0)" class="icon-like active" title="Like this" rel="tooltip"></a>
+	        						
 	        						<a <% if (obj.homepage) { %>
 	        						 href="<%= homepage %>"
 	        						<% } %> class="icon-homepage 
@@ -50,7 +64,9 @@
 	        						title="Email"  rel="tooltip" target="_blank"></a>
 	        						
 	             				</div>
-	             				<div class="btn pull-right btn-small btn-info" style="margin-top:5px">Profile</div>
+	             				<div class="dev-links pull-right">
+	             				<a href="javascript:void(0)" class="icon-like active" title="Like this" rel="tooltip"></a>
+	             				</div>
         					</div>
 		</div><!--basicInfo-->
 		
@@ -72,7 +88,7 @@
 					</div><!--focus-->
 					<div class="dev-appRate">
 						<span class="dev-statTitle">avg</span>
-						<span class="dev-statContent" title="<%= app_avg_score %>"><%= app_avg_score %></span>	        
+						<span class="dev-statContent" title="<%= app_avg_score %>"><span class="dev-raty"></span>(<%= app_total_rating_count %>)</span>	        
 					</div><!--rate-->
 				</div>
 			</div>
@@ -92,7 +108,7 @@
 		
 		
 		<div class="dev-appsContainer pull-right">
-			<div class="dev-apps">
+			<div class="dev-apps clearfix">
 				<% for(var i=0; i<apps.length; i++) { %>
 				<div class="dev-app">
 					<img class="dev-appLogo" src="assets/<%= apps[i].app_logo %>" title="<%=apps[i].short_description %>" rel="popover" />

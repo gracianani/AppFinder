@@ -7,8 +7,10 @@ LoadingInterval = 0;
 AppFinder.Views.LoadingView = Backbone.View.extend({
 	template: JST["backbone/templates/loading"],
   	tagName : "div",
-  	id: "loading",
-  	
+  	id: "loadingOutter",
+  	initialize : function() {
+  		$("#loadingContainer").html(this.render().el);
+  	},
   	render: function() {
   		$(this.el).html(this.template( ));
   		 LoadingInterval = setInterval( function() {

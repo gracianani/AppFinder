@@ -6,6 +6,7 @@ AppFinder.Views.Developer.IndexView = Backbone.View.extend ({
   tagName : "div",
   className : "container",
   initialize: function ()  {
+  	  $('#loadingContainer').show();
       $(this.el).html(this.template());
       this.collection.on('add', this.addOne, this);
       this.collection.on('reset', this.addAll, this);
@@ -17,6 +18,7 @@ AppFinder.Views.Developer.IndexView = Backbone.View.extend ({
   	this.developers.html("");
     this.collection.forEach(this.addOne,this); 
     this.render();
+    $('#loadingContainer').hide();
   },
   
   addOne: function(developer) {

@@ -16,21 +16,21 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	
 	this.loginView = new AppFinder.Views.LoginView();
 	this.registerView = new AppFinder.Views.RegisterView();
-	
+	this.loadingView = new AppFinder.Views.LoadingView();
 	this.developerView = new AppFinder.Views.Developer.IndexView({collection: this.developers});
 
 
   },
   start: function(){
-	Backbone.history.start({pushStage:true});
+	Backbone.history.start();
   },
   routes: {
-    
     "index"    		: 	"index",
     "id:id&popup:video" 	: 	"popup",
-    "id:id"      	: 	"show",
+    "id:id"      			: 	"show",
     "login"			:	"login",
     "developers"	:	"developer",
+    "developers/id:id"		:	"showDeveloper",
     "register"		:	"register",
     ".*"        	: 	"index"
   },
@@ -81,6 +81,18 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	    
 	    popupModel.fetch();
 
+  },
+  showDeveloper: function() {
+  	this.showStage('detail');
+  	
+	var showModel = new AppFinder.Models.Developer();
+	showModel.url = 'assets/data/developer-id1.json';
+    var showView = new AppFinder.Views.Developer.ShowView({model: showModel});
+    $("#detail-view").html(showView.el);
+    
+    showModel.fetch();
+
+	  
   },
   developer: function() {
   	this.showStage('developers');
