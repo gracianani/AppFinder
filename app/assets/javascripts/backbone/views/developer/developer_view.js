@@ -34,7 +34,7 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
     $el.find('.dev-app [rel="popover"]').popover({
 	    "placement":"top",
 	    "trigger":"hover"
-    });
+	});
     
     if ( this.model.get('lat') != null ) {
 	    var mapStr = '<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=http://maps.google.com.tw/maps?f=q&geocode=&q='+

@@ -760,7 +760,9 @@ height:35px;
 }
 
 .detail a {
-	color:#c73b0b;
+}
+#lnk_screenshots,#lnk_videos{
+	color:#9b2f10;
 }
 .detail a:hover,.detail a:active {
 	color:#978e43;
@@ -1265,8 +1267,16 @@ footer {
 	  background:transparent url(img/ajax-loader.gif) no-repeat center center !important;
 	  min-height:30px;
   }
-  
-  
+ 
+ .devDetail-name {
+	 font-size: 30px;
+	 line-height: 1.2em;
+	 padding:10px 0 0;
+	 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+ } 
+ .devDetail .dev-desc,.devDetail .dev-rate {
+	 font-size: 14px;
+ }
   
   
   /* Large desktop */

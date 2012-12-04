@@ -1,8 +1,34 @@
 <div id="developer-<%= id %>">
 <ul class="breadcrumb">
 	  <li><a href="/">Home</a> <span class="divider">/</span></li>
-	  <li><a href="/">Apps Search</a> <span class="divider">/</span></li>
+	  <li><a href="/developers">Developer Search</a> <span class="divider">/</span></li>
 	  <li class="active"><%= name %></li>
 </ul>
-<%= name %>
+	<div id="detail-primary">
+		<div class="devDetail-name"><%= name %>
+				<% if (obj.verified && verified > 0) {%>
+				<i class="icon-verified" title="Verified" rel="tooltip"></i>
+				<% } %>		
+		
+		</div>
+				<div class="dev-rate">
+					<%= rate %>
+				</div>
+			<div class="dev-desc">
+			<%= description %>
+			</div>
+		<div class="social-share clearfix pt10 pb10">
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_facebook_like" fb:like:layout="button_count" style="width:85px"></a>
+			<a class="addthis_button_tweet" data-count="none"  style="width:85px"></a>
+			<a class="addthis_button_google_plusone" g:plusone:size="medium"  style="width:65px"></a> 
+			</div>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b82f6610809c25"></script>
+			<!-- AddThis Button END -->
+		</div>
+	</div>
+	<div id="detail-secondary">
+	<%= name %>
+	</div>
 </div>

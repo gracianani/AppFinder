@@ -111,7 +111,7 @@
 			<div class="dev-apps clearfix">
 				<% for(var i=0; i<apps.length; i++) { %>
 				<div class="dev-app">
-					<img class="dev-appLogo" src="assets/<%= apps[i].app_logo %>" title="<%=apps[i].short_description %>" rel="popover" />
+					<img class="dev-appLogo" src="assets/<%= apps[i].app_logo %>" title="<%=apps[i].short_description %>" rel="popover" data-content="2 or 3 screenshots img here" />
 					<div class="dev-appName"><%= apps[i].app_name %></div>
 					<div class="dev-appCat">in <a href="#"><%= apps[i].app_category %></a></div>
 					<div class="dev-appPrice btn btn-small">
