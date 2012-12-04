@@ -6,7 +6,6 @@ AppFinder.Views.Developer.IndexView = Backbone.View.extend ({
   tagName : "div",
   className : "container",
   initialize: function ()  {
-  	  $('#loadingContainer').show();
       $(this.el).html(this.template());
       this.collection.on('add', this.addOne, this);
       this.collection.on('reset', this.addAll, this);

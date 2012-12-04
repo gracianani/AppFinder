@@ -44,6 +44,9 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   index: function() {
 
   	this.showStage('app');
+  	
+    $('#loadingContainer').show();
+
   	$('#app-view').prepend(this.indexView.el);
   	$('#app-view').prepend(this.filterView.el);
   	$('#app-view').prepend(this.highlightsView.el);
@@ -64,7 +67,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	showModel.url = 'assets/data/app-id2.json';
     var showView = new AppFinder.Views.WaterfallApps.ShowView({model: showModel});
     $("#detail-view").html(showView.el);
-    
+
     showModel.fetch();
      
   },
@@ -96,6 +99,8 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   developer: function() {
   	this.showStage('developers');
+    $('#loadingContainer').show();
+
   	$('#developers-view').prepend(this.developerView.el);
 	$('#developers-view').prepend(this.filterView.el);
 	this.filters.fetch();

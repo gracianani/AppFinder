@@ -9,7 +9,8 @@ AppFinder.Views.LoadingView = Backbone.View.extend({
   	tagName : "div",
   	id: "loadingOutter",
   	initialize : function() {
-  		$("#loadingContainer").html(this.render().el);
+  		$("#loadingContainer").html(this.el).hide();
+  		this.render();
   	},
   	render: function() {
   		$(this.el).html(this.template( ));
