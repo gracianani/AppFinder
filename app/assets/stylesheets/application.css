@@ -1099,15 +1099,15 @@ footer {
 	  border-radius: 5px;
 	  color: #777;
 	  min-height: 200px;
-	  box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+	  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 	  position: relative;
 	  background-color: #f7f7f7;
 	  overflow: hidden;
 	  margin-bottom: 20px;
   }
   .dev-basicInfo {
-	  width:430px;
-	  padding:15px 25px 25px;
+	  width:420px;
+	  padding:20px 25px 35px 30px;
 	  background-color: #FFF;
 	  border-radius: 5px 0 0 5px;
 
@@ -1115,7 +1115,8 @@ footer {
   .dev-where {
 	  background-color:#f7f7f7;
 	  border-radius: 3px;
-	  padding:5px 15px 5px 5px;
+	  padding:3px 15px 3px 10px;
+	  margin-left:-10px;
 	  text-shadow: 1px 1px 0 #fff;
 	  color:#938a8a;
 	  font-size: 12px;
@@ -1125,7 +1126,7 @@ footer {
 	  color:#c73c0c;
 	  font-size: 24px;
 	  line-height: 1.2em;
-	  padding:8px 0 0;
+	  padding:10px 0 0;
 	  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	  cursor: pointer;
   }
@@ -1153,10 +1154,10 @@ footer {
 	  font-size: 11px;
 	  line-height: 1.5em;
 	  color: #999;
-	  margin-bottom: 15px;
+	  margin-bottom: 24px;
   }
   .dev-stat {
-	  padding:15px;
+	  padding:25px 25px 15px;
 	  width: 220px;
   }
   .dev-statTitle{
@@ -1167,13 +1168,17 @@ footer {
 	  font-size: 12px;
 	  color: #999;
 	  padding-right:5px;
+	  vertical-align: top;
+	  height: 21px;
+	  line-height: 21px;
+
   }
   .dev-statContent {
 	  display: inline-block;
 	  font-size: 12px;
 	  vertical-align: top;
-	  height: 20px;
-	  line-height: 20px;
+	  height: 21px;
+	  line-height: 21px;
 	  width: 120px;
 	  overflow: hidden;
   }
@@ -1186,18 +1191,19 @@ footer {
   .dev-stat .badges {
 	  max-height: 64px;
 	  overflow: hidden;
+	  margin-top: 15px;
   }
   .dev-stat .tags {
 	  max-height: 96px;
 	  overflow: hidden;
+	  
   }
   .dev-appNum {
 	  background:#c73c0c;
 	  color:#FFF;
 	  border-radius: 5px;
-	  padding:3px 6px 5px;
+	  padding:3px 10px 5px;
 	  margin-right: 10px;
-	  margin-bottom: 10px;
 	  cursor: pointer;
 }
   .dev-appNum:hover,.dev-appNum:focus,.dev-appNum:active {
@@ -1214,7 +1220,7 @@ footer {
 	  font-size: 30px;
 	  font-weight: normal;
 	  font-family:"Courier New", Courier, monospace;
-	  margin-bottom: -5px;
+	  margin-bottom: -2px;
   }
   .dev-appNum>small {
 	  font-size: 9px;
@@ -1223,7 +1229,7 @@ footer {
 	  background-color: #efefee;
 	  padding:15px;
 	  text-align: center;
-	  width: 400px;
+	  width: 390px;
 	  border-radius: 0 5px 5px 0;
   }
   .dev-app {
@@ -1246,6 +1252,9 @@ footer {
 	  line-height: 1.1em;
 	  font-weight: bold;
 	  cursor: pointer;
+	  height: 2.2em;
+	  overflow: hidden;
+	  margin-bottom: 5px;
   }
 
   .dev-appPrice {
@@ -1292,3 +1301,35 @@ footer {
 	  background:transparent url(img/ajax-loader.gif) no-repeat center center !important;
 	  min-height:30px;
   }
+  
+  
+  
+  
+  /* Large desktop */
+@media (min-width: 1200px) { 
+
+}
+  
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.dev-basicInfo {
+		float: none;
+		clear:both;
+		border-radius: 5px 5px 0 0;
+		width: auto!important;
+		height: auto!important;
+	}
+	.dev-stat {
+		width: 40%;
+	}
+	.dev-appsContainer {
+		height: auto!important;
+		width: 50%;
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { }

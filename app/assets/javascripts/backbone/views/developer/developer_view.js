@@ -42,7 +42,7 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
 
     setTimeout(function(){
 	    var containerHeight = $el.height();
-	    $el.find('.dev-basicInfo').height(containerHeight - 40);
+	    $el.find('.dev-basicInfo').height(containerHeight - 55);
 	    $el.find('.dev-appsContainer').height(containerHeight - 30);
 	}, 0);
     return this;
