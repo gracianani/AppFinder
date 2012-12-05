@@ -21,57 +21,15 @@
 				<% } %>			
 			</div>
 			<div class="devDetail-avg">Avg: <span class="raty"></span>(<%= app_total_rating_count %>)</div>
-			<div class="dev-desc">
-			<%= description %>
-			</div>
-		<div class="social-share clearfix pt10 pb10">
-			<!-- AddThis Button BEGIN -->
-			<div class="addthis_toolbox addthis_default_style ">
-			<a class="addthis_button_facebook_like" fb:like:layout="button_count" style="width:85px"></a>
-			<a class="addthis_button_tweet" data-count="none"  style="width:85px"></a>
-			<a class="addthis_button_google_plusone" g:plusone:size="medium"  style="width:65px"></a> 
-			</div>
-			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b82f6610809c25"></script>
-			<!-- AddThis Button END -->
-		</div>
-		
-		<div class="devDetail-apps">
-			<h4>Apps by <%= name %></h4>
-			
-			<% for(var i=0; i<apps.length; i++) { %>
-				<div class="devDetail-app clearfix">
-					<div class="devDetail-appColLeft">
-					<img class="devDetail-appLogo" src="assets/<%= apps[i].app_logo %>" title="" rel="popover" /><br>
-					<div class="devDetail-appPrice btn btn-small">
-						<% if (apps[i].app_price > 0 ) { %>
-							$<%= apps[i].app_price %>
-						<% } else { %>
-							FREE
-						<% } %>
-					</div>
-					</div>
-					<div class="devDetail-appColCenter">
-						<div class="devDetail-appName"><%= apps[i].app_name %></div>
-						<div class="devDetail-appCat">in <a href="#"><%= apps[i].app_category %></a></div>
-						<div class="devDetail-appDesc">
-						<%=apps[i].short_description %>
-						</div>						
-					</div>
-				</div><!--app-->
-				<% } %>
-		</div>
-	</div>
-	<div id="detail-secondary">
-			<div class="dev-links">
+			<div class="dev-links pt10 pb10 clearfix">
 	  	        				<% if (obj.homepage) { %>
 	        						<a href="<%= homepage %>" class="icon-homepage active" 
 	        						title="Homepage"  rel="tooltip" target="_blank">
 	        						<%= homepage %>
 	        						</a>
-	        						<% } %>
-	        						
-	        						<% if (obj.twitter) { %>
-	        						<a href="<%= twitter %>" class="icon-twi active" 
+	        						<% } 
+	        						 if (obj.twitter) { %>
+	        						 <a href="<%= twitter %>" class="icon-twi active" 
 	        						title="Twitter"  rel="tooltip" target="_blank">
 	        						<%= twitter %>
 	        						</a>
@@ -85,8 +43,83 @@
 	        						<% } %>	
 	        						
 	        </div>
+			<div class="dev-desc">
+			<%= description %>
+			</div>
+			<div class=" clearfix pt10 pb10">
+		<div class="social-share pull-left">
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_facebook_like" fb:like:layout="button_count" style="width:85px"></a>
+			<a class="addthis_button_tweet" data-count="none"  style="width:85px"></a>
+			<a class="addthis_button_google_plusone" g:plusone:size="medium"  style="width:65px"></a> 
+			</div>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b82f6610809c25"></script>
+			<!-- AddThis Button END -->
+			
+			
+		</div>
+		<div class="pull-right dev-links">
+	             	<a href="javascript:void(0)" class="icon-like active" title="Like this" rel="tooltip">Like this</a>
+	  </div>
+	  </div>
+		
+		<div class="devDetail-apps">
+			<h4>Apps by <%= name %></h4>
+			
+			<% for(var i=0; i<apps.length; i++) { %>
+				<div class="devDetail-app clearfix">
+					<div class="devDetail-appColLeft">
+					<a href="/id<%= apps[i].app_id %>" ><img class="devDetail-appLogo" src="assets/<%= apps[i].app_logo %>" title="" rel="popover" /></a><br>
+					<div class="devDetail-appPrice btn btn-small">
+						<% if (apps[i].app_price > 0 ) { %>
+							$<%= apps[i].app_price %>
+						<% } else { %>
+							FREE
+						<% } %>
+					</div>
+					</div>
+					<div class="devDetail-appColCenter">
+						<div class="devDetail-appName"><a href="/id<%= apps[i].app_id %>" ><%= apps[i].app_name %></a></div>
+						<div class="devDetail-appCat">in <a href="#"><%= apps[i].app_category %></a></div>
+						<div class="devDetail-appDesc">
+						<%=apps[i].short_description %>
+						</div>						
+					</div>
+					<div class="devDetail-appColRight">
+							<div class="app-raitings">
+								<span class="app-raty" data-rating="<%= apps[i].app_rating %>"></span>
+								(<%= apps[i].app_rating_count %>)
+							</div>
+							<div class="clearfix">
+								<div class="app-badges">
+								<% for (var j=0; j < apps[i].app_badges.length; j++) { %>
+									<a class="badge" href="javascript:void(0)"> <span> <%= apps[i].app_badges[j] %></span> </a>
+								<% } %>
+								</div>
+							</div>
+							<div class="clearfix">
+							<div class="app-tags">
+							
+							<% for (var j=0; j < apps[i].app_tags.length; j++) { %>
+								<a class="tag" href="javascript:void(0)"><%= apps[i].app_tags[j] %></a>
+							<% } %>
+							</div>
+							</div>
+							
+					</div>
+				</div><!--app-->
+				<% } %>
+		</div>
+	</div>
+	<div id="detail-secondary">
+
 	        <% if (obj.location) { %>
-	        <p class="pt20">
+	        
+				
+		        <div class="devDetail-map">
+		        <div class="devDetail-map-spike">a</div>
+		        <p style="text-align:left">
 		        	<span class="dev-location">
 					<i class="icon-map-marker"></i> <%= location %>
 				</span> - 
@@ -94,12 +127,35 @@
 					<%= distance %> far from you
 				</span>
 				</p>
-				
-		        <div class="devDetail-map">
-		        <div class="devDetail-map-spike">a</div>
 		        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.tw/maps?f=q&geocode=&q=<%=lat%>,<%=lng%>&z=16&output=embed&t=q"></iframe>
 		        </div>
 	        <% } %>	
+	        <% if (obj.similar_developers && similar_developers.length > 0) { %>
+	        <h4>Similar developers</h4>
+	        <div class="similar-developers">
+	        <% for(var i = 0; i < similar_developers.length; i++) { %>
+	        	<div class="smlDev" data-href="developers/id<%= similar_developers[i].id %>">
+	        		<div class="dev-appNum pull-right" title="View All Apps" rel="tooltip">
+					<big><%= similar_developers[i].numOfApps %></big><small>APPS</small>
+					</div><!--appNum-->
+	        		<a class="smlDev-name dev-name" href="/developers/id<%= similar_developers[i].id %>">
+	        		<%= similar_developers[i].name %>
+	        		</a>
+	        		<div class="smlDev-avg"><%= similar_developers[i].rate %> | Avg:<span class="smlDev-raty" data-rating="<%= similar_developers[i].app_avg_score %>"></span>(<%= similar_developers[i].app_total_rating_count %>)</div>
+	        		<% if (similar_developers[i].location) { %>
+	        		<div class="smlDev-location"><i class="icon-map-marker"></i> <%= similar_developers[i].location %> - <%= similar_developers[i].distance %> far from you</div>
+	        		 <% } %>
+	        		<hr>
+	        		
+	        		<div class="smlDev-desc">
+	        		<%= similar_developers[i].description %>
+	        		</div>
+	        	</div><!--/.smlDev-->
+	        	 <% } %>
+	        </div><!--/.similar-developers-->
+	        		        
+	        <% } %>
+
 
 	</div>
 </div>
