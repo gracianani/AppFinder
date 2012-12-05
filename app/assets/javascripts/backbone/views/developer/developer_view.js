@@ -33,14 +33,10 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
 	$el.find('.dev-app [rel="popover"]').each(function(){
     	$(this).smlPopover({
 	    "placement":"left",
-	    "trigger":"click"
+	    "trigger":"hover"
 		});
 			
     });
-    
-	
-    
-    
     
     
     if ( this.model.get('lat') != null ) {
