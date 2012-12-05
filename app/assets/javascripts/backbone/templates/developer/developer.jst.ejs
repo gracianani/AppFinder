@@ -115,9 +115,9 @@
 						rel="popover" data-content="
 						<div class='flexslider' style=' 
 							<% if(apps[i].app_screenshots[0].width > apps[i].app_screenshots[0].height) { %>
-								width:300px; height:<%= 300*apps[0].app_screenshots[0].height/apps[i].app_screenshots[0].width %>px
+								width:300px; height:<%= Math.floor(300*apps[0].app_screenshots[0].height/apps[i].app_screenshots[0].width-1) %>px
 							<% } else { %>
-								height:300px; width:<%= 300*apps[0].app_screenshots[0].width/apps[i].app_screenshots[0].height %>px
+								height:300px; width:<%= Math.floor(300*apps[0].app_screenshots[0].width/apps[i].app_screenshots[0].height-1) %>px
 							<% } %>' 
 						 >
 						<ul class='slides'>
@@ -129,7 +129,6 @@
 						</ul> 
 						
 						</div>
-						<div class='description'> <%= apps[i].short_description %> </div>
 						" />
 					<div class="dev-appName"><%= apps[i].app_name %></div>
 					<div class="dev-appCat">in <a href="#"><%= apps[i].app_category %></a></div>
