@@ -3,7 +3,7 @@
 	
 		<div class="dev-basicInfo pull-left">
 			<% if (obj.location) { %>
-			<div class="dev-where">
+			<div class="dev-where" data-placement="right" rel="popover" >
 				<span class="dev-location">
 					<i class="icon-map-marker"></i> <%= location %>
 				</span> - 
@@ -112,7 +112,7 @@
 				<% for(var i=0; i<apps.length; i++) { %>
 				<div class="dev-app">
 					<img class="dev-appLogo" src="assets/<%= apps[i].app_logo %>" 
-						rel="popover" data-content="
+						rel="popover" data-placement="left" data-content="
 						<div class='flexslider' style=' 
 							<% if(apps[i].app_screenshots[0].width > apps[i].app_screenshots[0].height) { %>
 								width:300px; height:<%= Math.floor(300*apps[0].app_screenshots[0].height/apps[i].app_screenshots[0].width-1) %>px

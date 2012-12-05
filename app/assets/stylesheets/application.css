@@ -733,21 +733,21 @@ h4 {
 	font-size: 12px;
 }
 
-.detail .badge {
+.detailPage .badge {
 	background-color: #ebeece;
 	color: #7d742f;
 }
-.card .tag i, .card .badge i,.detail .tag i, .detail .badge i {
+.card .tag i, .card .badge i,.detailPage .tag i, .detailPage .badge i {
 		vertical-align: bottom;
 
 }
-.tag:hover,.detail .tag:hover{
+.tag:hover,.detailPage .tag:hover{
 	background-color: #c73b0b;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
 	color: #FFF
 
 }
-.badge:hover,.detail .badge:hover{
+.badge:hover,.detailPage .badge:hover{
 	background-color: #edb230;
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
 	color: #FFF
@@ -1089,41 +1089,35 @@ footer {
 	  display: block;
 
   }
-  .dev-name:hover,.dev-name:active,.dev-name:focus{
+  .dev-name:hover,.dev-name:active,.dev-name:focus,.smlDev:hover .dev-name{
 	  color:#e7a136;
   }
   .popover {
   	width:330px;
   }
   .smlPopover {
-	  border-width: 1px;
-	border-style: solid;
+
 	background-color: #505050;
-    border-color: #303030;
+	border-radius: 10px;
 	color: #555;
     width:auto;
-    -webkit-border-radius: 0 0 0 0;
-	-moz-border-radius: 0 0 0 0;
-	border-radius: 0 0 0 0;
+    
   }
   .smlPopover.left .arrow {
   	border-left-color:#404040;
+  }
+  .smlPopover.right .arrow {
+  	border-right-color:#404040;
   }
   .smlPopover .description{
   	position: absolute;
   	bottom: 0;
 	padding: 5px 5px 0px 5px;
 	overflow: hidden;
-	border-width: 0 0 1px;
-	font-weight: 700;
 	background-color: rgba(0,0,0,0.8);
   	color: #F3F3F3;
   	font-size:11px;
-  	font-weight:normal;
-  	-webkit-border-radius: 0 0 0px 0px;
-	-moz-border-radius: 0 0 0px 0px;
-	border-radius: 0 0 0px 0px;
-    border-bottom: none;
+
   }
   .smlPopover .popover-content {
   	padding:1px;
@@ -1208,7 +1202,7 @@ footer {
 	  margin-right: 10px;
 	  cursor: pointer;
 }
-  .dev-appNum:hover,.dev-appNum:focus,.dev-appNum:active {
+  .dev-appNum:hover,.dev-appNum:focus,.dev-appNum:active,.smlDev:hover .dev-appNum {
 	  background:#e7a136;
   }
   .dev-appNum>big,.dev-appNum>small {
@@ -1223,6 +1217,7 @@ footer {
 	  font-weight: normal;
 	  font-family:"Courier New", Courier, monospace;
 	  margin-bottom: -2px;
+	  letter-spacing: -2px;
   }
   .dev-appNum>small {
 	  font-size: 9px;
@@ -1245,7 +1240,9 @@ footer {
   .dev-apps {
 	  position: absolute;
 	  left:15px;
-	  top:10px;
+	  top:15px;
+	  height: 212px;
+	  overflow: hidden;
   }
   .dev-appLogo,.devDetail-appLogo {
 	  width: 100px;
@@ -1306,7 +1303,7 @@ footer {
   }
   
   
-  #flexslider,#video_flexslider {
+  #flexslider,#video_flexslider,.pageloading {
 	  background:transparent url(img/ajax-loader.gif) no-repeat center center !important;
 	  min-height:30px;
   }
@@ -1330,26 +1327,49 @@ footer {
 	 font-size: 14px;
  }
  .devDetail .dev-links>a.active {
-	display: block;
-	padding-left:50px;
+	display: inline-block;
+	float: left;
+	padding-left: 50px;
+	padding-right: 20px;
+	margin-right: 1px;
+	margin-left: 0;
+	min-width: 150px;
 	line-height: 32px;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-style: italic;
 	
 	width: auto;
 	text-shadow: 1px 1px 0 #fff;
+	font-size: 14px;
+	
+	background-color: #f5f5f5;
+	border-radius:2px;
+	
+	background-position-x: 10px;
 }
  .devDetail .dev-links>a:hover {
-	color:#9b2f10;
+	color:#C73C0C;
+	background-position-x: 10px;
+	background-color: #f9f9f9;
 	 
  }
  .devDetail .dev-links>a:nth-child(even){
-	 
  } 
+ .devDetail .dev-links>.icon-like.active {
+	 background-color: transparent;
+	 min-width: auto;
+	 padding-top:10px;
+	 line-height: 22px;
+	 height: 22px;
+	 padding-left: 45px;
+ }
  .devDetail-app {
-	 margin-bottom: 20px;
 	 border-bottom: 1px dotted #dedede;
-	 padding-bottom: 15px;
+	 padding:20px 10px;
+	 border-radius: 5px;
+ }
+ .devDetail-app:hover,.devDetail-app:active,.devDetail-app:focus {
+	 background-color: #f9f9f9;
  }
  .devDetail-appColLeft {
 	 float: left;
@@ -1361,7 +1381,12 @@ footer {
   .devDetail-appColCenter {
 	  float: left;
 	  display: inline-block;
-	  width: 350px;
+	  width: 250px;
+  }
+  .devDetail-appColRight {
+	  float: right;
+	  display: inline-block;
+	  width:350px;
   }
  .devDetail-appName {
 	 font-size: 16px;
@@ -1375,15 +1400,14 @@ footer {
 	 margin:10px 0 5px;
  }
  .devDetail-map-spike{
-	 border-left:8px transparent solid;
-	 border-right:8px transparent solid;
-	 border-bottom: 10px solid #f6f6f4;
+	 border-left:20px transparent solid;
+	 border-bottom: 25px solid #f6f6f4;
 	 height: 0;
 	 width: 0;
 	 overflow: hidden;
 	 position: absolute;
-	 top:-9px;
-	 left: 20px;
+	 top:20px;
+	 left: -18px;
  }
  .devDetail-map {
 	 background:url(img/header-bg.png);
@@ -1400,6 +1424,47 @@ footer {
 	 margin-bottom: 20px;
 	 border-bottom: 1px solid #DEDEDE;
  }
+ .app-raitings {
+	 color: #999;
+	 margin-bottom: 10px;
+ }
+ .smlDev {
+	 background-color: #f5f5f5;
+	 padding:10px 15px;
+	 border-radius: 5px;
+	 font-size: 12px;
+	 margin-bottom: 15px;
+	 cursor: pointer;
+ }
+ .smlDev.over {
+	 background-color: #f9f9f9;
+ }
+ .smlDev hr {
+	 margin:5px 0;
+ }
+ .smlDev-name {
+	 font-size: 16px;
+	 padding-top: 5px;
+	 margin-bottom: 2px;
+	 text-shadow: 1px 1px 0 #FFF;
+ }
+ .smlDev-avg {
+	 margin-bottom: 5px;
+	 text-shadow: 1px 1px 0 #FFF;
+
+ }
+ .smlDev-location {
+
+	 margin-top: 5px;
+ }
+ .smlDev-desc {
+	 margin: 5px;
+	 color: #666;
+	 line-height: 1.5em;
+	 height: 4.5em;
+	 overflow: hidden;
+ }
+ 
   /* Large desktop */
 @media (min-width: 1200px) { 
 
@@ -1422,11 +1487,17 @@ footer {
 		width: 40%;
 		padding:15px 3%;
 	}
-	body {
-		margin-top:0;
+
+	.devDetail-appColRight {
+		float: none;
+		clear: both;
 	}
 }
- 
+@media (max-width: 1023px) {
+	body {
+		margin-top:0;
+	}	
+} 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { 
 	.dev-basicInfo {
@@ -1452,6 +1523,14 @@ footer {
 	}
 	body {
 		margin-top:0;
+	}
+	#detail-primary,#detail-secondary {
+		float: none;
+		width: auto;
+	}
+	.devDetail-appColRight {
+		float: none;
+		clear: both;
 	}
 
 }

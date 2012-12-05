@@ -1,0 +1,48 @@
+
+    <div class="control-group">
+		<label>Icon</label>
+		<img src="assets/<%= icon_url %>" class="img-rounded" style="width:75px;height75px">
+    </div>
+    
+    <div class="control-group">
+		<label>Screenshots</label>
+		<div class="screenshots">
+		  <ul class="slides">
+		  	<% for(var i=0; i< screenshot_url.length; i++) { %>
+		  		<li>
+		      	<img src="assets/<%= screenshot_url[i] %>">
+		    	</li>
+		  	<% } %>
+		  </ul>
+		</div>
+    </div>
+    
+    <div class="control-group">
+    	<label for="inputAppVideo">Videos</label>
+    	<ul class="links">
+    		<% for(var i=0;i<videos.length; i++) { %>
+    			<li class="input-xxlarge">
+    				<% if(videos[i].video_type == "youtube" ) { %>
+    					http://youtu.be/<%=videos[i].video_id %> <a href="http://youtu.be/<%=videos[i].video_id %>" target="_blank">View current</a>
+    				<% } else if(videos[i].video_type == "vimeo") { %>
+    					http://vimeo.com/<%=videos[i].video_id %> <a href="http://vimeo.com/<%=videos[i].video_id %>" target="_blank">View current</a>
+    				<% } %>
+    			</li>
+    		<% } %>
+    	</ul>
+    </div>
+    
+    <div class="control-group">
+	  <label  for="inputAppCategory">Category</label>
+	  <input type="text" id="inputAppCategory" class="input-xlarge" placeholder="" value="<%= category %>" readonly>
+	</div>
+	
+	<div class="control-group">
+	  <label  for="inputAppPrice">Pricing and Payments</label>
+	  <div class="input-prepend input-append">
+	  <span class="add-on">$</span>
+	  <input class="span2" id="inputAppPrice" class="input-xlarge" type="text" value='<%= price %>' readonly>
+	</div>
+	<div class="form-actions">
+	<button type="submit" id="save" class="btn btn-info pull-right btn-large" >Save</button>
+	</div>

@@ -22,21 +22,80 @@
     	"app_name" : "The Cat In The Hat",
     	"app_category": "Games",
     	"app_price" : "0.99",
+    	"app_rating" : "3+",
+    	"app_rating_count" : 1039,
+    	"app_tags" : ["Family", "Kids","Both iPhone & iPad", "Great on iPhone5", "Games", "Puzzle", "Game Center"], 
+    	"app_badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
     	"app_logo" : "appImages/the-cat-in-the-hat-dr.-seuss-logo.jpg",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
     	}, {
     	"app_id" : "3", 
     	"app_name": "An Awesome Book", 
     	"app_category": "Education",
+    	"app_rating" : "5",
+    	"app_rating_count" : 39,
+    	"app_tags" : ["Family", "Kids","Both iPhone & iPad", "Great on iPhone5", "Games", "Puzzle", "Game Center"], 
+    	"app_badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
     	"app_logo" : "appImages/animal-legends-logo.jpg", 
     	"app_price":"0.0",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}, { "url" : "appImages/eHarmony-screenshot-1.jpg", "width" : 280, "height" : 480}]
+    	},
   		{
   		"app_id" : "4", 
   		"app_name": "Flea Sympony",  
   		"app_category": "Games",
+    	"app_rating" : "4+",
+    	"app_rating_count" : 103,
+    	"app_tags" : ["Family", "Kids","Both iPhone & iPad", "Great on iPhone5", "Games", "Puzzle", "Game Center"], 
+    	"app_badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
   		"app_logo" : "appImages/flea-symphony-logo.jpg", 
   		"app_price":"1.99",
-  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
+  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+  		"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}, { "url" : "appImages/eHarmony-screenshot-1.jpg", "width" : 280, "height" : 480}]
+  		}
+  	],
+  	"similar_developers" : [
+  	{
+		"id" : "3",
+		"location" : "Chicago, IL, US",
+		"distance" : "1.5km",
+		"lat":25.017445,
+		"lng":121.53338,
+		"name" : "Riktam Technologies",
+		"verified":1,
+		"rate" : "$10k-15k",
+		"description" : "We build awesome web and mobile apps. With 150+ successful projects for iOS, Android, Windows Phone, Facebook, the Web & Browser extensions, we know what it takes to build great products. Get in touch with us to discuss how we can partner with you.",
+		"numOfApps":"3",
+	    "main_category" : ["Farm and Animal Games"],
+	    "app_avg_score" : "4",
+	    "app_total_rating_count" : "256"	
+  	},
+  	{
+		"id" : "4",
+		"name" : "Rare Breed Digital",
+		"rate" : "$10k-15k",
+		"description" : "We build awesome web and mobile apps. With 150+ successful projects for iOS, Android, Windows Phone, Facebook, the Web & Browser extensions.",
+		"numOfApps":"12",
+	    "main_category" : ["Kids"],
+	    "app_avg_score" : "3+",
+	    "app_total_rating_count" : "10494"	
+  	},
+  	{
+		"id" : "5",
+		"location" : "Los Angeles, US",
+		"distance" : "1510 mi",
+		"lat":25.017445,
+		"lng":121.53338,
+		"name" : "Stanfy",
+		"verified":1,
+		"rate" : "over $20k",
+		"description" : "We create apps that you love! Over 40 talented people in the team, already 60 finished mobile projects. Please get in touch for a no-obligation quote & expert advice.",
+		"numOfApps":"2",
+	    "main_category" : ["Farm and Animal Games"],
+	    "app_avg_score" : "5",
+	    "app_total_rating_count" : "194"	
+  	}
   	]
 }

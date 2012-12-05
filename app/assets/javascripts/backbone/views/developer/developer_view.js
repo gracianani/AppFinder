@@ -5,7 +5,19 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
   template: JST["backbone/templates/developer/developer"],
   tagName: "div",
   className: "developer",
-  initialize : function() {},
+  initialize : function() {
+	$(window).on('resize', this.repositionBoards)
+
+  },
+  remove: function() {
+    $(window).off('resize', this.repositionBoards);
+   },
+  repositionBoards:function(e) {
+	  var wndWidth = $(e.currentTarget).width();
+	  if ( wndWidth < 1024 ) {
+	  }
+	  
+  },
   events: {
 	  "mouseenter":"toggleSocialButton",
 	  "mouseleave":"toggleSocialButton"
@@ -32,7 +44,6 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
     $el.find('[rel="tooltip"]').tooltip();
 	$el.find('.dev-app [rel="popover"]').each(function(){
     	$(this).smlPopover({
-	    "placement":"left",
 	    "trigger":"hover"
 		});
 			
