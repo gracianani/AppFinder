@@ -1243,7 +1243,7 @@ footer {
 	  left:15px;
 	  top:10px;
   }
-  .dev-appLogo {
+  .dev-appLogo,.devDetail-appLogo {
 	  width: 100px;
 	  height:100px;
 	  border-radius: 10px;
@@ -1313,11 +1313,89 @@ footer {
 	 padding:10px 0 0;
 	 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
  } 
+ .devDetail-focus,.devDetail-avg {
+	 color: #999;
+	 line-height: 25px;
+	 height: 25px;
+	 vertical-align: center;
+ }
+ .devDetail .dev-desc {
+	 margin-top: 15px;
+ }
  .devDetail .dev-desc,.devDetail .dev-rate {
 	 font-size: 14px;
  }
-  
-  
+ .devDetail .dev-links>a.active {
+	display: block;
+	padding-left:50px;
+	line-height: 32px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-style: italic;
+	
+	width: auto;
+	text-shadow: 1px 1px 0 #fff;
+}
+ .devDetail .dev-links>a:hover {
+	color:#9b2f10;
+	 
+ }
+ .devDetail .dev-links>a:nth-child(even){
+	 
+ } 
+ .devDetail-app {
+	 margin-bottom: 20px;
+	 border-bottom: 1px dotted #dedede;
+	 padding-bottom: 15px;
+ }
+ .devDetail-appColLeft {
+	 float: left;
+	 display: inline-block;
+	 width: 105px;
+	 text-align: center;
+	 margin-right: 15px;
+ }
+  .devDetail-appColCenter {
+	  float: left;
+	  display: inline-block;
+	  width: 350px;
+  }
+ .devDetail-appName {
+	 font-size: 16px;
+	 margin-bottom: 5px;
+	 font-weight: bold;
+ }
+ .devDetail-appDesc {
+	 font-size: 12px;
+	 line-height: 1.5em;
+	 color: #999;
+	 margin:10px 0 5px;
+ }
+ .devDetail-map-spike{
+	 border-left:8px transparent solid;
+	 border-right:8px transparent solid;
+	 border-bottom: 10px solid #f6f6f4;
+	 height: 0;
+	 width: 0;
+	 overflow: hidden;
+	 position: absolute;
+	 top:-9px;
+	 left: 20px;
+ }
+ .devDetail-map {
+	 background:url(img/header-bg.png);
+	 border-radius: 5px;
+	 padding:15px;
+	 text-align: center;
+	 box-shadow:1px 1px 2px #cdcdcd;
+	 margin:5px 0 25px;
+	 position: relative;
+ }
+ .devDetail h4 {
+	 font-size: 20px;
+	 padding-bottom: 10px;
+	 margin-bottom: 20px;
+	 border-bottom: 1px solid #DEDEDE;
+ }
   /* Large desktop */
 @media (min-width: 1200px) { 
 
@@ -1339,6 +1417,9 @@ footer {
 		height: 210px!important;
 		width: 40%;
 		padding:15px 3%;
+	}
+	body {
+		margin-top:0;
 	}
 }
  
@@ -1365,49 +1446,14 @@ footer {
 		height: 210px!important;
 
 	}
+	body {
+		margin-top:0;
+	}
+
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	.dev-basicInfo {
-		float: none;
-		clear:both;
-		border-radius: 5px 5px 0 0;
-		width: auto!important;
-		height: auto!important;
-	}
-	.dev-stat {
-		float: none;
-		clear:both;
-		width: auto!important;
-		padding-bottom: 25px;
 
-	}
-	.dev-appsContainer {
-		float: none;
-		clear:both;
-		width: auto!important;
-		height: 210px!important;
-
-	}
 }
 
-/* Set a slightly bigger max-width so we can fit in our photos */
-.ui-tooltip-flickr{
-    max-width: 700px;
-}
-
-    /* Adds the flickr favicon to the top right of the tooltip :) */
-    .ui-tooltip-flickr .ui-tooltip-titlebar{
-        background-image: url('http://l.yimg.com/g/favicon.ico');
-        background-repeat: no-repeat;
-        background-position: 97% 7px;
-    }
-
-    .ui-tooltip-flickr .ui-tooltip-title{
-        padding-right: 0;
-    }
-
-    .ui-tooltip-flickr img{
-        margin: 0 auto;
-    }​

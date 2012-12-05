@@ -11,9 +11,16 @@
 				<% } %>		
 		
 		</div>
-				<div class="dev-rate">
+			<div class="dev-rate">
 					<%= rate %>
-				</div>
+			</div>
+			<div class="devDetail-focus">
+				Focus: 
+				<% for (var i=0; i < main_category.length; i++) {  %>
+				<% if (i > 0) { %>, <%}%><a href=""><%= main_category[i] %></a>
+				<% } %>			
+			</div>
+			<div class="devDetail-avg">Avg: <span class="raty"></span>(<%= app_total_rating_count %>)</div>
 			<div class="dev-desc">
 			<%= description %>
 			</div>
@@ -27,8 +34,72 @@
 			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b82f6610809c25"></script>
 			<!-- AddThis Button END -->
 		</div>
+		
+		<div class="devDetail-apps">
+			<h4>Apps by <%= name %></h4>
+			
+			<% for(var i=0; i<apps.length; i++) { %>
+				<div class="devDetail-app clearfix">
+					<div class="devDetail-appColLeft">
+					<img class="devDetail-appLogo" src="assets/<%= apps[i].app_logo %>" title="" rel="popover" /><br>
+					<div class="devDetail-appPrice btn btn-small">
+						<% if (apps[i].app_price > 0 ) { %>
+							$<%= apps[i].app_price %>
+						<% } else { %>
+							FREE
+						<% } %>
+					</div>
+					</div>
+					<div class="devDetail-appColCenter">
+						<div class="devDetail-appName"><%= apps[i].app_name %></div>
+						<div class="devDetail-appCat">in <a href="#"><%= apps[i].app_category %></a></div>
+						<div class="devDetail-appDesc">
+						<%=apps[i].short_description %>
+						</div>						
+					</div>
+				</div><!--app-->
+				<% } %>
+		</div>
 	</div>
 	<div id="detail-secondary">
-	<%= name %>
+			<div class="dev-links">
+	  	        				<% if (obj.homepage) { %>
+	        						<a href="<%= homepage %>" class="icon-homepage active" 
+	        						title="Homepage"  rel="tooltip" target="_blank">
+	        						<%= homepage %>
+	        						</a>
+	        						<% } %>
+	        						
+	        						<% if (obj.twitter) { %>
+	        						<a href="<%= twitter %>" class="icon-twi active" 
+	        						title="Twitter"  rel="tooltip" target="_blank">
+	        						<%= twitter %>
+	        						</a>
+	        						<% } %>	
+	        						
+	        						<% if (obj.email) { %>
+	        						<a href="mailto:<%= email %>" class="icon-email active" 
+	        						title="Email"  rel="tooltip" target="_blank">
+	        						<%= email %>
+	        						</a>
+	        						<% } %>	
+	        						
+	        </div>
+	        <% if (obj.location) { %>
+	        <p class="pt20">
+		        	<span class="dev-location">
+					<i class="icon-map-marker"></i> <%= location %>
+				</span> - 
+				<span class="dev-distance">
+					<%= distance %> far from you
+				</span>
+				</p>
+				
+		        <div class="devDetail-map">
+		        <div class="devDetail-map-spike">a</div>
+		        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.tw/maps?f=q&geocode=&q=<%=lat%>,<%=lng%>&z=16&output=embed&t=q"></iframe>
+		        </div>
+	        <% } %>	
+
 	</div>
 </div>
