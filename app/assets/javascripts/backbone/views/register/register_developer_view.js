@@ -5,9 +5,6 @@ AppFinder.Views.RegisterDeveloperView = Backbone.View.extend({
   	tagName : "form",
   	className: "form-horizontal",
   	id: "register-developer",
-  	events :{
-  		"click #addNewApp":"addNewApp"
-  	},
 	addNewApp : function() {
 		var app = new AppFinder.Models.App({appId:2});
 		new AppFinder.Views.EditAppView({model:app });

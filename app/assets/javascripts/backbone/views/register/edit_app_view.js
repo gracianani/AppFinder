@@ -7,11 +7,10 @@ AppFinder.Views.EditAppView = Backbone.View.extend({
   	initialize : function() {
   		
   		if(this.model.get("appId") != null) {
-  			this.id = this.model.get("appId");
   			this.model.url = 'assets/data/app-id'+"2.json";
   			this.model.fetch();
   		}
-  		this.model.on('change:id', function() { $("#accordionApps").append(this.render().el); } ,this );
+  		this.model.on('change', function() { $("#accordionApps").append(this.render().el); } ,this );
   	},
   	render: function() {
 		$(this.el).html(this.template(this.model.toJSON()));
