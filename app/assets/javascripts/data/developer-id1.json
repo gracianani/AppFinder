@@ -27,7 +27,8 @@
     	"app_tags" : ["Family", "Kids","Both iPhone & iPad", "Great on iPhone5", "Games", "Puzzle", "Game Center"], 
     	"app_badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
     	"app_logo" : "appImages/the-cat-in-the-hat-dr.-seuss-logo.jpg",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
     	}, {
     	"app_id" : "3", 
     	"app_name": "An Awesome Book", 
@@ -38,7 +39,9 @@
     	"app_badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
     	"app_logo" : "appImages/animal-legends-logo.jpg", 
     	"app_price":"0.0",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}, { "url" : "appImages/eHarmony-screenshot-1.jpg", "width" : 280, "height" : 480}]
+    	},
   		{
   		"app_id" : "4", 
   		"app_name": "Flea Sympony",  
@@ -49,7 +52,9 @@
     	"app_badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
   		"app_logo" : "appImages/flea-symphony-logo.jpg", 
   		"app_price":"1.99",
-  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
+  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+  		"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}, { "url" : "appImages/eHarmony-screenshot-1.jpg", "width" : 280, "height" : 480}]
+  		}
   	],
   	"similar_developers" : [
   	{

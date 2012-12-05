@@ -1096,34 +1096,28 @@ footer {
   	width:330px;
   }
   .smlPopover {
-	  border-width: 1px;
-	border-style: solid;
+
 	background-color: #505050;
-    border-color: #303030;
+	border-radius: 10px;
 	color: #555;
     width:auto;
-    -webkit-border-radius: 0 0 0 0;
-	-moz-border-radius: 0 0 0 0;
-	border-radius: 0 0 0 0;
+    
   }
   .smlPopover.left .arrow {
   	border-left-color:#404040;
+  }
+  .smlPopover.right .arrow {
+  	border-right-color:#404040;
   }
   .smlPopover .description{
   	position: absolute;
   	bottom: 0;
 	padding: 5px 5px 0px 5px;
 	overflow: hidden;
-	border-width: 0 0 1px;
-	font-weight: 700;
 	background-color: rgba(0,0,0,0.8);
   	color: #F3F3F3;
   	font-size:11px;
-  	font-weight:normal;
-  	-webkit-border-radius: 0 0 0px 0px;
-	-moz-border-radius: 0 0 0px 0px;
-	border-radius: 0 0 0px 0px;
-    border-bottom: none;
+
   }
   .smlPopover .popover-content {
   	padding:1px;
@@ -1246,7 +1240,9 @@ footer {
   .dev-apps {
 	  position: absolute;
 	  left:15px;
-	  top:10px;
+	  top:15px;
+	  height: 212px;
+	  overflow: hidden;
   }
   .dev-appLogo,.devDetail-appLogo {
 	  width: 100px;
@@ -1368,9 +1364,12 @@ footer {
 	 padding-left: 45px;
  }
  .devDetail-app {
-	 margin-bottom: 20px;
 	 border-bottom: 1px dotted #dedede;
-	 padding-bottom: 15px;
+	 padding:20px 10px;
+	 border-radius: 5px;
+ }
+ .devDetail-app:hover,.devDetail-app:active,.devDetail-app:focus {
+	 background-color: #f9f9f9;
  }
  .devDetail-appColLeft {
 	 float: left;
@@ -1402,7 +1401,6 @@ footer {
  }
  .devDetail-map-spike{
 	 border-left:20px transparent solid;
-	 border-right:20px transparent solid;
 	 border-bottom: 25px solid #f6f6f4;
 	 height: 0;
 	 width: 0;
@@ -1489,11 +1487,17 @@ footer {
 		width: 40%;
 		padding:15px 3%;
 	}
-	body {
-		margin-top:0;
+
+	.devDetail-appColRight {
+		float: none;
+		clear: both;
 	}
 }
- 
+@media (max-width: 1023px) {
+	body {
+		margin-top:0;
+	}	
+} 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { 
 	.dev-basicInfo {
@@ -1519,6 +1523,14 @@ footer {
 	}
 	body {
 		margin-top:0;
+	}
+	#detail-primary,#detail-secondary {
+		float: none;
+		width: auto;
+	}
+	.devDetail-appColRight {
+		float: none;
+		clear: both;
 	}
 
 }

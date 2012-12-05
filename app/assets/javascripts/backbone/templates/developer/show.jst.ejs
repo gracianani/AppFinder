@@ -68,7 +68,24 @@
 			<h4>Apps by <%= name %></h4>
 			
 			<% for(var i=0; i<apps.length; i++) { %>
-				<div class="devDetail-app clearfix">
+				<div class="devDetail-app clearfix" data-placement="right" rel="popover" data-content="
+						<div class='flexslider' style=' 
+							<% if(apps[i].app_screenshots[0].width > apps[i].app_screenshots[0].height) { %>
+								width:300px; height:<%= Math.floor(300*apps[0].app_screenshots[0].height/apps[i].app_screenshots[0].width-1) %>px
+							<% } else { %>
+								height:300px; width:<%= Math.floor(300*apps[0].app_screenshots[0].width/apps[i].app_screenshots[0].height-1) %>px
+							<% } %>' 
+						 >
+						<ul class='slides'>
+						<% for(var j=0; j<apps[i].app_screenshots.length; j++) { %>
+						<li>
+							<img src='assets/<%= apps[i].app_screenshots[j].url %>' style='width:100%;height:auto;' />
+						</li>
+						<% } %>
+						</ul> 
+						
+						</div>
+						">
 					<div class="devDetail-appColLeft">
 					<a href="/id<%= apps[i].app_id %>" ><img class="devDetail-appLogo" src="assets/<%= apps[i].app_logo %>" title="" rel="popover" /></a><br>
 					<div class="devDetail-appPrice btn btn-small">

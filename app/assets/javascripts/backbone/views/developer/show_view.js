@@ -7,8 +7,12 @@ AppFinder.Views.Developer.ShowView = Backbone.View.extend ({
   className : "devDetail detailPage container",
   initialize: function ()  {
   	 this.model.on('change',this.render,this);
+  	 $(window).on('resize', this.repositionBoards)
 
   },
+  remove: function() {
+    $(window).off('resize', this.repositionBoards);
+   },
   events : {
 	  'click .smlDev':'clickSimilarDev'
   },
@@ -17,9 +21,26 @@ AppFinder.Views.Developer.ShowView = Backbone.View.extend ({
 	  window.router.navigate(href);
 	 
   },
+  repositionBoards: function(e) {
+	  var wndWidth = $(e.currentTarget).width();
+	  if ( wndWidth < 1024 ) {
+
+	  }
+	  
+  },
   render: function() {
   	$(this.el).html(this.template(this.model.toJSON()));
   	$el = $(this.el);
+  	
+  	
+
+  	$el.find('.devDetail-app').each(function(){
+    	$(this).smlPopover({
+	    "trigger":"hover"
+		});
+			
+    });
+    
   	
   	var ratingStr = this.model.get('app_avg_score');
     var ratings = parseFloat(ratingStr);
