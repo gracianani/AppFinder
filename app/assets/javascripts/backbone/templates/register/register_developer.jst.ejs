@@ -1,6 +1,5 @@
 <fieldset>
 <legend>Your Company</legend>
-<h3>The Company you're representing</h3>
 <div class="control-group">
   <label  for="inputCompanyName">Name of the Company</label>
   <input type="text" id="inputCompanyName" class="input-xlarge" placeholder="">
@@ -25,11 +24,12 @@
 </div>
 </fieldset>
 <fieldset>
-<h3>Your typical fee per App</h3>
+
 <div class="control-group">
+	<label for="inputAppFee">Your typical fee per App</label>
 	<div class="input-prepend input-append">
 	  <span class="add-on">$</span>
-	  <input class="span2" id="appendedPrependedInput" type="text">
+	  <input class="span2" id="inputAppFee" type="text">
 	  <span class="add-on">K</span>
 	</div>
 </div>
@@ -37,11 +37,8 @@
 <fieldset>
 	<legend>Your Apps</legend>
 	<div class="accordion" id="accordionApps">
-	  
     </div>
-    
-    
-    
-	
-	
 </fieldset>
+<div class="form-actions">
+	<button type="submit" id="saveCompany" class="btn btn-info pull-right btn-large" >Save your profile</button>
+</div>

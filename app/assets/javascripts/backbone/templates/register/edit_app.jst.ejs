@@ -1,30 +1,25 @@
 
 <div class="accordion-heading">
-  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionApps" href="#addNewApp">
-    <% if( typeof(appId) == "undefined" || appId == 0) { %>
-    	Add New App
-    <% } else { %>
+  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionApps" href="#app<%=id %>">
         <img src="assets/<%= icon_url %>" class="img-rounded" style="width:75px;height:75px">
         <%= title %>
-    <% } %>
   </a>
 </div>
-<div id="addNewApp" class="accordion-body collapse">
+<div id="app<%=id %>" class="accordion-body collapse">
   <div class="accordion-inner">
     <div class="control-group">
 		<label  for="inputAppName">Name of the App</label>
-		<input type="text" id="inputAppName" class="input-xlarge" placeholder="" value="<%= title%>">
+		<input type="text" id="inputAppName" class="input-xlarge" placeholder="" value="<%= title %>" >
 	</div>
     <div class="control-group">
     	<label  for="inputAppUrl">Link to the App (include http://) </label>
   		<input type="text" id="inputAppUrl" class="input-xlarge" placeholder="">
-  		<button type="submit" class="btn">Add this App</button>
+  		<button type="submit" class="btn" id="update-id<%= id%>">Update</button>
     </div>
     
     <div class="control-group">
 		<label>Icon</label>
 		<img src="assets/<%= icon_url %>" class="img-rounded" style="width:75px;height75px">
-    	<button type="submit" class="btn">Change Icon</button>
     </div>
     
     <div class="control-group">
@@ -41,35 +36,32 @@
     </div>
     
     <div class="control-group">
-    	<label>Upload a screenshot image</label>
-    	<button type="submit" class="btn">Upload</button>
+    	<label for="inputAppVideo">Videos</label>
+    	<ul class="links">
+    		<% for(var i=0;i<videos.length; i++) { %>
+    			<li class="input-xxlarge">
+    				<% if(videos[i].video_type == "youtube" ) { %>
+    					http://youtu.be/<%=videos[i].video_id %> <a href="http://youtu.be/<%=videos[i].video_id %>" target="_blank">View current</a>
+    				<% } else if(videos[i].video_type == "vimeo") { %>
+    					http://vimeo.com/<%=videos[i].video_id %> <a href="http://vimeo.com/<%=videos[i].video_id %>" target="_blank">View current</a>
+    				<% } %>
+    			</li>
+    		<% } %>
+    	</ul>
     </div>
     
     <div class="control-group">
-    	<label for="inputAppVideo">Link to a video (optional)</label>
-  		<input type="text" id="inputAppVideo" class="input-xlarge" placeholder="">
-    	<button type="submit" class="btn">Add</button>
-    </div>
-    
-    <div class="control-group">
-	  <label  for="selectAppCategory">Category</label>
-	  <select id="selectAppCategory" class="input-xlarge">
-	  	<option value="US">Games</option>
-	  </select>
+	  <label  for="inputAppCategory">Category</label>
+	  <input type="text" id="inputAppCategory" class="input-xlarge" placeholder="" value="<%= category %>" readonly>
 	</div>
 	
 	<div class="control-group">
 	  <label  for="inputAppPrice">Pricing and Payments</label>
 	  <div class="input-prepend input-append">
 	  <span class="add-on">$</span>
-	  <input class="span2" id="inputAppPrice" class="input-xlarge" type="text" value='<%= price %>'>
-	</div>
-	
-	<div class="form-actions">
-  		<button type="submit" class="btn btn-primary">Save changes</button>
-  		<button type="button" class="btn">Cancel</button>
+	  <input class="span2" id="inputAppPrice" class="input-xlarge" type="text" value='<%= price %>' readonly>
 	</div>
 	
 </div>
-	      </div>
-	    </div>
+</div>
+</div>

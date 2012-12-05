@@ -31,7 +31,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     "developers"	:	"developer",
     "developers/id:id"		:	"showDeveloper",
     "register"		:	"register",
-    "register#developer" : "registerDeveloper",
+    "register/developer" : "registerDeveloper",
     ".*"        	: 	"index"
   },
   showStage:function(stageName){

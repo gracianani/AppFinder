@@ -1476,4 +1476,7 @@ footer {
 }
 #register-developer .form-actions{
 	background:none;
+	margin-bottom: 0;
 }
+
+#register-developer ul.links a{color: #9B2F10;}
