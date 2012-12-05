@@ -23,21 +23,25 @@
     	"app_category": "Games",
     	"app_price" : "0.99",
     	"app_logo" : "appImages/the-cat-in-the-hat-dr.-seuss-logo.jpg",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}, { "url" : "appImages/eHarmony-screenshot-1.jpg", "width" : 280, "height" : 480}]
     	}, {
     	"app_id" : "3", 
     	"app_name": "An Awesome Book", 
     	"app_category": "Education",
     	"app_logo" : "appImages/animal-legends-logo.jpg", 
     	"app_price":"0.0",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
-  		{
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}, { "url" : "appImages/eHarmony-screenshot-1.jpg", "width" : 280, "height" : 480}]
+    	},{
   		"app_id" : "4", 
   		"app_name": "Flea Sympony",  
   		"app_category": "Games",
   		"app_logo" : "appImages/flea-symphony-logo.jpg", 
   		"app_price":"1.99",
-  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
+  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+  		"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}, { "url" : "appImages/eHarmony-screenshot-1.jpg", "width" : 280, "height" : 480}]
+  		}
   	]
 }, 
 {
@@ -64,21 +68,25 @@
     	"app_category": "Lifestyle",
     	"app_price" : "0.99",
     	"app_logo" : "appImages/branchOut-logo.jpg",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
     	}, {
     	"app_id" : "6", 
     	"app_name": "IMAX", 
     	"app_category": "Entertainment",
     	"app_logo" : "appImages/bloons-td-5-logo.jpg", 
     	"app_price":"0.0",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
-    	{
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
+    	}, {
     	"app_id" : "6", 
     	"app_name": "Angry Birds Star Wars", 
     	"app_category": "Entertainment",
     	"app_logo" : "appImages/angry-birds-star-wars-logo.jpg", 
     	"app_price":"0.0",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
+    	}
   	]
 }, 
 {
@@ -101,20 +109,24 @@
     	"app_category": "Lifestyle",
     	"app_price" : "0.99",
     	"app_logo" : "appImages/eHarmony-logo.jpg",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
     	}, {
     	"app_id" : "6", 
     	"app_name": "IMAX", 
     	"app_category": "Entertainment",
     	"app_logo" : "appImages/ban-jo-logo.jpg", 
     	"app_price":"0.0",
-    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"},
-  		{
+    	"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+    	"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
+    	},{
   		"app_id" : "7", 
   		"app_name": "SchoolIt",  
   		"app_category": "Education",
   		"app_logo" : "appImages/lazy-riders-logo.jpg", 
   		"app_price":"1.99",
-  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!"}
+  		"short_description" : "The magic of storytelling is combined with features that entertain and promote literacy to offer an immersive and enriching reading experience!",
+  		"app_screenshots":[{ "url" : "appImages/branchOut-screenshot-1.jpg", "width" : 280, "height" : 480}]
+  		}
   	]
 }]

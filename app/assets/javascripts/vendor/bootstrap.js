@@ -1065,7 +1065,6 @@
         , actualHeight
         , placement
         , tp
-
       if (this.hasContent() && this.enabled) {
         $tip = this.tip()
         this.setContent()
@@ -1108,7 +1107,8 @@
         $tip
           .css(tp)
           .addClass(placement)
-          .addClass('in')
+          .addClass('in');
+          
       }
     }
 
@@ -1283,7 +1283,8 @@
       $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
       $tip.find('.popover-content > *')[this.options.html ? 'html' : 'text'](content)
 
-      $tip.removeClass('fade top bottom left right in')
+      $tip.removeClass('fade top bottom left right in');
+      
     }
 
   , hasContent: function () {
@@ -1298,6 +1299,7 @@
       content = $e.attr('data-content')
         || (typeof o.content == 'function' ? o.content.call($e[0]) :  o.content)
 
+	  
       return content
     }
 

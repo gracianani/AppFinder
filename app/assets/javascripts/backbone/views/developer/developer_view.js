@@ -5,7 +5,6 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
   template: JST["backbone/templates/developer/developer"],
   tagName: "div",
   className: "developer",
-  
   initialize : function() {},
   events: {
 	  "mouseenter":"toggleSocialButton",
@@ -31,10 +30,18 @@ AppFinder.Views.Developer.DeveloperView = Backbone.View.extend({
     });
     
     $el.find('[rel="tooltip"]').tooltip();
-    $el.find('.dev-app [rel="popover"]').popover({
-	    "placement":"top",
-	    "trigger":"hover"
-	});
+	$el.find('.dev-app [rel="popover"]').each(function(){
+    	$(this).smlPopover({
+	    "placement":"left",
+	    "trigger":"click"
+		});
+			
+    });
+    
+	
+    
+    
+    
     
     if ( this.model.get('lat') != null ) {
 	    var mapStr = '<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=http://maps.google.com.tw/maps?f=q&geocode=&q='+

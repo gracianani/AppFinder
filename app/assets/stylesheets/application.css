@@ -1093,7 +1093,46 @@ footer {
 	  color:#e7a136;
   }
   .popover {
-	  width: 330px;
+  	width:330px;
+  }
+  .smlPopover {
+	  border-width: 1px;
+	border-style: solid;
+	background-color: #505050;
+    border-color: #303030;
+	color: #555;
+    width:auto;
+    -webkit-border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+  }
+  .smlPopover.left .arrow {
+  	border-left-color:#404040;
+  }
+  .smlPopover .description{
+  	position: absolute;
+  	bottom: 0;
+	padding: 5px 5px 0px 5px;
+	overflow: hidden;
+	border-width: 0 0 1px;
+	font-weight: 700;
+	background-color: rgba(0,0,0,0.8);
+  	color: #F3F3F3;
+  	font-size:11px;
+  	font-weight:normal;
+  	-webkit-border-radius: 0 0 0px 0px;
+	-moz-border-radius: 0 0 0px 0px;
+	border-radius: 0 0 0px 0px;
+    border-bottom: none;
+  }
+  .smlPopover .popover-content {
+  	padding:1px;
+  }
+  .smlPopover .popover-content p {
+  	overflow: hidden;
+  }
+  .smlPopover .flexslider {
+  	margin:0;
   }
   .icon-verified {
 	  background: url(img/icon-vertificated.png) no-repeat center center;
@@ -1352,3 +1391,23 @@ footer {
 
 	}
 }
+
+/* Set a slightly bigger max-width so we can fit in our photos */
+.ui-tooltip-flickr{
+    max-width: 700px;
+}
+
+    /* Adds the flickr favicon to the top right of the tooltip :) */
+    .ui-tooltip-flickr .ui-tooltip-titlebar{
+        background-image: url('http://l.yimg.com/g/favicon.ico');
+        background-repeat: no-repeat;
+        background-position: 97% 7px;
+    }
+
+    .ui-tooltip-flickr .ui-tooltip-title{
+        padding-right: 0;
+    }
+
+    .ui-tooltip-flickr img{
+        margin: 0 auto;
+    }​
