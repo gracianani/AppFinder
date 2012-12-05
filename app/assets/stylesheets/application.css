@@ -1132,7 +1132,11 @@ footer {
   	overflow: hidden;
   }
   .smlPopover .flexslider {
-  	margin:0;
+  	margin-bottom:35px;
+  }
+  .smlPopover .flex-control-nav{
+  	position: relative;
+	top: 4px;
   }
   .icon-verified {
 	  background: url(img/icon-vertificated.png) no-repeat center center;
@@ -1524,3 +1528,19 @@ footer {
 
 }
 
+#register-developer .input-xlarge
+{
+	width:60%;	
+}
+
+#register-developer .screenshots .slides li{
+	float:left;
+	width:110px;
+	margin-right: 3px;
+	border: 1px solid lightGrey;
+	padding: 2px 2px;
+	display:block;
+}
+#register-developer .form-actions{
+	background:none;
+}

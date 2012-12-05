@@ -29,11 +29,11 @@
 		      animation: "slide",
 		      useCSS: false,
 		      animationLoop: true,
-		      smoothHeight: true,
-		      animationSpeed: 200,
-		      controlNav:false,
+		      smoothHeight: false,
+		      animationSpeed: 100,
+		      controlNav:true,
 		      directionNav:false
-		  }); }, 100);
+		  }); }, 50);
 		  
   	}
 

@@ -1,4 +1,3 @@
-AppFinder.Views.WaterfallApps = AppFinder.Views.WaterfallApps || {};
 
 AppFinder.Views.RegisterView = Backbone.View.extend({
 	template: JST["backbone/templates/register"],
@@ -7,6 +6,7 @@ AppFinder.Views.RegisterView = Backbone.View.extend({
   	
   	initialize : function() {
   		$("#register-view").html(this.render().el);
+  		
   	},
   	render: function() {
   		$(this.el).html(this.template());
