@@ -19,7 +19,6 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	this.loadingView = new AppFinder.Views.LoadingView();
 	this.developerView = new AppFinder.Views.Developer.IndexView({collection: this.developers});
 
-
   },
   start: function(){
 	Backbone.history.start();
@@ -32,6 +31,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     "developers"	:	"developer",
     "developers/id:id"		:	"showDeveloper",
     "register"		:	"register",
+    "register#developer" : "registerDeveloper",
     ".*"        	: 	"index"
   },
   showStage:function(stageName){
@@ -111,6 +111,9 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   login: function(){
 	this.showStage('login');
-
+  },
+  registerDeveloper : function() {
+  	new AppFinder.Views.RegisterDeveloperView();
+  	this.showStage('register');
   }
 });

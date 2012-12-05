@@ -1461,3 +1461,19 @@ footer {
 
 }
 
+#register-developer .input-xlarge
+{
+	width:60%;	
+}
+
+#register-developer .screenshots .slides li{
+	float:left;
+	width:110px;
+	margin-right: 3px;
+	border: 1px solid lightGrey;
+	padding: 2px 2px;
+	display:block;
+}
+#register-developer .form-actions{
+	background:none;
+}
