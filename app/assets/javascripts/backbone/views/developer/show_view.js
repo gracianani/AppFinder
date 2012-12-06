@@ -66,6 +66,7 @@ AppFinder.Views.Developer.ShowView = Backbone.View.extend ({
 	    });
     	
     });
+    $el.find('[rel="smlScorebar"]').smlScorebar();
    return this;
 
   }
