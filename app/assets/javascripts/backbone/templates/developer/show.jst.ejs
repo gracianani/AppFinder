@@ -11,6 +11,8 @@
 				<% } %>		
 		
 		</div>
+		
+		<!--
 			<div class="dev-rate">
 					<%= rate %>
 			</div>
@@ -21,7 +23,54 @@
 				<% } %>			
 			</div>
 			<div class="devDetail-avg">Avg: <span class="raty"></span>(<%= app_total_rating_count %>)</div>
-			<div class="dev-links pt10 pb10 clearfix">
+			-->
+<table class="table devDetail-statTable table-hover table-bordered table-striped">
+		<thead>
+			<tr>
+			<th colspan="4">2 Years | Since 2007.1</th>
+			</tr>
+			<tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="devDetail-statName">Apps</td>
+				<td class="devDetail-statNum"><%= numOfApps %></td>
+				<td>Total</td>
+				<td><div rel="smlScorebar" data-score="5" data-average="2"  data-top="55"></div></td>
+			</tr>
+			<tr>
+				<td  class="devDetail-statName">Reviews</td>
+				<td class="devDetail-statNum"><%= app_total_rating_count %></td>
+				<td><span class="raty"></span></td>
+				<td>
+				<div rel="smlScorebar" data-score="8" data-average="7"  data-top="15"></div>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2"  class="devDetail-statName">Earnings</td>
+				<td class="devDetail-statNum">$30K-$60K</td>
+				<td>Total</td>
+				<td>
+				<div rel="smlScorebar" data-score="9" class="selfRate" data-average="2.3"  data-top="80"></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="devDetail-statNum">$10K-$15K</td>
+				<td>Per App</td>
+				<td>
+				<div rel="smlScorebar" class="selfRate" data-score="8" data-average="5"  data-top="30"></div>
+				</td>
+			</tr>
+						<tr>
+				<td  class="devDetail-statName">Categories with Most Apps</td>
+				<td colspan="3">Family and Educations(3)  Kids(2)</td>
+			</tr>
+		</tbody>
+
+		</table>
+		
+		
+		<div class="dev-links pt10 pb10 clearfix">
 	  	        				<% if (obj.homepage) { %>
 	        						<a href="<%= homepage %>" class="icon-homepage active" 
 	        						title="Homepage"  rel="tooltip" target="_blank">
@@ -42,10 +91,14 @@
 	        						</a>
 	        						<% } %>	
 	        						
-	        </div>
+	        </div>			
 			<div class="dev-desc">
 			<%= description %>
 			</div>
+			
+			
+	        
+
 			<div class=" clearfix pt10 pb10">
 		<div class="social-share pull-left">
 			<!-- AddThis Button BEGIN -->
