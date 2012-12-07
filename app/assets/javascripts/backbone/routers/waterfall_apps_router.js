@@ -7,9 +7,12 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 
 	this.indexView = new AppFinder.Views.WaterfallApps.IndexView({collection:this.waterfallApps});
 	
-	
+	//old
 	this.filterView = new AppFinder.Views.Filters.FiltersView({model:this.filters});
+	//new
+	this.appFilters = new AppFinder.Collections.FiltersCollection();
 	
+    this.appFiltersView = new AppFinder.Views.FilterView({collection:this.appFilters});
     
 	this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
 	
@@ -48,9 +51,20 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     $('#loadingContainer').show();
 
   	$('#app-view').prepend(this.indexView.el);
-  	$('#app-view').prepend(this.filterView.el);
+  //	$('#app-view').prepend(this.filterView.el);
+  	$('#app-view').prepend(this.appFiltersView.el);
   	$('#app-view').prepend(this.highlightsView.el);
-  	this.filters.fetch();
+  //	this.filters.fetch();
+  	this.appFilters.reset([
+	  {url: "/assets/data/app-category.json", type:"app_category"},
+	  {url: "/assets/data/app-tags.json", type: "app_tags"},
+	  {url: "/assets/data/app-badges.json", type:"app_badges"},
+	  {type:"app_price"},
+	  {type:"app_ratings"},
+	  {type:"app_devices"},
+	  {type:"app_release_date"},
+	  {type:"search_keywords"}
+	]);
   	this.highlights.fetch();
   	this.waterfallApps.fetch();
   	
