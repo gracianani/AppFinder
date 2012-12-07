@@ -1,0 +1,18 @@
+<i class="icon-tags smlDropdown-toggle"><b class="caret pull-right"></b></i>
+<div class="smlDropdown-menu">
+	<div class="smlDropdown-inner">
+		<select data-placeholder="Click to search all tags" id="filter-tags-select" class="chzn-select" multiple="">
+<% for (i = 0; i< tags.length; i++) { %>
+		<option value="<%= tags[i].name %>"> <%= tags[i].name %> </option>
+<% } %>
+		</select>
+		<div id="hotTags" class="tags">
+			<h4>Hot Tags</h4>
+			<% for (i = 0; i< popularTags.length; i++) { %>
+				<a href="#" class="tag btn filter-tag-link"><%= popularTags[i].name %></a> 
+			<% } %>
+		</div>
+		<hr />
+		<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+	</div>
+</div>

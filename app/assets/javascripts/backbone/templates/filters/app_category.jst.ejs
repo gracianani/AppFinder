@@ -1,0 +1,21 @@
+Category<b class="caret pull-right"></b>
+<div class="smlDropdown-menu">
+<div class="smlDropdown-inner">
+<select data-placeholder="Click to Search Categories" class="chzn-select" id="filter-category-select" multiple="">
+<option value="">All Categories</option>
+<% for (i = 0; i< categories.length; i++) { 
+	 if (categories[i].children.length == 0) { %>
+		<option value="<%= categories[i].name %>"> <%= categories[i].name %> </option>
+	 <% } else {  %>
+		<optgroup label="<%= categories[i].name %>">
+			<% for (j = 0; j < categories[i].children.length; j++) { %>
+				<option value="<%= categories[i].children[j].name %>"> <%= categories[i].children[j].name %> </option>
+			<% } %>
+		</optiongroup>
+	<%  } %>
+<% } %>
+</select> 
+<hr />
+<div class="clearfix"><a id="filter-category-apply" class="btn btn-info btn-small pull-right">Apply</a></div>    
+</div>
+</div>

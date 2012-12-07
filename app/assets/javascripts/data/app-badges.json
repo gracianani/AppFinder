@@ -1,0 +1,34 @@
+{
+"badges": [
+	{"name" : "Beep Beep!"}, 
+	{"name" : "Patronage"},
+	{"name" : "Cha-ching!"},
+	{"name" : "Stevedore"},
+	{"name" : "Egghead"},
+	{"name" : "Got Milk?"},
+	{"name" : "Baconator"},
+	{"name" : "Sheep Shearer"},
+	{"name" : "Goat Goader"},
+	{"name" : "Hyper Harvester"},
+	{"name" : "Turbo Trucker"},
+	{"name" : "Hyper Herder"},
+	{"name" : "Captain"},
+	{"name" : "Citizen Kane"},
+	{"name" : "Farm Tycoon"},
+	{"name" : "Dream Farm"},
+	{"name" : "Fruit Farmer"},
+	{"name" : "Berry Picker"},
+	{"name" : "Green Thumb"},
+	{"name" : "Gold Miner"},
+	{"name" : "Helter Smelter"}
+], 
+"popularBadges": [
+		{"name" : "Most Downloaded Game"}, 
+		{"name" : "Games Starter Kit"},
+		{"name" : "Essentials App Collections"},
+		{"name" : "Great Free Apps"},
+		{"name" : "Enhanced for iPhone5"},
+		{"name" : "Editors' Choice"}
+]
+
+}

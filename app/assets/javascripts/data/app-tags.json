@@ -1,0 +1,42 @@
+{"tags": [
+			{"name" : "Suduku"}, 
+			{"name" : "Tic Tac Toe"},
+			{"name" : "Tile Puzzles"},
+			{"name" : "Bubble Shooter Games"},
+			{"name" : "Word Games"},
+			{"name" : "Memory Games"},
+ 			{"name" : "Zombie Games"},
+ 			{"name" : "Role Playing Advantures"},
+ 			{"name" : "Gun Shotting"},
+ 			{"name" : "Jump and Run"},
+ 			{"name" : "Quest and Mystery"},
+			{"name" : "Fashion and Style Games"},
+			{"name" : "Virtual Pets and Families"},
+			{"name" : "War Games"},
+ 			{"name" : "Music Games"},
+ 			{"name" : "Guessing Games"},
+ 			{"name" : "Movie Triva"},
+ 			{"name" : "Party and Drinking Games"},
+ 			{"name" : "Stunts and Tricks"},
+			{"name" : "Block Games"},
+			{"name" : "Brain Teaser and Trainer"},
+			{"name" : "World Fact Quizzes"},
+			{"name" : "Puzzles"},
+			{"name" : "Bubble"},
+			{"name" : "Word"},
+			{"name" : "Block"},
+			{"name" : "Brain Teaser"},
+			{"name" : "Quizzes"}
+	],
+"popularTags": [
+			{"name" : "Suduku"}, 
+			{"name" : "Tic Tac Toe"},
+			{"name" : "Puzzles"},
+			{"name" : "Bubble"},
+			{"name" : "Word"},
+			{"name" : "Block"},
+			{"name" : "Brain Teaser"},
+			{"name" : "Quizzes"}
+	]	
+	
+}

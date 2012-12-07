@@ -1,0 +1,18 @@
+<i class="icon-badges smlDropdown-toggle"><b class="caret pull-right"></b></i>
+<div class="smlDropdown-menu">
+	<div class="smlDropdown-inner">
+		<select data-placeholder="Click to search all badges" id="filter-badges-select" class="chzn-select" multiple="">
+	<% for (i = 0; i< badges.length; i++) { %>
+			<option value="<%= badges[i].name %>"> <%= badges[i].name %> </option>
+	<% } %>	
+		</select>
+		<div id="hotBadges" class="badges">
+			<h4>Popular Badges</h4>
+			<% for (i = 0; i< popularBadges.length; i++) { %>
+				<a href="#" class="tag btn filter-tag-link"><%= popularBadges[i].name %></a> 
+			<% } %>
+		</div>
+		<hr />
+		<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+	</div>
+</div>
