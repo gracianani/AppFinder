@@ -5,10 +5,10 @@ gem 'heroku'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #group  :staging do
-#  gem "pg"
+  gem "pg"
 #end
 
-gem 'sqlite3'
+#gem 'sqlite3'
 gem "rails-backbone"
 gem  "coffee-script"
 # Gems used only for assets and not required
