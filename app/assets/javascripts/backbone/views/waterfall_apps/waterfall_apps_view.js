@@ -9,17 +9,27 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   events: {
     "click .destroy" : "destroy",
     "click .app-share-btn" : "toggleShareMenu",
-    "click div.app-like" : "toggleLike", 
+    "click .app-like" : "toggleLike", 
     "click img,.app-short-description,.app-name" : "showDetail",
     "mouseenter" : "onMouseEnter",
     "mouseleave" : "onMouseLeave",
     "mouseenter .btn-install" : "toggleInstallText",
     "mouseleave .btn-install" : "toggleInstallText",
-    "click div.app-video" : "showDetail"
+    "click div.app-video" : "showDetail",
+    "click .app-dislike"  : "toggleDislikeApp",
+    "click .trashOverlay":"toggleDislikeApp"
   },
   
   initialize : function(){
     this.mouseover = false;
+  },
+  toggleDislikeApp : function(e){
+  	e.stopPropagation();
+	this.$el.toggleClass('trashed'); 
+	return false;
+  },
+  toggleTrashOverlay : function(e) {
+
   },
   toggleLike : function() {
     this.model.toggle_like();
@@ -90,6 +100,8 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   	var $el = $(this.el);
     $el.html(this.template(this.model.toJSON() ));
     $el.mosaic({'animation':'slide'});
+    
+    $el.find('[rel="tooltip"]').tooltip();
     
     var ratingStr = this.model.get('ratings');
     var ratings = parseFloat(ratingStr);

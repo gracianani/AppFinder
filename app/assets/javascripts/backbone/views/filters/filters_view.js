@@ -17,10 +17,11 @@ AppFinder.Views.Filters.FiltersView = Backbone.View.extend({
   },
   render: function(){
   	$(this.el).html(this.template(this.model.toJSON()));
+  	$(this.el).find('[rel="tooltip"]').tooltip();
   	var that = this;
 	setTimeout( function (){
 
-		$("#filter-tags-select,#filter-badges-select,#filter-country-select,#filter-category-select").chosen();
+		$("#filter-tags-select,#filter-badges-select,#filter-country-select,#filter-category-select,#filter-city-select,#filter-province-select,#filter-distance-select").chosen();
 		$('.smlDropdown').smlDropdown();
 		
 		$('#filter-rating-low').raty({

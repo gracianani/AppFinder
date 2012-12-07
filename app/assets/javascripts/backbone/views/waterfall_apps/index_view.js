@@ -11,7 +11,12 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
       this.collection.on('reset', this.addAll, this);
       this.apps = $(this.el).find('#waterfallApps');
   },
-
+  events : {
+	"click #toolbox" : "removeAllDislikedApps"  
+  },
+  removeAllDislikedApps : function(){
+	  this.apps.masonry( 'remove', $('.trashed') ).masonry( 'reload' );
+  },
   addAll: function() {
   	if ( this.$el.find('.masonry').size() > 0 ) {
   		this.apps.masonry( 'destroy' );	  	

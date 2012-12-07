@@ -107,13 +107,21 @@
 			<a href="#"><%= category %></a>
 		</div>
 		<div class="clearfix">
-		<div class="app-like pull-left">
+		<div class="app-like pull-left" rel="tooltip" title="
+		<% if ( like == true ) { %> 
+					Unlike
+		<% } else { %>
+					Like
+		<% } %>
+		">
 			<i class="icon-heart 
-				<% if ( like == false ) { %> 
-					icon-gray
+				<% if ( like == true ) { %> 
+					<%= liked %>
 				<% } %>
-			"></i>
-			<%= like_count %>
+			"></i><%= like_count %>
+		</div>
+		<div class="app-dislike pull-left"  rel="tooltip" title="Dislike">
+			<i class="icon-trash"></i>
 		</div>
 		<div class="app-video pull-right">
 			<% if ( video_url != "" ) { %>
@@ -121,5 +129,8 @@
 			<% } %>
 		</div>
 		</div>
+	</div>
+	<div class="trashOverlay">
+		<div class="cancelTrash">Put Back</div>
 	</div>
 </div><!--/#app-<%= id %> -->

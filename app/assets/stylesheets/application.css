@@ -227,6 +227,7 @@ h4 {
 	font-size: 14px;
 }
 
+
 /* ==========================================================================
    Header style
    ========================================================================== */
@@ -453,7 +454,7 @@ h4 {
 	border-left: none;
 }
 .filter-btn:last-child{
-	border-right: none;
+	border: none;
 	float: right;
 }
 .filter-btn>[class^="icon-"],.filter-btn>[class*=" icon-"]{
@@ -504,7 +505,10 @@ h4 {
 }
 
 .icon-globe {
-	background-image:url(img/icon-globe.png);
+	background-image:url(img/icon-location.png);
+}
+.icon-app {
+	background-image:url(img/icon-app.png);
 }
 .filter-btn>.icon-search {
 	background-position:-48px 0;
@@ -556,7 +560,7 @@ h4 {
 	color:#e7a136;
 	text-transform: capitalize;
 }
-#filter-rating .smlDropdown-menu {
+#filter-rating .smlDropdown-menu,#filter-app  .smlDropdown-menu{
 	width: 250px;
 }
 .chzn-drop {
@@ -567,7 +571,7 @@ h4 {
 }
 
 #filter-keyword .search-query {
-	width:411px;
+	width:auto;
 }
 #filter-summary {
 	padding: 10px 20px;
@@ -629,11 +633,112 @@ h4 {
 	border-right-color: #fff!important;	
 	text-align: left;
 }
+#filter_city_select_chzn,#filter_province_select_chzn,#filter_country_select_chzn,#filter_distance_select_chzn {
+	margin-bottom: 10px;
+	border:1px solid #efefef;
+	padding:5px;
+	border-radius: 5px;
+}
 /* ==========================================================================
    Card style
    ========================================================================== */
 #waterfallApps {
 	margin:0 -10px 20px;
+}
+#toolbox {
+	width: 130px;
+	position: fixed;
+	z-index: 100;
+
+	cursor: pointer;
+	border:1px solid #BBB;
+	border-radius: 5px;
+	
+	line-height: 1.5em;
+	right:15px;
+	bottom: 0px;
+	
+	background-color: #F0EDED;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFAFB), to(#F0EDED), color-stop(0.5, #F9F7F7), color-stop(0.5, #F6F3F4));
+	background-image: -moz-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+	background-image: -o-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+	background-image: -webkit-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
+	text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+
+	
+	-moz-transition: bottom 250ms ease-in-out;
+	-webkit-transition: bottom 250ms ease-in-out;
+	
+}
+.toolbox-btn {
+	padding:10px;
+	border-bottom:1px solid #dedede;
+	border-top: 1px solid #FFF;
+	font-size: 16px;
+	font-family: "helvetica neue",arial,sans-serif;
+}
+.toolbox-btn:hover {
+	color:#9b2f10;
+}
+.toolbox-btn:first-child {
+	border-top: none;
+}
+.icon-heart {
+	background-image: url(img/icon-like-small.png);
+	background-position: left top;
+}
+.icon-trash {
+	background-image: url(img/icon-trash.png);
+	background-position: left top;
+}
+.app-dislike.disliked,.app-dislike:hover>.icon-trash,.app-dislike:focus>.icon-trash,.app-dislike:active>.icon-trash {
+	background-position: left -14px;
+}
+.icon-heart.liked,.app-like:hover>.icon-heart,.app-like:active>.icon-heart,.app-like:focus>.icon-heart{
+	background-position: left -14px;
+}
+.app-like {
+	color: #999;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.app-dislike {
+	padding:0 10px;
+	cursor: pointer;
+}
+.app-like:hover,.app-like:active,.app-like:focus{
+	color:#9b2f10;
+}
+.trashOverlay {
+	background-color: rgba(0,0,0,0.6);
+	position: absolute;
+	left: 0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	z-index: 6;
+	display: none;
+	cursor: pointer;
+	color: #aaa;
+	text-align: center;
+}
+.cancelTrash {
+	position: absolute;
+	top:45%;
+	width: 100%;
+	text-decoration: underline;
+
+}
+.trashed .trashOverlay {
+	display: block;
+}
+.trashOverlay:hover {
+	color: #FFF;
+	font-size: 16px;
 }
 .card {
 	width:190px;
@@ -790,7 +895,7 @@ h4 {
 	font-size: 12px;
 }
 
-.detailPage .badge {
+.detail .badge {
 	background-color: #ebeece;
 	color: #7d742f;
 }
@@ -1438,12 +1543,12 @@ footer {
   .devDetail-appColCenter {
 	  float: left;
 	  display: inline-block;
-	  width: 250px;
+	  width: 450px;
   }
   .devDetail-appColRight {
 	  float: right;
 	  display: inline-block;
-	  width:350px;
+	  width:150px;
   }
  .devDetail-appName {
 	 font-size: 16px;
@@ -1582,6 +1687,8 @@ footer {
 	.devDetail-appColRight {
 		float: none;
 		clear: both;
+		width: auto;
+
 	}
 }
 @media (max-width: 1023px) {
@@ -1619,9 +1726,11 @@ footer {
 		float: none;
 		width: auto;
 	}
-	.devDetail-appColRight {
+	.devDetail-appColRight,.devDetail-appColCenter  {
 		float: none;
 		clear: both;
+		width: auto;
+		margin:15px 0;
 	}
 
 }
