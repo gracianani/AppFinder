@@ -25,9 +25,10 @@
         base.$el.data("omr.mosaic", base);
         
         base.init = function(){
-            base.options = $.extend({},$.omr.mosaic.defaultOptions, options);
+        	
+            	base.options = $.extend({},$.omr.mosaic.defaultOptions, options);
+            	base.load_box();
             
-            base.load_box();
         };
         
         // Preload Images
@@ -62,9 +63,13 @@
 				// Handle fade animations
 				case 'fade':
 					$(base.el).hover(function () {
-			        	$(base.options.overlay, base.el).stop().fadeTo(base.options.speed, base.options.opacity);
+						if ( base.options.enabled ) {
+			        		$(base.options.overlay, base.el).stop().fadeTo(base.options.speed, base.options.opacity);
+			        	}
 			        },function () {
-			        	$(base.options.overlay, base.el).stop().fadeTo(base.options.speed, 0);
+			        	if ( base.options.enabled ) {
+			        		$(base.options.overlay, base.el).stop().fadeTo(base.options.speed, 0);
+			        	}
 			      	});
 			      	
 			    	break;
@@ -84,9 +89,15 @@
 			      	endState[base.options.anchor_y] = startY;
 			      	
 					$(base.el).hover(function () {
-			        	$(base.options.overlay, base.el).stop().animate(hoverState, base.options.speed);
+						if ( base.options.enabled ) {
+
+			        		$(base.options.overlay, base.el).stop().animate(hoverState, base.options.speed);
+			        	}
 			        },function () {
-			        	$(base.options.overlay, base.el).stop().animate(endState, base.options.speed);
+			        	if ( base.options.enabled ) {
+
+			        		$(base.options.overlay, base.el).stop().animate(endState, base.options.speed);
+			        		}
 			      	});
 			      	
 			      	break;
@@ -107,7 +118,8 @@
         hover_x		: '0px',
         hover_y		: '0px',
         overlay  	: '.mosaic-overlay',	//Mosaic overlay
-		backdrop 	: '.mosaic-backdrop'	//Mosaic backdrop
+		backdrop 	: '.mosaic-backdrop',	//Mosaic backdrop
+		enabled		: true
     };
     
     $.fn.mosaic = function(options){

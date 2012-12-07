@@ -227,6 +227,7 @@ h4 {
 	font-size: 14px;
 }
 
+
 /* ==========================================================================
    Header style
    ========================================================================== */
@@ -643,6 +644,101 @@ h4 {
    ========================================================================== */
 #waterfallApps {
 	margin:0 -10px 20px;
+}
+#toolbox {
+	width: 130px;
+	position: fixed;
+	z-index: 100;
+
+	cursor: pointer;
+	border:1px solid #BBB;
+	border-radius: 5px;
+	
+	line-height: 1.5em;
+	right:15px;
+	bottom: 0px;
+	
+	background-color: #F0EDED;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFAFB), to(#F0EDED), color-stop(0.5, #F9F7F7), color-stop(0.5, #F6F3F4));
+	background-image: -moz-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+	background-image: -o-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+	background-image: -webkit-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
+	text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+
+	
+	-moz-transition: bottom 250ms ease-in-out;
+	-webkit-transition: bottom 250ms ease-in-out;
+	
+}
+.toolbox-btn {
+	padding:10px;
+	border-bottom:1px solid #dedede;
+	border-top: 1px solid #FFF;
+	font-size: 16px;
+	font-family: "helvetica neue",arial,sans-serif;
+}
+.toolbox-btn:hover {
+	color:#9b2f10;
+}
+.toolbox-btn:first-child {
+	border-top: none;
+}
+.icon-heart {
+	background-image: url(img/icon-like-small.png);
+	background-position: left top;
+}
+.icon-trash {
+	background-image: url(img/icon-trash.png);
+	background-position: left top;
+}
+.app-dislike.disliked,.app-dislike:hover>.icon-trash,.app-dislike:focus>.icon-trash,.app-dislike:active>.icon-trash {
+	background-position: left -14px;
+}
+.icon-heart.liked,.app-like:hover>.icon-heart,.app-like:active>.icon-heart,.app-like:focus>.icon-heart{
+	background-position: left -14px;
+}
+.app-like {
+	color: #999;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.app-dislike {
+	padding:0 10px;
+	cursor: pointer;
+}
+.app-like:hover,.app-like:active,.app-like:focus{
+	color:#9b2f10;
+}
+.trashOverlay {
+	background-color: rgba(0,0,0,0.6);
+	position: absolute;
+	left: 0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	z-index: 6;
+	display: none;
+	cursor: pointer;
+	color: #aaa;
+	text-align: center;
+}
+.cancelTrash {
+	position: absolute;
+	top:45%;
+	width: 100%;
+	text-decoration: underline;
+
+}
+.trashed .trashOverlay {
+	display: block;
+}
+.trashOverlay:hover {
+	color: #FFF;
+	font-size: 16px;
 }
 .card {
 	width:190px;
