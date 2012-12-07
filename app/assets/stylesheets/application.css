@@ -453,7 +453,7 @@ h4 {
 	border-left: none;
 }
 .filter-btn:last-child{
-	border-right: none;
+	border: none;
 	float: right;
 }
 .filter-btn>[class^="icon-"],.filter-btn>[class*=" icon-"]{
@@ -504,7 +504,10 @@ h4 {
 }
 
 .icon-globe {
-	background-image:url(img/icon-globe.png);
+	background-image:url(img/icon-location.png);
+}
+.icon-app {
+	background-image:url(img/icon-app.png);
 }
 .filter-btn>.icon-search {
 	background-position:-48px 0;
@@ -556,7 +559,7 @@ h4 {
 	color:#e7a136;
 	text-transform: capitalize;
 }
-#filter-rating .smlDropdown-menu {
+#filter-rating .smlDropdown-menu,#filter-app  .smlDropdown-menu{
 	width: 250px;
 }
 .chzn-drop {
@@ -567,7 +570,7 @@ h4 {
 }
 
 #filter-keyword .search-query {
-	width:411px;
+	width:auto;
 }
 #filter-summary {
 	padding: 10px 20px;
@@ -628,6 +631,12 @@ h4 {
 	border-right-color: 2px!important;
 	border-right-color: #fff!important;	
 	text-align: left;
+}
+#filter_city_select_chzn,#filter_province_select_chzn,#filter_country_select_chzn,#filter_distance_select_chzn {
+	margin-bottom: 10px;
+	border:1px solid #efefef;
+	padding:5px;
+	border-radius: 5px;
 }
 /* ==========================================================================
    Card style
@@ -790,7 +799,7 @@ h4 {
 	font-size: 12px;
 }
 
-.detailPage .badge {
+.detail .badge {
 	background-color: #ebeece;
 	color: #7d742f;
 }
@@ -1438,12 +1447,12 @@ footer {
   .devDetail-appColCenter {
 	  float: left;
 	  display: inline-block;
-	  width: 250px;
+	  width: 450px;
   }
   .devDetail-appColRight {
 	  float: right;
 	  display: inline-block;
-	  width:350px;
+	  width:150px;
   }
  .devDetail-appName {
 	 font-size: 16px;
@@ -1582,6 +1591,8 @@ footer {
 	.devDetail-appColRight {
 		float: none;
 		clear: both;
+		width: auto;
+
 	}
 }
 @media (max-width: 1023px) {
@@ -1619,9 +1630,11 @@ footer {
 		float: none;
 		width: auto;
 	}
-	.devDetail-appColRight {
+	.devDetail-appColRight,.devDetail-appColCenter  {
 		float: none;
 		clear: both;
+		width: auto;
+		margin:15px 0;
 	}
 
 }

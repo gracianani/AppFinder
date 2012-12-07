@@ -115,6 +115,13 @@
 			"></i>
 			<%= like_count %>
 		</div>
+		<div class="app-dislike pull-left">
+			<i class="icon-thumbs-down   
+				<% if ( like == false ) { %> 
+					icon-gray
+				<% } %>
+			"></i>
+		</div>
 		<div class="app-video pull-right">
 			<% if ( video_url != "" ) { %>
 				<i class="icon-facetime-video"></i>				 

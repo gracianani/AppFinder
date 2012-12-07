@@ -23,8 +23,21 @@
         			</div>
         			</div>
                 </div><!-- /category -->
-
-	        	<div id="filter-price" class="filter-btn smlDropdown">
+<div id="filter-app" class="filter-btn smlDropdown"  title="How Many Apps" rel="tooltip">
+	        			<i class="icon-app smlDropdown-toggle"><b class="caret pull-right"></b></i>
+	        			<div class="smlDropdown-menu">
+	        			<div class="smlDropdown-inner">
+	        						<h4>Apps Count</h4>
+	        						<form class="form-inline">
+	        							Min <input type="text" class="input-mini"></input>
+	        							Max <input type="text" class="input-mini"></input>
+	        						</form>
+	        					<hr>
+	        					<div class="clearfix"><a id="filter-app-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+	        			</div>
+	        			</div>
+	        	</div><!-- /num of apps -->
+	        	<div id="filter-price" class="filter-btn smlDropdown" title="Price" rel="tooltip">
 	        			<i class="icon-price smlDropdown-toggle"><b class="caret pull-right"></b></i>
 	        			<div class="smlDropdown-menu">
 	        				<div class="smlDropdown-inner">
@@ -42,12 +55,12 @@
 	        						<hr>
 	        						<p class="checkbox"><input type="checkbox" />In-app Purchase</p>
 	        						<hr />
-	        						<div class="clearfix"><a id="filter-category-apply" class="btn btn-info btn-small pull-right">Apply</a></div>    
+	        						<div class="clearfix"><a id="filter-price-apply" class="btn btn-info btn-small pull-right">Apply</a></div>    
         			
 	        				</div>
 	        			</div>
 	        	</div><!-- /price -->  
-	        	<div id="filter-rating" class="filter-btn smlDropdown">
+	        	<div id="filter-rating" class="filter-btn smlDropdown"  title="Ratings" rel="tooltip">
 	        			<i class="icon-rating  smlDropdown-toggle"><b class="caret pull-right"></b></i>
 	        			<div class="smlDropdown-menu">
 	        				<div class="smlDropdown-inner">
@@ -67,12 +80,69 @@
 	        						</form>
 	        					</div>
 	        					<hr>
-	        					<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+	        					<div class="clearfix"><a id="filter-rating-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
 	        					
 	        				</div>
 	        			</div>
 	        	</div><!-- /rating -->    
-	        	<div id="filter-time" class="filter-btn smlDropdown">
+
+	        	
+	        	<div id="filter-badge" class="filter-btn smlDropdown"  title="Badges" rel="tooltip">
+	        		<i class="icon-badges smlDropdown-toggle"><b class="caret pull-right"></b></i>
+	        		<div class="smlDropdown-menu">
+        				<div class="smlDropdown-inner">
+        					<select data-placeholder="Click to search all badges" id="filter-badges-select" class="chzn-select" multiple="">
+        				<% for (i = 0; i< badges.length; i++) { %>
+	        					<option value="<%= badges[i].name %>"> <%= badges[i].name %> </option>
+	        			<% } %>	
+        					</select>
+        					<div id="hotBadges" class="badges">
+        						<h4>Popular Badges</h4>
+        						<% for (i = 0; i< popularBadges.length; i++) { %>
+	        						<a href="#" class="tag btn filter-tag-link"><%= popularBadges[i].name %></a> 
+        						<% } %>
+        					</div>
+        					<hr />
+	        				<div class="clearfix"><a id="filter-badge-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+        				</div>
+	        		</div>
+	        	</div><!-- /badge -->
+	        	
+	        	<div id="filter-tag" class="filter-btn smlDropdown" title="Tags" rel="tooltip">
+	        			<i class="icon-tags smlDropdown-toggle"><b class="caret pull-right"></b></i>
+	        			<div class="smlDropdown-menu">
+	        				<div class="smlDropdown-inner">
+		        				<select data-placeholder="Click to search all tags" id="filter-tags-select" class="chzn-select" multiple="">
+	        			<% for (i = 0; i< tags.length; i++) { %>
+	        					<option value="<%= tags[i].name %>"> <%= tags[i].name %> </option>
+	        			<% } %>
+	        					</select>
+	        					<div id="hotTags" class="tags">
+	        						<h4>Hot Tags</h4>
+	        						<% for (i = 0; i< popularTags.length; i++) { %>
+		        						<a href="#" class="tag btn filter-tag-link"><%= popularTags[i].name %></a> 
+	        						<% } %>
+	        					</div>
+	        					<hr />
+	        					<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+        					</div>
+	        			</div>
+	        	</div><!-- /tag -->    
+	        	<div id="filter-device" class="filter-btn smlDropdown"  title="Devices" rel="tooltip">
+	        			<i class="icon-device smlDropdown-toggle"><b class="caret pull-right"></b></i>
+	        			<div class="smlDropdown-menu">
+	        			<div class="smlDropdown-inner">
+	
+	        				<label class="checkbox"> <input type="checkbox" value="all">All Devices</input></label>
+	        				<label class="checkbox"> <input type="checkbox" value="iPhone">iPhone</input></label>
+	        				<label class="checkbox"> <input type="checkbox" value="iPad">iPad</input></label>
+	        				<label class="checkbox"> <input type="checkbox" value="iMac">iMac</input></label>
+	        				<hr />
+	        				<div class="clearfix"><a id="filter-device-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
+	        			</div>
+	        			</div>
+	        	</div><!-- /device -->
+	        	<div id="filter-time" class="filter-btn smlDropdown"  title="Time" rel="tooltip">
 	        			<i class="icon-calendar smlDropdown-toggle"><b class="caret pull-right"></b></i>
 	        			<ul class="smlDropdown-menu" role="menu" aria-labelledby="dLabel">
 						    <li><a tabindex="-1" href="#">All Time</a></li>
@@ -83,11 +153,13 @@
 						</ul>
 				        
 	        	</div><!-- /time -->   
-	        	<div id="filter-lan" class="filter-btn smlDropdown">
+	        	<div id="filter-lan" class="filter-btn smlDropdown"  title="Developer's Location" rel="tooltip">
 	        			<i class="icon-globe smlDropdown-toggle"><b class="caret pull-right"></b></i>
 	        			<div class="smlDropdown-menu">
 	        				<div class="smlDropdown-inner">
-		        				<select id="filter-country-select" data-placeholder="Choose a Country" class="chzn-select">
+	        				
+	        					<h4>Specify a Location</h4>
+		        				<select id="filter-country-select" data-placeholder="Country" class="chzn-select">
 					                <option value=""></option> 
 					                <option value="United States">United States</option> 
 					                <option value="United Kingdom">United Kingdom</option> 
@@ -333,66 +405,33 @@
 					                <option value="Zambia">Zambia</option> 
 					                <option value="Zimbabwe">Zimbabwe</option>
 					              </select>
+					              
+					              <select id="filter-province-select" data-placeholder="Province" class="chzn-select">
+					                <option value=""></option> 
+					              	<option value="Yemen">Yemen</option> 
+					                <option value="Zambia">Zambia</option> 
+					                <option value="Zimbabwe">Zimbabwe</option>
+					              </select>
+					              <select id="filter-city-select" data-placeholder="City" class="chzn-select">
+					                <option value=""></option> 
+					              	<option value="Yemen">Yemen</option> 
+					                <option value="Zambia">Zambia</option> 
+					                <option value="Zimbabwe">Zimbabwe</option>
+					              </select>
+					              <hr />
+					              <h4>Location Near Me</h4>
+					              <select id="filter-distance-select" data-placeholder="Distance" class="chzn-select">
+					                <option value=""></option> 
+					              	<option value="500">500 meters</option> 
+					                <option value="2000">2km</option> 
+					                <option value="5000">5km</option>
+					              </select>
 		        			</div>
+		        			
+		        			
 		        		</div>
 	        	</div><!-- /place -->
 	        	
-	        	<div id="filter-badge" class="filter-btn smlDropdown">
-	        		<i class="icon-badges smlDropdown-toggle"><b class="caret pull-right"></b></i>
-	        		<div class="smlDropdown-menu">
-        				<div class="smlDropdown-inner">
-        					<select data-placeholder="Click to search all badges" id="filter-badges-select" class="chzn-select" multiple="">
-        				<% for (i = 0; i< badges.length; i++) { %>
-	        					<option value="<%= badges[i].name %>"> <%= badges[i].name %> </option>
-	        			<% } %>	
-        					</select>
-        					<div id="hotBadges" class="badges">
-        						<h4>Popular Badges</h4>
-        						<% for (i = 0; i< popularBadges.length; i++) { %>
-	        						<a href="#" class="tag btn filter-tag-link"><%= popularBadges[i].name %></a> 
-        						<% } %>
-        					</div>
-        					<hr />
-	        				<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
-        				</div>
-	        		</div>
-	        	</div><!-- /badge -->
-	        	
-	        	<div id="filter-tag" class="filter-btn smlDropdown">
-	        			<i class="icon-tags smlDropdown-toggle"><b class="caret pull-right"></b></i>
-	        			<div class="smlDropdown-menu">
-	        				<div class="smlDropdown-inner">
-		        				<select data-placeholder="Click to search all tags" id="filter-tags-select" class="chzn-select" multiple="">
-	        			<% for (i = 0; i< tags.length; i++) { %>
-	        					<option value="<%= tags[i].name %>"> <%= tags[i].name %> </option>
-	        			<% } %>
-	        					</select>
-	        					<div id="hotTags" class="tags">
-	        						<h4>Hot Tags</h4>
-	        						<% for (i = 0; i< popularTags.length; i++) { %>
-		        						<a href="#" class="tag btn filter-tag-link"><%= popularTags[i].name %></a> 
-	        						<% } %>
-	        					</div>
-	        					<hr />
-	        					<div class="clearfix"><a id="filter-tag-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
-        					</div>
-	        			</div>
-	        	</div><!-- /tag -->    
-	        	<div id="filter-device" class="filter-btn smlDropdown">
-	        			<i class="icon-device smlDropdown-toggle"><b class="caret pull-right"></b></i>
-	        			<div class="smlDropdown-menu">
-	        			<div class="smlDropdown-inner">
-	
-	        				<label class="checkbox"> <input type="checkbox" value="all">All Devices</input></label>
-	        				<label class="checkbox"> <input type="checkbox" value="iPhone">iPhone</input></label>
-	        				<label class="checkbox"> <input type="checkbox" value="iPad">iPad</input></label>
-	        				<label class="checkbox"> <input type="checkbox" value="iMac">iMac</input></label>
-	        				<hr />
-	        				<div class="clearfix"><a id="filter-device-apply" class="btn btn-info btn-small pull-right">Apply</a></div>
-	        			</div>
-	        			</div>
-	        	</div><!-- /device -->
-
         		<div id="filter-keyword" class="filter-btn form-search">
 					    <input type="text" class="search-query">
 					    <i class="icon-search"></i>
