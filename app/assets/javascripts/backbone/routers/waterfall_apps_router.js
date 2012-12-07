@@ -116,8 +116,22 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     $('#loadingContainer').show();
 
   	$('#developers-view').prepend(this.developerView.el);
-	$('#developers-view').prepend(this.filterView.el);
-	this.filters.fetch();
+	//$('#developers-view').prepend(this.filterView.el);
+	$('#developers-view').prepend(this.appFiltersView.el);
+	this.appFilters.reset([
+	  {url: "/assets/data/app-category.json", type:"app_category"},
+	  {type:"developer_app_count"},
+	  {type:"app_price"},
+	  {type:"app_ratings"},
+	  {url: "/assets/data/app-tags.json", type: "app_tags"},
+	  {url: "/assets/data/app-badges.json", type:"app_badges"},
+	  {type:"app_devices"},
+	  {type:"app_release_date"},
+	  {type: "location"},
+	  {type:"search_keywords"}
+	]);
+	
+	//this.filters.fetch();
   	this.developers.fetch();
   },
   register:function() {

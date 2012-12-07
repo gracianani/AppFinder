@@ -1,6 +1,6 @@
-AppFinder.Views.AppFilterBoxView = AppFinder.Views.AppFilterBoxView || {};
+AppFinder.Views.FilterBoxView = AppFinder.Views.FilterBoxView || {};
 
-AppFinder.Views.AppFilterBoxView = Backbone.View.extend({
+AppFinder.Views.FilterBoxView = Backbone.View.extend({
     initialize: function(options){
     	this.collection.on('add', this.addOne, this);
       	this.collection.on('reset', this.addAll, this);
@@ -39,6 +39,12 @@ AppFinder.Views.AppFilterBoxView = Backbone.View.extend({
     	}
     	else if(filterType == "search_keywords") {
     		filterView = new AppFinder.Views.SearchKeywordsView();
+    	}
+    	else if (filterType == "location") {
+    		filterView = new AppFinder.Views.LocationView();
+    	}
+    	else if(filterType == "developer_app_count"){
+    		filterView = new AppFinder.Views.DeveloperAppCountView();
     	}
     	else {
     		return this;
