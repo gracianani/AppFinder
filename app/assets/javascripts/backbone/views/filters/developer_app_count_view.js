@@ -4,8 +4,8 @@ AppFinder.Views.DeveloperAppCountView = AppFinder.Views.DeveloperAppCountView ||
 AppFinder.Views.DeveloperAppCountView = Backbone.View.extend({
 	template: JST["backbone/templates/filters/developer_app_count"],
     initialize: function(){
-    	this.attr("title", this.title);
-    	this.attr("rel", this.rel);
+    	$(this.el).attr("title", this.title);
+    	$(this.el).attr("rel", this.rel);
     	this.render();
     },
     tagName : "div",
