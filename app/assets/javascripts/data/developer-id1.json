@@ -1,6 +1,8 @@
 {
 	"id" : "2",
-	"location" : "Chicago, IL, US",
+	"address_line_1":"9900 Corporate Campus Dr., Suite 3000",
+	"address_line_2":"Louisville, KY 40223",
+	"address_line_3":"Chicago, IL, US",	
 	"distance" : "1.5km",
 	"lat":25.017445,
 	"lng":121.53338,
@@ -11,6 +13,7 @@
 	"homepage":"http://rik.com",
 	"twitter" :"http://twitter.com/rik",
 	"email":"rik@rik.com",
+	"phone":"(502) 657-6033",
 	"numOfApps":"3",
 	"tags" : ["Kids Education","Good","New","Cat","Dogs","NiceHat"],
     "badges" : ["PATRONAGE","Top114","ReviewedByXXX"],

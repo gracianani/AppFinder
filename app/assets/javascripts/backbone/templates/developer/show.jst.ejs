@@ -24,10 +24,10 @@
 			</div>
 			<div class="devDetail-avg">Avg: <span class="raty"></span>(<%= app_total_rating_count %>)</div>
 			-->
-<table class="table devDetail-statTable table-hover table-bordered table-striped">
+<table class="table devDetail-statTable table-hover ">
 		<thead>
 			<tr>
-			<th colspan="4">2 Years | Since 2007.1</th>
+			<th colspan="4">Founded in 2007.1</th>
 			</tr>
 			<tr>
 		</thead>
@@ -42,16 +42,53 @@
 
 			</tr>
 			<tr>
-				<td rowspan="2"  class="devDetail-statName">Earnings</td>
-				<td class="devDetail-statNum">$30K-$60K</td>
+				<td class="devDetail-statName">Budget</td>
+				<td class="devDetail-statNum"><%= rate %></td>
 				
 			</tr>
 			<tr>
-				<td class="devDetail-statNum">$10K-$15K</td>		
+				<td  class="devDetail-statName">Categories</td>
+				<td ><% for (var i=0; i < main_category.length; i++) {  %>
+						 <% if (i > 0) { %>, <%}%><a href=""><%= main_category[i] %></a> 
+						<% } %></td>
 			</tr>
 			<tr>
-				<td  class="devDetail-statName">Categories with Most Apps</td>
-				<td >Family and Educations(3)  Kids(2)</td>
+				<td  class="devDetail-statName">Badges</td>
+				<td ><% for (var i=0; i < badges.length; i++) {  %>
+				<a class="badge" href="javascript:void(0)"><i class='icon-certificate icon-white'></i> <%= badges[i] %> </a>
+			<% } %></td>
+			</tr>
+			<tr>
+				
+				<td colSpan="2">
+				<div id="chartdiv" style="width: 100%; height: 200px;"></div>
+				</td>
+				        <script type="text/javascript">
+            var chart;
+            var legend;
+
+            var chartData = [{
+                title: "Free Apps",
+                num: 3
+            }, {
+                title: "Paid Apps",
+                num: 5
+            }];
+
+            AmCharts.ready(function () {
+                // PIE CHART
+                chart = new AmCharts.AmPieChart();
+                chart.dataProvider = chartData;
+                chart.titleField = "title";
+                chart.valueField = "num";
+                chart.outlineColor = "#FFFFFF";
+                chart.outlineAlpha = 0.8;
+                chart.outlineThickness = 2;
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+        </script>
 			</tr>
 		</tbody>
 
@@ -60,23 +97,27 @@
 		
 		<div class="dev-links pt10 pb10 clearfix">
 	  	        				<% if (obj.homepage) { %>
-	        						<a href="<%= homepage %>" class="icon-homepage active" 
+	        						<a href="<%= homepage %>" class="devDetail-link" 
 	        						title="Homepage"  rel="tooltip" target="_blank">
-	        						<%= homepage %>
+	        						<i class="icon-homepage active"></i><%= homepage %>
 	        						</a>
 	        						<% } 
 	        						 if (obj.twitter) { %>
-	        						 <a href="<%= twitter %>" class="icon-twi active" 
+	        						 <a href="<%= twitter %>" class="devDetail-link" 
 	        						title="Twitter"  rel="tooltip" target="_blank">
-	        						<%= twitter %>
+	        						<i class="icon-twi active"></i><%= twitter %>
 	        						</a>
 	        						<% } %>	
 	        						
 	        						<% if (obj.email) { %>
-	        						<a href="mailto:<%= email %>" class="icon-email active" 
+	        						<a href="mailto:<%= email %>" class="devDetail-link" 
 	        						title="Email"  rel="tooltip" target="_blank">
-	        						<%= email %>
+	        						<i class="icon-email active"></i><%= email %>
 	        						</a>
+	        						<% } %>	
+	        						
+	        						<% if (obj.phone) { %>
+	        						<a class="devDetail-link" title="Phone" rel="tooltip"><i class="icon-phone active"></i><%= phone %></a>
 	        						<% } %>	
 	        						
 	        </div>			
@@ -152,7 +193,7 @@
 							<div class="clearfix">
 								<div class="app-badges">
 								<% for (var j=0; j < apps[i].app_badges.length; j++) { %>
-									<a class="badge" href="javascript:void(0)"> <span> <%= apps[i].app_badges[j] %></span> </a>
+									<a class="badge" href="javascript:void(0)"><i class="icon-certificate icon-white"></i> <span> <%= apps[i].app_badges[j] %></span> </a>
 								<% } %>
 								</div>
 							</div>
@@ -160,24 +201,37 @@
 					</div>
 				</div><!--app-->
 				<% } %>
+				
+				<div class="pagination pull-right">
+				  <ul>
+				    <li class="disabled"><a href="#">Prev</a></li>
+				    <li class="active"><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">Next</a></li>
+				  </ul>
+				</div>
 		</div>
 	</div>
 	<div id="detail-secondary">
 
-	        <% if (obj.location) { %>
+	        <% if (obj.address_line_1) { %>
 	        
 				
 		        <div class="devDetail-map">
 		        <div class="devDetail-map-spike">a</div>
-		        <p style="text-align:left">
-		        	<span class="dev-location">
-					<i class="icon-map-marker"></i> <%= location %>
-				</span> - 
-				<span class="dev-distance">
+		        <p style="text-align:left"><i class="icon-globe"></i> Address:</p>
+		        <div class="devDetail-location">
+		        <%= address_line_1 %><br />		
+		        <%= address_line_2 %><br />		
+		        <%= address_line_3 %><br />	
+				</div>
+				<div class="devDetail-distance">
 					<%= distance %> far from you
-				</span>
-				</p>
-		        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.tw/maps?f=q&geocode=&q=<%=lat%>,<%=lng%>&z=16&output=embed&t=q"></iframe>
+				</div>
+
+		        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&geocode=&q=<%=lat%>,<%=lng%>&z=16&output=embed&t=q"></iframe>
 		        </div>
 	        <% } %>	
 	        <% if (obj.similar_developers && similar_developers.length > 0) { %>
