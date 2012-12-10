@@ -18,7 +18,7 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
   },
   removeAllDislikedApps : function(e){
   		this.apps.masonry( 'remove', $('.trashed') ).masonry( 'reload' );
-  		$(e.target).animate({'right':'-300px'},500,function(){
+  		$(e.currentTarget).animate({'right':'-300px'},500,function(){
 	  		$(this).hide();
 	  });
   },

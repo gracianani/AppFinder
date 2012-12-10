@@ -7,9 +7,19 @@ AppFinder.Views.SearchKeywordsView = Backbone.View.extend({
     initialize: function(){
 		this.model.on("change", this.render, this);
     },
+    events: {
+	  "focus .search-query":"focusInput",
+	  "blur .search-query":"blurInput"
+    },
     tagName : "div",
     className : "filter-btn form-search",
     id: "filter-keyword",
+    focusInput:function(e){
+	  //$(e.target).animate({'width':'250px'},200);  
+    },
+    blurInput:function(e){
+	  //$(e.target).animate({'width':'120px'},200);  
+    },
     render: function(){
     	$(this.el).html(this.template());
     	var that = this;
