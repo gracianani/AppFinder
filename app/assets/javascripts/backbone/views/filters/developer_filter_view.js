@@ -27,7 +27,7 @@ AppFinder.Views.DeveloperFilterView = Backbone.View.extend({
     	
     	setTimeout (function(){
     	    $('.smlDropdown').smlDropdown();
-		},500);
+		},1000);
 		
     	return this;
     }
