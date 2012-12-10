@@ -22,6 +22,7 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   
   initialize : function(){
     this.mouseover = false;
+    
   },
   toggleDislikeApp : function(e){
   	e.stopPropagation();

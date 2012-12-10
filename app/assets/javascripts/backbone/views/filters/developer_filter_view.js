@@ -24,9 +24,6 @@ AppFinder.Views.DeveloperFilterView = Backbone.View.extend({
     render: function(){
     	$(this.el).append( this.filtersView.el);
     	$(this.el).append( this.filterSummaryView.el);
-    	
-    
-		
     	return this;
     }
 });

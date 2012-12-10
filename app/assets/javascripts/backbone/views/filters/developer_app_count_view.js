@@ -15,11 +15,11 @@ AppFinder.Views.DeveloperAppCountView = Backbone.View.extend({
     rel:"tooltip",
     render: function(){
     	$(this.el).html(this.template());
-    	setTimeout( function (){
+    	
+		
+		$(this.el).smlDropdown();
+		$(this.el).attr("title", this.title).tooltip();		
 
-			$("#filter-country-select,#filter-city-select,#filter-province-select,#filter-distance-select").chosen();
-	
-    	}, 0);
     	return this;
     }
 });
