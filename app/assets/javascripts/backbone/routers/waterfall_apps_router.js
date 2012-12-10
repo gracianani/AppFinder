@@ -1,7 +1,7 @@
 AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   initialize: function (options) {
     this.waterfallApps = new AppFinder.Collections.AppsCollection();
-    this.filters = new AppFinder.Models.Filters();
+
     this.highlights = new AppFinder.Models.Highlight();
 	this.developers = new AppFinder.Collections.DevelopersCollection();
 

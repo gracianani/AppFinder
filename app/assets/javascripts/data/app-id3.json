@@ -1,0 +1,50 @@
+{
+  "title"	:"Hay Day",
+  "id"		:"3",
+  "icon_url": 	"appImages/hey-day-logo.jpg",
+  "developer" : "Supercell",
+  "ratings" : 	"5",
+  "screenshot_url" : [
+  						"appImages/hay-day-screenshot-1.jpg",
+  						"appImages/hay-day-screenshot-2.jpg",
+  						"appImages/hay-day-screenshot-3.jpg",
+  						"appImages/hay-day-screenshot-4.jpg",
+  						"appImages/hay-day-screenshot-5.jpg" ],
+  "screenshot_width" : "482",
+  "screenshot_height" : "272",
+  "short_description" : "Hay Day is a totally new farming experience with smooth gestural controls lovingly handcrafted for your iPad or iPhone.",
+  "long_description" : "Get back to nature and experience the peaceful, simple life of working the land and rearing chickens, pigs, cows and sheep.",
+  "like_count" : 3,
+  "videos" : [ {"video_id" :"MRxSVEM-Bto", "video_type":"youtube" }, {"video_id":"27855315", "video_type":"vimeo"}],
+  "category" : "Simulation",
+  "price" : 0.00, 
+  "tags" : ["Family", "Kids","Both iPhone & iPad", "Great on iPhone5", "Games", "Simulation", "Game Center"], 
+  "badges" : [ "Top 1 iPhone Game" , "featured on 144apps", "New"],
+  "similar_apps" : [
+  	{"id" : "3", "name": "An Awesome Book", "icon" : "appImages/an-awsome-book-logo.jpg", "ratings":"4+", "developer" : "Supercell, Inc"},
+  	{"id" : "4", "name": "Flea Sympony",  "icon" : "appImages/flea-symphony-logo.jpg", "ratings":"4+", "developer" : "Nimbitz, Inc"},
+  	{"id" : "5", "name": "Lazy Riders", "icon" : "appImages/lazy-riders-logo.jpg", "ratings":"4+", "developer" : "Supercell, Inc"},
+  	{"id" : "6", "name": "Animal Legends", "icon" : "appImages/animal-legends-logo.jpg", "ratings":"4+", "developer" : "Facebook, Inc"},
+  	{"id" : "7", "name": "Swackeet", "icon" : "appImages/swackeet-logo.jpg","ratings":"4+",  "developer" : "Zinga, Inc"}
+  ],
+  "comments":[{
+  		"id"		: 0,
+  		"user_name" : "Mark",
+  		"user_url"	: "#",
+  		"user_avatar": "https://www.gstatic.com/s2/contacts/images/NoPicture.gif",
+  		"is_like"	: 1,
+  		"time"		: "Jun 28, 2012",
+  		"comment"	: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."	  
+  },{
+  		"id"			: 1,
+  		"user_name"		: "Applico",
+  		"user_url"		: "#",
+  		"user_avatar"	: "https://www.gstatic.com/s2/contacts/images/NoPicture.gif",
+  		"user_title"			: "Developer",
+  		"user_company"		: "Google",
+  		"company_url"	: "#",
+  		"is_like"	: 0,
+  		"time"		: "Jun 28, 2012",
+  		"comment"	: "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."		  
+  }]
+}

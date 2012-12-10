@@ -1,5 +1,3 @@
-
-
 AppFinder.Views.SearchKeywordsView = AppFinder.Views.SearchKeywordsView || {};
 
 AppFinder.Views.SearchKeywordsView = Backbone.View.extend({
@@ -21,6 +19,7 @@ AppFinder.Views.SearchKeywordsView = Backbone.View.extend({
 	    	$('#filter-keyword > .search-query').autocomplete({
 	            lookup: names,
 	            onSelect: function (suggestion) {
+	            	console.log(suggestion);
 	            }
 	        });
     	});
