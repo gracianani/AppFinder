@@ -647,47 +647,50 @@ h4 {
 #waterfallApps {
 	margin:0 -10px 20px;
 }
-#scrollToTop {
-	width: 130px;
+#scrollToTop,#trashDisliked  {
 	position: fixed;
-	z-index: 100;
-
 	cursor: pointer;
+	z-index: 6;
 	border:1px solid #BBB;
 	border-radius: 5px;
-	
-	line-height: 1.5em;
-	right:15px;
-	bottom: 0px;
-	
 	background-color: #F0EDED;
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFAFB), to(#F0EDED), color-stop(0.5, #F9F7F7), color-stop(0.5, #F6F3F4));
 	background-image: -moz-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
 	background-image: -o-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
 	background-image: -webkit-linear-gradient(top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
-
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
 	text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+	line-height: 1.2em;	
+}
+#scrollToTop {
+	right:15px;
+	bottom: -6px;
+	display: none;	
+	padding:25px 15px 31px;
+}
+#trashDisliked {
+	top:200px;
+	right: -300px;
+	display: none;
+	padding:12px 25px;
+}
+#toolbox {
 
-	
+
 }
 .toolbox-btn {
-	padding:10px;
-	border-bottom:1px solid #dedede;
-	border-top: 1px solid #FFF;
+	padding:10px 15px;
 	font-size: 15px;
 	font-weight: bold;
 	font-family: "helvetica neue",arial,sans-serif;
 	-moz-transition: bottom 250ms ease-in-out;
 	-webkit-transition: bottom 250ms ease-in-out;
-	display: none;
+	color:#555;
 }
 .toolbox-btn:hover {
 	color:#9b2f10;
 }
-.toolbox-btn:first-child {
-	border-top: none;
-}
+
 .icon-heart {
 	background-image: url(img/icon-like-small.png);
 	background-position: left top;
@@ -1465,7 +1468,7 @@ footer {
 	  
   }
   .icon-phone {
-	  background-image:url(img/icon-email.png);
+	  background-image:url(img/icon-phone.png);
 	  
   }
   .dev-links>.active {
@@ -1670,11 +1673,10 @@ footer {
 
  }
  .devDetail-statName {
-	 width: 100px;
+	 width: 20%;
  }
  .devDetail-statNum {
 	 color: #bf3a00;
-	 width: 120px;
 	
  }
  .devDetail-td {

@@ -61,34 +61,10 @@
 			<tr>
 				
 				<td colSpan="2">
-				<div id="chartdiv" style="width: 100%; height: 200px;"></div>
+				<div id="freeChart" style="width: 300px; height: 100px;float:left"></div>
+				<div id="deviceChart" style="width: 300px; height: 100px;float:left"></div>
 				</td>
-				        <script type="text/javascript">
-            var chart;
-            var legend;
-
-            var chartData = [{
-                title: "Free Apps",
-                num: 3
-            }, {
-                title: "Paid Apps",
-                num: 5
-            }];
-
-            AmCharts.ready(function () {
-                // PIE CHART
-                chart = new AmCharts.AmPieChart();
-                chart.dataProvider = chartData;
-                chart.titleField = "title";
-                chart.valueField = "num";
-                chart.outlineColor = "#FFFFFF";
-                chart.outlineAlpha = 0.8;
-                chart.outlineThickness = 2;
-
-                // WRITE
-                chart.write("chartdiv");
-            });
-        </script>
+			 
 			</tr>
 		</tbody>
 

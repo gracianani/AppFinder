@@ -67,6 +67,40 @@ AppFinder.Views.Developer.ShowView = Backbone.View.extend ({
     	
     });
     $el.find('[rel="tooltip"]').tooltip();
+    
+    var priceData = this.model.get('price_data');
+    var deviceData = this.model.get('device_data');
+
+    AmCharts.ready(function () {
+                // PIE CHART
+                chart = new AmCharts.AmPieChart();
+                chart.dataProvider = priceData;
+                chart.titleField = "title";
+                chart.valueField = "num";
+                chart.outlineColor = "#FFFFFF";
+                chart.outlineAlpha = 0.8;
+                chart.outlineThickness = 2;
+                chart.labelRadius = 0;
+                chart.labelText="[[title]]<br>[[percents]]%",
+                chart.marginBottom = 0;
+                chart.marginTop=0;
+
+                // WRITE
+                chart.write("freeChart");
+                
+                chart2 = new AmCharts.AmPieChart();
+                chart2.dataProvider = deviceData;
+                chart2.titleField = "title";
+                chart2.valueField = "num";
+                chart2.outlineColor = "#FFFFFF";
+                chart2.outlineAlpha = 0.8;
+                chart2.outlineThickness = 2;
+                chart2.labelRadius = 0;
+                chart2.labelText="[[title]]<br>[[percents]]%",
+                chart2.marginBottom = 0;
+                chart2.marginTop=0;
+                chart2.write("deviceChart");
+   });
    return this;
 
   }

@@ -27,6 +27,14 @@ AppFinder.Views.WaterfallApps.WaterfallAppsView = Backbone.View.extend({
   toggleDislikeApp : function(e){
   	e.stopPropagation();
 	this.$el.toggleClass('trashed'); 
+	if ( $(".trashed").size() > 0 ) {
+		$('#trashDisliked:hidden').show().animate({'right':'-6px'},300);
+	} else {
+		$('#trashDisliked:visible').animate({'right':'-300px'},300,function(){
+	  		$(this).hide();
+	  	});
+	}
+	
 	return false;
   },
   toggleTrashOverlay : function(e) {

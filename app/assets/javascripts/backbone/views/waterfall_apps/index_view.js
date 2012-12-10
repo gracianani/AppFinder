@@ -16,8 +16,11 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
 	"click #trashDisliked" : "removeAllDislikedApps",
 	"click #scrollToTop":"scrollToTop"  
   },
-  removeAllDislikedApps : function(){
-	  this.apps.masonry( 'remove', $('.trashed') ).masonry( 'reload' );
+  removeAllDislikedApps : function(e){
+  		this.apps.masonry( 'remove', $('.trashed') ).masonry( 'reload' );
+  		$(e.target).animate({'right':'-300px'},500,function(){
+	  		$(this).hide();
+	  });
   },
   scrollToTop : function(){
 	$('body,html').animate({
