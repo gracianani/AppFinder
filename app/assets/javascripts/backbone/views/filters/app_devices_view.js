@@ -10,9 +10,7 @@ AppFinder.Views.AppDevicesView = Backbone.View.extend({
     className : "filter-btn smlDropdown",
     render: function(){
     	$(this.el).html(this.template());
-    	setTimeout(function() {
-    		$('.smlDropdown').smlDropdown();
-    	},0);
+
     	return this;
     }
 });

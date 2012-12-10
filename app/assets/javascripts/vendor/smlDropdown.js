@@ -1,6 +1,8 @@
-(function ($, window) {
-  $.fn.smlDropdown = function (options) {
 
+(function ($, window) {
+	
+  $.fn.smlDropdown = function (options) {
+	var i = i || 0;
     // Default settings
     var settings = $.extend({
       "auto": true,             // Boolean: Animate automatically, true or false
