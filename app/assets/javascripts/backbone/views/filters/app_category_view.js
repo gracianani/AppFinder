@@ -18,7 +18,6 @@ AppFinder.Views.AppCategoryView = Backbone.View.extend({
     	
 		setTimeout (function(){
     		$("#filter-category-select").chosen();
-    	    $('.smlDropdown').smlDropdown();
 		},0);
     	
     	return this;

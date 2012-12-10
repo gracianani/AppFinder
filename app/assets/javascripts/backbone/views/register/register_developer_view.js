@@ -20,7 +20,7 @@ AppFinder.Views.RegisterDeveloperView = Backbone.View.extend({
 	addNewApp : function() {
 		var app = new AppFinder.Models.App();
 		this.newAppView = new AppFinder.Views.NewAppView({model:app});
-	},
+	},	
   	initialize : function() {
   		$("#register").html(this.render().el);
   		this.addNewApp();

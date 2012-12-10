@@ -11,17 +11,17 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	this.filterView = new AppFinder.Views.Filters.FiltersView({model:this.filters});
 	//new
 	this.appFilters = new AppFinder.Collections.FiltersCollection();
+	this.developterFilters = new AppFinder.Collections.FiltersCollection();
 	
-    this.appFiltersView = new AppFinder.Views.FilterView({collection:this.appFilters});
+    this.appFiltersView = new AppFinder.Views.AppFilterView({collection:this.appFilters});
+    this.developerFiltersView = new AppFinder.Views.DeveloperFilterView({collection:this.developterFilters});
     
 	this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
-	
 	
 	this.loginView = new AppFinder.Views.LoginView();
 	this.registerView = new AppFinder.Views.RegisterView();
 	this.loadingView = new AppFinder.Views.LoadingView();
 	this.developerView = new AppFinder.Views.Developer.IndexView({collection: this.developers});
-
   },
   start: function(){
 	Backbone.history.start();
@@ -55,16 +55,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   	$('#app-view').prepend(this.appFiltersView.el);
   	$('#app-view').prepend(this.highlightsView.el);
   //	this.filters.fetch();
-  	this.appFilters.reset([
-	  {url: "/assets/data/app-category.json", type:"app_category"},
-	  {url: "/assets/data/app-tags.json", type: "app_tags"},
-	  {url: "/assets/data/app-badges.json", type:"app_badges"},
-	  {type:"app_price"},
-	  {type:"app_ratings"},
-	  {type:"app_devices"},
-	  {type:"app_release_date"},
-	  {type:"search_keywords"}
-	]);
+  	
   	this.highlights.fetch();
   	this.waterfallApps.fetch();
   	
@@ -117,19 +108,8 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 
   	$('#developers-view').prepend(this.developerView.el);
 	//$('#developers-view').prepend(this.filterView.el);
-	$('#developers-view').prepend(this.appFiltersView.el);
-	this.appFilters.reset([
-	  {url: "/assets/data/app-category.json", type:"app_category"},
-	  {type:"developer_app_count"},
-	  {type:"app_price"},
-	  {type:"app_ratings"},
-	  {url: "/assets/data/app-tags.json", type: "app_tags"},
-	  {url: "/assets/data/app-badges.json", type:"app_badges"},
-	  {type:"app_devices"},
-	  {type:"app_release_date"},
-	  {type: "location"},
-	  {type:"search_keywords"}
-	]);
+	$('#developers-view').prepend(this.developerFiltersView.el);
+	
 	
 	//this.filters.fetch();
   	this.developers.fetch();
