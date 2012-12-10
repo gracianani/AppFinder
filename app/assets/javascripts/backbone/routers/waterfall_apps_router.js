@@ -29,7 +29,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     ".*"        	: 	"index"
   },
   showStage:function(stageName){
-	$('.stage-view.active').hide().html("").removeClass('active');
+	$('.stage-view.active').hide().removeClass('active');
   	$('#'+stageName+'-view').show().addClass('active');
   	if($(".tbox").length > 0 ) {
   		TINY.box.hide();
@@ -44,7 +44,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     	 	
     $('#loadingContainer').show();
 
-  	$('#app-view').prepend(this.indexView.el);
+  	$('#app-view').html(this.indexView.el);
   //	$('#app-view').prepend(this.filterView.el);
   	$('#app-view').prepend(appFiltersView.render().el);
   	$('#app-view').prepend(this.highlightsView.el);
@@ -102,7 +102,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   	var developerFiltersView = new AppFinder.Views.DeveloperFilterView({collection:developterFilters});	 
 
     $('#loadingContainer').show();
-  	$('#developers-view').prepend(this.developerView.el);
+  	$('#developers-view').html(this.developerView.el);
 	//$('#developers-view').prepend(this.filterView.el);
 	$('#developers-view').prepend(developerFiltersView.render().el);
 	

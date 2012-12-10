@@ -18,6 +18,8 @@ AppFinder.Views.DeveloperFilterView = Backbone.View.extend({
 		  {type: "location"},
 		  {url: "/assets/data/app-names.json", type:"search_keywords"}
 		]);
+		
+		$('#filter-box').remove();
     },
     tagName : "div",
     id: "filters",
