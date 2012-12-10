@@ -15,6 +15,9 @@ AppFinder.Views.AppFilterView = Backbone.View.extend({
 		  {type:"app_release_date"},
 		  {url: "/assets/data/app-names.json", type:"search_keywords"}
 		]);
+		
+		$('#filter-box').remove();
+      	
     },
     tagName : "div",
     id: "filters",

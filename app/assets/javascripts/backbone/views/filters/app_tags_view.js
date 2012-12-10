@@ -13,7 +13,7 @@ AppFinder.Views.AppTagsView = Backbone.View.extend({
     	$el = $(this.el);
     	$el.html(this.template(this.model.toJSON()));
 		setTimeout (function(){
-    		$el.find(".chzn-select").chosen();
+    		$("#filter-tags-select").chosen();
     		$el.find('.filter-tag-link').bind('click',function(e){
 			  	e.preventDefault();
 			  	var tagValue = $(e.target).html();

@@ -20,6 +20,13 @@
     "main_category" : ["Farm and Animal Games"],
     "app_avg_score" : "4",
     "app_total_rating_count" : "10494",
+    "device_data":[
+    {"title": "iPad","num": 1},
+    {"title": "iPhone","num": 3},
+    {"title": "Universial","num": 3}],
+    "price_data":[
+    {"title": "Free","num": 1},
+    {"title": "Paid","num": 3}],
     "apps" : [ {
     	"app_id" : "2",
     	"app_name" : "The Cat In The Hat",

@@ -13,8 +13,7 @@ AppFinder.Views.AppBadgesView = Backbone.View.extend({
     	$el = $(this.el);
     	$el.html(this.template(this.model.toJSON()));
     	setTimeout(function(){
-    		console.log($el.find(".chzn-select"));
-	    	$el.find(".chzn-select").chosen();	
+    		$("#filter-badges-select").chosen();
     	},0);
     	$el.smlDropdown();
 		$el.attr("title", this.title).tooltip();

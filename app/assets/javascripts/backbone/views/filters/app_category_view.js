@@ -15,7 +15,7 @@ AppFinder.Views.AppCategoryView = Backbone.View.extend({
     render: function(){
     	$(this.el).html(this.template(this.model.toJSON()));
     	setTimeout(function(){
-	    	$el.find(".chzn-select").chosen();
+	    	$("#filter-category-select").chosen();
     	}, 0);
     	
 		$(this.el).smlDropdown();

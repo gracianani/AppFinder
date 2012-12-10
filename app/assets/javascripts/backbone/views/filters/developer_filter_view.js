@@ -6,9 +6,10 @@ AppFinder.Views.DeveloperFilterView = Backbone.View.extend({
     	this.filtersView = new AppFinder.Views.FilterBoxView({collection: this.collection});
 		this.collection.on("reset", this.render, this);
 		this.collection.reset([
+		  {type:"developer_sort_by"},
 		  {url: "/assets/data/app-category.json", type:"app_category"},
 		  {type:"developer_app_count"},
-		  {type:"app_price"},
+		  {type:"developer_budget"},
 		  {type:"app_ratings"},
 		  {url: "/assets/data/app-tags.json", type: "app_tags"},
 		  {url: "/assets/data/app-badges.json", type:"app_badges"},
@@ -17,6 +18,8 @@ AppFinder.Views.DeveloperFilterView = Backbone.View.extend({
 		  {type: "location"},
 		  {url: "/assets/data/app-names.json", type:"search_keywords"}
 		]);
+		
+		$('#filter-box').remove();
     },
     tagName : "div",
     id: "filters",
