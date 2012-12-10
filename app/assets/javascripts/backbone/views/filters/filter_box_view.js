@@ -38,7 +38,8 @@ AppFinder.Views.FilterBoxView = Backbone.View.extend({
     		filterView = new AppFinder.Views.AppReleaseDateView();
     	}
     	else if(filterType == "search_keywords") {
-    		filterView = new AppFinder.Views.SearchKeywordsView();
+    		
+    		filterView = new AppFinder.Views.SearchKeywordsView({model: filter});
     	}
     	else if (filterType == "location") {
     		filterView = new AppFinder.Views.LocationView();

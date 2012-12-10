@@ -12,9 +12,8 @@ AppFinder.Models.App = Backbone.Model.extend({
 	}
 }) ;
 
-
 AppFinder.Collections.AppsCollection = Backbone.Collection.extend({
-  url: '/assets/data/app.json',
-  model: AppFinder.Models.App
+	url: '/assets/data/app.json',
+	model: AppFinder.Models.App
 }) ;
   

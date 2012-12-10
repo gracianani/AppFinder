@@ -15,7 +15,7 @@ AppFinder.Views.DeveloperFilterView = Backbone.View.extend({
 		  {type:"app_devices"},
 		  {type:"app_release_date"},
 		  {type: "location"},
-		  {type:"search_keywords"}
+		  {url: "/assets/data/app-names.json", type:"search_keywords"}
 		]);
     },
     tagName : "div",
@@ -24,8 +24,6 @@ AppFinder.Views.DeveloperFilterView = Backbone.View.extend({
     render: function(){
     	$(this.el).append( this.filtersView.el);
     	$(this.el).append( this.filterSummaryView.el);
-    	
-		
     	return this;
     }
 });
