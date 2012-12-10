@@ -70,37 +70,36 @@ AppFinder.Views.Developer.ShowView = Backbone.View.extend ({
     
     var priceData = this.model.get('price_data');
     var deviceData = this.model.get('device_data');
+    
+    // PIE CHART
+    chart = new AmCharts.AmPieChart();
+    chart.dataProvider = priceData;
+    chart.titleField = "title";
+    chart.valueField = "num";
+    chart.outlineColor = "#FFFFFF";
+    chart.outlineAlpha = 0.8;
+    chart.outlineThickness = 2;
+    chart.labelRadius = 0;
+    chart.labelText="[[title]]<br>[[percents]]%",
+    chart.marginBottom = 0;
+    chart.marginTop=0;
 
-    AmCharts.ready(function () {
-                // PIE CHART
-                chart = new AmCharts.AmPieChart();
-                chart.dataProvider = priceData;
-                chart.titleField = "title";
-                chart.valueField = "num";
-                chart.outlineColor = "#FFFFFF";
-                chart.outlineAlpha = 0.8;
-                chart.outlineThickness = 2;
-                chart.labelRadius = 0;
-                chart.labelText="[[title]]<br>[[percents]]%",
-                chart.marginBottom = 0;
-                chart.marginTop=0;
-
-                // WRITE
-                chart.write("freeChart");
+    // WRITE
+    chart.write("freeChart");
                 
-                chart2 = new AmCharts.AmPieChart();
-                chart2.dataProvider = deviceData;
-                chart2.titleField = "title";
-                chart2.valueField = "num";
-                chart2.outlineColor = "#FFFFFF";
-                chart2.outlineAlpha = 0.8;
-                chart2.outlineThickness = 2;
-                chart2.labelRadius = 0;
-                chart2.labelText="[[title]]<br>[[percents]]%",
-                chart2.marginBottom = 0;
-                chart2.marginTop=0;
-                chart2.write("deviceChart");
-   });
+    deviceChart = new AmCharts.AmPieChart();
+    deviceChart.dataProvider = deviceData;
+    deviceChart.titleField = "title";
+    deviceChart.valueField = "num";
+    deviceChart.outlineColor = "#FFFFFF";
+    deviceChart.outlineAlpha = 0.8;
+    deviceChart.outlineThickness = 2;
+    deviceChart.labelRadius = 0;
+    deviceChart.labelText="[[title]]<br>[[percents]]%",
+    deviceChart.marginBottom = 0;
+    deviceChart.marginTop=0;
+    deviceChart.write("deviceChart");
+   
    return this;
 
   }
