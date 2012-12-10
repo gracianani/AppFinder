@@ -6,15 +6,6 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
 	this.developers = new AppFinder.Collections.DevelopersCollection();
 
 	this.indexView = new AppFinder.Views.WaterfallApps.IndexView({collection:this.waterfallApps});
-	
-	//old
-	this.filterView = new AppFinder.Views.Filters.FiltersView({model:this.filters});
-	//new
-	this.appFilters = new AppFinder.Collections.FiltersCollection();
-	this.developterFilters = new AppFinder.Collections.FiltersCollection();
-	
-    this.appFiltersView = new AppFinder.Views.AppFilterView({collection:this.appFilters});
-    this.developerFiltersView = new AppFinder.Views.DeveloperFilterView({collection:this.developterFilters});
     
 	this.highlightsView = new AppFinder.Views.Highlights.HighlightsView({model: this.highlights});
 	
@@ -38,7 +29,7 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
     ".*"        	: 	"index"
   },
   showStage:function(stageName){
-	$('.stage-view.active').hide().removeClass('active');
+	$('.stage-view.active').hide().html("").removeClass('active');
   	$('#'+stageName+'-view').show().addClass('active');
   	if($(".tbox").length > 0 ) {
   		TINY.box.hide();
@@ -47,12 +38,15 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   index: function() {
 
   	this.showStage('app');
-  	
+  	//new
+	var appFilters = new AppFinder.Collections.FiltersCollection();
+	var appFiltersView = new AppFinder.Views.AppFilterView({collection:appFilters});
+    	 	
     $('#loadingContainer').show();
 
   	$('#app-view').prepend(this.indexView.el);
   //	$('#app-view').prepend(this.filterView.el);
-  	$('#app-view').prepend(this.appFiltersView.el);
+  	$('#app-view').prepend(appFiltersView.render().el);
   	$('#app-view').prepend(this.highlightsView.el);
   //	this.filters.fetch();
   	
@@ -104,11 +98,13 @@ AppFinder.Routers.WaterfallAppsRouter = Backbone.Router.extend( {
   },
   developer: function() {
   	this.showStage('developers');
-    $('#loadingContainer').show();
+  	var developterFilters = new AppFinder.Collections.FiltersCollection();
+  	var developerFiltersView = new AppFinder.Views.DeveloperFilterView({collection:developterFilters});	 
 
+    $('#loadingContainer').show();
   	$('#developers-view').prepend(this.developerView.el);
 	//$('#developers-view').prepend(this.filterView.el);
-	$('#developers-view').prepend(this.developerFiltersView.el);
+	$('#developers-view').prepend(developerFiltersView.render().el);
 	
 	
 	//this.filters.fetch();

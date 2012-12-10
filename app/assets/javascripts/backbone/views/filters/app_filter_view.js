@@ -22,9 +22,7 @@ AppFinder.Views.AppFilterView = Backbone.View.extend({
     render: function(){
     	$(this.el).append( this.filtersView.el);
     	$(this.el).append( this.filterSummaryView.el);
-    	setTimeout(function() {
-    		$('.smlDropdown').smlDropdown();
-    	},0);
+    		
     	return this;
     }
 });

@@ -10,12 +10,19 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
       this.collection.on('add', this.addOne, this);
       this.collection.on('reset', this.addAll, this);
       this.apps = $(this.el).find('#waterfallApps');
+      
   },
   events : {
-	"click #toolbox" : "removeAllDislikedApps"  
+	"click #trashDisliked" : "removeAllDislikedApps",
+	"click #scrollToTop":"scrollToTop"  
   },
   removeAllDislikedApps : function(){
 	  this.apps.masonry( 'remove', $('.trashed') ).masonry( 'reload' );
+  },
+  scrollToTop : function(){
+	$('body,html').animate({
+				scrollTop: 0
+	}, 800);  
   },
   addAll: function() {
   	if ( this.$el.find('.masonry').size() > 0 ) {
@@ -42,6 +49,14 @@ AppFinder.Views.WaterfallApps.IndexView = Backbone.View.extend ({
 		itemSelector : '.card'
 	});
 
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('#scrollToTop').slideDown();
+		} else {
+			$('#scrollToTop').slideUp();
+		}
+	});
+		
 	this.apps.infinitescroll({
     	navSelector  : "#page-nav", // selector for the paged navigation (it will be hidden)
     	nextSelector : "#page-nav a", // selector for the NEXT link (to page 2)

@@ -7,6 +7,7 @@ AppFinder.Views.AppRatingsView = Backbone.View.extend({
     },
     tagName : "div",
     id: "filter-rating",
+    title:"Ratings",
     className : "filter-btn smlDropdown",
     render: function(){
     	$(this.el).html(this.template());
@@ -26,6 +27,8 @@ AppFinder.Views.AppRatingsView = Backbone.View.extend({
 				'targetType' : 'number'
 			});
     	}, 0);
+    	$(this.el).smlDropdown();
+		$(this.el).attr("title", this.title).tooltip();
     	return this;
     }
 });

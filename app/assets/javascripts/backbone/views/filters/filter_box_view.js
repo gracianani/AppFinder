@@ -51,7 +51,9 @@ AppFinder.Views.FilterBoxView = Backbone.View.extend({
     	}
     	if(filter.get('url') !== undefined){
 	    	filter.url = filter.get('url');
+	    	console.log('fetch...'+ filter.get("type"));
 	    	filter.fetch();
+	    	filter.change();
     	}
 		$(this.el).append(filterView.el);
  		return this;

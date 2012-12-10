@@ -13,7 +13,6 @@
     return this.each(function () {
       // Index for namespacing
       i++;
-
       var $this = $(this),
       // Namespacing
         namespace = settings.namespace,

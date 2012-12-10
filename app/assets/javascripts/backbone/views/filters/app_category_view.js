@@ -13,14 +13,15 @@ AppFinder.Views.AppCategoryView = Backbone.View.extend({
     id: "filter-category",
     className : "filter-btn smlDropdown",
     render: function(){
-    	var that = this;
     	$(this.el).html(this.template(this.model.toJSON()));
+    	setTimeout(function(){
+	    	$el.find(".chzn-select").chosen();
+    	}, 0);
     	
-		setTimeout (function(){
-    		$("#filter-category-select").chosen();
-		},0);
+		$(this.el).smlDropdown();
+		$(this.el).attr("title", this.title).tooltip();	
+		    	
     	
-    
     	return this;
     }
 });
