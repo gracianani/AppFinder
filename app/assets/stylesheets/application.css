@@ -523,7 +523,10 @@ h4 {
 	height: 100%;
 }
 #filter-category {
-	width:180px;
+	width:150px;
+}
+#filter-sortBy {
+	width: 100px;
 }
 #filter-category-select {
 	width:200px;
@@ -541,7 +544,7 @@ h4 {
 #filter-calendar-select {
 	width:60px;
 }
-#filter-tag .smlDropdown-menu {
+#filter-tag .smlDropdown-menu,#filter-budget .smlDropdown-menu {
 	width:250px;
 }
 #filter-tag .filter-tag-link {
@@ -560,6 +563,9 @@ h4 {
 #filter-priceRange,#filter-rating-low-hint,#filter-rating-high-hint {
 	color:#e7a136;
 	text-transform: capitalize;
+}
+#filter-address-input {
+	margin-left:5px;
 }
 #filter-rating .smlDropdown-menu,#filter-app  .smlDropdown-menu{
 	width: 250px;

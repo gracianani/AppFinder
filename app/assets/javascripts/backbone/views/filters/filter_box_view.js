@@ -47,6 +47,12 @@ AppFinder.Views.FilterBoxView = Backbone.View.extend({
     	else if(filterType == "developer_app_count"){
     		filterView = new AppFinder.Views.DeveloperAppCountView();
     	}
+    	else if(filterType == "developer_sort_by"){
+    		filterView = new AppFinder.Views.DeveloperSortByView();
+    	}
+    	else if(filterType == "developer_budget"){
+    		filterView = new AppFinder.Views.DeveloperBudgetView();
+    	}
     	else {
     		return this;
     	}
